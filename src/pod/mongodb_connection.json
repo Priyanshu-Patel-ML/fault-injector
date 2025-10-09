@@ -51,20 +51,7 @@
         "module": "mongodb_probes",
         "func": "probe_max_connections",
         "arguments": {
-          "expected_connections": 20
-        }
-      }
-    },
-    {
-      "name": "exhaust-mongo-connections",
-      "type": "action",
-      "provider": {
-        "type": "python",
-        "module": "mongodb_actions",
-        "func": "exhaust_mongo_connections",
-        "arguments": {
-          "max_connections": 50,
-          "hold_until_rollback": true
+          "expected_connections": 5
         }
       }
     },
@@ -74,7 +61,7 @@
       "provider": {
         "type": "process",
         "path": "sleep",
-        "arguments": "120"
+        "arguments": "60"
       }
     }
   ],

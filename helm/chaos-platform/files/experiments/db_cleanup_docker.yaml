@@ -1,0 +1,36 @@
+DB_Cleanup_Docker:
+  schedule: "*/1 * * * *"  # Every 1 minute
+  start_date: "2025-01-10"
+  description: "Database Cleanup - Auto cleanup MongoDB posts every minute - Docker Operator"
+  default_view: "graph"
+  orientation: "LR"
+  catchup: false
+  max_active_runs: 1
+  default_args:
+    owner: "airflow"
+    depends_on_past: false
+    retries: 1
+    retry_delay_seconds: 30
+  tasks:
+    - task_id: run_db_cleanup_docker
+      operator: airflow.providers.docker.operators.docker.DockerOperator
+      image: "priyanshu01ce/airflow_chaos:latest"
+      api_version: "auto"
+      auto_remove: true
+      user: "root"
+      mount_tmp_dir: false
+      docker_url: "unix://var/run/docker.sock"
+      network_mode: "host"
+      mounts:
+        - source: "/home/priyanshupatel/fault-injector/src/pod"
+          target: "/opt/airflow/src/pod"
+          type: "bind"
+      environment:
+        PYTHONPATH: "/opt/airflow/src/pod"
+      command: >
+        bash -c '
+        cd /opt/airflow/src/pod &&
+        echo "Starting database cleanup check..." &&
+        chaos run db_cleanup.json &&
+        echo "Database cleanup completed successfully"'
+      container_name: "db_cleanup_chaos"

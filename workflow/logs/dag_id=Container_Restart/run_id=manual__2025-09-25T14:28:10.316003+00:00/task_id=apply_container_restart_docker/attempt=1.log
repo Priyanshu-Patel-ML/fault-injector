@@ -1,0 +1,460 @@
+[2025-09-25T14:28:12.588+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-09-25T14:28:12.601+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: Container_Restart.apply_container_restart_docker manual__2025-09-25T14:28:10.316003+00:00 [queued]>
+[2025-09-25T14:28:12.609+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: Container_Restart.apply_container_restart_docker manual__2025-09-25T14:28:10.316003+00:00 [queued]>
+[2025-09-25T14:28:12.610+0000] {taskinstance.py:2865} INFO - Starting attempt 1 of 1
+[2025-09-25T14:28:12.625+0000] {taskinstance.py:2888} INFO - Executing <Task(DockerOperator): apply_container_restart_docker> on 2025-09-25 14:28:10.316003+00:00
+[2025-09-25T14:28:12.630+0000] {standard_task_runner.py:72} INFO - Started process 131 to run task
+[2025-09-25T14:28:12.634+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'Container_Restart', 'apply_container_restart_docker', 'manual__2025-09-25T14:28:10.316003+00:00', '--job-id', '303', '--raw', '--subdir', 'DAGS_FOLDER/dag_factory.py', '--cfg-path', '/tmp/tmps91h_pol']
+[2025-09-25T14:28:12.635+0000] {standard_task_runner.py:105} INFO - Job 303: Subtask apply_container_restart_docker
+[2025-09-25T14:28:12.684+0000] {task_command.py:467} INFO - Running <TaskInstance: Container_Restart.apply_container_restart_docker manual__2025-09-25T14:28:10.316003+00:00 [running]> on host BNXL-80508-WL.India.XoriantCorp.com
+[2025-09-25T14:28:12.770+0000] {taskinstance.py:3131} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='Container_Restart' AIRFLOW_CTX_TASK_ID='apply_container_restart_docker' AIRFLOW_CTX_EXECUTION_DATE='2025-09-25T14:28:10.316003+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-09-25T14:28:10.316003+00:00'
+[2025-09-25T14:28:12.771+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2025-09-25T14:28:12.857+0000] {docker.py:367} INFO - Starting docker container from image priyanshu01ce/***_chaos:latest
+[2025-09-25T14:28:13.100+0000] {docker.py:438} INFO - The container is run as root user. For security, consider using a regular user account.
+[2025-09-25T14:28:21.439+0000] {docker.py:438} INFO - 
+[2025-09-25T14:28:21.466+0000] {docker.py:438} INFO - total 10972
+[2025-09-25T14:28:21.466+0000] {docker.py:438} INFO - drwxr-xr-x 4    1000 1000     4096 Sep 25 11:14 .
+[2025-09-25T14:28:21.466+0000] {docker.py:438} INFO - drwxr-xr-x 1 *** root     4096 Sep 24 12:24 ..
+[2025-09-25T14:28:21.466+0000] {docker.py:438} INFO - -rw-r--r-- 1    1000 1000     1193 Sep  8 07:02 API_Latency.json
+[2025-09-25T14:28:21.467+0000] {docker.py:438} INFO - -rw-r--r-- 1    1000 1000      729 Sep  9 10:30 API_Timeout.json
+[2025-09-25T14:28:21.467+0000] {docker.py:438} INFO - -rw-r--r-- 1    1000 1000     1333 Sep 25 12:12 Continuous_Load_Test.yaml
+[2025-09-25T14:28:21.467+0000] {docker.py:438} INFO - -rw-r--r-- 1    1000 1000     1241 Sep 25 11:21 Load_Test.yaml
+[2025-09-25T14:28:21.467+0000] {docker.py:438} INFO - -rw-r--r-- 1    1000 1000     1177 Sep 25 10:49 Stress_test.yaml
+[2025-09-25T14:28:21.467+0000] {docker.py:438} INFO - -rw-r--r-- 1    1000 1000     1017 Sep 24 10:45 Stress_test_kube.yaml
+[2025-09-25T14:28:21.467+0000] {docker.py:438} INFO - drwxr-xr-x 2 root    root     4096 Sep 25 10:19 __pycache__
+[2025-09-25T14:28:21.467+0000] {docker.py:438} INFO - -rw-r--r-- 1    1000 1000     8875 Sep 22 09:04 chaosk6_actions.py
+[2025-09-25T14:28:21.468+0000] {docker.py:438} INFO - -rw-rw-r-- 1 root    root    70239 Sep 25 14:21 chaostoolkit.log
+[2025-09-25T14:28:21.468+0000] {docker.py:438} INFO - -rw-r--r-- 1    1000 1000     3213 Sep  9 09:11 combined-sequential.json
+[2025-09-25T14:28:21.468+0000] {docker.py:438} INFO - -rw-r--r-- 1    1000 1000      502 Sep 16 05:31 connection_test_experiment.json
+[2025-09-25T14:28:21.468+0000] {docker.py:438} INFO - -rw-r--r-- 1    1000 1000     1420 Sep 24 06:53 container_restart.json
+[2025-09-25T14:28:21.468+0000] {docker.py:438} INFO - -rw-r--r-- 1    1000 1000    13551 Sep 25 05:07 container_restart.py
+[2025-09-25T14:28:21.468+0000] {docker.py:438} INFO - -rw-r--r-- 1    1000 1000     1315 Sep 25 11:12 container_restart.yaml
+[2025-09-25T14:28:21.468+0000] {docker.py:438} INFO - -rw-r--r-- 1    1000 1000     1031 Sep 24 07:37 container_restart_kube.yaml
+[2025-09-25T14:28:21.468+0000] {docker.py:438} INFO - -rw-r--r-- 1    1000 1000     1409 Sep 18 12:30 continuous_load_test.json
+[2025-09-25T14:28:21.469+0000] {docker.py:438} INFO - -rw-r--r-- 1    1000 1000     1637 Sep 25 10:13 cordon-uncordon-node.json
+[2025-09-25T14:28:21.469+0000] {docker.py:438} INFO - -rw-r--r-- 1    1000 1000     1637 Sep 25 04:39 cordon_test.json
+[2025-09-25T14:28:21.469+0000] {docker.py:438} INFO - -rw-r--r-- 1    1000 1000     1037 Sep 25 11:18 cordon_uncordon_node.yaml
+[2025-09-25T14:28:21.469+0000] {docker.py:438} INFO - -rw-r--r-- 1    1000 1000     1214 Sep 24 17:12 cordon_uncordon_node_kube.yaml
+[2025-09-25T14:28:21.469+0000] {docker.py:438} INFO - -rw-r--r-- 1    1000 1000     1771 Sep 24 07:40 db_cleanup.json
+[2025-09-25T14:28:21.469+0000] {docker.py:438} INFO - -rw-r--r-- 1    1000 1000     6399 Sep 24 07:40 db_cleanup.py
+[2025-09-25T14:28:21.470+0000] {docker.py:438} INFO - -rw-r--r-- 1    1000 1000     1172 Sep 24 07:40 db_cleanup_docker.yaml
+[2025-09-25T14:28:21.470+0000] {docker.py:438} INFO - -rw-r--r-- 1    1000 1000     1097 Sep 24 10:43 db_cleanup_kube.yaml
+[2025-09-25T14:28:21.470+0000] {docker.py:438} INFO - -rw-r--r-- 1 root    root     4165 Sep 25 14:21 journal.json
+[2025-09-25T14:28:21.470+0000] {docker.py:438} INFO - -rw-rw-r-- 1 root    root     9834 Sep 25 09:01 k6_continuous_load.log
+[2025-09-25T14:28:21.470+0000] {docker.py:438} INFO - -rw-r--r-- 1 root    root     3970 Sep 20 09:39 k6_continuous_summary.json
+[2025-09-25T14:28:21.470+0000] {docker.py:438} INFO - -rw-rw-r-- 1 root    root 10911089 Sep 25 09:28 k6_post_api.log
+[2025-09-25T14:28:21.470+0000] {docker.py:438} INFO - -rw-r--r-- 1 root    root     3433 Sep 25 09:28 k6_summary.json
+[2025-09-25T14:28:21.471+0000] {docker.py:438} INFO - -rw-r--r-- 1    1000 1000      945 Sep 21 16:40 load_test.json
+[2025-09-25T14:28:21.471+0000] {docker.py:438} INFO - -rw-r--r-- 1    1000 1000      879 Sep 24 07:14 load_test_kube.yaml
+[2025-09-25T14:28:21.471+0000] {docker.py:438} INFO - -rw-r--r-- 1    1000 1000      528 Sep 17 12:13 max_connection_experiment.json
+[2025-09-25T14:28:21.471+0000] {docker.py:438} INFO - -rw-r--r-- 1    1000 1000     1227 Sep 13 15:20 memory-stress-rollback.json
+[2025-09-25T14:28:21.471+0000] {docker.py:438} INFO - -rw-r--r-- 1    1000 1000     7586 Sep 18 05:54 mongodb_actions.py
+[2025-09-25T14:28:21.471+0000] {docker.py:438} INFO - -rw-r--r-- 1    1000 1000     2136 Sep 18 11:23 mongodb_connection.json
+[2025-09-25T14:28:21.471+0000] {docker.py:438} INFO - -rw-r--r-- 1    1000 1000      597 Sep 16 09:17 mongodb_network_latency_experiment.json
+[2025-09-25T14:28:21.472+0000] {docker.py:438} INFO - -rw-r--r-- 1    1000 1000     3657 Sep 18 05:42 mongodb_probes.py
+[2025-09-25T14:28:21.472+0000] {docker.py:438} INFO - -rw-r--r-- 1    1000 1000     6161 Sep 12 08:04 pod_restart.py
+[2025-09-25T14:28:21.472+0000] {docker.py:438} INFO - -rw-r--r-- 1    1000 1000     1632 Sep 16 08:57 redis_config_faults.py
+[2025-09-25T14:28:21.472+0000] {docker.py:438} INFO - -rw-r--r-- 1    1000 1000      902 Sep 18 08:24 redis_experiment.json
+[2025-09-25T14:28:21.472+0000] {docker.py:438} INFO - -rw-r--r-- 1    1000 1000     1251 Sep 18 09:25 redis_experiment.yaml
+[2025-09-25T14:28:21.472+0000] {docker.py:438} INFO - -rw-r--r-- 1    1000 1000      929 Sep 24 07:35 redis_experiment_kube.yaml
+[2025-09-25T14:28:21.473+0000] {docker.py:438} INFO - -rw-r--r-- 1    1000 1000      945 Sep 18 06:53 redis_load.json
+[2025-09-25T14:28:21.473+0000] {docker.py:438} INFO - -rw-r--r-- 1    1000 1000     1255 Sep 25 11:19 redis_memory_stress.yaml
+[2025-09-25T14:28:21.473+0000] {docker.py:438} INFO - -rw-r--r-- 1    1000 1000     1284 Sep 25 10:53 run_load_test_with_cleanup.py
+[2025-09-25T14:28:21.473+0000] {docker.py:438} INFO - drwxr-xr-x 2    1000 1000     4096 Sep 18 09:09 scripts
+[2025-09-25T14:28:21.473+0000] {docker.py:438} INFO - -rw-r--r-- 1    1000 1000     2034 Sep 25 10:52 stress_test.json
+[2025-09-25T14:28:21.474+0000] {docker.py:438} INFO - -rw-r--r-- 1    1000 1000      367 Sep 17 07:24 test_params.json
+[2025-09-25T14:28:21.474+0000] {docker.py:438} INFO - Starting continuous container restart experiment...
+[2025-09-25T14:28:22.653+0000] {docker.py:438} INFO - [32m[2025-09-25 14:28:22 INFO] Validating the experiment's syntax
+[2025-09-25T14:28:23.231+0000] {docker.py:438} INFO - [32m[2025-09-25 14:28:23 INFO] Experiment looks valid
+[2025-09-25T14:28:23.232+0000] {docker.py:438} INFO - [32m[2025-09-25 14:28:23 INFO] Running experiment: Continuous Container Restart Experiment
+[2025-09-25T14:28:23.235+0000] {docker.py:438} INFO - [32m[2025-09-25 14:28:23 INFO] Steady-state strategy: default
+[2025-09-25T14:28:23.235+0000] {docker.py:438} INFO - [32m[2025-09-25 14:28:23 INFO] Rollbacks strategy: default
+[2025-09-25T14:28:23.235+0000] {docker.py:438} INFO - [32m[2025-09-25 14:28:23 INFO] No steady state hypothesis defined. That's ok, just exploring.
+[2025-09-25T14:28:23.236+0000] {docker.py:438} INFO - [32m[2025-09-25 14:28:23 INFO] Playing your experiment's method now...
+[2025-09-25T14:28:23.236+0000] {docker.py:438} INFO - [32m[2025-09-25 14:28:23 INFO] Action: continuous-container-restart
+[2025-09-25T14:32:47.791+0000] {docker.py:438} INFO - 🚀 Starting continuous container restart experiment
+[2025-09-25T14:32:47.793+0000] {docker.py:438} INFO - 📅 Interval: 5 seconds
+[2025-09-25T14:32:47.793+0000] {docker.py:438} INFO - ⏱️  Duration: 400 seconds
+[2025-09-25T14:32:47.793+0000] {docker.py:438} INFO - 🎯 Target: app=compose-post-service
+[2025-09-25T14:32:47.793+0000] {docker.py:438} INFO - 📍 Namespace: default
+[2025-09-25T14:32:47.794+0000] {docker.py:438} INFO - 📦 Container: compose-post-service
+[2025-09-25T14:32:47.794+0000] {docker.py:438} INFO - 
+[2025-09-25T14:32:47.794+0000] {docker.py:438} INFO - ============================================================
+[2025-09-25T14:32:47.794+0000] {docker.py:438} INFO - 🔄 Container Restart #1 at 2025-09-25 14:28:23
+[2025-09-25T14:32:47.794+0000] {docker.py:438} INFO - ============================================================
+[2025-09-25T14:32:47.794+0000] {docker.py:438} INFO - 🔄 Container restart function started!
+[2025-09-25T14:32:47.794+0000] {docker.py:438} INFO - 🔍 Selecting pods with label_selector: app=compose-post-service
+[2025-09-25T14:32:47.795+0000] {docker.py:438} INFO - 📋 Found 1 pods initially
+[2025-09-25T14:32:47.795+0000] {docker.py:438} INFO - 🎲 Random selection: 1 pods
+[2025-09-25T14:32:47.795+0000] {docker.py:438} INFO - ✅ Selected pods: ['compose-post-service-6dff877d56-h99zt']
+[2025-09-25T14:32:47.795+0000] {docker.py:438} INFO - 🎯 Restarting container in pod: compose-post-service-6dff877d56-h99zt
+[2025-09-25T14:32:47.795+0000] {docker.py:438} INFO - 📊 Current restart count: 13
+[2025-09-25T14:32:47.795+0000] {docker.py:438} INFO - 🔧 Trying restart strategy 1: sh -c kill -INT 1
+[2025-09-25T14:32:47.796+0000] {docker.py:438} INFO - ✅ Signal sent successfully to container in pod compose-post-service-6dff877d56-h99zt
+[2025-09-25T14:32:47.796+0000] {docker.py:438} INFO - ⏳ Waiting for container restart (up to 60 seconds)...
+[2025-09-25T14:32:47.796+0000] {docker.py:438} INFO - ✅ Container restart verified! Count: 13 → 14
+[2025-09-25T14:32:47.796+0000] {docker.py:438} INFO - 🏁 Restart operation completed for 1 containers
+[2025-09-25T14:32:47.796+0000] {docker.py:438} INFO - ✅ Successfully restarted: 1 containers
+[2025-09-25T14:32:47.796+0000] {docker.py:438} INFO - ✅ Successfully restarted 1 containers
+[2025-09-25T14:32:47.796+0000] {docker.py:438} INFO -    📦 compose-post-service-6dff877d56-h99zt: restart_verified
+[2025-09-25T14:32:47.797+0000] {docker.py:438} INFO - ⏳ Waiting 5 seconds until next restart...
+[2025-09-25T14:32:47.797+0000] {docker.py:438} INFO - 📊 Time remaining: 394 seconds
+[2025-09-25T14:32:47.797+0000] {docker.py:438} INFO - 📈 Total containers restarted so far: 1
+[2025-09-25T14:32:47.797+0000] {docker.py:438} INFO - 
+[2025-09-25T14:32:47.797+0000] {docker.py:438} INFO - ============================================================
+[2025-09-25T14:32:47.797+0000] {docker.py:438} INFO - 🔄 Container Restart #2 at 2025-09-25 14:28:34
+[2025-09-25T14:32:47.797+0000] {docker.py:438} INFO - ============================================================
+[2025-09-25T14:32:47.798+0000] {docker.py:438} INFO - 🔄 Container restart function started!
+[2025-09-25T14:32:47.798+0000] {docker.py:438} INFO - 🔍 Selecting pods with label_selector: app=compose-post-service
+[2025-09-25T14:32:47.798+0000] {docker.py:438} INFO - 📋 Found 1 pods initially
+[2025-09-25T14:32:47.798+0000] {docker.py:438} INFO - 🎲 Random selection: 1 pods
+[2025-09-25T14:32:47.798+0000] {docker.py:438} INFO - ✅ Selected pods: ['compose-post-service-6dff877d56-h99zt']
+[2025-09-25T14:32:47.798+0000] {docker.py:438} INFO - 🎯 Restarting container in pod: compose-post-service-6dff877d56-h99zt
+[2025-09-25T14:32:47.798+0000] {docker.py:438} INFO - 📊 Current restart count: 14
+[2025-09-25T14:32:47.798+0000] {docker.py:438} INFO - 🔧 Trying restart strategy 1: sh -c kill -INT 1
+[2025-09-25T14:32:47.799+0000] {docker.py:438} INFO - ✅ Signal sent successfully to container in pod compose-post-service-6dff877d56-h99zt
+[2025-09-25T14:32:47.799+0000] {docker.py:438} INFO - ⏳ Waiting for container restart (up to 60 seconds)...
+[2025-09-25T14:32:47.799+0000] {docker.py:438} INFO - ✅ Container restart verified! Count: 14 → 15
+[2025-09-25T14:32:47.799+0000] {docker.py:438} INFO - 🏁 Restart operation completed for 1 containers
+[2025-09-25T14:32:47.799+0000] {docker.py:438} INFO - ✅ Successfully restarted: 1 containers
+[2025-09-25T14:32:47.799+0000] {docker.py:438} INFO - ✅ Successfully restarted 1 containers
+[2025-09-25T14:32:47.799+0000] {docker.py:438} INFO -    📦 compose-post-service-6dff877d56-h99zt: restart_verified
+[2025-09-25T14:32:47.800+0000] {docker.py:438} INFO - ⏳ Waiting 5 seconds until next restart...
+[2025-09-25T14:32:47.800+0000] {docker.py:438} INFO - 📊 Time remaining: 371 seconds
+[2025-09-25T14:32:47.800+0000] {docker.py:438} INFO - 📈 Total containers restarted so far: 2
+[2025-09-25T14:32:47.800+0000] {docker.py:438} INFO - 
+[2025-09-25T14:32:47.800+0000] {docker.py:438} INFO - ============================================================
+[2025-09-25T14:32:47.800+0000] {docker.py:438} INFO - 🔄 Container Restart #3 at 2025-09-25 14:28:57
+[2025-09-25T14:32:47.800+0000] {docker.py:438} INFO - ============================================================
+[2025-09-25T14:32:47.801+0000] {docker.py:438} INFO - 🔄 Container restart function started!
+[2025-09-25T14:32:47.801+0000] {docker.py:438} INFO - 🔍 Selecting pods with label_selector: app=compose-post-service
+[2025-09-25T14:32:47.801+0000] {docker.py:438} INFO - 📋 Found 1 pods initially
+[2025-09-25T14:32:47.801+0000] {docker.py:438} INFO - 🎲 Random selection: 1 pods
+[2025-09-25T14:32:47.801+0000] {docker.py:438} INFO - ✅ Selected pods: ['compose-post-service-6dff877d56-h99zt']
+[2025-09-25T14:32:47.801+0000] {docker.py:438} INFO - 🎯 Restarting container in pod: compose-post-service-6dff877d56-h99zt
+[2025-09-25T14:32:47.801+0000] {docker.py:438} INFO - 📊 Current restart count: 15
+[2025-09-25T14:32:47.802+0000] {docker.py:438} INFO - 🔧 Trying restart strategy 1: sh -c kill -INT 1
+[2025-09-25T14:32:47.802+0000] {docker.py:438} INFO - ✅ Signal sent successfully to container in pod compose-post-service-6dff877d56-h99zt
+[2025-09-25T14:32:47.802+0000] {docker.py:438} INFO - ⏳ Waiting for container restart (up to 60 seconds)...
+[2025-09-25T14:32:47.802+0000] {docker.py:438} INFO - ✅ Container restart verified! Count: 15 → 16
+[2025-09-25T14:32:47.802+0000] {docker.py:438} INFO - 🏁 Restart operation completed for 1 containers
+[2025-09-25T14:32:47.802+0000] {docker.py:438} INFO - ✅ Successfully restarted: 1 containers
+[2025-09-25T14:32:47.802+0000] {docker.py:438} INFO - ✅ Successfully restarted 1 containers
+[2025-09-25T14:32:47.803+0000] {docker.py:438} INFO -    📦 compose-post-service-6dff877d56-h99zt: restart_verified
+[2025-09-25T14:32:47.803+0000] {docker.py:438} INFO - ⏳ Waiting 5 seconds until next restart...
+[2025-09-25T14:32:47.803+0000] {docker.py:438} INFO - 📊 Time remaining: 291 seconds
+[2025-09-25T14:32:47.803+0000] {docker.py:438} INFO - 📈 Total containers restarted so far: 3
+[2025-09-25T14:32:47.803+0000] {docker.py:438} INFO - 
+[2025-09-25T14:32:47.803+0000] {docker.py:438} INFO - ============================================================
+[2025-09-25T14:32:47.804+0000] {docker.py:438} INFO - 🔄 Container Restart #4 at 2025-09-25 14:30:17
+[2025-09-25T14:32:47.804+0000] {docker.py:438} INFO - ============================================================
+[2025-09-25T14:32:47.804+0000] {docker.py:438} INFO - 🔄 Container restart function started!
+[2025-09-25T14:32:47.804+0000] {docker.py:438} INFO - 🔍 Selecting pods with label_selector: app=compose-post-service
+[2025-09-25T14:32:47.804+0000] {docker.py:438} INFO - 📋 Found 1 pods initially
+[2025-09-25T14:32:47.804+0000] {docker.py:438} INFO - 🎲 Random selection: 1 pods
+[2025-09-25T14:32:47.804+0000] {docker.py:438} INFO - ✅ Selected pods: ['compose-post-service-6dff877d56-h99zt']
+[2025-09-25T14:32:47.805+0000] {docker.py:438} INFO - 🎯 Restarting container in pod: compose-post-service-6dff877d56-h99zt
+[2025-09-25T14:32:47.805+0000] {docker.py:438} INFO - 📊 Current restart count: 16
+[2025-09-25T14:32:47.805+0000] {docker.py:438} INFO - 🔧 Trying restart strategy 1: sh -c kill -INT 1
+[2025-09-25T14:32:47.806+0000] {docker.py:438} INFO - ✅ Signal sent successfully to container in pod compose-post-service-6dff877d56-h99zt
+[2025-09-25T14:32:47.806+0000] {docker.py:438} INFO - ⏳ Waiting for container restart (up to 60 seconds)...
+[2025-09-25T14:32:47.806+0000] {docker.py:438} INFO - ✅ Container restart verified! Count: 16 → 17
+[2025-09-25T14:32:47.806+0000] {docker.py:438} INFO - 🏁 Restart operation completed for 1 containers
+[2025-09-25T14:32:47.806+0000] {docker.py:438} INFO - ✅ Successfully restarted: 1 containers
+[2025-09-25T14:32:47.806+0000] {docker.py:438} INFO - ✅ Successfully restarted 1 containers
+[2025-09-25T14:32:47.807+0000] {docker.py:438} INFO -    📦 compose-post-service-6dff877d56-h99zt: restart_verified
+[2025-09-25T14:32:47.807+0000] {docker.py:438} INFO - ⏳ Waiting 5 seconds until next restart...
+[2025-09-25T14:32:47.807+0000] {docker.py:438} INFO - 📊 Time remaining: 230 seconds
+[2025-09-25T14:32:47.807+0000] {docker.py:438} INFO - 📈 Total containers restarted so far: 4
+[2025-09-25T14:32:47.807+0000] {docker.py:438} INFO - 
+[2025-09-25T14:32:47.807+0000] {docker.py:438} INFO - ============================================================
+[2025-09-25T14:32:47.808+0000] {docker.py:438} INFO - 🔄 Container Restart #5 at 2025-09-25 14:31:18
+[2025-09-25T14:32:47.808+0000] {docker.py:438} INFO - ============================================================
+[2025-09-25T14:32:47.808+0000] {docker.py:438} INFO - 🔄 Container restart function started!
+[2025-09-25T14:32:47.808+0000] {docker.py:438} INFO - 🔍 Selecting pods with label_selector: app=compose-post-service
+[2025-09-25T14:32:47.808+0000] {docker.py:438} INFO - 📋 Found 1 pods initially
+[2025-09-25T14:32:47.808+0000] {docker.py:438} INFO - 🎲 Random selection: 1 pods
+[2025-09-25T14:32:47.809+0000] {docker.py:438} INFO - ✅ Selected pods: ['compose-post-service-6dff877d56-h99zt']
+[2025-09-25T14:32:47.809+0000] {docker.py:438} INFO - 🎯 Restarting container in pod: compose-post-service-6dff877d56-h99zt
+[2025-09-25T14:32:47.809+0000] {docker.py:438} INFO - 📊 Current restart count: 17
+[2025-09-25T14:32:47.809+0000] {docker.py:438} INFO - 🔧 Trying restart strategy 1: sh -c kill -INT 1
+[2025-09-25T14:32:47.809+0000] {docker.py:438} INFO - ✅ Signal sent successfully to container in pod compose-post-service-6dff877d56-h99zt
+[2025-09-25T14:32:47.809+0000] {docker.py:438} INFO - ⏳ Waiting for container restart (up to 60 seconds)...
+[2025-09-25T14:32:47.809+0000] {docker.py:438} INFO - ⚠️  Strategy 1 didn't cause restart, trying next...
+[2025-09-25T14:32:47.809+0000] {docker.py:438} INFO - 🔧 Trying restart strategy 2: sh -c kill -2 1
+[2025-09-25T14:32:47.810+0000] {docker.py:438} INFO - ❌ Strategy 2 failed: (0)
+[2025-09-25T14:32:47.810+0000] {docker.py:438} INFO - Reason: Handshake status 500 Internal Server Error -+-+- {'date': 'Thu, 25 Sep 2025 14:32:26 GMT', 'connection': 'close', 'content-length': '0'} -+-+- b''
+[2025-09-25T14:32:47.810+0000] {docker.py:438} INFO - 
+[2025-09-25T14:32:47.810+0000] {docker.py:438} INFO - 🔧 Trying restart strategy 3: sh -c kill -TERM 1
+[2025-09-25T14:32:47.810+0000] {docker.py:438} INFO - ❌ Strategy 3 failed: (0)
+[2025-09-25T14:32:47.810+0000] {docker.py:438} INFO - Reason: Handshake status 500 Internal Server Error -+-+- {'date': 'Thu, 25 Sep 2025 14:32:28 GMT', 'connection': 'close', 'content-length': '0'} -+-+- b''
+[2025-09-25T14:32:47.810+0000] {docker.py:438} INFO - 
+[2025-09-25T14:32:47.810+0000] {docker.py:438} INFO - 🔧 Trying restart strategy 4: sh -c kill -9 1
+[2025-09-25T14:32:47.811+0000] {docker.py:438} INFO - ❌ Strategy 4 failed: (0)
+[2025-09-25T14:32:47.811+0000] {docker.py:438} INFO - Reason: Handshake status 500 Internal Server Error -+-+- {'date': 'Thu, 25 Sep 2025 14:32:29 GMT', 'connection': 'close', 'content-length': '0'} -+-+- b''
+[2025-09-25T14:32:47.811+0000] {docker.py:438} INFO - 
+[2025-09-25T14:32:47.811+0000] {docker.py:438} INFO - ❌ All restart strategies failed - container restart not verified
+[2025-09-25T14:32:47.811+0000] {docker.py:438} INFO - 🏁 Restart operation completed for 1 containers
+[2025-09-25T14:32:47.811+0000] {docker.py:438} INFO - ✅ Successfully restarted: 0 containers
+[2025-09-25T14:32:47.811+0000] {docker.py:438} INFO - ✅ Successfully restarted 1 containers
+[2025-09-25T14:32:47.812+0000] {docker.py:438} INFO -    📦 compose-post-service-6dff877d56-h99zt: restart_failed
+[2025-09-25T14:32:47.812+0000] {docker.py:438} INFO - ⏳ Waiting 5 seconds until next restart...
+[2025-09-25T14:32:47.812+0000] {docker.py:438} INFO - 📊 Time remaining: 153 seconds
+[2025-09-25T14:32:47.812+0000] {docker.py:438} INFO - 📈 Total containers restarted so far: 5
+[2025-09-25T14:32:47.812+0000] {docker.py:438} INFO - 
+[2025-09-25T14:32:47.812+0000] {docker.py:438} INFO - ============================================================
+[2025-09-25T14:32:47.812+0000] {docker.py:438} INFO - 🔄 Container Restart #6 at 2025-09-25 14:32:34
+[2025-09-25T14:32:47.812+0000] {docker.py:438} INFO - ============================================================
+[2025-09-25T14:32:47.813+0000] {docker.py:438} INFO - 🔄 Container restart function started!
+[2025-09-25T14:32:47.813+0000] {docker.py:438} INFO - 🔍 Selecting pods with label_selector: app=compose-post-service
+[2025-09-25T14:32:47.813+0000] {docker.py:438} INFO - 📋 Found 1 pods initially
+[2025-09-25T14:32:47.813+0000] {docker.py:438} INFO - 🎲 Random selection: 1 pods
+[2025-09-25T14:32:47.813+0000] {docker.py:438} INFO - ✅ Selected pods: ['compose-post-service-6dff877d56-h99zt']
+[2025-09-25T14:32:47.813+0000] {docker.py:438} INFO - 🎯 Restarting container in pod: compose-post-service-6dff877d56-h99zt
+[2025-09-25T14:32:47.813+0000] {docker.py:438} INFO - 📊 Current restart count: 17
+[2025-09-25T14:32:47.814+0000] {docker.py:438} INFO - 🔧 Trying restart strategy 1: sh -c kill -INT 1
+[2025-09-25T14:32:47.814+0000] {docker.py:438} INFO - ❌ Strategy 1 failed: (0)
+[2025-09-25T14:32:47.814+0000] {docker.py:438} INFO - Reason: Handshake status 500 Internal Server Error -+-+- {'date': 'Thu, 25 Sep 2025 14:32:37 GMT', 'connection': 'close', 'content-length': '0'} -+-+- b''
+[2025-09-25T14:32:47.814+0000] {docker.py:438} INFO - 
+[2025-09-25T14:32:47.814+0000] {docker.py:438} INFO - 🔧 Trying restart strategy 2: sh -c kill -2 1
+[2025-09-25T14:32:47.814+0000] {docker.py:438} INFO - ❌ Strategy 2 failed: (0)
+[2025-09-25T14:32:47.814+0000] {docker.py:438} INFO - Reason: Handshake status 500 Internal Server Error -+-+- {'date': 'Thu, 25 Sep 2025 14:32:39 GMT', 'connection': 'close', 'content-length': '0'} -+-+- b''
+[2025-09-25T14:32:47.814+0000] {docker.py:438} INFO - 
+[2025-09-25T14:32:47.815+0000] {docker.py:438} INFO - 🔧 Trying restart strategy 3: sh -c kill -TERM 1
+[2025-09-25T14:32:47.815+0000] {docker.py:438} INFO - ❌ Strategy 3 failed: (0)
+[2025-09-25T14:32:47.815+0000] {docker.py:438} INFO - Reason: Handshake status 500 Internal Server Error -+-+- {'date': 'Thu, 25 Sep 2025 14:32:41 GMT', 'connection': 'close', 'content-length': '0'} -+-+- b''
+[2025-09-25T14:32:47.815+0000] {docker.py:438} INFO - 
+[2025-09-25T14:32:47.815+0000] {docker.py:438} INFO - 🔧 Trying restart strategy 4: sh -c kill -9 1
+[2025-09-25T14:32:47.815+0000] {docker.py:438} INFO - ❌ Strategy 4 failed: (0)
+[2025-09-25T14:32:47.815+0000] {docker.py:438} INFO - Reason: Handshake status 500 Internal Server Error -+-+- {'date': 'Thu, 25 Sep 2025 14:32:42 GMT', 'connection': 'close', 'content-length': '0'} -+-+- b''
+[2025-09-25T14:32:47.816+0000] {docker.py:438} INFO - 
+[2025-09-25T14:32:47.816+0000] {docker.py:438} INFO - ❌ All restart strategies failed - container restart not verified
+[2025-09-25T14:32:47.816+0000] {docker.py:438} INFO - 🏁 Restart operation completed for 1 containers
+[2025-09-25T14:32:47.816+0000] {docker.py:438} INFO - ✅ Successfully restarted: 0 containers
+[2025-09-25T14:32:47.816+0000] {docker.py:438} INFO - ✅ Successfully restarted 1 containers
+[2025-09-25T14:32:47.816+0000] {docker.py:438} INFO -    📦 compose-post-service-6dff877d56-h99zt: restart_failed
+[2025-09-25T14:32:47.816+0000] {docker.py:438} INFO - ⏳ Waiting 5 seconds until next restart...
+[2025-09-25T14:32:47.816+0000] {docker.py:438} INFO - 📊 Time remaining: 140 seconds
+[2025-09-25T14:32:47.817+0000] {docker.py:438} INFO - 📈 Total containers restarted so far: 6
+[2025-09-25T14:32:47.817+0000] {docker.py:438} INFO - 
+[2025-09-25T14:32:47.817+0000] {docker.py:438} INFO - ============================================================
+[2025-09-25T14:32:47.817+0000] {docker.py:438} INFO - 🔄 Container Restart #7 at 2025-09-25 14:32:47
+[2025-09-25T14:32:47.817+0000] {docker.py:438} INFO - ============================================================
+[2025-09-25T14:34:49.861+0000] {docker.py:438} INFO - 🔄 Container restart function started!
+[2025-09-25T14:34:49.862+0000] {docker.py:438} INFO - 🔍 Selecting pods with label_selector: app=compose-post-service
+[2025-09-25T14:34:49.862+0000] {docker.py:438} INFO - 📋 Found 1 pods initially
+[2025-09-25T14:34:49.862+0000] {docker.py:438} INFO - 🎲 Random selection: 1 pods
+[2025-09-25T14:34:49.863+0000] {docker.py:438} INFO - ✅ Selected pods: ['compose-post-service-6dff877d56-h99zt']
+[2025-09-25T14:34:49.863+0000] {docker.py:438} INFO - 🎯 Restarting container in pod: compose-post-service-6dff877d56-h99zt
+[2025-09-25T14:34:49.863+0000] {docker.py:438} INFO - 📊 Current restart count: 17
+[2025-09-25T14:34:49.863+0000] {docker.py:438} INFO - 🔧 Trying restart strategy 1: sh -c kill -INT 1
+[2025-09-25T14:34:49.863+0000] {docker.py:438} INFO - ❌ Strategy 1 failed: (0)
+[2025-09-25T14:34:49.863+0000] {docker.py:438} INFO - Reason: Handshake status 500 Internal Server Error -+-+- {'date': 'Thu, 25 Sep 2025 14:32:50 GMT', 'connection': 'close', 'content-length': '0'} -+-+- b''
+[2025-09-25T14:34:49.863+0000] {docker.py:438} INFO - 
+[2025-09-25T14:34:49.864+0000] {docker.py:438} INFO - 🔧 Trying restart strategy 2: sh -c kill -2 1
+[2025-09-25T14:34:49.864+0000] {docker.py:438} INFO - ❌ Strategy 2 failed: (0)
+[2025-09-25T14:34:49.864+0000] {docker.py:438} INFO - Reason: Handshake status 500 Internal Server Error -+-+- {'date': 'Thu, 25 Sep 2025 14:32:52 GMT', 'connection': 'close', 'content-length': '0'} -+-+- b''
+[2025-09-25T14:34:49.864+0000] {docker.py:438} INFO - 
+[2025-09-25T14:34:49.864+0000] {docker.py:438} INFO - 🔧 Trying restart strategy 3: sh -c kill -TERM 1
+[2025-09-25T14:34:49.864+0000] {docker.py:438} INFO - ✅ Signal sent successfully to container in pod compose-post-service-6dff877d56-h99zt
+[2025-09-25T14:34:49.864+0000] {docker.py:438} INFO - ⏳ Waiting for container restart (up to 60 seconds)...
+[2025-09-25T14:34:49.865+0000] {docker.py:438} INFO - ✅ Container restart verified! Count: 17 → 18
+[2025-09-25T14:34:49.865+0000] {docker.py:438} INFO - 🏁 Restart operation completed for 1 containers
+[2025-09-25T14:34:49.865+0000] {docker.py:438} INFO - ✅ Successfully restarted: 1 containers
+[2025-09-25T14:34:49.865+0000] {docker.py:438} INFO - ✅ Successfully restarted 1 containers
+[2025-09-25T14:34:49.865+0000] {docker.py:438} INFO -    📦 compose-post-service-6dff877d56-h99zt: restart_verified
+[2025-09-25T14:34:49.865+0000] {docker.py:438} INFO - ⏳ Waiting 5 seconds until next restart...
+[2025-09-25T14:34:49.865+0000] {docker.py:438} INFO - 📊 Time remaining: 126 seconds
+[2025-09-25T14:34:49.865+0000] {docker.py:438} INFO - 📈 Total containers restarted so far: 7
+[2025-09-25T14:34:49.866+0000] {docker.py:438} INFO - 
+[2025-09-25T14:34:49.866+0000] {docker.py:438} INFO - ============================================================
+[2025-09-25T14:34:49.866+0000] {docker.py:438} INFO - 🔄 Container Restart #8 at 2025-09-25 14:33:02
+[2025-09-25T14:34:49.866+0000] {docker.py:438} INFO - ============================================================
+[2025-09-25T14:34:49.866+0000] {docker.py:438} INFO - 🔄 Container restart function started!
+[2025-09-25T14:34:49.866+0000] {docker.py:438} INFO - 🔍 Selecting pods with label_selector: app=compose-post-service
+[2025-09-25T14:34:49.867+0000] {docker.py:438} INFO - 📋 Found 1 pods initially
+[2025-09-25T14:34:49.867+0000] {docker.py:438} INFO - 🎲 Random selection: 1 pods
+[2025-09-25T14:34:49.867+0000] {docker.py:438} INFO - ✅ Selected pods: ['compose-post-service-6dff877d56-h99zt']
+[2025-09-25T14:34:49.867+0000] {docker.py:438} INFO - 🎯 Restarting container in pod: compose-post-service-6dff877d56-h99zt
+[2025-09-25T14:34:49.867+0000] {docker.py:438} INFO - 📊 Current restart count: 18
+[2025-09-25T14:34:49.867+0000] {docker.py:438} INFO - 🔧 Trying restart strategy 1: sh -c kill -INT 1
+[2025-09-25T14:34:49.867+0000] {docker.py:438} INFO - ✅ Signal sent successfully to container in pod compose-post-service-6dff877d56-h99zt
+[2025-09-25T14:34:49.867+0000] {docker.py:438} INFO - ⏳ Waiting for container restart (up to 60 seconds)...
+[2025-09-25T14:34:49.868+0000] {docker.py:438} INFO - ⚠️  Strategy 1 didn't cause restart, trying next...
+[2025-09-25T14:34:49.868+0000] {docker.py:438} INFO - 🔧 Trying restart strategy 2: sh -c kill -2 1
+[2025-09-25T14:34:49.868+0000] {docker.py:438} INFO - ❌ Strategy 2 failed: (0)
+[2025-09-25T14:34:49.868+0000] {docker.py:438} INFO - Reason: Handshake status 500 Internal Server Error -+-+- {'date': 'Thu, 25 Sep 2025 14:34:09 GMT', 'connection': 'close', 'content-length': '0'} -+-+- b''
+[2025-09-25T14:34:49.868+0000] {docker.py:438} INFO - 
+[2025-09-25T14:34:49.868+0000] {docker.py:438} INFO - 🔧 Trying restart strategy 3: sh -c kill -TERM 1
+[2025-09-25T14:34:49.868+0000] {docker.py:438} INFO - ❌ Strategy 3 failed: (0)
+[2025-09-25T14:34:49.869+0000] {docker.py:438} INFO - Reason: Handshake status 500 Internal Server Error -+-+- {'date': 'Thu, 25 Sep 2025 14:34:10 GMT', 'connection': 'close', 'content-length': '0'} -+-+- b''
+[2025-09-25T14:34:49.869+0000] {docker.py:438} INFO - 
+[2025-09-25T14:34:49.869+0000] {docker.py:438} INFO - 🔧 Trying restart strategy 4: sh -c kill -9 1
+[2025-09-25T14:34:49.869+0000] {docker.py:438} INFO - ❌ Strategy 4 failed: (0)
+[2025-09-25T14:34:49.869+0000] {docker.py:438} INFO - Reason: Handshake status 500 Internal Server Error -+-+- {'date': 'Thu, 25 Sep 2025 14:34:11 GMT', 'connection': 'close', 'content-length': '0'} -+-+- b''
+[2025-09-25T14:34:49.869+0000] {docker.py:438} INFO - 
+[2025-09-25T14:34:49.869+0000] {docker.py:438} INFO - ❌ All restart strategies failed - container restart not verified
+[2025-09-25T14:34:49.869+0000] {docker.py:438} INFO - 🏁 Restart operation completed for 1 containers
+[2025-09-25T14:34:49.870+0000] {docker.py:438} INFO - ✅ Successfully restarted: 0 containers
+[2025-09-25T14:34:49.870+0000] {docker.py:438} INFO - ✅ Successfully restarted 1 containers
+[2025-09-25T14:34:49.870+0000] {docker.py:438} INFO -    📦 compose-post-service-6dff877d56-h99zt: restart_failed
+[2025-09-25T14:34:49.870+0000] {docker.py:438} INFO - ⏳ Waiting 5 seconds until next restart...
+[2025-09-25T14:34:49.870+0000] {docker.py:438} INFO - 📊 Time remaining: 51 seconds
+[2025-09-25T14:34:49.870+0000] {docker.py:438} INFO - 📈 Total containers restarted so far: 8
+[2025-09-25T14:34:49.871+0000] {docker.py:438} INFO - 
+[2025-09-25T14:34:49.871+0000] {docker.py:438} INFO - ============================================================
+[2025-09-25T14:34:49.871+0000] {docker.py:438} INFO - 🔄 Container Restart #9 at 2025-09-25 14:34:16
+[2025-09-25T14:34:49.871+0000] {docker.py:438} INFO - ============================================================
+[2025-09-25T14:34:49.871+0000] {docker.py:438} INFO - 🔄 Container restart function started!
+[2025-09-25T14:34:49.871+0000] {docker.py:438} INFO - 🔍 Selecting pods with label_selector: app=compose-post-service
+[2025-09-25T14:34:49.871+0000] {docker.py:438} INFO - 📋 Found 1 pods initially
+[2025-09-25T14:34:49.871+0000] {docker.py:438} INFO - 🎲 Random selection: 1 pods
+[2025-09-25T14:34:49.872+0000] {docker.py:438} INFO - ✅ Selected pods: ['compose-post-service-6dff877d56-h99zt']
+[2025-09-25T14:34:49.872+0000] {docker.py:438} INFO - 🎯 Restarting container in pod: compose-post-service-6dff877d56-h99zt
+[2025-09-25T14:34:49.872+0000] {docker.py:438} INFO - 📊 Current restart count: 18
+[2025-09-25T14:34:49.872+0000] {docker.py:438} INFO - 🔧 Trying restart strategy 1: sh -c kill -INT 1
+[2025-09-25T14:34:49.872+0000] {docker.py:438} INFO - ❌ Strategy 1 failed: (0)
+[2025-09-25T14:34:49.873+0000] {docker.py:438} INFO - Reason: Handshake status 500 Internal Server Error -+-+- {'date': 'Thu, 25 Sep 2025 14:34:19 GMT', 'connection': 'close', 'content-length': '0'} -+-+- b''
+[2025-09-25T14:34:49.873+0000] {docker.py:438} INFO - 
+[2025-09-25T14:34:49.873+0000] {docker.py:438} INFO - 🔧 Trying restart strategy 2: sh -c kill -2 1
+[2025-09-25T14:34:49.873+0000] {docker.py:438} INFO - ❌ Strategy 2 failed: (0)
+[2025-09-25T14:34:49.873+0000] {docker.py:438} INFO - Reason: Handshake status 500 Internal Server Error -+-+- {'date': 'Thu, 25 Sep 2025 14:34:21 GMT', 'connection': 'close', 'content-length': '0'} -+-+- b''
+[2025-09-25T14:34:49.873+0000] {docker.py:438} INFO - 
+[2025-09-25T14:34:49.873+0000] {docker.py:438} INFO - 🔧 Trying restart strategy 3: sh -c kill -TERM 1
+[2025-09-25T14:34:49.874+0000] {docker.py:438} INFO - ❌ Strategy 3 failed: (0)
+[2025-09-25T14:34:49.874+0000] {docker.py:438} INFO - Reason: Handshake status 500 Internal Server Error -+-+- {'date': 'Thu, 25 Sep 2025 14:34:22 GMT', 'connection': 'close', 'content-length': '0'} -+-+- b''
+[2025-09-25T14:34:49.874+0000] {docker.py:438} INFO - 
+[2025-09-25T14:34:49.874+0000] {docker.py:438} INFO - 🔧 Trying restart strategy 4: sh -c kill -9 1
+[2025-09-25T14:34:49.874+0000] {docker.py:438} INFO - ❌ Strategy 4 failed: (0)
+[2025-09-25T14:34:49.874+0000] {docker.py:438} INFO - Reason: Handshake status 500 Internal Server Error -+-+- {'date': 'Thu, 25 Sep 2025 14:34:24 GMT', 'connection': 'close', 'content-length': '0'} -+-+- b''
+[2025-09-25T14:34:49.875+0000] {docker.py:438} INFO - 
+[2025-09-25T14:34:49.875+0000] {docker.py:438} INFO - ❌ All restart strategies failed - container restart not verified
+[2025-09-25T14:34:49.875+0000] {docker.py:438} INFO - 🏁 Restart operation completed for 1 containers
+[2025-09-25T14:34:49.875+0000] {docker.py:438} INFO - ✅ Successfully restarted: 0 containers
+[2025-09-25T14:34:49.875+0000] {docker.py:438} INFO - ✅ Successfully restarted 1 containers
+[2025-09-25T14:34:49.875+0000] {docker.py:438} INFO -    📦 compose-post-service-6dff877d56-h99zt: restart_failed
+[2025-09-25T14:34:49.876+0000] {docker.py:438} INFO - ⏳ Waiting 5 seconds until next restart...
+[2025-09-25T14:34:49.876+0000] {docker.py:438} INFO - 📊 Time remaining: 39 seconds
+[2025-09-25T14:34:49.876+0000] {docker.py:438} INFO - 📈 Total containers restarted so far: 9
+[2025-09-25T14:34:49.876+0000] {docker.py:438} INFO - 
+[2025-09-25T14:34:49.876+0000] {docker.py:438} INFO - ============================================================
+[2025-09-25T14:34:49.876+0000] {docker.py:438} INFO - 🔄 Container Restart #10 at 2025-09-25 14:34:29
+[2025-09-25T14:34:49.876+0000] {docker.py:438} INFO - ============================================================
+[2025-09-25T14:34:49.877+0000] {docker.py:438} INFO - 🔄 Container restart function started!
+[2025-09-25T14:34:49.877+0000] {docker.py:438} INFO - 🔍 Selecting pods with label_selector: app=compose-post-service
+[2025-09-25T14:34:49.877+0000] {docker.py:438} INFO - 📋 Found 1 pods initially
+[2025-09-25T14:34:49.877+0000] {docker.py:438} INFO - 🎲 Random selection: 1 pods
+[2025-09-25T14:34:49.877+0000] {docker.py:438} INFO - ✅ Selected pods: ['compose-post-service-6dff877d56-h99zt']
+[2025-09-25T14:34:49.877+0000] {docker.py:438} INFO - 🎯 Restarting container in pod: compose-post-service-6dff877d56-h99zt
+[2025-09-25T14:34:49.877+0000] {docker.py:438} INFO - 📊 Current restart count: 18
+[2025-09-25T14:34:49.878+0000] {docker.py:438} INFO - 🔧 Trying restart strategy 1: sh -c kill -INT 1
+[2025-09-25T14:34:49.878+0000] {docker.py:438} INFO - ❌ Strategy 1 failed: (0)
+[2025-09-25T14:34:49.878+0000] {docker.py:438} INFO - Reason: Handshake status 500 Internal Server Error -+-+- {'date': 'Thu, 25 Sep 2025 14:34:33 GMT', 'connection': 'close', 'content-length': '0'} -+-+- b''
+[2025-09-25T14:34:49.878+0000] {docker.py:438} INFO - 
+[2025-09-25T14:34:49.878+0000] {docker.py:438} INFO - 🔧 Trying restart strategy 2: sh -c kill -2 1
+[2025-09-25T14:34:49.878+0000] {docker.py:438} INFO - ❌ Strategy 2 failed: (0)
+[2025-09-25T14:34:49.879+0000] {docker.py:438} INFO - Reason: Handshake status 500 Internal Server Error -+-+- {'date': 'Thu, 25 Sep 2025 14:34:34 GMT', 'connection': 'close', 'content-length': '0'} -+-+- b''
+[2025-09-25T14:34:49.879+0000] {docker.py:438} INFO - 
+[2025-09-25T14:34:49.879+0000] {docker.py:438} INFO - 🔧 Trying restart strategy 3: sh -c kill -TERM 1
+[2025-09-25T14:34:49.879+0000] {docker.py:438} INFO - ❌ Strategy 3 failed: (0)
+[2025-09-25T14:34:49.879+0000] {docker.py:438} INFO - Reason: Handshake status 500 Internal Server Error -+-+- {'date': 'Thu, 25 Sep 2025 14:34:36 GMT', 'connection': 'close', 'content-length': '0'} -+-+- b''
+[2025-09-25T14:34:49.879+0000] {docker.py:438} INFO - 
+[2025-09-25T14:34:49.879+0000] {docker.py:438} INFO - 🔧 Trying restart strategy 4: sh -c kill -9 1
+[2025-09-25T14:34:49.879+0000] {docker.py:438} INFO - ❌ Strategy 4 failed: (0)
+[2025-09-25T14:34:49.880+0000] {docker.py:438} INFO - Reason: Handshake status 500 Internal Server Error -+-+- {'date': 'Thu, 25 Sep 2025 14:34:37 GMT', 'connection': 'close', 'content-length': '0'} -+-+- b''
+[2025-09-25T14:34:49.880+0000] {docker.py:438} INFO - 
+[2025-09-25T14:34:49.880+0000] {docker.py:438} INFO - ❌ All restart strategies failed - container restart not verified
+[2025-09-25T14:34:49.881+0000] {docker.py:438} INFO - 🏁 Restart operation completed for 1 containers
+[2025-09-25T14:34:49.881+0000] {docker.py:438} INFO - ✅ Successfully restarted: 0 containers
+[2025-09-25T14:34:49.881+0000] {docker.py:438} INFO - ✅ Successfully restarted 1 containers
+[2025-09-25T14:34:49.881+0000] {docker.py:438} INFO -    📦 compose-post-service-6dff877d56-h99zt: restart_failed
+[2025-09-25T14:34:49.881+0000] {docker.py:438} INFO - ⏳ Waiting 5 seconds until next restart...
+[2025-09-25T14:34:49.881+0000] {docker.py:438} INFO - 📊 Time remaining: 26 seconds
+[2025-09-25T14:34:49.881+0000] {docker.py:438} INFO - 📈 Total containers restarted so far: 10
+[2025-09-25T14:34:49.881+0000] {docker.py:438} INFO - 
+[2025-09-25T14:34:49.882+0000] {docker.py:438} INFO - ============================================================
+[2025-09-25T14:34:49.882+0000] {docker.py:438} INFO - 🔄 Container Restart #11 at 2025-09-25 14:34:42
+[2025-09-25T14:34:49.882+0000] {docker.py:438} INFO - ============================================================
+[2025-09-25T14:34:49.882+0000] {docker.py:438} INFO - 🔄 Container restart function started!
+[2025-09-25T14:34:49.882+0000] {docker.py:438} INFO - 🔍 Selecting pods with label_selector: app=compose-post-service
+[2025-09-25T14:34:49.882+0000] {docker.py:438} INFO - 📋 Found 1 pods initially
+[2025-09-25T14:34:49.882+0000] {docker.py:438} INFO - 🎲 Random selection: 1 pods
+[2025-09-25T14:34:49.883+0000] {docker.py:438} INFO - ✅ Selected pods: ['compose-post-service-6dff877d56-h99zt']
+[2025-09-25T14:34:49.883+0000] {docker.py:438} INFO - 🎯 Restarting container in pod: compose-post-service-6dff877d56-h99zt
+[2025-09-25T14:34:49.883+0000] {docker.py:438} INFO - 📊 Current restart count: 18
+[2025-09-25T14:34:49.883+0000] {docker.py:438} INFO - 🔧 Trying restart strategy 1: sh -c kill -INT 1
+[2025-09-25T14:34:49.883+0000] {docker.py:438} INFO - ❌ Strategy 1 failed: (0)
+[2025-09-25T14:34:49.883+0000] {docker.py:438} INFO - Reason: Handshake status 500 Internal Server Error -+-+- {'date': 'Thu, 25 Sep 2025 14:34:45 GMT', 'connection': 'close', 'content-length': '0'} -+-+- b''
+[2025-09-25T14:34:49.883+0000] {docker.py:438} INFO - 
+[2025-09-25T14:34:49.883+0000] {docker.py:438} INFO - 🔧 Trying restart strategy 2: sh -c kill -2 1
+[2025-09-25T14:34:49.884+0000] {docker.py:438} INFO - ❌ Strategy 2 failed: (0)
+[2025-09-25T14:34:49.884+0000] {docker.py:438} INFO - Reason: Handshake status 500 Internal Server Error -+-+- {'date': 'Thu, 25 Sep 2025 14:34:47 GMT', 'connection': 'close', 'content-length': '0'} -+-+- b''
+[2025-09-25T14:34:49.884+0000] {docker.py:438} INFO - 
+[2025-09-25T14:34:49.884+0000] {docker.py:438} INFO - 🔧 Trying restart strategy 3: sh -c kill -TERM 1
+[2025-09-25T14:34:49.884+0000] {docker.py:438} INFO - ❌ Strategy 3 failed: (0)
+[2025-09-25T14:34:49.884+0000] {docker.py:438} INFO - Reason: Handshake status 500 Internal Server Error -+-+- {'date': 'Thu, 25 Sep 2025 14:34:48 GMT', 'connection': 'close', 'content-length': '0'} -+-+- b''
+[2025-09-25T14:34:49.884+0000] {docker.py:438} INFO - 
+[2025-09-25T14:34:49.884+0000] {docker.py:438} INFO - 🔧 Trying restart strategy 4: sh -c kill -9 1
+[2025-09-25T14:34:49.884+0000] {docker.py:438} INFO - ❌ Strategy 4 failed: (0)
+[2025-09-25T14:34:49.885+0000] {docker.py:438} INFO - Reason: Handshake status 500 Internal Server Error -+-+- {'date': 'Thu, 25 Sep 2025 14:34:49 GMT', 'connection': 'close', 'content-length': '0'} -+-+- b''
+[2025-09-25T14:35:01.818+0000] {docker.py:438} INFO - [32m[2025-09-25 14:35:01 INFO] Let's rollback...
+[2025-09-25T14:35:01.818+0000] {docker.py:438} INFO - [32m[2025-09-25 14:35:01 INFO] Rollback: verify-pods-running
+[2025-09-25T14:35:01.818+0000] {docker.py:438} INFO - [32m[2025-09-25 14:35:01 INFO] Probe: verify-pods-running
+[2025-09-25T14:35:03.197+0000] {docker.py:438} INFO - [32m[2025-09-25 14:35:03 INFO] Experiment ended with status: completed
+[2025-09-25T14:35:03.198+0000] {docker.py:438} INFO - ❌ All restart strategies failed - container restart not verified
+[2025-09-25T14:35:03.199+0000] {docker.py:438} INFO - 🏁 Restart operation completed for 1 containers
+[2025-09-25T14:35:03.199+0000] {docker.py:438} INFO - ✅ Successfully restarted: 0 containers
+[2025-09-25T14:35:03.199+0000] {docker.py:438} INFO - ✅ Successfully restarted 1 containers
+[2025-09-25T14:35:03.199+0000] {docker.py:438} INFO -    📦 compose-post-service-6dff877d56-h99zt: restart_failed
+[2025-09-25T14:35:03.199+0000] {docker.py:438} INFO - ⏳ Waiting 5 seconds until next restart...
+[2025-09-25T14:35:03.199+0000] {docker.py:438} INFO - 📊 Time remaining: 13 seconds
+[2025-09-25T14:35:03.200+0000] {docker.py:438} INFO - 📈 Total containers restarted so far: 11
+[2025-09-25T14:35:03.200+0000] {docker.py:438} INFO - 
+[2025-09-25T14:35:03.200+0000] {docker.py:438} INFO - ============================================================
+[2025-09-25T14:35:03.200+0000] {docker.py:438} INFO - 🔄 Container Restart #12 at 2025-09-25 14:34:54
+[2025-09-25T14:35:03.200+0000] {docker.py:438} INFO - ============================================================
+[2025-09-25T14:35:03.200+0000] {docker.py:438} INFO - 🔄 Container restart function started!
+[2025-09-25T14:35:03.200+0000] {docker.py:438} INFO - 🔍 Selecting pods with label_selector: app=compose-post-service
+[2025-09-25T14:35:03.201+0000] {docker.py:438} INFO - 📋 Found 1 pods initially
+[2025-09-25T14:35:03.201+0000] {docker.py:438} INFO - 🎲 Random selection: 1 pods
+[2025-09-25T14:35:03.201+0000] {docker.py:438} INFO - ✅ Selected pods: ['compose-post-service-6dff877d56-h99zt']
+[2025-09-25T14:35:03.201+0000] {docker.py:438} INFO - 🎯 Restarting container in pod: compose-post-service-6dff877d56-h99zt
+[2025-09-25T14:35:03.201+0000] {docker.py:438} INFO - 📊 Current restart count: 18
+[2025-09-25T14:35:03.201+0000] {docker.py:438} INFO - 🔧 Trying restart strategy 1: sh -c kill -INT 1
+[2025-09-25T14:35:03.201+0000] {docker.py:438} INFO - ❌ Strategy 1 failed: (0)
+[2025-09-25T14:35:03.201+0000] {docker.py:438} INFO - Reason: Handshake status 500 Internal Server Error -+-+- {'date': 'Thu, 25 Sep 2025 14:34:57 GMT', 'connection': 'close', 'content-length': '0'} -+-+- b''
+[2025-09-25T14:35:03.201+0000] {docker.py:438} INFO - 
+[2025-09-25T14:35:03.202+0000] {docker.py:438} INFO - 🔧 Trying restart strategy 2: sh -c kill -2 1
+[2025-09-25T14:35:03.202+0000] {docker.py:438} INFO - ❌ Strategy 2 failed: (0)
+[2025-09-25T14:35:03.202+0000] {docker.py:438} INFO - Reason: Handshake status 500 Internal Server Error -+-+- {'date': 'Thu, 25 Sep 2025 14:34:58 GMT', 'connection': 'close', 'content-length': '0'} -+-+- b''
+[2025-09-25T14:35:03.202+0000] {docker.py:438} INFO - 
+[2025-09-25T14:35:03.202+0000] {docker.py:438} INFO - 🔧 Trying restart strategy 3: sh -c kill -TERM 1
+[2025-09-25T14:35:03.202+0000] {docker.py:438} INFO - ❌ Strategy 3 failed: (0)
+[2025-09-25T14:35:03.203+0000] {docker.py:438} INFO - Reason: Handshake status 500 Internal Server Error -+-+- {'date': 'Thu, 25 Sep 2025 14:35:00 GMT', 'connection': 'close', 'content-length': '0'} -+-+- b''
+[2025-09-25T14:35:03.203+0000] {docker.py:438} INFO - 
+[2025-09-25T14:35:03.203+0000] {docker.py:438} INFO - 🔧 Trying restart strategy 4: sh -c kill -9 1
+[2025-09-25T14:35:03.203+0000] {docker.py:438} INFO - ❌ Strategy 4 failed: (0)
+[2025-09-25T14:35:03.203+0000] {docker.py:438} INFO - Reason: Handshake status 500 Internal Server Error -+-+- {'date': 'Thu, 25 Sep 2025 14:35:01 GMT', 'connection': 'close', 'content-length': '0'} -+-+- b''
+[2025-09-25T14:35:03.203+0000] {docker.py:438} INFO - 
+[2025-09-25T14:35:03.203+0000] {docker.py:438} INFO - ❌ All restart strategies failed - container restart not verified
+[2025-09-25T14:35:03.203+0000] {docker.py:438} INFO - 🏁 Restart operation completed for 1 containers
+[2025-09-25T14:35:03.203+0000] {docker.py:438} INFO - ✅ Successfully restarted: 0 containers
+[2025-09-25T14:35:03.204+0000] {docker.py:438} INFO - ✅ Successfully restarted 1 containers
+[2025-09-25T14:35:03.204+0000] {docker.py:438} INFO -    📦 compose-post-service-6dff877d56-h99zt: restart_failed
+[2025-09-25T14:35:03.204+0000] {docker.py:438} INFO - ⏰ Less than 5 seconds remaining, stopping experiment
+[2025-09-25T14:35:03.204+0000] {docker.py:438} INFO - 
+[2025-09-25T14:35:03.204+0000] {docker.py:438} INFO - ============================================================
+[2025-09-25T14:35:03.204+0000] {docker.py:438} INFO - 🏁 Container Restart Experiment Completed!
+[2025-09-25T14:35:03.204+0000] {docker.py:438} INFO - ============================================================
+[2025-09-25T14:35:03.204+0000] {docker.py:438} INFO - 📈 Total restart cycles: 12
+[2025-09-25T14:35:03.204+0000] {docker.py:438} INFO - 📦 Total containers restarted: 12
+[2025-09-25T14:35:03.205+0000] {docker.py:438} INFO - ⏱️  Total duration: 399 seconds
+[2025-09-25T14:35:03.205+0000] {docker.py:438} INFO - 📊 Average cycle time: 33.2 seconds
+[2025-09-25T14:35:03.205+0000] {docker.py:438} INFO - 🎯 Target selector: app=compose-post-service
+[2025-09-25T14:35:03.205+0000] {docker.py:438} INFO - 📍 Namespace: default
+[2025-09-25T14:35:03.325+0000] {docker.py:438} INFO - Container restart experiment completed successfully
+[2025-09-25T14:35:03.542+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2025-09-25T14:35:03.542+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=Container_Restart, task_id=apply_container_restart_docker, run_id=manual__2025-09-25T14:28:10.316003+00:00, execution_date=20250925T142810, start_date=20250925T142812, end_date=20250925T143503
+[2025-09-25T14:35:03.575+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-09-25T14:35:03.589+0000] {taskinstance.py:3900} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-09-25T14:35:03.591+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

@@ -86,6 +86,51 @@ services:
       - airflow-init
     restart: always
 
+  experiment-api:
+    build: .
+    image: airflow_chaos:latest
+    user: airflow
+    network_mode: "host"
+    command: >
+      bash -c "
+      cd /opt/airflow/experiment-apis &&
+      pip install -r requirements.txt &&
+      python -c 'from app import app, db; app.app_context().push(); db.create_all()' &&
+      python app.py
+      "
+    ports:
+      - "5000:5000"
+    depends_on:
+      - postgres
+      - airflow-init
+    environment:
+      AIRFLOW__CORE__EXECUTOR: CeleryExecutor
+      AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://airflow:airflow@localhost:5433/airflow
+      AIRFLOW__CELERY__RESULT_BACKEND: db+postgresql://airflow:airflow@localhost:5433/airflow
+      AIRFLOW__CELERY__BROKER_URL: redis://:@localhost:6380/0
+      AIRFLOW__CORE__FERNET_KEY: ''
+      AIRFLOW__CORE__DAGS_ARE_PAUSED_AT_CREATION: 'true'
+      AIRFLOW__CORE__LOAD_EXAMPLES: 'false'
+      AIRFLOW__API__AUTH_BACKENDS: 'airflow.api.auth.backend.basic_auth,airflow.api.auth.backend.session'
+      AIRFLOW__SCHEDULER__ENABLE_HEALTH_CHECK: 'true'
+      KUBECONFIG: /root/.kube/config
+      FLASK_APP: app.py
+      FLASK_ENV: development
+      POSTGRES_HOST: localhost
+      POSTGRES_PORT: 5433
+      POSTGRES_USER: airflow
+      POSTGRES_PASSWORD: airflow
+      POSTGRES_DB: airflow
+    volumes:
+      - ./experiment-apis:/opt/airflow/experiment-apis
+      - ./dags:/opt/airflow/dags
+      - ./logs:/opt/airflow/logs
+      - ./plugins:/opt/airflow/plugins
+      - ../src:/opt/airflow/src
+      - ~/.kube/config:/root/.kube/config:ro
+      - /var/run/docker.sock:/var/run/docker.sock
+    restart: always
+
 volumes:
   postgres-db-volume:
 

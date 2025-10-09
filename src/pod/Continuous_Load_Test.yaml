@@ -1,6 +1,6 @@
-Continuous_Load_Test:
-  schedule: "@once"
-  start_date: "2025-01-18"
+Continuous_Load:
+  schedule: "*/5 * * * *"
+  start_date: "2025-09-26"
   description: "Continuous Load Test - POST Compose & GET Timeline APIs with variable VUs"
   default_view: "graph"
   orientation: "LR"

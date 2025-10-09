@@ -1,0 +1,40 @@
+Container_Restart_Test_Docker:
+  schedule: "@once"
+  start_date: "2025-01-10"
+  description: "Continuous Container Restart Experiment - Docker Operator"
+  default_view: "graph"
+  orientation: "LR"
+  catchup: false
+  default_args:
+    owner: "airflow"
+    depends_on_past: false
+    retries: 0
+  tasks:
+    - task_id: apply_container_restart_docker
+      operator: airflow.providers.docker.operators.docker.DockerOperator
+      image: "priyanshu01ce/airflow_chaos:latest"
+      api_version: "auto"
+      auto_remove: true
+      user: "root"
+      mount_tmp_dir: false
+      docker_url: "unix://var/run/docker.sock"
+      network_mode: "host"
+      mounts:
+        - source: "/home/priyanshupatel/fault-injector/src/pod"
+          target: "/opt/airflow/src/pod"
+          type: "bind"
+        - source: "/home/priyanshupatel/.kube/config"
+          target: "/root/.kube/config"
+          type: "bind"
+          read_only: true
+      environment:
+        KUBECONFIG: "/root/.kube/config"
+        PYTHONPATH: "/opt/airflow/src/pod"
+      command: >
+        bash -c '
+        cd /opt/airflow/src/pod &&
+        ls -la &&
+        echo "Starting continuous container restart experiment..." &&
+        chaos run container_restart.json &&
+        echo "Container restart experiment completed successfully"'
+      container_name: "container_restart_chaos"

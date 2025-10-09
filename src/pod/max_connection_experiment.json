@@ -1,19 +1,83 @@
 {
   "version": "1.0.0",
-  "title": "Change MongoDB maxIncomingConnections setting",
-  "description": "Update maxIncomingConnections and restart MongoDB pod in Kubernetes.",
-  "tags": ["mongodb", "chaos", "custom-action"],
+  "title": "MongoDB maxIncomingConnections Experiment",
+  "description": "Test effect of changing maxIncomingConnections and exhausting connections",
+  "tags": ["mongodb", "kubernetes", "configmap", "chaos"],
+
+  "steady-state-hypothesis": {
+    "title": "MongoDB healthy before changes",
+    "probes": [
+      {
+        "name": "baseline-connection-probe",
+        "type": "probe",
+        "tolerance": true,
+        "provider": {
+          "type": "python",
+          "module": "mongodb_probes",
+          "func": "probe_max_connections"
+        }
+      }
+    ]
+  },
+
   "method": [
     {
-      "name": "change-max-connections",
+      "name": "update-max-connections",
       "type": "action",
       "provider": {
         "type": "python",
         "module": "mongodb_actions",
         "func": "update_mongodb_max_connections",
         "arguments": {
-          "new_max_connections": 10
+          "new_max_connections": 7
         }
+      }
+    },
+    {
+      "name": "post-update-probe",
+      "type": "probe",
+      "tolerance": true,
+      "provider": {
+        "type": "python",
+        "module": "mongodb_probes",
+        "func": "probe_max_connections",
+        "arguments": {
+          "expected_connections": 10
+        }
+      }
+    },
+    {
+      "name": "exhaust-mongo-connections",
+      "type": "action",
+      "provider": {
+        "type": "python",
+        "module": "mongodb_actions",
+        "func": "exhaust_mongo_connections",
+        "arguments": {
+          "num_connections": 50,
+          "hold_until_rollback": true
+        }
+      }
+    },
+    {
+      "name": "wait-2-minutes",
+      "type": "probe",
+      "provider": {
+        "type": "process",
+        "path": "sleep",
+        "arguments": "120"
+      }
+    }
+  ],
+
+  "rollbacks": [
+    {
+      "name": "rollback-mongo-config",
+      "type": "action",
+      "provider": {
+        "type": "python",
+        "module": "mongodb_actions",
+        "func": "rollback_mongodb_max_connections"
       }
     }
   ]

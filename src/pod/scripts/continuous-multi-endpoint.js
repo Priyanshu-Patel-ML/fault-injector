@@ -1,8 +1,7 @@
 import http from 'k6/http';
 import { check, sleep } from 'k6';
-
+ 
 export let options = {
-    executor: 'ramping-vus',
     stages: [
         { duration: '30s', target: 30 },   // Start at 30
         { duration: '1m', target: 50 },    // Ramp to 50
@@ -16,14 +15,32 @@ export let options = {
         { duration: '1m', target: 47 },
         { duration: '1m', target: 36 },
         { duration: '1m', target: 44 },
-        { duration: '24h', target: 40 },   // Long final stage
+        { duration: '2m', target: 40 },
+        { duration: '2m', target: 42 },
+        { duration: '2m', target: 40 },
+        { duration: '2m', target: 45 },
+        { duration: '2m', target: 42 },
+        { duration: '2m', target: 33 },
+        { duration: '2m', target: 36 },
+        { duration: '2m', target: 39 },
+        { duration: '3m', target: 40 },
+        { duration: '2m', target: 35 },    // Additional stages to reach 50min
+        { duration: '2m', target: 45 },
+        { duration: '2m', target: 38 },
+        { duration: '2m', target: 42 },
+        { duration: '2m', target: 36 },
+        { duration: '2m', target: 44 },
+        { duration: '2m', target: 40 },
+        { duration: '2m', target: 43 },
+        { duration: '3m', target: 39 },    // Final 3min stage
+        { duration: '30s', target: 0 }     // Ramp down to 0
     ],
     thresholds: {
         http_req_duration: ['p(95)<5000'],
         http_req_failed: ['rate<0.1'],
     },
 };
-
+ 
 const endpoints = [
     {
         url: 'http://4.154.253.199:8080/api/post/compose',
@@ -37,7 +54,7 @@ const endpoints = [
         weight: 60
     }
 ];
-
+ 
 export default function () {
     const token = __ENV.CHAOS_K6_LOGIN_TOKEN;
     let params = {
@@ -46,22 +63,22 @@ export default function () {
             'Content-Type': 'application/x-www-form-urlencoded'
         }
     };
-
+ 
     // Weighted random endpoint selection
     const rand = Math.random() * 100;
     const endpoint = rand < 40 ? endpoints[0] : endpoints[1];
-
+ 
     let response;
     if (endpoint.method === 'POST') {
         response = http.post(endpoint.url, endpoint.body, params);
     } else {
         response = http.get(endpoint.url, params);
     }
-
+ 
     check(response, {
         'status is 200': (r) => r.status === 200,
         'response time < 5s': (r) => r.timings.duration < 5000,
     });
-
+ 
     sleep(1); // 1 second between requests
 }

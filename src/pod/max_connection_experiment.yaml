@@ -1,0 +1,39 @@
+Max_Connection_Experiment:
+  schedule: "@once"
+  start_date: "2025-01-18"
+  description: "MongoDB Max Connections Change Experiment - Update maxIncomingConnections setting"
+  default_view: "graph"
+  orientation: "LR"
+  catchup: false
+  default_args:
+    owner: "airflow"
+    depends_on_past: false
+    retries: 0
+  tasks:
+    - task_id: run_max_connection_experiment
+      operator: airflow.providers.docker.operators.docker.DockerOperator
+      image: "priyanshu01ce/airflow_chaos:latest"
+      api_version: "auto"
+      auto_remove: true
+      user: "root"
+      mount_tmp_dir: false
+      docker_url: "unix://var/run/docker.sock"
+      network_mode: "host"
+      mounts:
+        - source: "/home/priyanshupatel/fault-injector/src/pod"
+          target: "/opt/airflow/src/pod"
+          type: "bind"
+        - source: "/home/priyanshupatel/.kube/config"
+          target: "/root/.kube/config"
+          type: "bind"
+          read_only: true
+      environment:
+        KUBECONFIG: "/root/.kube/config"
+        PYTHONPATH: "/opt/airflow/src/pod"
+      command: >
+        bash -c '
+        cd /opt/airflow/src/pod &&
+        echo "Starting MongoDB max connections experiment..." &&
+        chaos run max_connection_experiment.json &&
+        echo "MongoDB max connections experiment completed successfully"'
+      container_name: "mongodb_max_connections_chaos"

@@ -1,45 +1,33 @@
+import subprocess
 import time
-import redis
 
-def redis_memory_stress_test(host="127.0.0.1", port=6379, limit_in_kb=1,
-                             eviction_policy="noeviction", duration=0):
-    """
-    Set Redis memory limit and eviction policy for a given duration.
-    After duration, rollback to defaults automatically.
-    """
-    client = redis.StrictRedis(host=host, port=port, decode_responses=True)
+def redis_exec_command(pod_label, redis_command):
+    """Executes a redis-cli command inside a pod matching the label."""
+    pod_name_cmd = f"kubectl get pod -l app={pod_label} -o jsonpath='{{.items[0].metadata.name}}'"
+    pod_name = subprocess.check_output(pod_name_cmd, shell=True, text=True).strip()
 
-    # Apply tiny memory limit
-    client.config_set("maxmemory", f"{limit_in_kb}kb")
-    client.config_set("maxmemory-policy", eviction_policy)
+    full_cmd = f"kubectl exec {pod_name} -- redis-cli {redis_command}"
+    output = subprocess.check_output(full_cmd, shell=True, text=True)
+    print(f"[CMD] {redis_command} → {output.strip()}")
+    return output.strip()
+
+
+def redis_memory_stress_test(pod_label="user-timeline-redis", limit_in_kb=100,
+                             eviction_policy="noeviction", duration=240):
+    """Set Redis maxmemory and policy via kubectl exec for a duration."""
+    redis_exec_command(pod_label, f"CONFIG SET maxmemory {limit_in_kb}kb")
+    redis_exec_command(pod_label, f"CONFIG SET maxmemory-policy {eviction_policy}")
 
     print(f"[INFO] Set maxmemory={limit_in_kb}KB, policy={eviction_policy}")
+    print(f"[INFO] Sleeping for {duration} seconds for stress effect...")
+    time.sleep(duration)
 
-    # Report current memory stats
-    used_memory = client.info("memory")["used_memory_human"]
-    evicted = client.info("stats").get("evicted_keys", 0)
-
-    print(f"[INFO] Redis used memory: {used_memory}")
-    print(f"[INFO] Keys evicted: {evicted}")
-
-    # Wait if duration specified
-    if duration > 0:
-        print(f"[INFO] Holding stress for {duration} seconds...")
-        time.sleep(duration)
-        reset_maxmemory(host, port)
-
-    return {"used_memory": used_memory, "evicted_keys": evicted, "duration": duration}
+    return reset_maxmemory(pod_label)
 
 
-def reset_maxmemory(host="127.0.0.1", port=6379):
-    """
-    Rollback: reset maxmemory and eviction policy to default values.
-    """
-    client = redis.StrictRedis(host=host, port=port, decode_responses=True)
-
-    client.config_set("maxmemory", 0)  # 0 = no limit
-    client.config_set("maxmemory-policy", "noeviction")  # default
-
-    print("[INFO] Redis maxmemory reset to unlimited, policy reset to noeviction")
-
-    return {"status": "reset", "maxmemory": "0", "policy": "noeviction"}
+def reset_maxmemory(pod_label="user-timeline-redis"):
+    """Reset Redis memory settings via kubectl exec."""
+    redis_exec_command(pod_label, "CONFIG SET maxmemory 0")
+    redis_exec_command(pod_label, "CONFIG SET maxmemory-policy noeviction")
+    print("[INFO] Redis settings reset to default.")
+    return {"status": "reset"}

@@ -1,36 +1,34 @@
 {
   "version": "1.0.0",
-  "title": "Local Redis Memory Stress Test",
-  "description": "Apply memory pressure to local Redis instance with eviction testing",
+  "title": "Redis Pod Memory Stress Test",
+  "description": "Stress Redis memory from within a pod via kubectl exec",
   "method": [
     {
-      "name": "redis-memory-stress-complete",
+      "name": "redis-memory-stress-k8s",
       "type": "action",
       "provider": {
         "type": "python",
         "module": "redis_config_faults",
         "func": "redis_memory_stress_test",
         "arguments": {
-          "host": "4.246.16.132",
-          "port": 6379,
+          "pod_label": "user-timeline-redis",
           "limit_in_kb": 100,
           "eviction_policy": "noeviction",
-          "duration": 180
+          "duration": 240
         }
       }
     }
   ],
   "rollbacks": [
     {
-      "name": "reset-redis-memory",
+      "name": "reset-redis-memory-k8s",
       "type": "action",
       "provider": {
         "type": "python",
         "module": "redis_config_faults",
         "func": "reset_maxmemory",
         "arguments": {
-          "host": "4.246.16.132",
-          "port": 6379
+          "pod_label": "user-timeline-redis"
         }
       }
     }

@@ -1,4 +1,4 @@
-Load_Test:
+Load:
   schedule: "@once"
   start_date: "2025-01-18"
   description: "POST API Load Test with JWT Authentication using k6"

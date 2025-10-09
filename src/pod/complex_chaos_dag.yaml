@@ -1,0 +1,195 @@
+Complex_Chaos_DAG:
+  schedule: "@once"
+  start_date: "2025-01-10"
+  description: "Complex Chaos Engineering DAG with Parallel and Sequential Tasks"
+  default_view: "graph"
+  orientation: "LR"
+  catchup: false
+  default_args:
+    owner: "airflow"
+    depends_on_past: false
+    retries: 1
+    retry_delay_seconds: 30
+  tasks:
+    # Initial setup task
+    - task_id: setup_environment
+      operator: airflow.providers.docker.operators.docker.DockerOperator
+      image: "airflow_chaos:latest"
+      api_version: "auto"
+      auto_remove: true
+      user: "root"
+      mount_tmp_dir: false
+      docker_url: "unix://var/run/docker.sock"
+      network_mode: "host"
+      mounts:
+        - source: "/home/priyanshupatel/fault-injector/src/pod"
+          target: "/opt/airflow/src/pod"
+          type: "bind"
+        - source: "/home/priyanshupatel/.kube/config"
+          target: "/root/.kube/config"
+          type: "bind"
+          read_only: true
+      environment:
+        KUBECONFIG: "/root/.kube/config"
+      command: >
+        bash -c "echo 'Setting up chaos environment...' && sleep 10 && echo 'Setup complete'"
+
+    # Parallel Group 1: Infrastructure Chaos
+    - task_id: container_restart_chaos
+      operator: airflow.providers.docker.operators.docker.DockerOperator
+      image: "airflow_chaos:latest"
+      api_version: "auto"
+      auto_remove: true
+      user: "root"
+      mount_tmp_dir: false
+      docker_url: "unix://var/run/docker.sock"
+      network_mode: "host"
+      mounts:
+        - source: "/home/priyanshupatel/fault-injector/src/pod"
+          target: "/opt/airflow/src/pod"
+          type: "bind"
+        - source: "/home/priyanshupatel/.kube/config"
+          target: "/root/.kube/config"
+          type: "bind"
+          read_only: true
+      environment:
+        KUBECONFIG: "/root/.kube/config"
+      command: >
+        bash -c "cd /opt/airflow/src/pod && chaos run container_restart.json"
+
+    - task_id: cpu_stress_chaos
+      operator: airflow.providers.docker.operators.docker.DockerOperator
+      image: "airflow_chaos:latest"
+      api_version: "auto"
+      auto_remove: true
+      user: "root"
+      mount_tmp_dir: false
+      docker_url: "unix://var/run/docker.sock"
+      network_mode: "host"
+      mounts:
+        - source: "/home/priyanshupatel/fault-injector/src/pod"
+          target: "/opt/airflow/src/pod"
+          type: "bind"
+        - source: "/home/priyanshupatel/.kube/config"
+          target: "/root/.kube/config"
+          type: "bind"
+          read_only: true
+      environment:
+        KUBECONFIG: "/root/.kube/config"
+      command: >
+        bash -c "cd /opt/airflow/src/pod && chaos run cpu_stress_ng.json"
+
+    # Parallel Group 2: Memory and Network Chaos
+    - task_id: memory_stress_chaos
+      operator: airflow.providers.docker.operators.docker.DockerOperator
+      image: "airflow_chaos:latest"
+      api_version: "auto"
+      auto_remove: true
+      user: "root"
+      mount_tmp_dir: false
+      docker_url: "unix://var/run/docker.sock"
+      network_mode: "host"
+      mounts:
+        - source: "/home/priyanshupatel/fault-injector/src/pod"
+          target: "/opt/airflow/src/pod"
+          type: "bind"
+        - source: "/home/priyanshupatel/.kube/config"
+          target: "/root/.kube/config"
+          type: "bind"
+          read_only: true
+      environment:
+        KUBECONFIG: "/root/.kube/config"
+      command: >
+        bash -c "cd /opt/airflow/src/pod && chaos run memory_stress.json"
+
+    - task_id: api_latency_chaos
+      operator: airflow.providers.docker.operators.docker.DockerOperator
+      image: "airflow_chaos:latest"
+      api_version: "auto"
+      auto_remove: true
+      user: "root"
+      mount_tmp_dir: false
+      docker_url: "unix://var/run/docker.sock"
+      network_mode: "host"
+      mounts:
+        - source: "/home/priyanshupatel/fault-injector/src/pod"
+          target: "/opt/airflow/src/pod"
+          type: "bind"
+        - source: "/home/priyanshupatel/.kube/config"
+          target: "/root/.kube/config"
+          type: "bind"
+          read_only: true
+      environment:
+        KUBECONFIG: "/root/.kube/config"
+      command: >
+        bash -c "cd /opt/airflow/src/pod && chaos run API_Latency.json"
+
+    # Validation after parallel chaos
+    - task_id: validate_infrastructure
+      operator: airflow.providers.docker.operators.docker.DockerOperator
+      image: "airflow_chaos:latest"
+      api_version: "auto"
+      auto_remove: true
+      user: "root"
+      mount_tmp_dir: false
+      docker_url: "unix://var/run/docker.sock"
+      network_mode: "host"
+      environment:
+        KUBECONFIG: "/root/.kube/config"
+      command: >
+        bash -c "echo 'Validating infrastructure after chaos...' && sleep 15 && echo 'Infrastructure validation complete'"
+
+    # Load testing phase
+    - task_id: continuous_load_test
+      operator: airflow.providers.docker.operators.docker.DockerOperator
+      image: "airflow_chaos:latest"
+      api_version: "auto"
+      auto_remove: true
+      user: "root"
+      mount_tmp_dir: false
+      docker_url: "unix://var/run/docker.sock"
+      network_mode: "host"
+      mounts:
+        - source: "/home/priyanshupatel/fault-injector/src/pod"
+          target: "/opt/airflow/src/pod"
+          type: "bind"
+        - source: "/home/priyanshupatel/.kube/config"
+          target: "/root/.kube/config"
+          type: "bind"
+          read_only: true
+      environment:
+        KUBECONFIG: "/root/.kube/config"
+        PYTHONPATH: "/opt/airflow/src/pod"
+      command: >
+        bash -c "cd /opt/airflow/src/pod && chaos run continuous_load_test.json"
+
+    # Final cleanup and reporting
+    - task_id: cleanup_and_report
+      operator: airflow.providers.docker.operators.docker.DockerOperator
+      image: "airflow_chaos:latest"
+      api_version: "auto"
+      auto_remove: true
+      user: "root"
+      mount_tmp_dir: false
+      docker_url: "unix://var/run/docker.sock"
+      network_mode: "host"
+      environment:
+        KUBECONFIG: "/root/.kube/config"
+      command: >
+        bash -c "echo 'Cleaning up chaos experiments...' && sleep 10 && echo 'Chaos engineering cycle complete - generating report'"
+
+dependencies:
+  # Setup runs first
+  - setup_environment >> [container_restart_chaos, cpu_stress_chaos]
+  
+  # Parallel Group 1: Infrastructure chaos runs in parallel
+  - setup_environment >> [memory_stress_chaos, api_latency_chaos]
+  
+  # Validation waits for all parallel chaos to complete
+  - [container_restart_chaos, cpu_stress_chaos, memory_stress_chaos, api_latency_chaos] >> validate_infrastructure
+  
+  # Load test runs after validation
+  - validate_infrastructure >> continuous_load_test
+  
+  # Final cleanup after load test
+  - continuous_load_test >> cleanup_and_report

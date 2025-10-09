@@ -1,0 +1,51 @@
+{
+    "version": "1.0.0",
+    "title": "Cordon-Pod Restart Combined Experiment",
+    "description": "Cordon nodes, run continuous pod restarts during cordon period, with automatic uncordon in rollbacks",
+    "tags": ["node-cordon", "pod-restart", "scheduling", "resilience", "chaos-engineering"],
+    "method": [
+        {
+            "name": "cordon-nodes",
+            "type": "action",
+            "provider": {
+                "type": "python",
+                "module": "chaosk8s.node.actions",
+                "func": "cordon_node",
+                "arguments": {
+                    "label_selector": "agentpool=agentpool"
+                }
+            }
+        },
+        {
+            "name": "continuous-pod-restart-during-cordon",
+            "type": "action",
+            "provider": {
+                "type": "python",
+                "module": "pod_restart",
+                "func": "restart_pods_continuous",
+                "arguments": {
+                    "label_selector": "app=post-storage-service",
+                    "qty": 1,
+                    "rand": true,
+                    "ns": "default",
+                    "interval": 20,
+                    "duration": 300
+                }
+            }
+        }
+    ],
+    "rollbacks": [
+        {
+            "name": "uncordon-all-nodes",
+            "type": "action",
+            "provider": {
+                "type": "python",
+                "module": "chaosk8s.node.actions",
+                "func": "uncordon_node",
+                "arguments": {
+                    "label_selector": "agentpool=agentpool"
+                }
+            }
+        }
+    ]
+}

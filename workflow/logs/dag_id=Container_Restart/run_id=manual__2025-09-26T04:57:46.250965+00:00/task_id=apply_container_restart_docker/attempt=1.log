@@ -1,0 +1,186 @@
+[2025-09-26T04:57:48.642+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-09-26T04:57:48.656+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: Container_Restart.apply_container_restart_docker manual__2025-09-26T04:57:46.250965+00:00 [queued]>
+[2025-09-26T04:57:48.666+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: Container_Restart.apply_container_restart_docker manual__2025-09-26T04:57:46.250965+00:00 [queued]>
+[2025-09-26T04:57:48.666+0000] {taskinstance.py:2865} INFO - Starting attempt 1 of 1
+[2025-09-26T04:57:48.680+0000] {taskinstance.py:2888} INFO - Executing <Task(DockerOperator): apply_container_restart_docker> on 2025-09-26 04:57:46.250965+00:00
+[2025-09-26T04:57:48.684+0000] {standard_task_runner.py:72} INFO - Started process 197 to run task
+[2025-09-26T04:57:48.689+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'Container_Restart', 'apply_container_restart_docker', 'manual__2025-09-26T04:57:46.250965+00:00', '--job-id', '325', '--raw', '--subdir', 'DAGS_FOLDER/dag_factory.py', '--cfg-path', '/tmp/tmpkmjsd2zk']
+[2025-09-26T04:57:48.690+0000] {standard_task_runner.py:105} INFO - Job 325: Subtask apply_container_restart_docker
+[2025-09-26T04:57:48.745+0000] {task_command.py:467} INFO - Running <TaskInstance: Container_Restart.apply_container_restart_docker manual__2025-09-26T04:57:46.250965+00:00 [running]> on host BNXL-80508-WL.India.XoriantCorp.com
+[2025-09-26T04:57:48.830+0000] {taskinstance.py:3131} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='Container_Restart' AIRFLOW_CTX_TASK_ID='apply_container_restart_docker' AIRFLOW_CTX_EXECUTION_DATE='2025-09-26T04:57:46.250965+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-09-26T04:57:46.250965+00:00'
+[2025-09-26T04:57:48.831+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2025-09-26T04:57:48.935+0000] {docker.py:367} INFO - Starting docker container from image priyanshu01ce/***_chaos:latest
+[2025-09-26T04:57:49.223+0000] {docker.py:438} INFO - The container is run as root user. For security, consider using a regular user account.
+[2025-09-26T04:57:54.993+0000] {docker.py:438} INFO - 
+[2025-09-26T04:57:54.997+0000] {docker.py:438} INFO - total 11528
+[2025-09-26T04:57:54.997+0000] {docker.py:438} INFO - drwxr-xr-x 4    1000 1000     4096 Sep 25 11:14 .
+[2025-09-26T04:57:54.997+0000] {docker.py:438} INFO - drwxr-xr-x 1 *** root     4096 Sep 24 12:24 ..
+[2025-09-26T04:57:54.998+0000] {docker.py:438} INFO - -rw-r--r-- 1    1000 1000     1193 Sep  8 07:02 API_Latency.json
+[2025-09-26T04:57:54.998+0000] {docker.py:438} INFO - -rw-r--r-- 1    1000 1000      729 Sep  9 10:30 API_Timeout.json
+[2025-09-26T04:57:54.998+0000] {docker.py:438} INFO - -rw-r--r-- 1    1000 1000     1333 Sep 25 12:12 Continuous_Load_Test.yaml
+[2025-09-26T04:57:54.998+0000] {docker.py:438} INFO - -rw-r--r-- 1    1000 1000     1241 Sep 25 11:21 Load_Test.yaml
+[2025-09-26T04:57:54.998+0000] {docker.py:438} INFO - -rw-r--r-- 1    1000 1000     1177 Sep 25 10:49 Stress_test.yaml
+[2025-09-26T04:57:54.998+0000] {docker.py:438} INFO - -rw-r--r-- 1    1000 1000     1017 Sep 24 10:45 Stress_test_kube.yaml
+[2025-09-26T04:57:54.998+0000] {docker.py:438} INFO - drwxr-xr-x 2 root    root     4096 Sep 26 04:11 __pycache__
+[2025-09-26T04:57:54.998+0000] {docker.py:438} INFO - -rw-r--r-- 1    1000 1000     8875 Sep 25 16:54 chaosk6_actions.py
+[2025-09-26T04:57:54.999+0000] {docker.py:438} INFO - -rw-rw-r-- 1 root    root   149069 Sep 26 04:18 chaostoolkit.log
+[2025-09-26T04:57:54.999+0000] {docker.py:438} INFO - -rw-r--r-- 1    1000 1000     3213 Sep  9 09:11 combined-sequential.json
+[2025-09-26T04:57:54.999+0000] {docker.py:438} INFO - -rw-r--r-- 1    1000 1000      502 Sep 16 05:31 connection_test_experiment.json
+[2025-09-26T04:57:54.999+0000] {docker.py:438} INFO - -rw-r--r-- 1    1000 1000     1420 Sep 24 06:53 container_restart.json
+[2025-09-26T04:57:54.999+0000] {docker.py:438} INFO - -rw-r--r-- 1    1000 1000    12340 Sep 26 04:57 container_restart.py
+[2025-09-26T04:57:54.999+0000] {docker.py:438} INFO - -rw-r--r-- 1    1000 1000     1315 Sep 25 11:12 container_restart.yaml
+[2025-09-26T04:57:54.999+0000] {docker.py:438} INFO - -rw-r--r-- 1    1000 1000     1031 Sep 24 07:37 container_restart_kube.yaml
+[2025-09-26T04:57:55.000+0000] {docker.py:438} INFO - -rw-r--r-- 1    1000 1000     1409 Sep 18 12:30 continuous_load_test.json
+[2025-09-26T04:57:55.000+0000] {docker.py:438} INFO - -rw-r--r-- 1    1000 1000     1637 Sep 25 10:13 cordon-uncordon-node.json
+[2025-09-26T04:57:55.000+0000] {docker.py:438} INFO - -rw-r--r-- 1    1000 1000     1637 Sep 25 04:39 cordon_test.json
+[2025-09-26T04:57:55.000+0000] {docker.py:438} INFO - -rw-r--r-- 1    1000 1000     1037 Sep 25 11:18 cordon_uncordon_node.yaml
+[2025-09-26T04:57:55.000+0000] {docker.py:438} INFO - -rw-r--r-- 1    1000 1000     1214 Sep 24 17:12 cordon_uncordon_node_kube.yaml
+[2025-09-26T04:57:55.000+0000] {docker.py:438} INFO - -rw-r--r-- 1    1000 1000     1771 Sep 24 07:40 db_cleanup.json
+[2025-09-26T04:57:55.000+0000] {docker.py:438} INFO - -rw-r--r-- 1    1000 1000     6399 Sep 24 07:40 db_cleanup.py
+[2025-09-26T04:57:55.000+0000] {docker.py:438} INFO - -rw-r--r-- 1    1000 1000     1172 Sep 24 07:40 db_cleanup_docker.yaml
+[2025-09-26T04:57:55.001+0000] {docker.py:438} INFO - -rw-r--r-- 1    1000 1000     1097 Sep 24 10:43 db_cleanup_kube.yaml
+[2025-09-26T04:57:55.001+0000] {docker.py:438} INFO - -rw-r--r-- 1 root    root     3318 Sep 26 04:18 journal.json
+[2025-09-26T04:57:55.001+0000] {docker.py:438} INFO - -rw-rw-r-- 1 root    root   501900 Sep 26 02:34 k6_continuous_load.log
+[2025-09-26T04:57:55.001+0000] {docker.py:438} INFO - -rw-r--r-- 1 root    root     3970 Sep 20 09:39 k6_continuous_summary.json
+[2025-09-26T04:57:55.001+0000] {docker.py:438} INFO - -rw-rw-r-- 1 root    root 10911089 Sep 25 09:28 k6_post_api.log
+[2025-09-26T04:57:55.001+0000] {docker.py:438} INFO - -rw-r--r-- 1 root    root     3433 Sep 25 09:28 k6_summary.json
+[2025-09-26T04:57:55.001+0000] {docker.py:438} INFO - -rw-r--r-- 1    1000 1000      945 Sep 21 16:40 load_test.json
+[2025-09-26T04:57:55.002+0000] {docker.py:438} INFO - -rw-r--r-- 1    1000 1000      879 Sep 24 07:14 load_test_kube.yaml
+[2025-09-26T04:57:55.002+0000] {docker.py:438} INFO - -rw-r--r-- 1    1000 1000      528 Sep 17 12:13 max_connection_experiment.json
+[2025-09-26T04:57:55.002+0000] {docker.py:438} INFO - -rw-r--r-- 1    1000 1000     1227 Sep 13 15:20 memory-stress-rollback.json
+[2025-09-26T04:57:55.002+0000] {docker.py:438} INFO - -rw-r--r-- 1    1000 1000     7586 Sep 18 05:54 mongodb_actions.py
+[2025-09-26T04:57:55.002+0000] {docker.py:438} INFO - -rw-r--r-- 1    1000 1000     2136 Sep 18 11:23 mongodb_connection.json
+[2025-09-26T04:57:55.003+0000] {docker.py:438} INFO - -rw-r--r-- 1    1000 1000      597 Sep 16 09:17 mongodb_network_latency_experiment.json
+[2025-09-26T04:57:55.003+0000] {docker.py:438} INFO - -rw-r--r-- 1    1000 1000     3657 Sep 18 05:42 mongodb_probes.py
+[2025-09-26T04:57:55.003+0000] {docker.py:438} INFO - -rw-r--r-- 1    1000 1000     6161 Sep 12 08:04 pod_restart.py
+[2025-09-26T04:57:55.003+0000] {docker.py:438} INFO - -rw-r--r-- 1    1000 1000     1632 Sep 16 08:57 redis_config_faults.py
+[2025-09-26T04:57:55.003+0000] {docker.py:438} INFO - -rw-r--r-- 1    1000 1000      902 Sep 18 08:24 redis_experiment.json
+[2025-09-26T04:57:55.004+0000] {docker.py:438} INFO - -rw-r--r-- 1    1000 1000     1251 Sep 18 09:25 redis_experiment.yaml
+[2025-09-26T04:57:55.004+0000] {docker.py:438} INFO - -rw-r--r-- 1    1000 1000      929 Sep 24 07:35 redis_experiment_kube.yaml
+[2025-09-26T04:57:55.004+0000] {docker.py:438} INFO - -rw-r--r-- 1    1000 1000      945 Sep 18 06:53 redis_load.json
+[2025-09-26T04:57:55.004+0000] {docker.py:438} INFO - -rw-r--r-- 1    1000 1000     1255 Sep 25 11:19 redis_memory_stress.yaml
+[2025-09-26T04:57:55.004+0000] {docker.py:438} INFO - -rw-r--r-- 1    1000 1000     1284 Sep 25 10:53 run_load_test_with_cleanup.py
+[2025-09-26T04:57:55.004+0000] {docker.py:438} INFO - drwxr-xr-x 2    1000 1000     4096 Sep 18 09:09 scripts
+[2025-09-26T04:57:55.005+0000] {docker.py:438} INFO - -rw-r--r-- 1    1000 1000     2034 Sep 25 10:52 stress_test.json
+[2025-09-26T04:57:55.005+0000] {docker.py:438} INFO - -rw-r--r-- 1    1000 1000      367 Sep 17 07:24 test_params.json
+[2025-09-26T04:57:55.005+0000] {docker.py:438} INFO - Starting continuous container restart experiment...
+[2025-09-26T04:57:55.822+0000] {docker.py:438} INFO - [32m[2025-09-26 04:57:55 INFO] Validating the experiment's syntax
+[2025-09-26T04:57:56.021+0000] {docker.py:438} INFO - [32m[2025-09-26 04:57:56 INFO] Experiment looks valid
+[2025-09-26T04:57:56.021+0000] {docker.py:438} INFO - [32m[2025-09-26 04:57:56 INFO] Running experiment: Continuous Container Restart Experiment
+[2025-09-26T04:57:56.023+0000] {docker.py:438} INFO - [32m[2025-09-26 04:57:56 INFO] Steady-state strategy: default
+[2025-09-26T04:57:56.024+0000] {docker.py:438} INFO - [32m[2025-09-26 04:57:56 INFO] Rollbacks strategy: default
+[2025-09-26T04:57:56.024+0000] {docker.py:438} INFO - [32m[2025-09-26 04:57:56 INFO] No steady state hypothesis defined. That's ok, just exploring.
+[2025-09-26T04:57:56.024+0000] {docker.py:438} INFO - [32m[2025-09-26 04:57:56 INFO] Playing your experiment's method now...
+[2025-09-26T04:57:56.024+0000] {docker.py:438} INFO - [32m[2025-09-26 04:57:56 INFO] Action: continuous-container-restart
+[2025-09-26T05:05:06.714+0000] {docker.py:438} INFO - [32m[2025-09-26 05:05:06 INFO] Let's rollback...
+[2025-09-26T05:05:06.716+0000] {docker.py:438} INFO - [32m[2025-09-26 05:05:06 INFO] Rollback: verify-pods-running
+[2025-09-26T05:05:06.717+0000] {docker.py:438} INFO - [32m[2025-09-26 05:05:06 INFO] Probe: verify-pods-running
+[2025-09-26T05:05:08.242+0000] {docker.py:438} INFO - [32m[2025-09-26 05:05:08 INFO] Experiment ended with status: completed
+[2025-09-26T05:05:08.244+0000] {docker.py:438} INFO - 🚀 Starting continuous container restart experiment
+[2025-09-26T05:05:08.244+0000] {docker.py:438} INFO - 📅 Interval: 5 seconds
+[2025-09-26T05:05:08.244+0000] {docker.py:438} INFO - ⏱️  Duration: 400 seconds
+[2025-09-26T05:05:08.244+0000] {docker.py:438} INFO - 🎯 Target: app=compose-post-service
+[2025-09-26T05:05:08.245+0000] {docker.py:438} INFO - 📍 Namespace: default
+[2025-09-26T05:05:08.245+0000] {docker.py:438} INFO - 📦 Container: compose-post-service
+[2025-09-26T05:05:08.245+0000] {docker.py:438} INFO - 
+[2025-09-26T05:05:08.245+0000] {docker.py:438} INFO - ============================================================
+[2025-09-26T05:05:08.245+0000] {docker.py:438} INFO - 🔄 Container Restart #1 at 2025-09-26 04:57:56
+[2025-09-26T05:05:08.245+0000] {docker.py:438} INFO - ============================================================
+[2025-09-26T05:05:08.246+0000] {docker.py:438} INFO - 🔄 Container restart function started!
+[2025-09-26T05:05:08.246+0000] {docker.py:438} INFO - 🔍 Selecting pods with label_selector: app=compose-post-service
+[2025-09-26T05:05:08.246+0000] {docker.py:438} INFO - 📋 Found 1 pods initially
+[2025-09-26T05:05:08.246+0000] {docker.py:438} INFO - 🎲 Random selection: 1 pods
+[2025-09-26T05:05:08.246+0000] {docker.py:438} INFO - ✅ Selected pods: ['compose-post-service-67bbb84bcd-p69ww']
+[2025-09-26T05:05:08.246+0000] {docker.py:438} INFO - 🎯 Restarting container in pod: compose-post-service-67bbb84bcd-p69ww
+[2025-09-26T05:05:08.246+0000] {docker.py:438} INFO - 📊 Current restart count: 10
+[2025-09-26T05:05:08.247+0000] {docker.py:438} INFO - 🔧 Trying restart strategy 1: sh -c kill -INT 1
+[2025-09-26T05:05:08.247+0000] {docker.py:438} INFO - ✅ Signal sent successfully to container in pod compose-post-service-67bbb84bcd-p69ww
+[2025-09-26T05:05:08.247+0000] {docker.py:438} INFO - ⏳ Waiting for container restart (up to 60 seconds)...
+[2025-09-26T05:05:08.247+0000] {docker.py:438} INFO - ✅ Container restart verified! Count: 10 → 11
+[2025-09-26T05:05:08.247+0000] {docker.py:438} INFO - 🏁 Restart operation completed for 1 containers
+[2025-09-26T05:05:08.247+0000] {docker.py:438} INFO - ✅ Successfully restarted: 1 containers
+[2025-09-26T05:05:08.247+0000] {docker.py:438} INFO - ✅ Successfully restarted 1 containers
+[2025-09-26T05:05:08.247+0000] {docker.py:438} INFO -    📦 compose-post-service-67bbb84bcd-p69ww: restart_verified
+[2025-09-26T05:05:08.248+0000] {docker.py:438} INFO - ⏳ Waiting 5 seconds until next restart...
+[2025-09-26T05:05:08.248+0000] {docker.py:438} INFO - 📊 Time remaining: 393 seconds
+[2025-09-26T05:05:08.248+0000] {docker.py:438} INFO - 📈 Total containers restarted so far: 1
+[2025-09-26T05:05:08.248+0000] {docker.py:438} INFO - 
+[2025-09-26T05:05:08.248+0000] {docker.py:438} INFO - ============================================================
+[2025-09-26T05:05:08.248+0000] {docker.py:438} INFO - 🔄 Container Restart #2 at 2025-09-26 04:58:08
+[2025-09-26T05:05:08.248+0000] {docker.py:438} INFO - ============================================================
+[2025-09-26T05:05:08.249+0000] {docker.py:438} INFO - 🔄 Container restart function started!
+[2025-09-26T05:05:08.249+0000] {docker.py:438} INFO - 🔍 Selecting pods with label_selector: app=compose-post-service
+[2025-09-26T05:05:08.249+0000] {docker.py:438} INFO - 📋 Found 1 pods initially
+[2025-09-26T05:05:08.249+0000] {docker.py:438} INFO - 🎲 Random selection: 1 pods
+[2025-09-26T05:05:08.249+0000] {docker.py:438} INFO - ✅ Selected pods: ['compose-post-service-67bbb84bcd-p69ww']
+[2025-09-26T05:05:08.249+0000] {docker.py:438} INFO - 🎯 Restarting container in pod: compose-post-service-67bbb84bcd-p69ww
+[2025-09-26T05:05:08.250+0000] {docker.py:438} INFO - 📊 Current restart count: 11
+[2025-09-26T05:05:08.250+0000] {docker.py:438} INFO - 🔧 Trying restart strategy 1: sh -c kill -INT 1
+[2025-09-26T05:05:08.250+0000] {docker.py:438} INFO - ✅ Signal sent successfully to container in pod compose-post-service-67bbb84bcd-p69ww
+[2025-09-26T05:05:08.250+0000] {docker.py:438} INFO - ⏳ Waiting for container restart (up to 60 seconds)...
+[2025-09-26T05:05:08.250+0000] {docker.py:438} INFO - ✅ Container restart verified! Count: 11 → 12
+[2025-09-26T05:05:08.250+0000] {docker.py:438} INFO - 🏁 Restart operation completed for 1 containers
+[2025-09-26T05:05:08.250+0000] {docker.py:438} INFO - ✅ Successfully restarted: 1 containers
+[2025-09-26T05:05:08.250+0000] {docker.py:438} INFO - ✅ Successfully restarted 1 containers
+[2025-09-26T05:05:08.251+0000] {docker.py:438} INFO -    📦 compose-post-service-67bbb84bcd-p69ww: restart_verified
+[2025-09-26T05:05:08.251+0000] {docker.py:438} INFO - ⏳ Waiting 5 seconds until next restart...
+[2025-09-26T05:05:08.251+0000] {docker.py:438} INFO - 📊 Time remaining: 370 seconds
+[2025-09-26T05:05:08.251+0000] {docker.py:438} INFO - 📈 Total containers restarted so far: 2
+[2025-09-26T05:05:08.251+0000] {docker.py:438} INFO - 
+[2025-09-26T05:05:08.251+0000] {docker.py:438} INFO - ============================================================
+[2025-09-26T05:05:08.251+0000] {docker.py:438} INFO - 🔄 Container Restart #3 at 2025-09-26 04:58:31
+[2025-09-26T05:05:08.252+0000] {docker.py:438} INFO - ============================================================
+[2025-09-26T05:05:08.252+0000] {docker.py:438} INFO - 🔄 Container restart function started!
+[2025-09-26T05:05:08.252+0000] {docker.py:438} INFO - 🔍 Selecting pods with label_selector: app=compose-post-service
+[2025-09-26T05:05:08.252+0000] {docker.py:438} INFO - 📋 Found 1 pods initially
+[2025-09-26T05:05:08.252+0000] {docker.py:438} INFO - 🎲 Random selection: 1 pods
+[2025-09-26T05:05:08.252+0000] {docker.py:438} INFO - ✅ Selected pods: ['compose-post-service-67bbb84bcd-p69ww']
+[2025-09-26T05:05:08.252+0000] {docker.py:438} INFO - 🎯 Restarting container in pod: compose-post-service-67bbb84bcd-p69ww
+[2025-09-26T05:05:08.252+0000] {docker.py:438} INFO - 📊 Current restart count: 12
+[2025-09-26T05:05:08.252+0000] {docker.py:438} INFO - 🔧 Trying restart strategy 1: sh -c kill -INT 1
+[2025-09-26T05:05:08.253+0000] {docker.py:438} INFO - ✅ Signal sent successfully to container in pod compose-post-service-67bbb84bcd-p69ww
+[2025-09-26T05:05:08.253+0000] {docker.py:438} INFO - ⏳ Waiting for container restart (up to 60 seconds)...
+[2025-09-26T05:05:08.253+0000] {docker.py:438} INFO - ✅ Container restart verified! Count: 12 → 13
+[2025-09-26T05:05:08.253+0000] {docker.py:438} INFO - 🏁 Restart operation completed for 1 containers
+[2025-09-26T05:05:08.253+0000] {docker.py:438} INFO - ✅ Successfully restarted: 1 containers
+[2025-09-26T05:05:08.253+0000] {docker.py:438} INFO - ✅ Successfully restarted 1 containers
+[2025-09-26T05:05:08.254+0000] {docker.py:438} INFO -    📦 compose-post-service-67bbb84bcd-p69ww: restart_verified
+[2025-09-26T05:05:08.254+0000] {docker.py:438} INFO - ⏳ Waiting 5 seconds until next restart...
+[2025-09-26T05:05:08.254+0000] {docker.py:438} INFO - 📊 Time remaining: 333 seconds
+[2025-09-26T05:05:08.254+0000] {docker.py:438} INFO - 📈 Total containers restarted so far: 3
+[2025-09-26T05:05:08.254+0000] {docker.py:438} INFO - 
+[2025-09-26T05:05:08.254+0000] {docker.py:438} INFO - ============================================================
+[2025-09-26T05:05:08.254+0000] {docker.py:438} INFO - 🔄 Container Restart #4 at 2025-09-26 04:59:07
+[2025-09-26T05:05:08.254+0000] {docker.py:438} INFO - ============================================================
+[2025-09-26T05:05:08.254+0000] {docker.py:438} INFO - 🔄 Container restart function started!
+[2025-09-26T05:05:08.255+0000] {docker.py:438} INFO - 🔍 Selecting pods with label_selector: app=compose-post-service
+[2025-09-26T05:05:08.255+0000] {docker.py:438} INFO - 📋 Found 1 pods initially
+[2025-09-26T05:05:08.255+0000] {docker.py:438} INFO - 🎲 Random selection: 1 pods
+[2025-09-26T05:05:08.255+0000] {docker.py:438} INFO - ✅ Selected pods: ['compose-post-service-67bbb84bcd-p69ww']
+[2025-09-26T05:05:08.255+0000] {docker.py:438} INFO - 🎯 Restarting container in pod: compose-post-service-67bbb84bcd-p69ww
+[2025-09-26T05:05:08.255+0000] {docker.py:438} INFO - 📊 Current restart count: 13
+[2025-09-26T05:05:08.256+0000] {docker.py:438} INFO - 🔧 Trying restart strategy 1: sh -c kill -INT 1
+[2025-09-26T05:05:08.256+0000] {docker.py:438} INFO - ✅ Signal sent successfully to container in pod compose-post-service-67bbb84bcd-p69ww
+[2025-09-26T05:05:08.256+0000] {docker.py:438} INFO - ⏳ Waiting for container restart (up to 60 seconds)...
+[2025-09-26T05:05:08.256+0000] {docker.py:438} INFO - ✅ Container restart verified! Count: 13 → 14
+[2025-09-26T05:05:08.256+0000] {docker.py:438} INFO - 🏁 Restart operation completed for 1 containers
+[2025-09-26T05:05:08.256+0000] {docker.py:438} INFO - ✅ Successfully restarted: 1 containers
+[2025-09-26T05:05:08.256+0000] {docker.py:438} INFO - ✅ Successfully restarted 1 containers
+[2025-09-26T05:05:08.256+0000] {docker.py:438} INFO -    📦 compose-post-service-67bbb84bcd-p69ww: restart_verified
+[2025-09-26T05:05:08.256+0000] {docker.py:438} INFO - ⏰ Less than 5 seconds remaining, stopping experiment
+[2025-09-26T05:05:08.257+0000] {docker.py:438} INFO - 
+[2025-09-26T05:05:08.257+0000] {docker.py:438} INFO - ============================================================
+[2025-09-26T05:05:08.257+0000] {docker.py:438} INFO - 🏁 Container Restart Experiment Completed!
+[2025-09-26T05:05:08.257+0000] {docker.py:438} INFO - ============================================================
+[2025-09-26T05:05:08.257+0000] {docker.py:438} INFO - 📈 Total restart cycles: 4
+[2025-09-26T05:05:08.257+0000] {docker.py:438} INFO - 📦 Total containers restarted: 4
+[2025-09-26T05:05:08.257+0000] {docker.py:438} INFO - ⏱️  Total duration: 431 seconds
+[2025-09-26T05:05:08.257+0000] {docker.py:438} INFO - 📊 Average cycle time: 107.7 seconds
+[2025-09-26T05:05:08.258+0000] {docker.py:438} INFO - 🎯 Target selector: app=compose-post-service
+[2025-09-26T05:05:08.258+0000] {docker.py:438} INFO - 📍 Namespace: default
+[2025-09-26T05:05:08.362+0000] {docker.py:438} INFO - Container restart experiment completed successfully
+[2025-09-26T05:05:08.559+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2025-09-26T05:05:08.560+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=Container_Restart, task_id=apply_container_restart_docker, run_id=manual__2025-09-26T04:57:46.250965+00:00, execution_date=20250926T045746, start_date=20250926T045748, end_date=20250926T050508
+[2025-09-26T05:05:08.622+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-09-26T05:05:08.645+0000] {taskinstance.py:3900} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-09-26T05:05:08.647+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

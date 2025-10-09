@@ -1,0 +1,43 @@
+Redis_Memory_Stress_Test:
+  schedule: "@once"
+  start_date: "2025-01-20"
+  description: "Redis memory stress test with automatic cleanup"
+  catchup: false
+  default_view: "graph"
+  orientation: "LR"
+  max_active_runs: 1
+
+  default_args:
+    owner: "airflow"
+    depends_on_past: false
+    retries: 1  
+    retry_delay_seconds: 60
+  tasks:
+    - task_id: redis_memory_stress_test
+      operator: airflow.providers.docker.operators.docker.DockerOperator
+      image: "airflow_chaos:latest"
+      api_version: "auto"
+      auto_remove: true
+      user: "root"
+      mount_tmp_dir: false
+      docker_url: "unix://var/run/docker.sock"
+      network_mode: "host"
+      container_name: "redis_memory_stress"
+      mounts:
+        - source: "/home/azureuser/fault-injector/src/pod"
+          target: "/opt/airflow/src/pod"
+          type: "bind"
+        - source: "/home/azureuser/.kube/config"
+          target: "/root/.kube/config"
+          type: "bind"
+          read_only: true
+      environment:
+        KUBECONFIG: "/root/.kube/config"
+        PYTHONPATH: "/opt/airflow/src/pod"
+      command: >
+        bash -c '
+        cd /opt/airflow/src/pod &&
+        chaos run redis_experiment.json &&
+        echo "[INFO] Sleeping for cooldown..." &&
+        sleep 30 &&
+        echo "[INFO] DAG complete"'

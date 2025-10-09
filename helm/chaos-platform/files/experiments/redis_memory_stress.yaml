@@ -1,0 +1,39 @@
+Redis_Memory_Stress_Test:
+  schedule: "@once"
+  start_date: "2025-01-10"
+  description: "Redis memory stress test on Azure Kubernetes with 1KB limit and noeviction policy"
+  default_view: "graph"
+  orientation: "LR"
+  catchup: false
+  default_args:
+    owner: "airflow"
+    depends_on_past: false
+    retries: 0
+  tasks:
+    - task_id: apply_redis_memory_stress
+      operator: airflow.providers.docker.operators.docker.DockerOperator
+      image: "airflow_chaos:latest"
+      api_version: "auto"
+      auto_remove: true
+      user: "root"
+      mount_tmp_dir: false
+      docker_url: "unix://var/run/docker.sock"
+      network_mode: "host"
+      mounts:
+        - source: "/home/priyanshupatel/fault-injector/src/pod"
+          target: "/opt/airflow/src/pod"
+          type: "bind"
+        - source: "/home/priyanshupatel/.kube/config"
+          target: "/root/.kube/config"
+          type: "bind"
+          read_only: true
+      environment:
+        KUBECONFIG: "/root/.kube/config"
+      command: >
+        bash -c '
+        cd /opt/airflow/src/pod &&
+        chaos run redis_experiment.json &&
+        echo "Sleeping for 180 seconds..." &&
+        sleep 180 &&
+        echo "Redis memory stress test completed"'
+      container_name: "redis_memory_stress"

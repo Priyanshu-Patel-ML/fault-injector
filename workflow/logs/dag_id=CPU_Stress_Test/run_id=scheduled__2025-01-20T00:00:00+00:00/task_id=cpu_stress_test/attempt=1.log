@@ -1,0 +1,33 @@
+[2025-09-30T08:33:50.063+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-09-30T08:33:50.095+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: CPU_Stress_Test.cpu_stress_test scheduled__2025-01-20T00:00:00+00:00 [queued]>
+[2025-09-30T08:33:50.107+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: CPU_Stress_Test.cpu_stress_test scheduled__2025-01-20T00:00:00+00:00 [queued]>
+[2025-09-30T08:33:50.107+0000] {taskinstance.py:2865} INFO - Starting attempt 1 of 2
+[2025-09-30T08:33:50.126+0000] {taskinstance.py:2888} INFO - Executing <Task(DockerOperator): cpu_stress_test> on 2025-01-20 00:00:00+00:00
+[2025-09-30T08:33:50.134+0000] {standard_task_runner.py:72} INFO - Started process 262 to run task
+[2025-09-30T08:33:50.137+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'CPU_Stress_Test', 'cpu_stress_test', 'scheduled__2025-01-20T00:00:00+00:00', '--job-id', '346', '--raw', '--subdir', 'DAGS_FOLDER/dag_factory.py', '--cfg-path', '/tmp/tmpkme6sy4z']
+[2025-09-30T08:33:50.139+0000] {standard_task_runner.py:105} INFO - Job 346: Subtask cpu_stress_test
+[2025-09-30T08:33:50.266+0000] {task_command.py:467} INFO - Running <TaskInstance: CPU_Stress_Test.cpu_stress_test scheduled__2025-01-20T00:00:00+00:00 [running]> on host BNXL-80508-WL.India.XoriantCorp.com
+[2025-09-30T08:33:50.412+0000] {taskinstance.py:3131} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='CPU_Stress_Test' AIRFLOW_CTX_TASK_ID='cpu_stress_test' AIRFLOW_CTX_EXECUTION_DATE='2025-01-20T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-01-20T00:00:00+00:00'
+[2025-09-30T08:33:50.416+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2025-09-30T08:33:50.661+0000] {docker.py:367} INFO - Starting docker container from image ***_chaos:latest
+[2025-09-30T08:33:51.145+0000] {docker.py:438} INFO - The container is run as root user. For security, consider using a regular user account.
+[2025-09-30T08:33:59.045+0000] {docker.py:438} INFO - 
+[2025-09-30T08:34:00.046+0000] {docker.py:438} INFO - [32m[2025-09-30 08:34:00 INFO] Validating the experiment's syntax
+[2025-09-30T08:34:00.218+0000] {docker.py:438} INFO - [32m[2025-09-30 08:34:00 INFO] Experiment looks valid
+[2025-09-30T08:34:00.219+0000] {docker.py:438} INFO - [32m[2025-09-30 08:34:00 INFO] Running experiment: CPU Stress Test - Database Pod with Timed Rollback
+[2025-09-30T08:34:00.222+0000] {docker.py:438} INFO - [32m[2025-09-30 08:34:00 INFO] Steady-state strategy: default
+[2025-09-30T08:34:00.222+0000] {docker.py:438} INFO - [32m[2025-09-30 08:34:00 INFO] Rollbacks strategy: default
+[2025-09-30T08:34:00.223+0000] {docker.py:438} INFO - [32m[2025-09-30 08:34:00 INFO] No steady state hypothesis defined. That's ok, just exploring.
+[2025-09-30T08:34:00.223+0000] {docker.py:438} INFO - [32m[2025-09-30 08:34:00 INFO] Playing your experiment's method now...
+[2025-09-30T08:34:00.223+0000] {docker.py:438} INFO - [32m[2025-09-30 08:34:00 INFO] Action: apply-database-cpu-stress
+[2025-09-30T08:34:01.520+0000] {docker.py:438} INFO - [32m[2025-09-30 08:34:01 INFO] Probe: wait-for-stress-duration
+[2025-09-30T08:39:06.529+0000] {docker.py:438} INFO - [32m[2025-09-30 08:39:06 INFO] Let's rollback...
+[2025-09-30T08:39:06.530+0000] {docker.py:438} INFO - [32m[2025-09-30 08:39:06 INFO] Rollback: cleanup-database-stress
+[2025-09-30T08:39:06.530+0000] {docker.py:438} INFO - [32m[2025-09-30 08:39:06 INFO] Action: cleanup-database-stress
+[2025-09-30T08:39:07.760+0000] {docker.py:438} INFO - [32m[2025-09-30 08:39:07 INFO] Experiment ended with status: completed
+[2025-09-30T08:39:07.855+0000] {docker.py:438} INFO - [INFO] CPU stress test completed
+[2025-09-30T08:39:18.048+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2025-09-30T08:39:18.048+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=CPU_Stress_Test, task_id=cpu_stress_test, run_id=scheduled__2025-01-20T00:00:00+00:00, execution_date=20250120T000000, start_date=20250930T083350, end_date=20250930T083918
+[2025-09-30T08:39:18.098+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-09-30T08:39:18.112+0000] {taskinstance.py:3900} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-09-30T08:39:18.115+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

@@ -30,3 +30,14 @@
 [2025-09-20T12:01:02.608+0000] {job.py:229} INFO - Heartbeat recovered after 22.13 seconds
 [2025-09-20T12:13:36.815+0000] {job.py:229} INFO - Heartbeat recovered after 597.78 seconds
 [2025-09-20T12:29:04.239+0000] {job.py:229} INFO - Heartbeat recovered after 725.69 seconds
+[2025-09-20T15:02:51.553+0000] {job.py:229} INFO - Heartbeat recovered after 1309.55 seconds
+[2025-09-20T18:03:23.753+0000] {job.py:229} INFO - Heartbeat recovered after 10832.21 seconds
+[2025-09-21T10:23:03.944+0000] {job.py:229} INFO - Heartbeat recovered after 58780.19 seconds
+[2025-09-21T10:23:03.969+0000] {local_task_job_runner.py:346} WARNING - State of this instance has been externally set to failed. Terminating instance.
+[2025-09-21T10:23:03.972+0000] {local_task_job_runner.py:245} INFO - ::endgroup::
+[2025-09-21T10:23:04.003+0000] {process_utils.py:132} INFO - Sending 15 to group 269. PIDs of all processes in the group: [269]
+[2025-09-21T10:23:04.011+0000] {process_utils.py:87} INFO - Sending the signal 15 to group 269
+[2025-09-21T10:23:05.103+0000] {taskinstance.py:3092} ERROR - Received SIGTERM. Terminating subprocesses.
+[2025-09-21T10:23:06.150+0000] {docker.py:533} INFO - Stopping docker container
+[2025-09-21T10:23:18.552+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2025-09-21T10:23:18.720+0000] {process_utils.py:80} INFO - Process psutil.Process(pid=269, status='terminated', exitcode=0, started='2025-09-20 09:44:31') (269) terminated with exit code 0

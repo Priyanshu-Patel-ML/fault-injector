@@ -1,0 +1,49 @@
+{
+  "version": "1.0.0",
+  "title": "CPU Stress Test - Database Pod with Timed Rollback",
+  "description": "Apply CPU stress to database pod with automatic cleanup after duration",
+  "method": [
+    {
+      "type": "action",
+      "name": "apply-database-cpu-stress",
+      "provider": {
+        "type": "python",
+        "module": "chaosk8s.chaosmesh.stress.actions",
+        "func": "stress_cpu",
+        "arguments": {
+          "name": "cpu-stress-database",
+          "workers": 8,
+          "load": 95,
+          "duration": "300s",
+          "ns": "default",
+          "label_selectors": "app=post-storage-mongodb",
+          "mode": "all"
+        }
+      }
+    },
+    {
+      "type": "probe",
+      "name": "wait-for-stress-duration",
+      "provider": {
+        "type": "process",
+        "path": "sleep",
+        "arguments": "305"
+      }
+    }
+  ],
+  "rollbacks": [
+    {
+      "type": "action",
+      "name": "cleanup-database-stress",
+      "provider": {
+        "type": "python",
+        "module": "chaosk8s.chaosmesh.stress.actions",
+        "func": "delete_stressor",
+        "arguments": {
+          "name": "cpu-stress-database",
+          "ns": "default"
+        }
+      }
+    }
+  ]
+}

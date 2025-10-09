@@ -1,0 +1,39 @@
+Stress_Test:
+  schedule: "@once"
+  start_date: "2025-09-22"
+  description: "Load Test with Auto Cleanup via Python Script"
+  default_view: "graph"
+  orientation: "LR"
+  catchup: false
+  default_args:
+    owner: "airflow"
+    depends_on_past: false
+    retries: 0
+  tasks:
+    - task_id: run_load_test_with_cleanup
+      operator: airflow.providers.docker.operators.docker.DockerOperator
+      image: "airflow_chaos:latest"
+      api_version: "auto"
+      auto_remove: true
+      user: "root"
+      mount_tmp_dir: false
+      docker_url: "unix://var/run/docker.sock"
+      network_mode: "host"
+      mounts:
+        - source: "/home/priyanshupatel/fault-injector/src/pod"
+          target: "/opt/airflow/src/pod"
+          type: "bind"
+        - source: "/home/priyanshupatel/.kube/config"
+          target: "/root/.kube/config"
+          type: "bind"
+          read_only: true
+      environment:
+        KUBECONFIG: "/root/.kube/config"
+        PYTHONPATH: "/opt/airflow/src/pod"
+      command: >
+        bash -c '
+        cd /opt/airflow/src/pod &&
+        echo "Starting Load Test with Auto Cleanup..." &&
+        chaos run load_test_cleanup.json &&
+        echo "Load test with cleanup completed successfully"'
+      container_name: "load_test_cleanup_chaos"

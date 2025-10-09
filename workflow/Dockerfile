@@ -24,7 +24,10 @@ RUN curl -sL https://github.com/grafana/k6/releases/download/v0.46.0/k6-v0.46.0-
 # Switch back to airflow user
 USER airflow
 
-# Install Chaos Toolkit + All Extensions + PostgreSQL support
+# Copy experiment-apis folder first (before pip install)
+COPY experiment-apis/ /opt/airflow/experiment-apis/
+
+# Install Chaos Toolkit + All Extensions + Flask dependencies from requirements.txt
 RUN pip install --no-cache-dir \
         chaostoolkit \
         chaostoolkit-kubernetes \
@@ -33,10 +36,17 @@ RUN pip install --no-cache-dir \
         dag-factory \
         psycopg2-binary \
         redis \
-        pymongo
+        pymongo && \
+    pip install --no-cache-dir -r /opt/airflow/experiment-apis/requirements.txt
 
 # Create src directory structure (if not mounted from host)
 RUN mkdir -p /opt/airflow/src/pod /opt/airflow/src/node
 
+# Switch back to airflow user
+USER airflow
+
 # Set Python path to include src directory
 ENV PYTHONPATH="/opt/airflow/src/pod:/opt/airflow/src/node:${PYTHONPATH}"
+
+# Copy experiment-apis folder
+COPY experiment-apis/ /opt/airflow/experiment-apis/

@@ -1,0 +1,18 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: chaos-platform-role
+rules:
+- apiGroups: [""]
+  resources: ["pods", "pods/log", "pods/exec"]
+  verbs: ["get", "list", "create", "delete", "watch"]
+- apiGroups: ["apps"]
+  resources: ["deployments", "replicasets"]
+  verbs: ["get", "list", "patch", "delete"]
+- apiGroups: [""]
+  resources: ["services", "endpoints"]
+  verbs: ["get", "list"]
+# ADD NODE PERMISSIONS
+- apiGroups: [""]
+  resources: ["nodes"]
+  verbs: ["get", "list", "patch", "update"]

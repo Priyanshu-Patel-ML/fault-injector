@@ -4,9 +4,21 @@ from pathlib import Path
 import requests
 from logzero import logger
 from typing import Optional
-import json  # missing earlier
+import json
+from pymongo import MongoClient
 
-__all__ = ["stress_endpoint", "stress_continuous_multi_endpoint"]
+__all__ = [
+    "stress_endpoint", 
+    "stress_continuous_multi_endpoint",
+    "count_posts_direct", 
+    "cleanup_database_direct",
+    "stress_endpoint_test"
+]
+
+def stress_endpoint_test():
+    """Test function"""
+    print("Hello world")
+    return
 
 def _run_process_and_wait(cmd, env=None, stdout_to_file: Optional[str] = None, debug: bool = False) -> bool:
     logger.debug("Running command: %s", " ".join(cmd))
@@ -155,3 +167,53 @@ def stress_continuous_multi_endpoint(endpoints: list, min_vus: int = 30, max_vus
         logger.info(f"k6 continuous output logged to {log_file}")
 
     return success
+
+# Database cleanup functions
+def count_posts_direct(db_host: str, db_port: int = 27017, database_name: str = "post", collection_name: str = "post"):
+    """Count posts directly via MongoDB connection"""
+    try:
+        client = MongoClient(f"mongodb://{db_host}:{db_port}/{database_name}", serverSelectionTimeoutMS=5000)
+        collection = client[database_name][collection_name]
+        total_count = collection.count_documents({})
+        client.close()
+        logger.info(f"📊 Total posts: {total_count}")
+        return {"status": "success", "total_posts": total_count}
+    except Exception as e:
+        logger.error(f"Failed to count posts: {e}")
+        return {"status": "error", "total_posts": -1, "message": str(e)}
+
+def cleanup_database_direct(db_host: str, db_port: int = 27017, database_name: str = "post", 
+                          collection_name: str = "post", keep_count: int = 10000, dry_run: bool = False):
+    """Clean up database - keep only latest N records"""
+    try:
+        client = MongoClient(f"mongodb://{db_host}:{db_port}/{database_name}", serverSelectionTimeoutMS=5000)
+        collection = client[database_name][collection_name]
+        total_count = collection.count_documents({})
+        logger.info(f"📊 Total posts before cleanup: {total_count}")
+        
+        if total_count <= keep_count:
+            client.close()
+            logger.info(f"✅ Only {total_count} posts, no cleanup needed")
+            return {"status": "success", "posts_deleted": 0, "message": "No cleanup needed"}
+        
+        if dry_run:
+            client.close()
+            posts_to_delete = total_count - keep_count
+            logger.info(f"🗑️ DRY RUN: Would delete {posts_to_delete} posts")
+            return {"status": "success", "posts_deleted": 0, "dry_run": True}
+        
+        # Keep only latest N records
+        latest_posts = list(collection.find().sort("_id", -1).limit(keep_count))
+        if len(latest_posts) == keep_count:
+            oldest_id = latest_posts[-1]["_id"]
+            result = collection.delete_many({"_id": {"$lt": oldest_id}})
+            deleted_count = result.deleted_count
+        else:
+            deleted_count = 0
+        
+        client.close()
+        logger.info(f"✅ Deleted {deleted_count} posts")
+        return {"status": "success", "posts_deleted": deleted_count}
+    except Exception as e:
+        logger.error(f"Cleanup failed: {e}")
+        return {"status": "error", "posts_deleted": 0, "message": str(e)}

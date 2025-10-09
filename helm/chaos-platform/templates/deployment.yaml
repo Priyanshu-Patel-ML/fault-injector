@@ -1,0 +1,131 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "chaos-platform.fullname" . }}
+  labels:
+    {{- include "chaos-platform.labels" . | nindent 4 }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      {{- include "chaos-platform.selectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+      labels:
+        {{- include "chaos-platform.selectorLabels" . | nindent 8 }}
+    spec:
+      hostNetwork: true  # This allows pod to access host services
+      dnsPolicy: ClusterFirstWithHostNet
+      serviceAccountName: {{ include "chaos-platform.serviceAccountName" . }}
+      initContainers:
+      - name: airflow-db-init
+        image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+        command: ["/bin/bash", "-c"]
+        args:
+        - |
+          echo "Initializing Airflow database..."
+          airflow db init
+          airflow users create \
+            --username admin \
+            --password admin \
+            --firstname Admin \
+            --lastname User \
+            --role Admin \
+            --email admin@example.com || true
+          echo "Database initialization completed"
+        env:
+        - name: AIRFLOW__DATABASE__SQL_ALCHEMY_CONN
+          value: "postgresql+psycopg2://{{ .Values.postgresql.external.username }}:{{ .Values.postgresql.external.password }}@{{ .Values.postgresql.external.host }}:{{ .Values.postgresql.external.port }}/{{ .Values.postgresql.external.database }}"
+      containers:
+      - name: airflow-webserver
+        image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+        imagePullPolicy: {{ .Values.image.pullPolicy }}
+        command: ["/bin/bash", "-c"]
+        args:
+        - |
+          # Copy files to avoid symlink issues
+          cp /tmp/dags/* /opt/airflow/dags/ 2>/dev/null || true
+          cp /tmp/experiments/* /opt/airflow/src/pod/ 2>/dev/null || true
+          # Start webserver
+          airflow webserver --port {{ .Values.airflow.webserver.port }}
+        ports:
+        - name: http
+          containerPort: {{ .Values.airflow.webserver.port }}
+          protocol: TCP
+        env:
+        - name: PYTHONPATH
+          value: "/opt/airflow/src/pod:/opt/airflow/src/node"
+        - name: AIRFLOW__CORE__EXECUTOR
+          value: "{{ .Values.airflow.executor }}"
+        - name: AIRFLOW__DATABASE__SQL_ALCHEMY_CONN
+          value: "postgresql+psycopg2://{{ .Values.postgresql.external.username }}:{{ .Values.postgresql.external.password }}@{{ .Values.postgresql.external.host }}:{{ .Values.postgresql.external.port }}/{{ .Values.postgresql.external.database }}"
+        volumeMounts:
+        - name: chaos-experiments
+          mountPath: /tmp/experiments
+        - name: chaos-dags
+          mountPath: /tmp/dags
+        - name: dags-volume
+          mountPath: /opt/airflow/dags
+        {{- if .Values.localDevelopment.enabled }}
+        - name: local-pod-folder
+          mountPath: /opt/airflow/src/pod
+          subPath: src/pod
+        {{- else }}
+        - name: experiments-volume
+          mountPath: /opt/airflow/src/pod
+        {{- end }}
+        resources:
+          {{- toYaml .Values.resources | nindent 12 }}
+      - name: airflow-scheduler
+        image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+        imagePullPolicy: {{ .Values.image.pullPolicy }}
+        command: ["/bin/bash", "-c"]
+        args:
+        - |
+          # Copy files to avoid symlink issues
+          cp /tmp/dags/* /opt/airflow/dags/ 2>/dev/null || true
+          cp /tmp/experiments/* /opt/airflow/src/pod/ 2>/dev/null || true
+          # Start scheduler
+          airflow scheduler
+        env:
+        - name: PYTHONPATH
+          value: "/opt/airflow/src/pod:/opt/airflow/src/node"
+        - name: AIRFLOW__CORE__EXECUTOR
+          value: "{{ .Values.airflow.executor }}"
+        - name: AIRFLOW__DATABASE__SQL_ALCHEMY_CONN
+          value: "postgresql+psycopg2://{{ .Values.postgresql.external.username }}:{{ .Values.postgresql.external.password }}@{{ .Values.postgresql.external.host }}:{{ .Values.postgresql.external.port }}/{{ .Values.postgresql.external.database }}"
+        volumeMounts:
+        - name: chaos-experiments
+          mountPath: /tmp/experiments
+        - name: chaos-dags
+          mountPath: /tmp/dags
+        - name: dags-volume
+          mountPath: /opt/airflow/dags
+        {{- if .Values.localDevelopment.enabled }}
+        - name: local-pod-folder
+          mountPath: /opt/airflow/src/pod
+          subPath: src/pod
+        {{- else }}
+        - name: experiments-volume
+          mountPath: /opt/airflow/src/pod
+        {{- end }}
+      volumes:
+      {{- if .Values.useConfigMap.enabled }}
+      - name: chaos-experiments
+        configMap:
+          name: {{ .Values.useConfigMap.name }}
+      {{- end }}
+      - name: chaos-dags
+        configMap:
+          name: {{ include "chaos-platform.fullname" . }}-dags
+      - name: dags-volume
+        emptyDir: {}
+      {{- if .Values.localDevelopment.enabled }}
+      - name: local-pod-folder
+        hostPath:
+          path: {{ .Values.localDevelopment.hostPath | default "/home/priyanshupatel/fault-injector" }}
+          type: Directory
+      {{- else }}
+      - name: experiments-volume
+        emptyDir: {}
+      {{- end }}

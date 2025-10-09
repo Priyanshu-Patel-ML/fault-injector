@@ -1,96 +1,1761 @@
-[36m[2025-09-20 13:22:19 DEBUG] [__init__:101] ###############################################################################
-[36m[2025-09-20 13:22:19 DEBUG] [__init__:102] Running command 'run'
-[36m[2025-09-20 13:22:19 DEBUG] [__init__:106] Using settings file '/root/.chaostoolkit/settings.yaml'
-[36m[2025-09-20 13:22:20 DEBUG] [settings:31] The Chaos Toolkit settings file could not be found at '/root/.chaostoolkit/settings.yaml'.
-[36m[2025-09-20 13:22:20 DEBUG] [__init__:472] No controls to apply on 'loader'
-[36m[2025-09-20 13:22:20 DEBUG] [__init__:472] No controls to apply on 'loader'
-[36m[2025-09-20 13:22:20 DEBUG] [caching:24] Building activity cache...
-[36m[2025-09-20 13:22:20 DEBUG] [caching:35] Cached 1 activities
-[32m[2025-09-20 13:22:20 INFO] [experiment:59] Validating the experiment's syntax
-[36m[2025-09-20 13:22:20 DEBUG] [configuration:64] Loading configuration...
-[36m[2025-09-20 13:22:20 DEBUG] [secret:79] Loading secrets...
-[36m[2025-09-20 13:22:20 DEBUG] [secret:104] Done loading secrets
-[32m[2025-09-20 13:22:20 INFO] [experiment:112] Experiment looks valid
-[36m[2025-09-20 13:22:20 DEBUG] [caching:42] Clearing activities cache
-[36m[2025-09-20 13:22:20 DEBUG] [run:224] Runtime strategies: hypothesis - default / rollbacks - default
-[36m[2025-09-20 13:22:20 DEBUG] [caching:24] Building activity cache...
-[36m[2025-09-20 13:22:20 DEBUG] [caching:35] Cached 1 activities
-[36m[2025-09-20 13:22:20 DEBUG] [configuration:64] Loading configuration...
-[36m[2025-09-20 13:22:20 DEBUG] [secret:79] Loading secrets...
-[36m[2025-09-20 13:22:20 DEBUG] [secret:104] Done loading secrets
-[36m[2025-09-20 13:22:20 DEBUG] [configuration:161] Loading dynamic configuration...
-[32m[2025-09-20 13:22:20 INFO] [run:440] Running experiment: Local Redis Memory Stress Test
-[36m[2025-09-20 13:22:20 DEBUG] [__init__:67] Initializing controls
-[32m[2025-09-20 13:22:20 INFO] [run:471] Steady-state strategy: default
-[32m[2025-09-20 13:22:20 INFO] [run:477] Rollbacks strategy: default
-[32m[2025-09-20 13:22:20 INFO] [run:485] No steady state hypothesis defined. That's ok, just exploring.
-[36m[2025-09-20 13:22:20 DEBUG] [__init__:472] No controls to apply on 'experiment'
-[32m[2025-09-20 13:22:20 INFO] [run:778] Playing your experiment's method now...
-[36m[2025-09-20 13:22:20 DEBUG] [__init__:472] No controls to apply on 'method'
-[36m[2025-09-20 13:22:20 DEBUG] [__init__:472] No controls to apply on 'activity'
-[32m[2025-09-20 13:22:20 INFO] [activity:232] Action: redis-memory-stress-complete
-[36m[2025-09-20 13:22:20 DEBUG] [python:33] Activity 'redis-memory-stress-complete' loaded from '/opt/airflow/src/pod/redis_config_faults.py'
-[36m[2025-09-20 13:25:13 DEBUG] [activity:260]   => succeeded with '{'used_memory': '20.03M', 'evicted_keys': 0, 'duration': 180}'
-[36m[2025-09-20 13:25:13 DEBUG] [__init__:472] No controls to apply on 'activity'
-[36m[2025-09-20 13:25:13 DEBUG] [__init__:472] No controls to apply on 'method'
-[32m[2025-09-20 13:25:13 INFO] [run:1072] Let's rollback...
-[36m[2025-09-20 13:25:13 DEBUG] [__init__:472] No controls to apply on 'rollback'
-[32m[2025-09-20 13:25:13 INFO] [rollback:36] Rollback: reset-redis-memory
-[36m[2025-09-20 13:25:13 DEBUG] [__init__:472] No controls to apply on 'activity'
-[32m[2025-09-20 13:25:13 INFO] [activity:232] Action: reset-redis-memory
-[36m[2025-09-20 13:25:13 DEBUG] [python:33] Activity 'reset-redis-memory' loaded from '/opt/airflow/src/pod/redis_config_faults.py'
-[36m[2025-09-20 13:25:14 DEBUG] [activity:260]   => succeeded with '{'status': 'reset', 'maxmemory': '0', 'policy': 'noeviction'}'
-[36m[2025-09-20 13:25:14 DEBUG] [__init__:472] No controls to apply on 'activity'
-[36m[2025-09-20 13:25:14 DEBUG] [__init__:472] No controls to apply on 'rollback'
-[32m[2025-09-20 13:25:14 INFO] [run:598] Experiment ended with status: completed
-[36m[2025-09-20 13:25:14 DEBUG] [__init__:472] No controls to apply on 'experiment'
-[36m[2025-09-20 13:25:14 DEBUG] [__init__:106] Cleaning up controls
-[36m[2025-09-20 13:25:14 DEBUG] [caching:42] Clearing activities cache
-[36m[2025-09-20 13:39:14 DEBUG] [__init__:101] ###############################################################################
-[36m[2025-09-20 13:39:14 DEBUG] [__init__:102] Running command 'run'
-[36m[2025-09-20 13:39:14 DEBUG] [__init__:106] Using settings file '/root/.chaostoolkit/settings.yaml'
-[36m[2025-09-20 13:39:15 DEBUG] [settings:31] The Chaos Toolkit settings file could not be found at '/root/.chaostoolkit/settings.yaml'.
-[36m[2025-09-20 13:39:15 DEBUG] [__init__:472] No controls to apply on 'loader'
-[36m[2025-09-20 13:39:15 DEBUG] [__init__:472] No controls to apply on 'loader'
-[36m[2025-09-20 13:39:15 DEBUG] [caching:24] Building activity cache...
-[36m[2025-09-20 13:39:15 DEBUG] [caching:35] Cached 1 activities
-[32m[2025-09-20 13:39:15 INFO] [experiment:59] Validating the experiment's syntax
-[36m[2025-09-20 13:39:15 DEBUG] [configuration:64] Loading configuration...
-[36m[2025-09-20 13:39:15 DEBUG] [secret:79] Loading secrets...
-[36m[2025-09-20 13:39:15 DEBUG] [secret:104] Done loading secrets
-[32m[2025-09-20 13:39:15 INFO] [experiment:112] Experiment looks valid
-[36m[2025-09-20 13:39:15 DEBUG] [caching:42] Clearing activities cache
-[36m[2025-09-20 13:39:15 DEBUG] [run:224] Runtime strategies: hypothesis - default / rollbacks - default
-[36m[2025-09-20 13:39:15 DEBUG] [caching:24] Building activity cache...
-[36m[2025-09-20 13:39:15 DEBUG] [caching:35] Cached 1 activities
-[36m[2025-09-20 13:39:15 DEBUG] [configuration:64] Loading configuration...
-[36m[2025-09-20 13:39:15 DEBUG] [secret:79] Loading secrets...
-[36m[2025-09-20 13:39:15 DEBUG] [secret:104] Done loading secrets
-[36m[2025-09-20 13:39:15 DEBUG] [configuration:161] Loading dynamic configuration...
-[32m[2025-09-20 13:39:15 INFO] [run:440] Running experiment: Local Redis Memory Stress Test
-[36m[2025-09-20 13:39:15 DEBUG] [__init__:67] Initializing controls
-[32m[2025-09-20 13:39:15 INFO] [run:471] Steady-state strategy: default
-[32m[2025-09-20 13:39:15 INFO] [run:477] Rollbacks strategy: default
-[32m[2025-09-20 13:39:15 INFO] [run:485] No steady state hypothesis defined. That's ok, just exploring.
-[36m[2025-09-20 13:39:15 DEBUG] [__init__:472] No controls to apply on 'experiment'
-[32m[2025-09-20 13:39:15 INFO] [run:778] Playing your experiment's method now...
-[36m[2025-09-20 13:39:15 DEBUG] [__init__:472] No controls to apply on 'method'
-[36m[2025-09-20 13:39:15 DEBUG] [__init__:472] No controls to apply on 'activity'
-[32m[2025-09-20 13:39:15 INFO] [activity:232] Action: redis-memory-stress-complete
-[36m[2025-09-20 13:39:15 DEBUG] [python:33] Activity 'redis-memory-stress-complete' loaded from '/opt/airflow/src/pod/redis_config_faults.py'
-[36m[2025-09-20 13:42:04 DEBUG] [activity:260]   => succeeded with '{'used_memory': '20.03M', 'evicted_keys': 0, 'duration': 180}'
-[36m[2025-09-20 13:42:04 DEBUG] [__init__:472] No controls to apply on 'activity'
-[36m[2025-09-20 13:42:04 DEBUG] [__init__:472] No controls to apply on 'method'
-[32m[2025-09-20 13:42:04 INFO] [run:1072] Let's rollback...
-[36m[2025-09-20 13:42:04 DEBUG] [__init__:472] No controls to apply on 'rollback'
-[32m[2025-09-20 13:42:04 INFO] [rollback:36] Rollback: reset-redis-memory
-[36m[2025-09-20 13:42:04 DEBUG] [__init__:472] No controls to apply on 'activity'
-[32m[2025-09-20 13:42:04 INFO] [activity:232] Action: reset-redis-memory
-[36m[2025-09-20 13:42:04 DEBUG] [python:33] Activity 'reset-redis-memory' loaded from '/opt/airflow/src/pod/redis_config_faults.py'
-[36m[2025-09-20 13:42:05 DEBUG] [activity:260]   => succeeded with '{'status': 'reset', 'maxmemory': '0', 'policy': 'noeviction'}'
-[36m[2025-09-20 13:42:05 DEBUG] [__init__:472] No controls to apply on 'activity'
-[36m[2025-09-20 13:42:05 DEBUG] [__init__:472] No controls to apply on 'rollback'
-[32m[2025-09-20 13:42:05 INFO] [run:598] Experiment ended with status: completed
-[36m[2025-09-20 13:42:05 DEBUG] [__init__:472] No controls to apply on 'experiment'
-[36m[2025-09-20 13:42:05 DEBUG] [__init__:106] Cleaning up controls
-[36m[2025-09-20 13:42:05 DEBUG] [caching:42] Clearing activities cache
+[36m[2025-09-26 10:58:30 DEBUG] [__init__:101] ###############################################################################
+[36m[2025-09-26 10:58:30 DEBUG] [__init__:102] Running command 'run'
+[36m[2025-09-26 10:58:30 DEBUG] [__init__:106] Using settings file '/root/.chaostoolkit/settings.yaml'
+[36m[2025-09-26 10:58:31 DEBUG] [settings:31] The Chaos Toolkit settings file could not be found at '/root/.chaostoolkit/settings.yaml'.
+[36m[2025-09-26 10:58:31 DEBUG] [__init__:472] No controls to apply on 'loader'
+[36m[2025-09-26 10:58:31 DEBUG] [__init__:472] No controls to apply on 'loader'
+[36m[2025-09-26 10:58:31 DEBUG] [caching:24] Building activity cache...
+[36m[2025-09-26 10:58:31 DEBUG] [caching:35] Cached 1 activities
+[32m[2025-09-26 10:58:31 INFO] [experiment:59] Validating the experiment's syntax
+[36m[2025-09-26 10:58:31 DEBUG] [configuration:64] Loading configuration...
+[36m[2025-09-26 10:58:31 DEBUG] [secret:79] Loading secrets...
+[36m[2025-09-26 10:58:31 DEBUG] [secret:104] Done loading secrets
+[32m[2025-09-26 10:58:31 INFO] [experiment:112] Experiment looks valid
+[36m[2025-09-26 10:58:31 DEBUG] [caching:42] Clearing activities cache
+[36m[2025-09-26 10:58:31 DEBUG] [run:224] Runtime strategies: hypothesis - default / rollbacks - default
+[36m[2025-09-26 10:58:31 DEBUG] [caching:24] Building activity cache...
+[36m[2025-09-26 10:58:31 DEBUG] [caching:35] Cached 1 activities
+[36m[2025-09-26 10:58:31 DEBUG] [configuration:64] Loading configuration...
+[36m[2025-09-26 10:58:31 DEBUG] [secret:79] Loading secrets...
+[36m[2025-09-26 10:58:31 DEBUG] [secret:104] Done loading secrets
+[36m[2025-09-26 10:58:31 DEBUG] [configuration:161] Loading dynamic configuration...
+[32m[2025-09-26 10:58:31 INFO] [run:440] Running experiment: Local Redis Memory Stress Test
+[36m[2025-09-26 10:58:31 DEBUG] [__init__:67] Initializing controls
+[32m[2025-09-26 10:58:31 INFO] [run:471] Steady-state strategy: default
+[32m[2025-09-26 10:58:31 INFO] [run:477] Rollbacks strategy: default
+[32m[2025-09-26 10:58:31 INFO] [run:485] No steady state hypothesis defined. That's ok, just exploring.
+[36m[2025-09-26 10:58:31 DEBUG] [__init__:472] No controls to apply on 'experiment'
+[32m[2025-09-26 10:58:31 INFO] [run:778] Playing your experiment's method now...
+[36m[2025-09-26 10:58:31 DEBUG] [__init__:472] No controls to apply on 'method'
+[36m[2025-09-26 10:58:31 DEBUG] [__init__:472] No controls to apply on 'activity'
+[32m[2025-09-26 10:58:31 INFO] [activity:232] Action: redis-memory-stress-complete
+[36m[2025-09-26 10:58:31 DEBUG] [python:33] Activity 'redis-memory-stress-complete' loaded from '/opt/airflow/src/pod/redis_config_faults.py'
+[36m[2025-09-26 11:00:44 DEBUG] [activity:317] Activity failed
+    Traceback (most recent call last):
+      File "/home/airflow/.local/lib/python3.11/site-packages/redis/connection.py", line 277, in connect
+        sock = self.retry.call_with_retry(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+      File "/home/airflow/.local/lib/python3.11/site-packages/redis/retry.py", line 67, in call_with_retry
+        raise error
+      File "/home/airflow/.local/lib/python3.11/site-packages/redis/retry.py", line 62, in call_with_retry
+        return do()
+               ^^^^
+      File "/home/airflow/.local/lib/python3.11/site-packages/redis/connection.py", line 278, in <lambda>
+        lambda: self._connect(), lambda error: self.disconnect(error)
+                ^^^^^^^^^^^^^^^
+      File "/home/airflow/.local/lib/python3.11/site-packages/redis/connection.py", line 639, in _connect
+        raise err
+      File "/home/airflow/.local/lib/python3.11/site-packages/redis/connection.py", line 627, in _connect
+        sock.connect(socket_address)
+    TimeoutError: [Errno 110] Connection timed out
+    
+    During handling of the above exception, another exception occurred:
+    
+    Traceback (most recent call last):
+      File "/home/airflow/.local/lib/python3.11/site-packages/chaoslib/provider/python.py", line 56, in run_python_activity
+        return func(**arguments)
+               ^^^^^^^^^^^^^^^^^
+      File "/opt/airflow/src/pod/redis_config_faults.py", line 13, in redis_memory_stress_test
+        client.config_set("maxmemory", f"{limit_in_kb}kb")
+      File "/home/airflow/.local/lib/python3.11/site-packages/redis/commands/core.py", line 860, in config_set
+        return self.execute_command("CONFIG SET", name, value, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+      File "/home/airflow/.local/lib/python3.11/site-packages/redis/client.py", line 545, in execute_command
+        conn = self.connection or pool.get_connection(command_name, **options)
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+      File "/home/airflow/.local/lib/python3.11/site-packages/redis/connection.py", line 1074, in get_connection
+        connection.connect()
+      File "/home/airflow/.local/lib/python3.11/site-packages/redis/connection.py", line 281, in connect
+        raise TimeoutError("Timeout connecting to server")
+    redis.exceptions.TimeoutError: Timeout connecting to server
+    
+    During handling of the above exception, another exception occurred:
+    
+    Traceback (most recent call last):
+      File "/home/airflow/.local/lib/python3.11/site-packages/chaoslib/activity.py", line 310, in run_activity
+        result = run_python_activity(activity, configuration, secrets)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+      File "/home/airflow/.local/lib/python3.11/site-packages/chaoslib/provider/python.py", line 58, in run_python_activity
+        raise ActivityFailed(
+      File "/home/airflow/.local/lib/python3.11/site-packages/chaoslib/provider/python.py", line 56, in run_python_activity
+        return func(**arguments)
+               ^^^^^^^^^^^^^^^^^
+      File "/opt/airflow/src/pod/redis_config_faults.py", line 13, in redis_memory_stress_test
+        client.config_set("maxmemory", f"{limit_in_kb}kb")
+      File "/home/airflow/.local/lib/python3.11/site-packages/redis/commands/core.py", line 860, in config_set
+        return self.execute_command("CONFIG SET", name, value, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+      File "/home/airflow/.local/lib/python3.11/site-packages/redis/client.py", line 545, in execute_command
+        conn = self.connection or pool.get_connection(command_name, **options)
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+      File "/home/airflow/.local/lib/python3.11/site-packages/redis/connection.py", line 1074, in get_connection
+        connection.connect()
+      File "/home/airflow/.local/lib/python3.11/site-packages/redis/connection.py", line 281, in connect
+        raise TimeoutError("Timeout connecting to server")
+    chaoslib.exceptions.ActivityFailed: redis.exceptions.TimeoutError: Timeout connecting to server
+[31m[2025-09-26 11:00:44 ERROR] [activity:268]   => failed: redis.exceptions.TimeoutError: Timeout connecting to server
+[36m[2025-09-26 11:00:44 DEBUG] [__init__:472] No controls to apply on 'activity'
+[36m[2025-09-26 11:00:44 DEBUG] [__init__:472] No controls to apply on 'method'
+[32m[2025-09-26 11:00:44 INFO] [run:1072] Let's rollback...
+[36m[2025-09-26 11:00:44 DEBUG] [__init__:472] No controls to apply on 'rollback'
+[32m[2025-09-26 11:00:44 INFO] [rollback:36] Rollback: reset-redis-memory
+[36m[2025-09-26 11:00:44 DEBUG] [__init__:472] No controls to apply on 'activity'
+[32m[2025-09-26 11:00:44 INFO] [activity:232] Action: reset-redis-memory
+[36m[2025-09-26 11:00:44 DEBUG] [python:33] Activity 'reset-redis-memory' loaded from '/opt/airflow/src/pod/redis_config_faults.py'
+[36m[2025-09-26 11:02:57 DEBUG] [activity:317] Activity failed
+    Traceback (most recent call last):
+      File "/home/airflow/.local/lib/python3.11/site-packages/redis/connection.py", line 277, in connect
+        sock = self.retry.call_with_retry(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+      File "/home/airflow/.local/lib/python3.11/site-packages/redis/retry.py", line 67, in call_with_retry
+        raise error
+      File "/home/airflow/.local/lib/python3.11/site-packages/redis/retry.py", line 62, in call_with_retry
+        return do()
+               ^^^^
+      File "/home/airflow/.local/lib/python3.11/site-packages/redis/connection.py", line 278, in <lambda>
+        lambda: self._connect(), lambda error: self.disconnect(error)
+                ^^^^^^^^^^^^^^^
+      File "/home/airflow/.local/lib/python3.11/site-packages/redis/connection.py", line 639, in _connect
+        raise err
+      File "/home/airflow/.local/lib/python3.11/site-packages/redis/connection.py", line 627, in _connect
+        sock.connect(socket_address)
+    TimeoutError: [Errno 110] Connection timed out
+    
+    During handling of the above exception, another exception occurred:
+    
+    Traceback (most recent call last):
+      File "/home/airflow/.local/lib/python3.11/site-packages/chaoslib/provider/python.py", line 56, in run_python_activity
+        return func(**arguments)
+               ^^^^^^^^^^^^^^^^^
+      File "/opt/airflow/src/pod/redis_config_faults.py", line 40, in reset_maxmemory
+        client.config_set("maxmemory", 0)  # 0 = no limit
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+      File "/home/airflow/.local/lib/python3.11/site-packages/redis/commands/core.py", line 860, in config_set
+        return self.execute_command("CONFIG SET", name, value, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+      File "/home/airflow/.local/lib/python3.11/site-packages/redis/client.py", line 545, in execute_command
+        conn = self.connection or pool.get_connection(command_name, **options)
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+      File "/home/airflow/.local/lib/python3.11/site-packages/redis/connection.py", line 1074, in get_connection
+        connection.connect()
+      File "/home/airflow/.local/lib/python3.11/site-packages/redis/connection.py", line 281, in connect
+        raise TimeoutError("Timeout connecting to server")
+    redis.exceptions.TimeoutError: Timeout connecting to server
+    
+    During handling of the above exception, another exception occurred:
+    
+    Traceback (most recent call last):
+      File "/home/airflow/.local/lib/python3.11/site-packages/chaoslib/activity.py", line 310, in run_activity
+        result = run_python_activity(activity, configuration, secrets)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+      File "/home/airflow/.local/lib/python3.11/site-packages/chaoslib/provider/python.py", line 58, in run_python_activity
+        raise ActivityFailed(
+      File "/home/airflow/.local/lib/python3.11/site-packages/chaoslib/provider/python.py", line 56, in run_python_activity
+        return func(**arguments)
+               ^^^^^^^^^^^^^^^^^
+      File "/opt/airflow/src/pod/redis_config_faults.py", line 40, in reset_maxmemory
+        client.config_set("maxmemory", 0)  # 0 = no limit
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+      File "/home/airflow/.local/lib/python3.11/site-packages/redis/commands/core.py", line 860, in config_set
+        return self.execute_command("CONFIG SET", name, value, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+      File "/home/airflow/.local/lib/python3.11/site-packages/redis/client.py", line 545, in execute_command
+        conn = self.connection or pool.get_connection(command_name, **options)
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+      File "/home/airflow/.local/lib/python3.11/site-packages/redis/connection.py", line 1074, in get_connection
+        connection.connect()
+      File "/home/airflow/.local/lib/python3.11/site-packages/redis/connection.py", line 281, in connect
+        raise TimeoutError("Timeout connecting to server")
+    chaoslib.exceptions.ActivityFailed: redis.exceptions.TimeoutError: Timeout connecting to server
+[31m[2025-09-26 11:02:57 ERROR] [activity:268]   => failed: redis.exceptions.TimeoutError: Timeout connecting to server
+[36m[2025-09-26 11:02:57 DEBUG] [__init__:472] No controls to apply on 'activity'
+[36m[2025-09-26 11:02:57 DEBUG] [__init__:472] No controls to apply on 'rollback'
+[32m[2025-09-26 11:02:57 INFO] [run:598] Experiment ended with status: completed
+[36m[2025-09-26 11:02:57 DEBUG] [__init__:472] No controls to apply on 'experiment'
+[36m[2025-09-26 11:02:57 DEBUG] [__init__:106] Cleaning up controls
+[36m[2025-09-26 11:02:57 DEBUG] [caching:42] Clearing activities cache
+[36m[2025-09-26 11:21:23 DEBUG] [__init__:101] ###############################################################################
+[36m[2025-09-26 11:21:23 DEBUG] [__init__:102] Running command 'run'
+[36m[2025-09-26 11:21:23 DEBUG] [__init__:106] Using settings file '/root/.chaostoolkit/settings.yaml'
+[36m[2025-09-26 11:21:24 DEBUG] [settings:31] The Chaos Toolkit settings file could not be found at '/root/.chaostoolkit/settings.yaml'.
+[36m[2025-09-26 11:21:24 DEBUG] [__init__:472] No controls to apply on 'loader'
+[36m[2025-09-26 11:21:24 DEBUG] [__init__:472] No controls to apply on 'loader'
+[36m[2025-09-26 11:21:24 DEBUG] [caching:24] Building activity cache...
+[36m[2025-09-26 11:21:24 DEBUG] [caching:35] Cached 1 activities
+[32m[2025-09-26 11:21:24 INFO] [experiment:59] Validating the experiment's syntax
+[36m[2025-09-26 11:21:24 DEBUG] [configuration:64] Loading configuration...
+[36m[2025-09-26 11:21:24 DEBUG] [secret:79] Loading secrets...
+[36m[2025-09-26 11:21:24 DEBUG] [secret:104] Done loading secrets
+[32m[2025-09-26 11:21:24 INFO] [experiment:112] Experiment looks valid
+[36m[2025-09-26 11:21:24 DEBUG] [caching:42] Clearing activities cache
+[36m[2025-09-26 11:21:24 DEBUG] [run:224] Runtime strategies: hypothesis - default / rollbacks - default
+[36m[2025-09-26 11:21:24 DEBUG] [caching:24] Building activity cache...
+[36m[2025-09-26 11:21:24 DEBUG] [caching:35] Cached 1 activities
+[36m[2025-09-26 11:21:24 DEBUG] [configuration:64] Loading configuration...
+[36m[2025-09-26 11:21:24 DEBUG] [secret:79] Loading secrets...
+[36m[2025-09-26 11:21:24 DEBUG] [secret:104] Done loading secrets
+[36m[2025-09-26 11:21:24 DEBUG] [configuration:161] Loading dynamic configuration...
+[32m[2025-09-26 11:21:24 INFO] [run:440] Running experiment: Continuous Load Test - POST Compose & GET Timeline APIs
+[36m[2025-09-26 11:21:24 DEBUG] [__init__:67] Initializing controls
+[32m[2025-09-26 11:21:24 INFO] [run:471] Steady-state strategy: default
+[32m[2025-09-26 11:21:24 INFO] [run:477] Rollbacks strategy: default
+[32m[2025-09-26 11:21:24 INFO] [run:485] No steady state hypothesis defined. That's ok, just exploring.
+[36m[2025-09-26 11:21:24 DEBUG] [__init__:472] No controls to apply on 'experiment'
+[32m[2025-09-26 11:21:24 INFO] [run:778] Playing your experiment's method now...
+[36m[2025-09-26 11:21:24 DEBUG] [__init__:472] No controls to apply on 'method'
+[36m[2025-09-26 11:21:24 DEBUG] [__init__:472] No controls to apply on 'activity'
+[32m[2025-09-26 11:21:24 INFO] [activity:232] Action: Continuous multi-endpoint load test
+[36m[2025-09-26 11:21:24 DEBUG] [python:33] Activity 'Continuous multi-endpoint load test' loaded from '/opt/airflow/src/pod/chaosk6_actions.py'
+[32m[2025-09-26 11:21:24 INFO] [chaosk6_actions:136] ✅ Obtained login_token (JWT): eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0aW1lc3RhbXAiOiIxNzU4ODg1Njg0IiwidHRsIjoiMzYwMCIsInVzZXJfaWQiOiI0MDA0Njk5MjM2MjAwOTUxODA4IiwidXNlcm5hbWUiOiJqYWdhbiJ9.UxREd6PrifAY28EoTbHTi1fu8objg-_9TNQRTIowziU
+[36m[2025-09-26 11:21:24 DEBUG] [chaosk6_actions:24] Running command: k6 run --summary-export k6_continuous_summary.json /opt/airflow/src/pod/scripts/continuous-multi-endpoint.js
+[36m[2025-09-26 11:28:16 DEBUG] [__init__:101] ###############################################################################
+[36m[2025-09-26 11:28:16 DEBUG] [__init__:102] Running command 'run'
+[36m[2025-09-26 11:28:16 DEBUG] [__init__:106] Using settings file '/root/.chaostoolkit/settings.yaml'
+[36m[2025-09-26 11:28:16 DEBUG] [settings:31] The Chaos Toolkit settings file could not be found at '/root/.chaostoolkit/settings.yaml'.
+[36m[2025-09-26 11:28:16 DEBUG] [__init__:472] No controls to apply on 'loader'
+[36m[2025-09-26 11:28:16 DEBUG] [__init__:472] No controls to apply on 'loader'
+[36m[2025-09-26 11:28:16 DEBUG] [caching:24] Building activity cache...
+[36m[2025-09-26 11:28:16 DEBUG] [caching:35] Cached 1 activities
+[32m[2025-09-26 11:28:16 INFO] [experiment:59] Validating the experiment's syntax
+[36m[2025-09-26 11:28:16 DEBUG] [configuration:64] Loading configuration...
+[36m[2025-09-26 11:28:16 DEBUG] [secret:79] Loading secrets...
+[36m[2025-09-26 11:28:16 DEBUG] [secret:104] Done loading secrets
+[32m[2025-09-26 11:28:17 INFO] [experiment:112] Experiment looks valid
+[36m[2025-09-26 11:28:17 DEBUG] [caching:42] Clearing activities cache
+[36m[2025-09-26 11:28:17 DEBUG] [run:224] Runtime strategies: hypothesis - default / rollbacks - default
+[36m[2025-09-26 11:28:17 DEBUG] [caching:24] Building activity cache...
+[36m[2025-09-26 11:28:17 DEBUG] [caching:35] Cached 1 activities
+[36m[2025-09-26 11:28:17 DEBUG] [configuration:64] Loading configuration...
+[36m[2025-09-26 11:28:17 DEBUG] [secret:79] Loading secrets...
+[36m[2025-09-26 11:28:17 DEBUG] [secret:104] Done loading secrets
+[36m[2025-09-26 11:28:17 DEBUG] [configuration:161] Loading dynamic configuration...
+[32m[2025-09-26 11:28:17 INFO] [run:440] Running experiment: Continuous Load Test - POST Compose & GET Timeline APIs
+[36m[2025-09-26 11:28:17 DEBUG] [__init__:67] Initializing controls
+[32m[2025-09-26 11:28:17 INFO] [run:471] Steady-state strategy: default
+[32m[2025-09-26 11:28:17 INFO] [run:477] Rollbacks strategy: default
+[32m[2025-09-26 11:28:17 INFO] [run:485] No steady state hypothesis defined. That's ok, just exploring.
+[36m[2025-09-26 11:28:17 DEBUG] [__init__:472] No controls to apply on 'experiment'
+[32m[2025-09-26 11:28:17 INFO] [run:778] Playing your experiment's method now...
+[36m[2025-09-26 11:28:17 DEBUG] [__init__:472] No controls to apply on 'method'
+[36m[2025-09-26 11:28:17 DEBUG] [__init__:472] No controls to apply on 'activity'
+[32m[2025-09-26 11:28:17 INFO] [activity:232] Action: Continuous multi-endpoint load test
+[36m[2025-09-26 11:28:17 DEBUG] [python:33] Activity 'Continuous multi-endpoint load test' loaded from '/opt/airflow/src/pod/chaosk6_actions.py'
+[32m[2025-09-26 11:28:17 INFO] [chaosk6_actions:136] ✅ Obtained login_token (JWT): eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0aW1lc3RhbXAiOiIxNzU4ODg2MDk3IiwidHRsIjoiMzYwMCIsInVzZXJfaWQiOiI0MDA0Njk5MjM2MjAwOTUxODA4IiwidXNlcm5hbWUiOiJqYWdhbiJ9.hkfb-O7sw1PqGSY5Rp5wkfixZfNbD3DgDLuhwFRH228
+[36m[2025-09-26 11:28:17 DEBUG] [chaosk6_actions:24] Running command: k6 run --summary-export k6_continuous_summary.json /opt/airflow/src/pod/scripts/continuous-multi-endpoint.js
+[36m[2025-09-26 11:35:24 DEBUG] [__init__:101] ###############################################################################
+[36m[2025-09-26 11:35:24 DEBUG] [__init__:102] Running command 'run'
+[36m[2025-09-26 11:35:24 DEBUG] [__init__:106] Using settings file '/root/.chaostoolkit/settings.yaml'
+[36m[2025-09-26 11:35:25 DEBUG] [settings:31] The Chaos Toolkit settings file could not be found at '/root/.chaostoolkit/settings.yaml'.
+[36m[2025-09-26 11:35:25 DEBUG] [__init__:472] No controls to apply on 'loader'
+[36m[2025-09-26 11:35:25 DEBUG] [__init__:472] No controls to apply on 'loader'
+[36m[2025-09-26 11:35:25 DEBUG] [caching:24] Building activity cache...
+[36m[2025-09-26 11:35:25 DEBUG] [caching:35] Cached 1 activities
+[32m[2025-09-26 11:35:25 INFO] [experiment:59] Validating the experiment's syntax
+[36m[2025-09-26 11:35:25 DEBUG] [configuration:64] Loading configuration...
+[36m[2025-09-26 11:35:25 DEBUG] [secret:79] Loading secrets...
+[36m[2025-09-26 11:35:25 DEBUG] [secret:104] Done loading secrets
+[32m[2025-09-26 11:35:25 INFO] [experiment:112] Experiment looks valid
+[36m[2025-09-26 11:35:25 DEBUG] [caching:42] Clearing activities cache
+[36m[2025-09-26 11:35:25 DEBUG] [run:224] Runtime strategies: hypothesis - default / rollbacks - default
+[36m[2025-09-26 11:35:25 DEBUG] [caching:24] Building activity cache...
+[36m[2025-09-26 11:35:25 DEBUG] [caching:35] Cached 1 activities
+[36m[2025-09-26 11:35:25 DEBUG] [configuration:64] Loading configuration...
+[36m[2025-09-26 11:35:25 DEBUG] [secret:79] Loading secrets...
+[36m[2025-09-26 11:35:25 DEBUG] [secret:104] Done loading secrets
+[36m[2025-09-26 11:35:25 DEBUG] [configuration:161] Loading dynamic configuration...
+[32m[2025-09-26 11:35:25 INFO] [run:440] Running experiment: Continuous Load Test - POST Compose & GET Timeline APIs
+[36m[2025-09-26 11:35:25 DEBUG] [__init__:67] Initializing controls
+[32m[2025-09-26 11:35:25 INFO] [run:471] Steady-state strategy: default
+[32m[2025-09-26 11:35:25 INFO] [run:477] Rollbacks strategy: default
+[32m[2025-09-26 11:35:25 INFO] [run:485] No steady state hypothesis defined. That's ok, just exploring.
+[36m[2025-09-26 11:35:25 DEBUG] [__init__:472] No controls to apply on 'experiment'
+[32m[2025-09-26 11:35:25 INFO] [run:778] Playing your experiment's method now...
+[36m[2025-09-26 11:35:25 DEBUG] [__init__:472] No controls to apply on 'method'
+[36m[2025-09-26 11:35:25 DEBUG] [__init__:472] No controls to apply on 'activity'
+[32m[2025-09-26 11:35:25 INFO] [activity:232] Action: Continuous multi-endpoint load test
+[36m[2025-09-26 11:35:25 DEBUG] [python:33] Activity 'Continuous multi-endpoint load test' loaded from '/opt/airflow/src/pod/chaosk6_actions.py'
+[32m[2025-09-26 11:35:25 INFO] [chaosk6_actions:136] ✅ Obtained login_token (JWT): eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0aW1lc3RhbXAiOiIxNzU4ODg2NTI1IiwidHRsIjoiMzYwMCIsInVzZXJfaWQiOiI0MDA0Njk5MjM2MjAwOTUxODA4IiwidXNlcm5hbWUiOiJqYWdhbiJ9.R6aaa5nwua9YXapBUY_7agHhvyvA7KcHNitAd_S04pY
+[36m[2025-09-26 11:35:25 DEBUG] [chaosk6_actions:24] Running command: k6 run --summary-export k6_continuous_summary.json /opt/airflow/src/pod/scripts/continuous-multi-endpoint.js
+[36m[2025-09-26 11:37:26 DEBUG] [__init__:101] ###############################################################################
+[36m[2025-09-26 11:37:26 DEBUG] [__init__:102] Running command 'run'
+[36m[2025-09-26 11:37:26 DEBUG] [__init__:106] Using settings file '/root/.chaostoolkit/settings.yaml'
+[36m[2025-09-26 11:37:26 DEBUG] [settings:31] The Chaos Toolkit settings file could not be found at '/root/.chaostoolkit/settings.yaml'.
+[36m[2025-09-26 11:37:26 DEBUG] [__init__:472] No controls to apply on 'loader'
+[36m[2025-09-26 11:37:26 DEBUG] [__init__:472] No controls to apply on 'loader'
+[36m[2025-09-26 11:37:26 DEBUG] [caching:24] Building activity cache...
+[36m[2025-09-26 11:37:26 DEBUG] [caching:35] Cached 1 activities
+[32m[2025-09-26 11:37:26 INFO] [experiment:59] Validating the experiment's syntax
+[36m[2025-09-26 11:37:26 DEBUG] [configuration:64] Loading configuration...
+[36m[2025-09-26 11:37:26 DEBUG] [secret:79] Loading secrets...
+[36m[2025-09-26 11:37:26 DEBUG] [secret:104] Done loading secrets
+[32m[2025-09-26 11:37:26 INFO] [experiment:112] Experiment looks valid
+[36m[2025-09-26 11:37:26 DEBUG] [caching:42] Clearing activities cache
+[36m[2025-09-26 11:37:26 DEBUG] [run:224] Runtime strategies: hypothesis - default / rollbacks - default
+[36m[2025-09-26 11:37:26 DEBUG] [caching:24] Building activity cache...
+[36m[2025-09-26 11:37:26 DEBUG] [caching:35] Cached 1 activities
+[36m[2025-09-26 11:37:26 DEBUG] [configuration:64] Loading configuration...
+[36m[2025-09-26 11:37:26 DEBUG] [secret:79] Loading secrets...
+[36m[2025-09-26 11:37:26 DEBUG] [secret:104] Done loading secrets
+[36m[2025-09-26 11:37:26 DEBUG] [configuration:161] Loading dynamic configuration...
+[32m[2025-09-26 11:37:26 INFO] [run:440] Running experiment: Continuous Load Test - POST Compose & GET Timeline APIs
+[36m[2025-09-26 11:37:26 DEBUG] [__init__:67] Initializing controls
+[32m[2025-09-26 11:37:26 INFO] [run:471] Steady-state strategy: default
+[32m[2025-09-26 11:37:26 INFO] [run:477] Rollbacks strategy: default
+[32m[2025-09-26 11:37:26 INFO] [run:485] No steady state hypothesis defined. That's ok, just exploring.
+[36m[2025-09-26 11:37:26 DEBUG] [__init__:472] No controls to apply on 'experiment'
+[32m[2025-09-26 11:37:26 INFO] [run:778] Playing your experiment's method now...
+[36m[2025-09-26 11:37:26 DEBUG] [__init__:472] No controls to apply on 'method'
+[36m[2025-09-26 11:37:26 DEBUG] [__init__:472] No controls to apply on 'activity'
+[32m[2025-09-26 11:37:26 INFO] [activity:232] Action: Continuous multi-endpoint load test
+[36m[2025-09-26 11:37:26 DEBUG] [python:33] Activity 'Continuous multi-endpoint load test' loaded from '/opt/airflow/src/pod/chaosk6_actions.py'
+[32m[2025-09-26 11:37:27 INFO] [chaosk6_actions:136] ✅ Obtained login_token (JWT): eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0aW1lc3RhbXAiOiIxNzU4ODg2NjQ3IiwidHRsIjoiMzYwMCIsInVzZXJfaWQiOiI0MDA0Njk5MjM2MjAwOTUxODA4IiwidXNlcm5hbWUiOiJqYWdhbiJ9.iDM1GL3gDh4sWiwCMxAH1fp5oRIhiRQo3uWCmgm1fx4
+[36m[2025-09-26 11:37:27 DEBUG] [chaosk6_actions:24] Running command: k6 run --summary-export k6_continuous_summary.json /opt/airflow/src/pod/scripts/continuous-multi-endpoint.js
+[36m[2025-09-26 11:43:06 DEBUG] [__init__:101] ###############################################################################
+[36m[2025-09-26 11:43:06 DEBUG] [__init__:102] Running command 'run'
+[36m[2025-09-26 11:43:06 DEBUG] [__init__:106] Using settings file '/root/.chaostoolkit/settings.yaml'
+[36m[2025-09-26 11:43:06 DEBUG] [settings:31] The Chaos Toolkit settings file could not be found at '/root/.chaostoolkit/settings.yaml'.
+[36m[2025-09-26 11:43:06 DEBUG] [__init__:472] No controls to apply on 'loader'
+[36m[2025-09-26 11:43:06 DEBUG] [__init__:472] No controls to apply on 'loader'
+[36m[2025-09-26 11:43:06 DEBUG] [caching:24] Building activity cache...
+[36m[2025-09-26 11:43:06 DEBUG] [caching:35] Cached 1 activities
+[32m[2025-09-26 11:43:06 INFO] [experiment:59] Validating the experiment's syntax
+[36m[2025-09-26 11:43:06 DEBUG] [configuration:64] Loading configuration...
+[36m[2025-09-26 11:43:06 DEBUG] [secret:79] Loading secrets...
+[36m[2025-09-26 11:43:06 DEBUG] [secret:104] Done loading secrets
+[32m[2025-09-26 11:43:07 INFO] [experiment:112] Experiment looks valid
+[36m[2025-09-26 11:43:07 DEBUG] [caching:42] Clearing activities cache
+[36m[2025-09-26 11:43:07 DEBUG] [run:224] Runtime strategies: hypothesis - default / rollbacks - default
+[36m[2025-09-26 11:43:07 DEBUG] [caching:24] Building activity cache...
+[36m[2025-09-26 11:43:07 DEBUG] [caching:35] Cached 1 activities
+[36m[2025-09-26 11:43:07 DEBUG] [configuration:64] Loading configuration...
+[36m[2025-09-26 11:43:07 DEBUG] [secret:79] Loading secrets...
+[36m[2025-09-26 11:43:07 DEBUG] [secret:104] Done loading secrets
+[36m[2025-09-26 11:43:07 DEBUG] [configuration:161] Loading dynamic configuration...
+[32m[2025-09-26 11:43:07 INFO] [run:440] Running experiment: Continuous Load Test - POST Compose & GET Timeline APIs
+[36m[2025-09-26 11:43:07 DEBUG] [__init__:67] Initializing controls
+[32m[2025-09-26 11:43:07 INFO] [run:471] Steady-state strategy: default
+[32m[2025-09-26 11:43:07 INFO] [run:477] Rollbacks strategy: default
+[32m[2025-09-26 11:43:07 INFO] [run:485] No steady state hypothesis defined. That's ok, just exploring.
+[36m[2025-09-26 11:43:07 DEBUG] [__init__:472] No controls to apply on 'experiment'
+[32m[2025-09-26 11:43:07 INFO] [run:778] Playing your experiment's method now...
+[36m[2025-09-26 11:43:07 DEBUG] [__init__:472] No controls to apply on 'method'
+[36m[2025-09-26 11:43:07 DEBUG] [__init__:472] No controls to apply on 'activity'
+[32m[2025-09-26 11:43:07 INFO] [activity:232] Action: Continuous multi-endpoint load test
+[36m[2025-09-26 11:43:07 DEBUG] [python:33] Activity 'Continuous multi-endpoint load test' loaded from '/opt/airflow/src/pod/chaosk6_actions.py'
+[32m[2025-09-26 11:43:07 INFO] [chaosk6_actions:136] ✅ Obtained login_token (JWT): eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0aW1lc3RhbXAiOiIxNzU4ODg2OTg3IiwidHRsIjoiMzYwMCIsInVzZXJfaWQiOiI0MDA0Njk5MjM2MjAwOTUxODA4IiwidXNlcm5hbWUiOiJqYWdhbiJ9.ImBHsxkFSnTrzE37OesHT4Kprl6kg-FgNCI2uQXqdKY
+[36m[2025-09-26 11:43:07 DEBUG] [chaosk6_actions:24] Running command: k6 run --summary-export k6_continuous_summary.json /opt/airflow/src/pod/scripts/continuous-multi-endpoint.js
+[36m[2025-09-26 12:16:04 DEBUG] [__init__:101] ###############################################################################
+[36m[2025-09-26 12:16:04 DEBUG] [__init__:102] Running command 'run'
+[36m[2025-09-26 12:16:04 DEBUG] [__init__:106] Using settings file '/root/.chaostoolkit/settings.yaml'
+[36m[2025-09-26 12:16:05 DEBUG] [settings:31] The Chaos Toolkit settings file could not be found at '/root/.chaostoolkit/settings.yaml'.
+[36m[2025-09-26 12:16:05 DEBUG] [__init__:472] No controls to apply on 'loader'
+[36m[2025-09-26 12:16:05 DEBUG] [__init__:472] No controls to apply on 'loader'
+[36m[2025-09-26 12:16:05 DEBUG] [caching:24] Building activity cache...
+[36m[2025-09-26 12:16:05 DEBUG] [caching:35] Cached 1 activities
+[32m[2025-09-26 12:16:05 INFO] [experiment:59] Validating the experiment's syntax
+[36m[2025-09-26 12:16:05 DEBUG] [configuration:64] Loading configuration...
+[36m[2025-09-26 12:16:05 DEBUG] [secret:79] Loading secrets...
+[36m[2025-09-26 12:16:05 DEBUG] [secret:104] Done loading secrets
+[32m[2025-09-26 12:16:05 INFO] [experiment:112] Experiment looks valid
+[36m[2025-09-26 12:16:05 DEBUG] [caching:42] Clearing activities cache
+[36m[2025-09-26 12:16:05 DEBUG] [run:224] Runtime strategies: hypothesis - default / rollbacks - default
+[36m[2025-09-26 12:16:05 DEBUG] [caching:24] Building activity cache...
+[36m[2025-09-26 12:16:05 DEBUG] [caching:35] Cached 1 activities
+[36m[2025-09-26 12:16:05 DEBUG] [configuration:64] Loading configuration...
+[36m[2025-09-26 12:16:05 DEBUG] [secret:79] Loading secrets...
+[36m[2025-09-26 12:16:05 DEBUG] [secret:104] Done loading secrets
+[36m[2025-09-26 12:16:05 DEBUG] [configuration:161] Loading dynamic configuration...
+[32m[2025-09-26 12:16:05 INFO] [run:440] Running experiment: Continuous Load Test - POST Compose & GET Timeline APIs
+[36m[2025-09-26 12:16:05 DEBUG] [__init__:67] Initializing controls
+[32m[2025-09-26 12:16:05 INFO] [run:471] Steady-state strategy: default
+[32m[2025-09-26 12:16:05 INFO] [run:477] Rollbacks strategy: default
+[32m[2025-09-26 12:16:05 INFO] [run:485] No steady state hypothesis defined. That's ok, just exploring.
+[36m[2025-09-26 12:16:05 DEBUG] [__init__:472] No controls to apply on 'experiment'
+[32m[2025-09-26 12:16:05 INFO] [run:778] Playing your experiment's method now...
+[36m[2025-09-26 12:16:05 DEBUG] [__init__:472] No controls to apply on 'method'
+[36m[2025-09-26 12:16:05 DEBUG] [__init__:472] No controls to apply on 'activity'
+[32m[2025-09-26 12:16:05 INFO] [activity:232] Action: Continuous multi-endpoint load test
+[36m[2025-09-26 12:16:05 DEBUG] [python:33] Activity 'Continuous multi-endpoint load test' loaded from '/opt/airflow/src/pod/chaosk6_actions.py'
+[32m[2025-09-26 12:16:06 INFO] [chaosk6_actions:136] ✅ Obtained login_token (JWT): eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0aW1lc3RhbXAiOiIxNzU4ODg4OTY2IiwidHRsIjoiMzYwMCIsInVzZXJfaWQiOiI0MDA0Njk5MjM2MjAwOTUxODA4IiwidXNlcm5hbWUiOiJqYWdhbiJ9.KuUZZckJn2v5QTdpg-Mc15osA8IIyGqnK6wp9F5M2Fg
+[36m[2025-09-26 12:16:06 DEBUG] [chaosk6_actions:24] Running command: k6 run --summary-export k6_continuous_summary.json /opt/airflow/src/pod/scripts/continuous-multi-endpoint.js
+[36m[2025-09-26 12:26:55 DEBUG] [__init__:101] ###############################################################################
+[36m[2025-09-26 12:26:55 DEBUG] [__init__:102] Running command 'run'
+[36m[2025-09-26 12:26:55 DEBUG] [__init__:106] Using settings file '/root/.chaostoolkit/settings.yaml'
+[36m[2025-09-26 12:26:56 DEBUG] [settings:31] The Chaos Toolkit settings file could not be found at '/root/.chaostoolkit/settings.yaml'.
+[36m[2025-09-26 12:26:56 DEBUG] [__init__:472] No controls to apply on 'loader'
+[36m[2025-09-26 12:26:56 DEBUG] [__init__:472] No controls to apply on 'loader'
+[36m[2025-09-26 12:26:56 DEBUG] [caching:24] Building activity cache...
+[36m[2025-09-26 12:26:56 DEBUG] [caching:35] Cached 1 activities
+[32m[2025-09-26 12:26:56 INFO] [experiment:59] Validating the experiment's syntax
+[36m[2025-09-26 12:26:56 DEBUG] [configuration:64] Loading configuration...
+[36m[2025-09-26 12:26:56 DEBUG] [secret:79] Loading secrets...
+[36m[2025-09-26 12:26:56 DEBUG] [secret:104] Done loading secrets
+[32m[2025-09-26 12:26:56 INFO] [experiment:112] Experiment looks valid
+[36m[2025-09-26 12:26:56 DEBUG] [caching:42] Clearing activities cache
+[36m[2025-09-26 12:26:56 DEBUG] [run:224] Runtime strategies: hypothesis - default / rollbacks - default
+[36m[2025-09-26 12:26:56 DEBUG] [caching:24] Building activity cache...
+[36m[2025-09-26 12:26:56 DEBUG] [caching:35] Cached 1 activities
+[36m[2025-09-26 12:26:56 DEBUG] [configuration:64] Loading configuration...
+[36m[2025-09-26 12:26:56 DEBUG] [secret:79] Loading secrets...
+[36m[2025-09-26 12:26:56 DEBUG] [secret:104] Done loading secrets
+[36m[2025-09-26 12:26:56 DEBUG] [configuration:161] Loading dynamic configuration...
+[32m[2025-09-26 12:26:56 INFO] [run:440] Running experiment: Local Redis Memory Stress Test
+[36m[2025-09-26 12:26:56 DEBUG] [__init__:67] Initializing controls
+[32m[2025-09-26 12:26:56 INFO] [run:471] Steady-state strategy: default
+[32m[2025-09-26 12:26:56 INFO] [run:477] Rollbacks strategy: default
+[32m[2025-09-26 12:26:56 INFO] [run:485] No steady state hypothesis defined. That's ok, just exploring.
+[36m[2025-09-26 12:26:56 DEBUG] [__init__:472] No controls to apply on 'experiment'
+[32m[2025-09-26 12:26:56 INFO] [run:778] Playing your experiment's method now...
+[36m[2025-09-26 12:26:56 DEBUG] [__init__:472] No controls to apply on 'method'
+[36m[2025-09-26 12:26:56 DEBUG] [__init__:472] No controls to apply on 'activity'
+[32m[2025-09-26 12:26:56 INFO] [activity:232] Action: redis-memory-stress-complete
+[36m[2025-09-26 12:26:56 DEBUG] [python:33] Activity 'redis-memory-stress-complete' loaded from '/opt/airflow/src/pod/redis_config_faults.py'
+[36m[2025-09-26 12:29:09 DEBUG] [activity:317] Activity failed
+    Traceback (most recent call last):
+      File "/home/airflow/.local/lib/python3.11/site-packages/redis/connection.py", line 277, in connect
+        sock = self.retry.call_with_retry(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+      File "/home/airflow/.local/lib/python3.11/site-packages/redis/retry.py", line 67, in call_with_retry
+        raise error
+      File "/home/airflow/.local/lib/python3.11/site-packages/redis/retry.py", line 62, in call_with_retry
+        return do()
+               ^^^^
+      File "/home/airflow/.local/lib/python3.11/site-packages/redis/connection.py", line 278, in <lambda>
+        lambda: self._connect(), lambda error: self.disconnect(error)
+                ^^^^^^^^^^^^^^^
+      File "/home/airflow/.local/lib/python3.11/site-packages/redis/connection.py", line 639, in _connect
+        raise err
+      File "/home/airflow/.local/lib/python3.11/site-packages/redis/connection.py", line 627, in _connect
+        sock.connect(socket_address)
+    TimeoutError: [Errno 110] Connection timed out
+    
+    During handling of the above exception, another exception occurred:
+    
+    Traceback (most recent call last):
+      File "/home/airflow/.local/lib/python3.11/site-packages/chaoslib/provider/python.py", line 56, in run_python_activity
+        return func(**arguments)
+               ^^^^^^^^^^^^^^^^^
+      File "/opt/airflow/src/pod/redis_config_faults.py", line 13, in redis_memory_stress_test
+        client.config_set("maxmemory", f"{limit_in_kb}kb")
+      File "/home/airflow/.local/lib/python3.11/site-packages/redis/commands/core.py", line 860, in config_set
+        return self.execute_command("CONFIG SET", name, value, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+      File "/home/airflow/.local/lib/python3.11/site-packages/redis/client.py", line 545, in execute_command
+        conn = self.connection or pool.get_connection(command_name, **options)
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+      File "/home/airflow/.local/lib/python3.11/site-packages/redis/connection.py", line 1074, in get_connection
+        connection.connect()
+      File "/home/airflow/.local/lib/python3.11/site-packages/redis/connection.py", line 281, in connect
+        raise TimeoutError("Timeout connecting to server")
+    redis.exceptions.TimeoutError: Timeout connecting to server
+    
+    During handling of the above exception, another exception occurred:
+    
+    Traceback (most recent call last):
+      File "/home/airflow/.local/lib/python3.11/site-packages/chaoslib/activity.py", line 310, in run_activity
+        result = run_python_activity(activity, configuration, secrets)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+      File "/home/airflow/.local/lib/python3.11/site-packages/chaoslib/provider/python.py", line 58, in run_python_activity
+        raise ActivityFailed(
+      File "/home/airflow/.local/lib/python3.11/site-packages/chaoslib/provider/python.py", line 56, in run_python_activity
+        return func(**arguments)
+               ^^^^^^^^^^^^^^^^^
+      File "/opt/airflow/src/pod/redis_config_faults.py", line 13, in redis_memory_stress_test
+        client.config_set("maxmemory", f"{limit_in_kb}kb")
+      File "/home/airflow/.local/lib/python3.11/site-packages/redis/commands/core.py", line 860, in config_set
+        return self.execute_command("CONFIG SET", name, value, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+      File "/home/airflow/.local/lib/python3.11/site-packages/redis/client.py", line 545, in execute_command
+        conn = self.connection or pool.get_connection(command_name, **options)
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+      File "/home/airflow/.local/lib/python3.11/site-packages/redis/connection.py", line 1074, in get_connection
+        connection.connect()
+      File "/home/airflow/.local/lib/python3.11/site-packages/redis/connection.py", line 281, in connect
+        raise TimeoutError("Timeout connecting to server")
+    chaoslib.exceptions.ActivityFailed: redis.exceptions.TimeoutError: Timeout connecting to server
+[31m[2025-09-26 12:29:09 ERROR] [activity:268]   => failed: redis.exceptions.TimeoutError: Timeout connecting to server
+[36m[2025-09-26 12:29:09 DEBUG] [__init__:472] No controls to apply on 'activity'
+[36m[2025-09-26 12:29:09 DEBUG] [__init__:472] No controls to apply on 'method'
+[32m[2025-09-26 12:29:09 INFO] [run:1072] Let's rollback...
+[36m[2025-09-26 12:29:09 DEBUG] [__init__:472] No controls to apply on 'rollback'
+[32m[2025-09-26 12:29:09 INFO] [rollback:36] Rollback: reset-redis-memory
+[36m[2025-09-26 12:29:09 DEBUG] [__init__:472] No controls to apply on 'activity'
+[32m[2025-09-26 12:29:09 INFO] [activity:232] Action: reset-redis-memory
+[36m[2025-09-26 12:29:09 DEBUG] [python:33] Activity 'reset-redis-memory' loaded from '/opt/airflow/src/pod/redis_config_faults.py'
+[36m[2025-09-26 12:31:22 DEBUG] [activity:317] Activity failed
+    Traceback (most recent call last):
+      File "/home/airflow/.local/lib/python3.11/site-packages/redis/connection.py", line 277, in connect
+        sock = self.retry.call_with_retry(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+      File "/home/airflow/.local/lib/python3.11/site-packages/redis/retry.py", line 67, in call_with_retry
+        raise error
+      File "/home/airflow/.local/lib/python3.11/site-packages/redis/retry.py", line 62, in call_with_retry
+        return do()
+               ^^^^
+      File "/home/airflow/.local/lib/python3.11/site-packages/redis/connection.py", line 278, in <lambda>
+        lambda: self._connect(), lambda error: self.disconnect(error)
+                ^^^^^^^^^^^^^^^
+      File "/home/airflow/.local/lib/python3.11/site-packages/redis/connection.py", line 639, in _connect
+        raise err
+      File "/home/airflow/.local/lib/python3.11/site-packages/redis/connection.py", line 627, in _connect
+        sock.connect(socket_address)
+    TimeoutError: [Errno 110] Connection timed out
+    
+    During handling of the above exception, another exception occurred:
+    
+    Traceback (most recent call last):
+      File "/home/airflow/.local/lib/python3.11/site-packages/chaoslib/provider/python.py", line 56, in run_python_activity
+        return func(**arguments)
+               ^^^^^^^^^^^^^^^^^
+      File "/opt/airflow/src/pod/redis_config_faults.py", line 40, in reset_maxmemory
+        client.config_set("maxmemory", 0)  # 0 = no limit
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+      File "/home/airflow/.local/lib/python3.11/site-packages/redis/commands/core.py", line 860, in config_set
+        return self.execute_command("CONFIG SET", name, value, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+      File "/home/airflow/.local/lib/python3.11/site-packages/redis/client.py", line 545, in execute_command
+        conn = self.connection or pool.get_connection(command_name, **options)
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+      File "/home/airflow/.local/lib/python3.11/site-packages/redis/connection.py", line 1074, in get_connection
+        connection.connect()
+      File "/home/airflow/.local/lib/python3.11/site-packages/redis/connection.py", line 281, in connect
+        raise TimeoutError("Timeout connecting to server")
+    redis.exceptions.TimeoutError: Timeout connecting to server
+    
+    During handling of the above exception, another exception occurred:
+    
+    Traceback (most recent call last):
+      File "/home/airflow/.local/lib/python3.11/site-packages/chaoslib/activity.py", line 310, in run_activity
+        result = run_python_activity(activity, configuration, secrets)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+      File "/home/airflow/.local/lib/python3.11/site-packages/chaoslib/provider/python.py", line 58, in run_python_activity
+        raise ActivityFailed(
+      File "/home/airflow/.local/lib/python3.11/site-packages/chaoslib/provider/python.py", line 56, in run_python_activity
+        return func(**arguments)
+               ^^^^^^^^^^^^^^^^^
+      File "/opt/airflow/src/pod/redis_config_faults.py", line 40, in reset_maxmemory
+        client.config_set("maxmemory", 0)  # 0 = no limit
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+      File "/home/airflow/.local/lib/python3.11/site-packages/redis/commands/core.py", line 860, in config_set
+        return self.execute_command("CONFIG SET", name, value, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+      File "/home/airflow/.local/lib/python3.11/site-packages/redis/client.py", line 545, in execute_command
+        conn = self.connection or pool.get_connection(command_name, **options)
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+      File "/home/airflow/.local/lib/python3.11/site-packages/redis/connection.py", line 1074, in get_connection
+        connection.connect()
+      File "/home/airflow/.local/lib/python3.11/site-packages/redis/connection.py", line 281, in connect
+        raise TimeoutError("Timeout connecting to server")
+    chaoslib.exceptions.ActivityFailed: redis.exceptions.TimeoutError: Timeout connecting to server
+[31m[2025-09-26 12:31:22 ERROR] [activity:268]   => failed: redis.exceptions.TimeoutError: Timeout connecting to server
+[36m[2025-09-26 12:31:22 DEBUG] [__init__:472] No controls to apply on 'activity'
+[36m[2025-09-26 12:31:22 DEBUG] [__init__:472] No controls to apply on 'rollback'
+[32m[2025-09-26 12:31:22 INFO] [run:598] Experiment ended with status: completed
+[36m[2025-09-26 12:31:22 DEBUG] [__init__:472] No controls to apply on 'experiment'
+[36m[2025-09-26 12:31:22 DEBUG] [__init__:106] Cleaning up controls
+[36m[2025-09-26 12:31:22 DEBUG] [caching:42] Clearing activities cache
+[36m[2025-09-26 12:32:29 DEBUG] [__init__:101] ###############################################################################
+[36m[2025-09-26 12:32:29 DEBUG] [__init__:102] Running command 'run'
+[36m[2025-09-26 12:32:29 DEBUG] [__init__:106] Using settings file '/root/.chaostoolkit/settings.yaml'
+[36m[2025-09-26 12:32:29 DEBUG] [settings:31] The Chaos Toolkit settings file could not be found at '/root/.chaostoolkit/settings.yaml'.
+[36m[2025-09-26 12:32:29 DEBUG] [__init__:472] No controls to apply on 'loader'
+[36m[2025-09-26 12:32:29 DEBUG] [__init__:472] No controls to apply on 'loader'
+[36m[2025-09-26 12:32:29 DEBUG] [caching:24] Building activity cache...
+[36m[2025-09-26 12:32:29 DEBUG] [caching:35] Cached 2 activities
+[32m[2025-09-26 12:32:29 INFO] [experiment:59] Validating the experiment's syntax
+[36m[2025-09-26 12:32:29 DEBUG] [configuration:64] Loading configuration...
+[36m[2025-09-26 12:32:29 DEBUG] [secret:79] Loading secrets...
+[36m[2025-09-26 12:32:29 DEBUG] [secret:104] Done loading secrets
+[32m[2025-09-26 12:32:29 INFO] [experiment:112] Experiment looks valid
+[36m[2025-09-26 12:32:29 DEBUG] [caching:42] Clearing activities cache
+[36m[2025-09-26 12:32:29 DEBUG] [run:224] Runtime strategies: hypothesis - default / rollbacks - default
+[36m[2025-09-26 12:32:29 DEBUG] [caching:24] Building activity cache...
+[36m[2025-09-26 12:32:29 DEBUG] [caching:35] Cached 2 activities
+[36m[2025-09-26 12:32:29 DEBUG] [configuration:64] Loading configuration...
+[36m[2025-09-26 12:32:29 DEBUG] [secret:79] Loading secrets...
+[36m[2025-09-26 12:32:29 DEBUG] [secret:104] Done loading secrets
+[36m[2025-09-26 12:32:29 DEBUG] [configuration:161] Loading dynamic configuration...
+[32m[2025-09-26 12:32:29 INFO] [run:440] Running experiment: Cordon-Pod Restart Combined Experiment
+[36m[2025-09-26 12:32:29 DEBUG] [__init__:67] Initializing controls
+[32m[2025-09-26 12:32:29 INFO] [run:471] Steady-state strategy: default
+[32m[2025-09-26 12:32:29 INFO] [run:477] Rollbacks strategy: default
+[32m[2025-09-26 12:32:29 INFO] [run:485] No steady state hypothesis defined. That's ok, just exploring.
+[36m[2025-09-26 12:32:29 DEBUG] [__init__:472] No controls to apply on 'experiment'
+[32m[2025-09-26 12:32:29 INFO] [run:778] Playing your experiment's method now...
+[36m[2025-09-26 12:32:29 DEBUG] [__init__:472] No controls to apply on 'method'
+[36m[2025-09-26 12:32:29 DEBUG] [__init__:472] No controls to apply on 'activity'
+[32m[2025-09-26 12:32:29 INFO] [activity:232] Action: cordon-nodes
+[36m[2025-09-26 12:32:29 DEBUG] [python:33] Activity 'cordon-nodes' loaded from '/home/airflow/.local/lib/python3.11/site-packages/chaosk8s/node/actions.py'
+[36m[2025-09-26 12:32:29 DEBUG] [__init__:79] Using Kubernetes context 'default' from config '/root/.kube/config'
+[36m[2025-09-26 12:32:29 DEBUG] [__init__:79] Using Kubernetes context 'default' from config '/root/.kube/config'
+[36m[2025-09-26 12:32:29 DEBUG] [actions:62] Filtering nodes by label agentpool=agentpool
+[36m[2025-09-26 12:32:32 DEBUG] [actions:64] Found 4 nodes
+[36m[2025-09-26 12:32:32 DEBUG] [actions:100] Picked nodes 'aks-agentpool-52243722-vmss000000, aks-agentpool-52243722-vmss000001, aks-agentpool-52243722-vmss000004, aks-agentpool-52243722-vmss000005'
+[36m[2025-09-26 12:32:36 DEBUG] [activity:260]   => succeeded with '['aks-agentpool-52243722-vmss000000', 'aks-agentpool-52243722-vmss000001', 'aks-agentpool-52243722-vmss000004', 'aks-agentpool-52243722-vmss000005']'
+[36m[2025-09-26 12:32:36 DEBUG] [__init__:472] No controls to apply on 'activity'
+[36m[2025-09-26 12:32:36 DEBUG] [__init__:472] No controls to apply on 'activity'
+[32m[2025-09-26 12:32:36 INFO] [activity:232] Action: continuous-pod-restart-during-cordon
+[36m[2025-09-26 12:32:36 DEBUG] [python:33] Activity 'continuous-pod-restart-during-cordon' loaded from '/opt/airflow/src/pod/pod_restart.py'
+[36m[2025-09-26 12:32:36 DEBUG] [__init__:79] Using Kubernetes context 'default' from config '/root/.kube/config'
+[36m[2025-09-26 12:32:58 DEBUG] [__init__:79] Using Kubernetes context 'default' from config '/root/.kube/config'
+[36m[2025-09-26 12:33:24 DEBUG] [__init__:79] Using Kubernetes context 'default' from config '/root/.kube/config'
+[36m[2025-09-26 12:33:52 DEBUG] [__init__:79] Using Kubernetes context 'default' from config '/root/.kube/config'
+[36m[2025-09-26 12:34:15 DEBUG] [__init__:79] Using Kubernetes context 'default' from config '/root/.kube/config'
+[36m[2025-09-26 12:34:40 DEBUG] [__init__:79] Using Kubernetes context 'default' from config '/root/.kube/config'
+[36m[2025-09-26 12:35:06 DEBUG] [__init__:79] Using Kubernetes context 'default' from config '/root/.kube/config'
+[36m[2025-09-26 12:35:30 DEBUG] [__init__:79] Using Kubernetes context 'default' from config '/root/.kube/config'
+[36m[2025-09-26 12:35:53 DEBUG] [__init__:79] Using Kubernetes context 'default' from config '/root/.kube/config'
+[36m[2025-09-26 12:36:17 DEBUG] [__init__:79] Using Kubernetes context 'default' from config '/root/.kube/config'
+[36m[2025-09-26 12:36:39 DEBUG] [__init__:79] Using Kubernetes context 'default' from config '/root/.kube/config'
+[36m[2025-09-26 12:37:28 DEBUG] [__init__:79] Using Kubernetes context 'default' from config '/root/.kube/config'
+[36m[2025-09-26 12:38:18 DEBUG] [activity:260]   => succeeded with '{'restart_count': 12, 'duration': 341.93381428718567, 'status': 'completed', 'target': 'app=post-storage-service', 'namespace': 'default'}'
+[36m[2025-09-26 12:38:18 DEBUG] [__init__:472] No controls to apply on 'activity'
+[36m[2025-09-26 12:38:18 DEBUG] [__init__:472] No controls to apply on 'method'
+[32m[2025-09-26 12:38:18 INFO] [run:1072] Let's rollback...
+[36m[2025-09-26 12:38:18 DEBUG] [__init__:472] No controls to apply on 'rollback'
+[32m[2025-09-26 12:38:18 INFO] [rollback:36] Rollback: uncordon-all-nodes
+[36m[2025-09-26 12:38:18 DEBUG] [__init__:472] No controls to apply on 'activity'
+[32m[2025-09-26 12:38:18 INFO] [activity:232] Action: uncordon-all-nodes
+[36m[2025-09-26 12:38:18 DEBUG] [python:33] Activity 'uncordon-all-nodes' loaded from '/home/airflow/.local/lib/python3.11/site-packages/chaosk8s/node/actions.py'
+[36m[2025-09-26 12:38:18 DEBUG] [__init__:79] Using Kubernetes context 'default' from config '/root/.kube/config'
+[36m[2025-09-26 12:38:18 DEBUG] [__init__:79] Using Kubernetes context 'default' from config '/root/.kube/config'
+[36m[2025-09-26 12:38:18 DEBUG] [actions:62] Filtering nodes by label agentpool=agentpool
+[36m[2025-09-26 12:38:22 DEBUG] [actions:64] Found 4 nodes
+[36m[2025-09-26 12:38:22 DEBUG] [actions:100] Picked nodes 'aks-agentpool-52243722-vmss000000, aks-agentpool-52243722-vmss000001, aks-agentpool-52243722-vmss000004, aks-agentpool-52243722-vmss000005'
+[36m[2025-09-26 12:38:29 DEBUG] [activity:260]   => succeeded with '['aks-agentpool-52243722-vmss000000', 'aks-agentpool-52243722-vmss000001', 'aks-agentpool-52243722-vmss000004', 'aks-agentpool-52243722-vmss000005']'
+[36m[2025-09-26 12:38:29 DEBUG] [__init__:472] No controls to apply on 'activity'
+[36m[2025-09-26 12:38:29 DEBUG] [__init__:472] No controls to apply on 'rollback'
+[32m[2025-09-26 12:38:29 INFO] [run:598] Experiment ended with status: completed
+[36m[2025-09-26 12:38:29 DEBUG] [__init__:472] No controls to apply on 'experiment'
+[36m[2025-09-26 12:38:29 DEBUG] [__init__:106] Cleaning up controls
+[36m[2025-09-26 12:38:29 DEBUG] [caching:42] Clearing activities cache
+[36m[2025-09-26 12:46:24 DEBUG] [__init__:101] ###############################################################################
+[36m[2025-09-26 12:46:24 DEBUG] [__init__:102] Running command 'run'
+[36m[2025-09-26 12:46:24 DEBUG] [__init__:106] Using settings file '/root/.chaostoolkit/settings.yaml'
+[36m[2025-09-26 12:46:26 DEBUG] [settings:31] The Chaos Toolkit settings file could not be found at '/root/.chaostoolkit/settings.yaml'.
+[36m[2025-09-26 12:46:26 DEBUG] [__init__:472] No controls to apply on 'loader'
+[36m[2025-09-26 12:46:26 DEBUG] [__init__:472] No controls to apply on 'loader'
+[36m[2025-09-26 12:46:26 DEBUG] [caching:24] Building activity cache...
+[36m[2025-09-26 12:46:26 DEBUG] [caching:35] Cached 2 activities
+[32m[2025-09-26 12:46:26 INFO] [experiment:59] Validating the experiment's syntax
+[36m[2025-09-26 12:46:26 DEBUG] [configuration:64] Loading configuration...
+[36m[2025-09-26 12:46:26 DEBUG] [secret:79] Loading secrets...
+[36m[2025-09-26 12:46:26 DEBUG] [secret:104] Done loading secrets
+[32m[2025-09-26 12:46:26 INFO] [experiment:112] Experiment looks valid
+[36m[2025-09-26 12:46:26 DEBUG] [caching:42] Clearing activities cache
+[36m[2025-09-26 12:46:26 DEBUG] [run:224] Runtime strategies: hypothesis - default / rollbacks - default
+[36m[2025-09-26 12:46:26 DEBUG] [caching:24] Building activity cache...
+[36m[2025-09-26 12:46:26 DEBUG] [caching:35] Cached 2 activities
+[36m[2025-09-26 12:46:26 DEBUG] [configuration:64] Loading configuration...
+[36m[2025-09-26 12:46:26 DEBUG] [secret:79] Loading secrets...
+[36m[2025-09-26 12:46:26 DEBUG] [secret:104] Done loading secrets
+[36m[2025-09-26 12:46:26 DEBUG] [configuration:161] Loading dynamic configuration...
+[32m[2025-09-26 12:46:26 INFO] [run:440] Running experiment: Cordon-Pod Restart Combined Experiment
+[36m[2025-09-26 12:46:26 DEBUG] [__init__:67] Initializing controls
+[32m[2025-09-26 12:46:26 INFO] [run:471] Steady-state strategy: default
+[32m[2025-09-26 12:46:26 INFO] [run:477] Rollbacks strategy: default
+[32m[2025-09-26 12:46:26 INFO] [run:485] No steady state hypothesis defined. That's ok, just exploring.
+[36m[2025-09-26 12:46:26 DEBUG] [__init__:472] No controls to apply on 'experiment'
+[32m[2025-09-26 12:46:26 INFO] [run:778] Playing your experiment's method now...
+[36m[2025-09-26 12:46:26 DEBUG] [__init__:472] No controls to apply on 'method'
+[36m[2025-09-26 12:46:26 DEBUG] [__init__:472] No controls to apply on 'activity'
+[32m[2025-09-26 12:46:26 INFO] [activity:232] Action: cordon-nodes
+[36m[2025-09-26 12:46:26 DEBUG] [python:33] Activity 'cordon-nodes' loaded from '/home/airflow/.local/lib/python3.11/site-packages/chaosk8s/node/actions.py'
+[36m[2025-09-26 12:46:26 DEBUG] [__init__:79] Using Kubernetes context 'default' from config '/root/.kube/config'
+[36m[2025-09-26 12:46:26 DEBUG] [__init__:79] Using Kubernetes context 'default' from config '/root/.kube/config'
+[36m[2025-09-26 12:46:26 DEBUG] [actions:62] Filtering nodes by label agentpool=agentpool
+[36m[2025-09-26 12:46:29 DEBUG] [actions:64] Found 4 nodes
+[36m[2025-09-26 12:46:29 DEBUG] [actions:100] Picked nodes 'aks-agentpool-52243722-vmss000000, aks-agentpool-52243722-vmss000001, aks-agentpool-52243722-vmss000004, aks-agentpool-52243722-vmss000005'
+[36m[2025-09-26 12:46:33 DEBUG] [activity:260]   => succeeded with '['aks-agentpool-52243722-vmss000000', 'aks-agentpool-52243722-vmss000001', 'aks-agentpool-52243722-vmss000004', 'aks-agentpool-52243722-vmss000005']'
+[36m[2025-09-26 12:46:33 DEBUG] [__init__:472] No controls to apply on 'activity'
+[36m[2025-09-26 12:46:33 DEBUG] [__init__:472] No controls to apply on 'activity'
+[32m[2025-09-26 12:46:33 INFO] [activity:232] Action: continuous-pod-restart-during-cordon
+[36m[2025-09-26 12:46:33 DEBUG] [python:33] Activity 'continuous-pod-restart-during-cordon' loaded from '/opt/airflow/src/pod/pod_restart.py'
+[36m[2025-09-26 12:46:33 DEBUG] [__init__:79] Using Kubernetes context 'default' from config '/root/.kube/config'
+[36m[2025-09-26 12:46:55 DEBUG] [__init__:79] Using Kubernetes context 'default' from config '/root/.kube/config'
+[36m[2025-09-26 12:47:17 DEBUG] [__init__:79] Using Kubernetes context 'default' from config '/root/.kube/config'
+[36m[2025-09-26 12:47:39 DEBUG] [__init__:79] Using Kubernetes context 'default' from config '/root/.kube/config'
+[36m[2025-09-26 12:48:02 DEBUG] [__init__:79] Using Kubernetes context 'default' from config '/root/.kube/config'
+[36m[2025-09-26 12:48:24 DEBUG] [__init__:79] Using Kubernetes context 'default' from config '/root/.kube/config'
+[36m[2025-09-26 12:48:48 DEBUG] [__init__:79] Using Kubernetes context 'default' from config '/root/.kube/config'
+[36m[2025-09-26 12:49:10 DEBUG] [__init__:79] Using Kubernetes context 'default' from config '/root/.kube/config'
+[36m[2025-09-26 12:49:32 DEBUG] [__init__:79] Using Kubernetes context 'default' from config '/root/.kube/config'
+[36m[2025-09-26 12:49:54 DEBUG] [__init__:79] Using Kubernetes context 'default' from config '/root/.kube/config'
+[36m[2025-09-26 12:50:15 DEBUG] [__init__:79] Using Kubernetes context 'default' from config '/root/.kube/config'
+[36m[2025-09-26 12:50:37 DEBUG] [__init__:79] Using Kubernetes context 'default' from config '/root/.kube/config'
+[36m[2025-09-26 12:50:59 DEBUG] [__init__:79] Using Kubernetes context 'default' from config '/root/.kube/config'
+[36m[2025-09-26 12:51:21 DEBUG] [__init__:79] Using Kubernetes context 'default' from config '/root/.kube/config'
+[36m[2025-09-26 12:51:23 DEBUG] [activity:260]   => succeeded with '{'restart_count': 14, 'duration': 290.2699794769287, 'status': 'completed', 'target': 'app=post-storage-service', 'namespace': 'default'}'
+[36m[2025-09-26 12:51:23 DEBUG] [__init__:472] No controls to apply on 'activity'
+[36m[2025-09-26 12:51:23 DEBUG] [__init__:472] No controls to apply on 'method'
+[32m[2025-09-26 12:51:23 INFO] [run:1072] Let's rollback...
+[36m[2025-09-26 12:51:23 DEBUG] [__init__:472] No controls to apply on 'rollback'
+[32m[2025-09-26 12:51:23 INFO] [rollback:36] Rollback: uncordon-all-nodes
+[36m[2025-09-26 12:51:23 DEBUG] [__init__:472] No controls to apply on 'activity'
+[32m[2025-09-26 12:51:23 INFO] [activity:232] Action: uncordon-all-nodes
+[36m[2025-09-26 12:51:23 DEBUG] [python:33] Activity 'uncordon-all-nodes' loaded from '/home/airflow/.local/lib/python3.11/site-packages/chaosk8s/node/actions.py'
+[36m[2025-09-26 12:51:23 DEBUG] [__init__:79] Using Kubernetes context 'default' from config '/root/.kube/config'
+[36m[2025-09-26 12:51:23 DEBUG] [__init__:79] Using Kubernetes context 'default' from config '/root/.kube/config'
+[36m[2025-09-26 12:51:23 DEBUG] [actions:62] Filtering nodes by label agentpool=agentpool
+[36m[2025-09-26 12:51:25 DEBUG] [actions:64] Found 4 nodes
+[36m[2025-09-26 12:51:25 DEBUG] [actions:100] Picked nodes 'aks-agentpool-52243722-vmss000000, aks-agentpool-52243722-vmss000001, aks-agentpool-52243722-vmss000004, aks-agentpool-52243722-vmss000005'
+[36m[2025-09-26 12:51:28 DEBUG] [activity:260]   => succeeded with '['aks-agentpool-52243722-vmss000000', 'aks-agentpool-52243722-vmss000001', 'aks-agentpool-52243722-vmss000004', 'aks-agentpool-52243722-vmss000005']'
+[36m[2025-09-26 12:51:28 DEBUG] [__init__:472] No controls to apply on 'activity'
+[36m[2025-09-26 12:51:28 DEBUG] [__init__:472] No controls to apply on 'rollback'
+[32m[2025-09-26 12:51:28 INFO] [run:598] Experiment ended with status: completed
+[36m[2025-09-26 12:51:28 DEBUG] [__init__:472] No controls to apply on 'experiment'
+[36m[2025-09-26 12:51:28 DEBUG] [__init__:106] Cleaning up controls
+[36m[2025-09-26 12:51:28 DEBUG] [caching:42] Clearing activities cache
+[36m[2025-09-26 12:57:54 DEBUG] [__init__:101] ###############################################################################
+[36m[2025-09-26 12:57:54 DEBUG] [__init__:102] Running command 'run'
+[36m[2025-09-26 12:57:54 DEBUG] [__init__:106] Using settings file '/root/.chaostoolkit/settings.yaml'
+[36m[2025-09-26 12:57:56 DEBUG] [settings:31] The Chaos Toolkit settings file could not be found at '/root/.chaostoolkit/settings.yaml'.
+[36m[2025-09-26 12:57:56 DEBUG] [__init__:472] No controls to apply on 'loader'
+[36m[2025-09-26 12:57:56 DEBUG] [__init__:472] No controls to apply on 'loader'
+[36m[2025-09-26 12:57:56 DEBUG] [caching:24] Building activity cache...
+[36m[2025-09-26 12:57:56 DEBUG] [caching:35] Cached 1 activities
+[32m[2025-09-26 12:57:56 INFO] [experiment:59] Validating the experiment's syntax
+[36m[2025-09-26 12:57:56 DEBUG] [configuration:64] Loading configuration...
+[36m[2025-09-26 12:57:56 DEBUG] [secret:79] Loading secrets...
+[36m[2025-09-26 12:57:56 DEBUG] [secret:104] Done loading secrets
+[32m[2025-09-26 12:57:56 INFO] [experiment:112] Experiment looks valid
+[36m[2025-09-26 12:57:56 DEBUG] [caching:42] Clearing activities cache
+[36m[2025-09-26 12:57:56 DEBUG] [run:224] Runtime strategies: hypothesis - default / rollbacks - default
+[36m[2025-09-26 12:57:56 DEBUG] [caching:24] Building activity cache...
+[36m[2025-09-26 12:57:56 DEBUG] [caching:35] Cached 1 activities
+[36m[2025-09-26 12:57:56 DEBUG] [configuration:64] Loading configuration...
+[36m[2025-09-26 12:57:56 DEBUG] [secret:79] Loading secrets...
+[36m[2025-09-26 12:57:56 DEBUG] [secret:104] Done loading secrets
+[36m[2025-09-26 12:57:56 DEBUG] [configuration:161] Loading dynamic configuration...
+[32m[2025-09-26 12:57:56 INFO] [run:440] Running experiment: Continuous Load Test - POST Compose & GET Timeline APIs
+[36m[2025-09-26 12:57:56 DEBUG] [__init__:67] Initializing controls
+[32m[2025-09-26 12:57:56 INFO] [run:471] Steady-state strategy: default
+[32m[2025-09-26 12:57:56 INFO] [run:477] Rollbacks strategy: default
+[32m[2025-09-26 12:57:56 INFO] [run:485] No steady state hypothesis defined. That's ok, just exploring.
+[36m[2025-09-26 12:57:56 DEBUG] [__init__:472] No controls to apply on 'experiment'
+[32m[2025-09-26 12:57:56 INFO] [run:778] Playing your experiment's method now...
+[36m[2025-09-26 12:57:56 DEBUG] [__init__:472] No controls to apply on 'method'
+[36m[2025-09-26 12:57:56 DEBUG] [__init__:472] No controls to apply on 'activity'
+[32m[2025-09-26 12:57:56 INFO] [activity:232] Action: Continuous multi-endpoint load test
+[36m[2025-09-26 12:57:56 DEBUG] [python:33] Activity 'Continuous multi-endpoint load test' loaded from '/opt/airflow/src/pod/chaosk6_actions.py'
+[32m[2025-09-26 12:57:57 INFO] [chaosk6_actions:136] ✅ Obtained login_token (JWT): eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0aW1lc3RhbXAiOiIxNzU4ODkxNDc3IiwidHRsIjoiMzYwMCIsInVzZXJfaWQiOiI0MDA0Njk5MjM2MjAwOTUxODA4IiwidXNlcm5hbWUiOiJqYWdhbiJ9.vA_Gkb11h07n6s-Qlf1aOdpRTNrzfc3W4MIOw6gwHTE
+[36m[2025-09-26 12:57:57 DEBUG] [chaosk6_actions:24] Running command: k6 run --summary-export k6_continuous_summary.json /opt/airflow/src/pod/scripts/continuous-multi-endpoint.js
+[36m[2025-09-26 13:15:49 DEBUG] [__init__:101] ###############################################################################
+[36m[2025-09-26 13:15:49 DEBUG] [__init__:102] Running command 'run'
+[36m[2025-09-26 13:15:49 DEBUG] [__init__:106] Using settings file '/root/.chaostoolkit/settings.yaml'
+[36m[2025-09-26 13:15:49 DEBUG] [settings:31] The Chaos Toolkit settings file could not be found at '/root/.chaostoolkit/settings.yaml'.
+[36m[2025-09-26 13:15:49 DEBUG] [__init__:472] No controls to apply on 'loader'
+[36m[2025-09-26 13:15:49 DEBUG] [__init__:472] No controls to apply on 'loader'
+[36m[2025-09-26 13:15:49 DEBUG] [caching:24] Building activity cache...
+[36m[2025-09-26 13:15:49 DEBUG] [caching:35] Cached 1 activities
+[32m[2025-09-26 13:15:49 INFO] [experiment:59] Validating the experiment's syntax
+[36m[2025-09-26 13:15:49 DEBUG] [configuration:64] Loading configuration...
+[36m[2025-09-26 13:15:49 DEBUG] [secret:79] Loading secrets...
+[36m[2025-09-26 13:15:49 DEBUG] [secret:104] Done loading secrets
+[32m[2025-09-26 13:15:50 INFO] [experiment:112] Experiment looks valid
+[36m[2025-09-26 13:15:50 DEBUG] [caching:42] Clearing activities cache
+[36m[2025-09-26 13:15:50 DEBUG] [run:224] Runtime strategies: hypothesis - default / rollbacks - default
+[36m[2025-09-26 13:15:50 DEBUG] [caching:24] Building activity cache...
+[36m[2025-09-26 13:15:50 DEBUG] [caching:35] Cached 1 activities
+[36m[2025-09-26 13:15:50 DEBUG] [configuration:64] Loading configuration...
+[36m[2025-09-26 13:15:50 DEBUG] [secret:79] Loading secrets...
+[36m[2025-09-26 13:15:50 DEBUG] [secret:104] Done loading secrets
+[36m[2025-09-26 13:15:50 DEBUG] [configuration:161] Loading dynamic configuration...
+[32m[2025-09-26 13:15:50 INFO] [run:440] Running experiment: Continuous Container Restart Experiment
+[36m[2025-09-26 13:15:50 DEBUG] [__init__:67] Initializing controls
+[32m[2025-09-26 13:15:50 INFO] [run:471] Steady-state strategy: default
+[32m[2025-09-26 13:15:50 INFO] [run:477] Rollbacks strategy: default
+[32m[2025-09-26 13:15:50 INFO] [run:485] No steady state hypothesis defined. That's ok, just exploring.
+[36m[2025-09-26 13:15:50 DEBUG] [__init__:472] No controls to apply on 'experiment'
+[32m[2025-09-26 13:15:50 INFO] [run:778] Playing your experiment's method now...
+[36m[2025-09-26 13:15:50 DEBUG] [__init__:472] No controls to apply on 'method'
+[36m[2025-09-26 13:15:50 DEBUG] [__init__:472] No controls to apply on 'activity'
+[32m[2025-09-26 13:15:50 INFO] [activity:232] Action: continuous-container-restart
+[36m[2025-09-26 13:15:50 DEBUG] [python:33] Activity 'continuous-container-restart' loaded from '/opt/airflow/src/pod/container_restart.py'
+[36m[2025-09-26 13:15:50 DEBUG] [__init__:79] Using Kubernetes context 'default' from config '/root/.kube/config'
+[36m[2025-09-26 13:16:08 DEBUG] [__init__:79] Using Kubernetes context 'default' from config '/root/.kube/config'
+[36m[2025-09-26 13:16:33 DEBUG] [__init__:79] Using Kubernetes context 'default' from config '/root/.kube/config'
+[36m[2025-09-26 13:17:13 DEBUG] [__init__:79] Using Kubernetes context 'default' from config '/root/.kube/config'
+[36m[2025-09-26 13:18:16 DEBUG] [__init__:79] Using Kubernetes context 'default' from config '/root/.kube/config'
+[36m[2025-09-26 13:19:30 DEBUG] [__init__:79] Using Kubernetes context 'default' from config '/root/.kube/config'
+[36m[2025-09-26 13:19:44 DEBUG] [__init__:79] Using Kubernetes context 'default' from config '/root/.kube/config'
+[36m[2025-09-26 13:19:58 DEBUG] [__init__:79] Using Kubernetes context 'default' from config '/root/.kube/config'
+[36m[2025-09-26 13:21:16 DEBUG] [__init__:79] Using Kubernetes context 'default' from config '/root/.kube/config'
+[36m[2025-09-26 13:21:31 DEBUG] [__init__:79] Using Kubernetes context 'default' from config '/root/.kube/config'
+[36m[2025-09-26 13:21:48 DEBUG] [__init__:79] Using Kubernetes context 'default' from config '/root/.kube/config'
+[36m[2025-09-26 13:22:02 DEBUG] [__init__:79] Using Kubernetes context 'default' from config '/root/.kube/config'
+[36m[2025-09-26 13:22:17 DEBUG] [__init__:79] Using Kubernetes context 'default' from config '/root/.kube/config'
+[36m[2025-09-26 13:22:25 DEBUG] [activity:260]   => succeeded with '{'restart_cycles': 13, 'total_containers_restarted': 5, 'duration': 395.49641156196594, 'status': 'completed', 'target': 'app=compose-post-service', 'namespace': 'default', 'container_name': 'compose-post-service'}'
+[36m[2025-09-26 13:22:25 DEBUG] [__init__:472] No controls to apply on 'activity'
+[36m[2025-09-26 13:22:25 DEBUG] [__init__:472] No controls to apply on 'method'
+[32m[2025-09-26 13:22:25 INFO] [run:1072] Let's rollback...
+[36m[2025-09-26 13:22:25 DEBUG] [__init__:472] No controls to apply on 'rollback'
+[32m[2025-09-26 13:22:25 INFO] [rollback:36] Rollback: verify-pods-running
+[36m[2025-09-26 13:22:25 DEBUG] [__init__:472] No controls to apply on 'activity'
+[32m[2025-09-26 13:22:25 INFO] [activity:232] Probe: verify-pods-running
+[36m[2025-09-26 13:22:25 DEBUG] [python:33] Activity 'verify-pods-running' loaded from '/home/airflow/.local/lib/python3.11/site-packages/chaosk8s/pod/probes.py'
+[36m[2025-09-26 13:22:25 DEBUG] [__init__:79] Using Kubernetes context 'default' from config '/root/.kube/config'
+[36m[2025-09-26 13:22:28 DEBUG] [probes:110] Found 1 pods matching label 'app=compose-post-service' in ns 'default'
+[36m[2025-09-26 13:22:28 DEBUG] [activity:260]   => succeeded with 'True'
+[36m[2025-09-26 13:22:28 DEBUG] [__init__:472] No controls to apply on 'activity'
+[36m[2025-09-26 13:22:28 DEBUG] [__init__:472] No controls to apply on 'rollback'
+[32m[2025-09-26 13:22:28 INFO] [run:598] Experiment ended with status: completed
+[36m[2025-09-26 13:22:28 DEBUG] [__init__:472] No controls to apply on 'experiment'
+[36m[2025-09-26 13:22:28 DEBUG] [__init__:106] Cleaning up controls
+[36m[2025-09-26 13:22:28 DEBUG] [caching:42] Clearing activities cache
+[36m[2025-09-29 05:29:03 DEBUG] [__init__:101] ###############################################################################
+[36m[2025-09-29 05:29:03 DEBUG] [__init__:102] Running command 'run'
+[36m[2025-09-29 05:29:03 DEBUG] [__init__:106] Using settings file '/root/.chaostoolkit/settings.yaml'
+[36m[2025-09-29 05:29:04 DEBUG] [settings:31] The Chaos Toolkit settings file could not be found at '/root/.chaostoolkit/settings.yaml'.
+[36m[2025-09-29 05:29:04 DEBUG] [__init__:472] No controls to apply on 'loader'
+[36m[2025-09-29 05:29:04 DEBUG] [__init__:472] No controls to apply on 'loader'
+[36m[2025-09-29 05:29:04 DEBUG] [caching:24] Building activity cache...
+[36m[2025-09-29 05:29:04 DEBUG] [caching:35] Cached 1 activities
+[32m[2025-09-29 05:29:04 INFO] [experiment:59] Validating the experiment's syntax
+[36m[2025-09-29 05:29:04 DEBUG] [configuration:64] Loading configuration...
+[36m[2025-09-29 05:29:04 DEBUG] [secret:79] Loading secrets...
+[36m[2025-09-29 05:29:04 DEBUG] [secret:104] Done loading secrets
+[32m[2025-09-29 05:29:04 INFO] [experiment:112] Experiment looks valid
+[36m[2025-09-29 05:29:04 DEBUG] [caching:42] Clearing activities cache
+[36m[2025-09-29 05:29:04 DEBUG] [run:224] Runtime strategies: hypothesis - default / rollbacks - default
+[36m[2025-09-29 05:29:04 DEBUG] [caching:24] Building activity cache...
+[36m[2025-09-29 05:29:04 DEBUG] [caching:35] Cached 1 activities
+[36m[2025-09-29 05:29:04 DEBUG] [configuration:64] Loading configuration...
+[36m[2025-09-29 05:29:04 DEBUG] [secret:79] Loading secrets...
+[36m[2025-09-29 05:29:04 DEBUG] [secret:104] Done loading secrets
+[36m[2025-09-29 05:29:04 DEBUG] [configuration:161] Loading dynamic configuration...
+[32m[2025-09-29 05:29:04 INFO] [run:440] Running experiment: Continuous Container Restart Experiment
+[36m[2025-09-29 05:29:04 DEBUG] [__init__:67] Initializing controls
+[32m[2025-09-29 05:29:04 INFO] [run:471] Steady-state strategy: default
+[32m[2025-09-29 05:29:04 INFO] [run:477] Rollbacks strategy: default
+[32m[2025-09-29 05:29:04 INFO] [run:485] No steady state hypothesis defined. That's ok, just exploring.
+[36m[2025-09-29 05:29:04 DEBUG] [__init__:472] No controls to apply on 'experiment'
+[32m[2025-09-29 05:29:04 INFO] [run:778] Playing your experiment's method now...
+[36m[2025-09-29 05:29:04 DEBUG] [__init__:472] No controls to apply on 'method'
+[36m[2025-09-29 05:29:04 DEBUG] [__init__:472] No controls to apply on 'activity'
+[32m[2025-09-29 05:29:04 INFO] [activity:232] Action: continuous-container-restart
+[36m[2025-09-29 05:29:04 DEBUG] [python:33] Activity 'continuous-container-restart' loaded from '/opt/airflow/src/pod/container_restart.py'
+[36m[2025-09-29 05:29:04 DEBUG] [__init__:79] Using Kubernetes context 'default' from config '/root/.kube/config'
+[36m[2025-09-29 05:29:17 DEBUG] [__init__:79] Using Kubernetes context 'default' from config '/root/.kube/config'
+[36m[2025-09-29 05:29:43 DEBUG] [__init__:79] Using Kubernetes context 'default' from config '/root/.kube/config'
+[36m[2025-09-29 05:30:24 DEBUG] [__init__:79] Using Kubernetes context 'default' from config '/root/.kube/config'
+[36m[2025-09-29 05:31:26 DEBUG] [__init__:79] Using Kubernetes context 'default' from config '/root/.kube/config'
+[36m[2025-09-29 05:32:37 DEBUG] [activity:260]   => succeeded with '{'restart_cycles': 5, 'total_containers_restarted': 4, 'duration': 212.75512957572937, 'status': 'completed', 'target': 'app=post-storage-mongodb', 'namespace': 'default', 'container_name': 'post-storage-mongodb'}'
+[36m[2025-09-29 05:32:37 DEBUG] [__init__:472] No controls to apply on 'activity'
+[36m[2025-09-29 05:32:37 DEBUG] [__init__:472] No controls to apply on 'method'
+[32m[2025-09-29 05:32:37 INFO] [run:1072] Let's rollback...
+[36m[2025-09-29 05:32:37 DEBUG] [__init__:472] No controls to apply on 'rollback'
+[32m[2025-09-29 05:32:37 INFO] [rollback:36] Rollback: verify-pods-running
+[36m[2025-09-29 05:32:37 DEBUG] [__init__:472] No controls to apply on 'activity'
+[32m[2025-09-29 05:32:37 INFO] [activity:232] Probe: verify-pods-running
+[36m[2025-09-29 05:32:37 DEBUG] [python:33] Activity 'verify-pods-running' loaded from '/home/airflow/.local/lib/python3.11/site-packages/chaosk8s/pod/probes.py'
+[36m[2025-09-29 05:32:37 DEBUG] [__init__:79] Using Kubernetes context 'default' from config '/root/.kube/config'
+[36m[2025-09-29 05:32:38 DEBUG] [probes:110] Found 1 pods matching label 'app=post-storage-mongodb' in ns 'default'
+[36m[2025-09-29 05:32:38 DEBUG] [activity:260]   => succeeded with 'True'
+[36m[2025-09-29 05:32:38 DEBUG] [__init__:472] No controls to apply on 'activity'
+[36m[2025-09-29 05:32:38 DEBUG] [__init__:472] No controls to apply on 'rollback'
+[32m[2025-09-29 05:32:38 INFO] [run:598] Experiment ended with status: completed
+[36m[2025-09-29 05:32:38 DEBUG] [__init__:472] No controls to apply on 'experiment'
+[36m[2025-09-29 05:32:38 DEBUG] [__init__:106] Cleaning up controls
+[36m[2025-09-29 05:32:38 DEBUG] [caching:42] Clearing activities cache
+[36m[2025-09-30 05:54:58 DEBUG] [__init__:101] ###############################################################################
+[36m[2025-09-30 05:54:58 DEBUG] [__init__:102] Running command 'run'
+[36m[2025-09-30 05:54:58 DEBUG] [__init__:106] Using settings file '/root/.chaostoolkit/settings.yaml'
+[36m[2025-09-30 05:54:58 DEBUG] [settings:31] The Chaos Toolkit settings file could not be found at '/root/.chaostoolkit/settings.yaml'.
+[36m[2025-09-30 05:54:58 DEBUG] [__init__:472] No controls to apply on 'loader'
+[36m[2025-09-30 05:54:58 DEBUG] [__init__:472] No controls to apply on 'loader'
+[36m[2025-09-30 05:54:58 DEBUG] [caching:24] Building activity cache...
+[36m[2025-09-30 05:54:58 DEBUG] [caching:35] Cached 1 activities
+[32m[2025-09-30 05:54:58 INFO] [experiment:59] Validating the experiment's syntax
+[36m[2025-09-30 05:54:58 DEBUG] [configuration:64] Loading configuration...
+[36m[2025-09-30 05:54:58 DEBUG] [secret:79] Loading secrets...
+[36m[2025-09-30 05:54:58 DEBUG] [secret:104] Done loading secrets
+[32m[2025-09-30 05:54:58 INFO] [experiment:112] Experiment looks valid
+[36m[2025-09-30 05:54:58 DEBUG] [caching:42] Clearing activities cache
+[36m[2025-09-30 05:54:58 DEBUG] [run:224] Runtime strategies: hypothesis - default / rollbacks - default
+[36m[2025-09-30 05:54:58 DEBUG] [caching:24] Building activity cache...
+[36m[2025-09-30 05:54:58 DEBUG] [caching:35] Cached 1 activities
+[36m[2025-09-30 05:54:58 DEBUG] [configuration:64] Loading configuration...
+[36m[2025-09-30 05:54:58 DEBUG] [secret:79] Loading secrets...
+[36m[2025-09-30 05:54:58 DEBUG] [secret:104] Done loading secrets
+[36m[2025-09-30 05:54:58 DEBUG] [configuration:161] Loading dynamic configuration...
+[32m[2025-09-30 05:54:58 INFO] [run:440] Running experiment: Redis Pod Memory Stress Test
+[36m[2025-09-30 05:54:58 DEBUG] [__init__:67] Initializing controls
+[32m[2025-09-30 05:54:58 INFO] [run:471] Steady-state strategy: default
+[32m[2025-09-30 05:54:58 INFO] [run:477] Rollbacks strategy: default
+[32m[2025-09-30 05:54:58 INFO] [run:485] No steady state hypothesis defined. That's ok, just exploring.
+[36m[2025-09-30 05:54:58 DEBUG] [__init__:472] No controls to apply on 'experiment'
+[32m[2025-09-30 05:54:58 INFO] [run:778] Playing your experiment's method now...
+[36m[2025-09-30 05:54:58 DEBUG] [__init__:472] No controls to apply on 'method'
+[36m[2025-09-30 05:54:58 DEBUG] [__init__:472] No controls to apply on 'activity'
+[32m[2025-09-30 05:54:58 INFO] [activity:232] Action: redis-memory-stress-k8s
+[36m[2025-09-30 05:54:58 DEBUG] [python:33] Activity 'redis-memory-stress-k8s' loaded from '/opt/airflow/src/pod/redis_config_faults.py'
+[36m[2025-09-30 05:59:17 DEBUG] [activity:260]   => succeeded with '{'status': 'reset'}'
+[36m[2025-09-30 05:59:17 DEBUG] [__init__:472] No controls to apply on 'activity'
+[36m[2025-09-30 05:59:17 DEBUG] [__init__:472] No controls to apply on 'method'
+[32m[2025-09-30 05:59:17 INFO] [run:1072] Let's rollback...
+[36m[2025-09-30 05:59:17 DEBUG] [__init__:472] No controls to apply on 'rollback'
+[32m[2025-09-30 05:59:17 INFO] [rollback:36] Rollback: reset-redis-memory-k8s
+[36m[2025-09-30 05:59:17 DEBUG] [__init__:472] No controls to apply on 'activity'
+[32m[2025-09-30 05:59:17 INFO] [activity:232] Action: reset-redis-memory-k8s
+[36m[2025-09-30 05:59:17 DEBUG] [python:33] Activity 'reset-redis-memory-k8s' loaded from '/opt/airflow/src/pod/redis_config_faults.py'
+[36m[2025-09-30 05:59:25 DEBUG] [activity:260]   => succeeded with '{'status': 'reset'}'
+[36m[2025-09-30 05:59:25 DEBUG] [__init__:472] No controls to apply on 'activity'
+[36m[2025-09-30 05:59:25 DEBUG] [__init__:472] No controls to apply on 'rollback'
+[32m[2025-09-30 05:59:25 INFO] [run:598] Experiment ended with status: completed
+[36m[2025-09-30 05:59:25 DEBUG] [__init__:472] No controls to apply on 'experiment'
+[36m[2025-09-30 05:59:25 DEBUG] [__init__:106] Cleaning up controls
+[36m[2025-09-30 05:59:25 DEBUG] [caching:42] Clearing activities cache
+[36m[2025-09-30 06:11:26 DEBUG] [__init__:101] ###############################################################################
+[36m[2025-09-30 06:11:26 DEBUG] [__init__:102] Running command 'run'
+[36m[2025-09-30 06:11:26 DEBUG] [__init__:106] Using settings file '/root/.chaostoolkit/settings.yaml'
+[36m[2025-09-30 06:11:27 DEBUG] [settings:31] The Chaos Toolkit settings file could not be found at '/root/.chaostoolkit/settings.yaml'.
+[36m[2025-09-30 06:11:27 DEBUG] [__init__:472] No controls to apply on 'loader'
+[36m[2025-09-30 06:11:27 DEBUG] [__init__:472] No controls to apply on 'loader'
+[36m[2025-09-30 06:11:27 DEBUG] [caching:24] Building activity cache...
+[36m[2025-09-30 06:11:27 DEBUG] [caching:35] Cached 1 activities
+[32m[2025-09-30 06:11:27 INFO] [experiment:59] Validating the experiment's syntax
+[36m[2025-09-30 06:11:27 DEBUG] [configuration:64] Loading configuration...
+[36m[2025-09-30 06:11:27 DEBUG] [secret:79] Loading secrets...
+[36m[2025-09-30 06:11:27 DEBUG] [secret:104] Done loading secrets
+[32m[2025-09-30 06:11:27 INFO] [experiment:112] Experiment looks valid
+[36m[2025-09-30 06:11:27 DEBUG] [caching:42] Clearing activities cache
+[36m[2025-09-30 06:11:27 DEBUG] [run:224] Runtime strategies: hypothesis - default / rollbacks - default
+[36m[2025-09-30 06:11:27 DEBUG] [caching:24] Building activity cache...
+[36m[2025-09-30 06:11:27 DEBUG] [caching:35] Cached 1 activities
+[36m[2025-09-30 06:11:27 DEBUG] [configuration:64] Loading configuration...
+[36m[2025-09-30 06:11:27 DEBUG] [secret:79] Loading secrets...
+[36m[2025-09-30 06:11:27 DEBUG] [secret:104] Done loading secrets
+[36m[2025-09-30 06:11:27 DEBUG] [configuration:161] Loading dynamic configuration...
+[32m[2025-09-30 06:11:27 INFO] [run:440] Running experiment: Redis Pod Memory Stress Test
+[36m[2025-09-30 06:11:27 DEBUG] [__init__:67] Initializing controls
+[32m[2025-09-30 06:11:27 INFO] [run:471] Steady-state strategy: default
+[32m[2025-09-30 06:11:27 INFO] [run:477] Rollbacks strategy: default
+[32m[2025-09-30 06:11:27 INFO] [run:485] No steady state hypothesis defined. That's ok, just exploring.
+[36m[2025-09-30 06:11:27 DEBUG] [__init__:472] No controls to apply on 'experiment'
+[32m[2025-09-30 06:11:27 INFO] [run:778] Playing your experiment's method now...
+[36m[2025-09-30 06:11:27 DEBUG] [__init__:472] No controls to apply on 'method'
+[36m[2025-09-30 06:11:27 DEBUG] [__init__:472] No controls to apply on 'activity'
+[32m[2025-09-30 06:11:27 INFO] [activity:232] Action: redis-memory-stress-k8s
+[36m[2025-09-30 06:11:27 DEBUG] [python:33] Activity 'redis-memory-stress-k8s' loaded from '/opt/airflow/src/pod/redis_config_faults.py'
+[36m[2025-09-30 06:15:48 DEBUG] [activity:260]   => succeeded with '{'status': 'reset'}'
+[36m[2025-09-30 06:15:48 DEBUG] [__init__:472] No controls to apply on 'activity'
+[36m[2025-09-30 06:15:48 DEBUG] [__init__:472] No controls to apply on 'method'
+[32m[2025-09-30 06:15:48 INFO] [run:1072] Let's rollback...
+[36m[2025-09-30 06:15:48 DEBUG] [__init__:472] No controls to apply on 'rollback'
+[32m[2025-09-30 06:15:48 INFO] [rollback:36] Rollback: reset-redis-memory-k8s
+[36m[2025-09-30 06:15:48 DEBUG] [__init__:472] No controls to apply on 'activity'
+[32m[2025-09-30 06:15:48 INFO] [activity:232] Action: reset-redis-memory-k8s
+[36m[2025-09-30 06:15:48 DEBUG] [python:33] Activity 'reset-redis-memory-k8s' loaded from '/opt/airflow/src/pod/redis_config_faults.py'
+[36m[2025-09-30 06:15:57 DEBUG] [activity:260]   => succeeded with '{'status': 'reset'}'
+[36m[2025-09-30 06:15:57 DEBUG] [__init__:472] No controls to apply on 'activity'
+[36m[2025-09-30 06:15:57 DEBUG] [__init__:472] No controls to apply on 'rollback'
+[32m[2025-09-30 06:15:57 INFO] [run:598] Experiment ended with status: completed
+[36m[2025-09-30 06:15:57 DEBUG] [__init__:472] No controls to apply on 'experiment'
+[36m[2025-09-30 06:15:57 DEBUG] [__init__:106] Cleaning up controls
+[36m[2025-09-30 06:15:57 DEBUG] [caching:42] Clearing activities cache
+[36m[2025-09-30 08:33:59 DEBUG] [__init__:101] ###############################################################################
+[36m[2025-09-30 08:33:59 DEBUG] [__init__:102] Running command 'run'
+[36m[2025-09-30 08:33:59 DEBUG] [__init__:106] Using settings file '/root/.chaostoolkit/settings.yaml'
+[36m[2025-09-30 08:34:00 DEBUG] [settings:31] The Chaos Toolkit settings file could not be found at '/root/.chaostoolkit/settings.yaml'.
+[36m[2025-09-30 08:34:00 DEBUG] [__init__:472] No controls to apply on 'loader'
+[36m[2025-09-30 08:34:00 DEBUG] [__init__:472] No controls to apply on 'loader'
+[36m[2025-09-30 08:34:00 DEBUG] [caching:24] Building activity cache...
+[36m[2025-09-30 08:34:00 DEBUG] [caching:35] Cached 2 activities
+[32m[2025-09-30 08:34:00 INFO] [experiment:59] Validating the experiment's syntax
+[36m[2025-09-30 08:34:00 DEBUG] [configuration:64] Loading configuration...
+[36m[2025-09-30 08:34:00 DEBUG] [secret:79] Loading secrets...
+[36m[2025-09-30 08:34:00 DEBUG] [secret:104] Done loading secrets
+[32m[2025-09-30 08:34:00 INFO] [experiment:112] Experiment looks valid
+[36m[2025-09-30 08:34:00 DEBUG] [caching:42] Clearing activities cache
+[36m[2025-09-30 08:34:00 DEBUG] [run:224] Runtime strategies: hypothesis - default / rollbacks - default
+[36m[2025-09-30 08:34:00 DEBUG] [caching:24] Building activity cache...
+[36m[2025-09-30 08:34:00 DEBUG] [caching:35] Cached 2 activities
+[36m[2025-09-30 08:34:00 DEBUG] [configuration:64] Loading configuration...
+[36m[2025-09-30 08:34:00 DEBUG] [secret:79] Loading secrets...
+[36m[2025-09-30 08:34:00 DEBUG] [secret:104] Done loading secrets
+[36m[2025-09-30 08:34:00 DEBUG] [configuration:161] Loading dynamic configuration...
+[32m[2025-09-30 08:34:00 INFO] [run:440] Running experiment: CPU Stress Test - Database Pod with Timed Rollback
+[36m[2025-09-30 08:34:00 DEBUG] [__init__:67] Initializing controls
+[32m[2025-09-30 08:34:00 INFO] [run:471] Steady-state strategy: default
+[32m[2025-09-30 08:34:00 INFO] [run:477] Rollbacks strategy: default
+[32m[2025-09-30 08:34:00 INFO] [run:485] No steady state hypothesis defined. That's ok, just exploring.
+[36m[2025-09-30 08:34:00 DEBUG] [__init__:472] No controls to apply on 'experiment'
+[32m[2025-09-30 08:34:00 INFO] [run:778] Playing your experiment's method now...
+[36m[2025-09-30 08:34:00 DEBUG] [__init__:472] No controls to apply on 'method'
+[36m[2025-09-30 08:34:00 DEBUG] [__init__:472] No controls to apply on 'activity'
+[32m[2025-09-30 08:34:00 INFO] [activity:232] Action: apply-database-cpu-stress
+[36m[2025-09-30 08:34:00 DEBUG] [python:33] Activity 'apply-database-cpu-stress' loaded from '/home/airflow/.local/lib/python3.11/site-packages/chaosk8s/chaosmesh/stress/actions.py'
+[36m[2025-09-30 08:34:00 DEBUG] [__init__:79] Using Kubernetes context 'default' from config '/root/.kube/config'
+[36m[2025-09-30 08:34:01 DEBUG] [activity:260]   => succeeded with '{'apiVersion': 'chaos-mesh.org/v1alpha1', 'kind': 'StressChaos', 'metadata': {'creationTimestamp': '2025-09-30T08:34:01Z', 'generation': 1, 'managedFields': [{'apiVersion': 'chaos-mesh.org/v1alpha1', 'fieldsType': 'FieldsV1', 'fieldsV1': {'f:spec': {'.': {}, 'f:duration': {}, 'f:mode': {}, 'f:selector': {'.': {}, 'f:labelSelectors': {'.': {}, 'f:app': {}}}, 'f:stressors': {'.': {}, 'f:cpu': {'.': {}, 'f:load': {}, 'f:workers': {}}}}}, 'manager': 'OpenAPI-Generator', 'operation': 'Update', 'time': '2025-09-30T08:34:01Z'}], 'name': 'cpu-stress-database', 'namespace': 'default', 'resourceVersion': '8758730', 'uid': 'fba8f751-70bd-4be7-81c5-eca989835813'}, 'spec': {'duration': '300s', 'mode': 'all', 'selector': {'labelSelectors': {'app': 'post-storage-mongodb'}, 'namespaces': ['default']}, 'stressors': {'cpu': {'load': 95, 'workers': 8}}}, 'status': {'experiment': {}}}'
+[36m[2025-09-30 08:34:01 DEBUG] [__init__:472] No controls to apply on 'activity'
+[36m[2025-09-30 08:34:01 DEBUG] [__init__:472] No controls to apply on 'activity'
+[32m[2025-09-30 08:34:01 INFO] [activity:232] Probe: wait-for-stress-duration
+[36m[2025-09-30 08:34:01 DEBUG] [process:52] Running: /usr/bin/sleep 305
+[36m[2025-09-30 08:39:06 DEBUG] [activity:260]   => succeeded with '{'status': 0, 'stdout': '', 'stderr': ''}'
+[36m[2025-09-30 08:39:06 DEBUG] [__init__:472] No controls to apply on 'activity'
+[36m[2025-09-30 08:39:06 DEBUG] [__init__:472] No controls to apply on 'method'
+[32m[2025-09-30 08:39:06 INFO] [run:1072] Let's rollback...
+[36m[2025-09-30 08:39:06 DEBUG] [__init__:472] No controls to apply on 'rollback'
+[32m[2025-09-30 08:39:06 INFO] [rollback:36] Rollback: cleanup-database-stress
+[36m[2025-09-30 08:39:06 DEBUG] [__init__:472] No controls to apply on 'activity'
+[32m[2025-09-30 08:39:06 INFO] [activity:232] Action: cleanup-database-stress
+[36m[2025-09-30 08:39:06 DEBUG] [python:33] Activity 'cleanup-database-stress' loaded from '/home/airflow/.local/lib/python3.11/site-packages/chaosk8s/chaosmesh/stress/actions.py'
+[36m[2025-09-30 08:39:06 DEBUG] [__init__:79] Using Kubernetes context 'default' from config '/root/.kube/config'
+[36m[2025-09-30 08:39:07 DEBUG] [activity:260]   => succeeded with '{'apiVersion': 'chaos-mesh.org/v1alpha1', 'kind': 'StressChaos', 'metadata': {'creationTimestamp': '2025-09-30T08:34:01Z', 'deletionGracePeriodSeconds': 0, 'deletionTimestamp': '2025-09-30T08:39:07Z', 'finalizers': ['chaos-mesh/records'], 'generation': 9, 'managedFields': [{'apiVersion': 'chaos-mesh.org/v1alpha1', 'fieldsType': 'FieldsV1', 'fieldsV1': {'f:spec': {'.': {}, 'f:duration': {}, 'f:mode': {}, 'f:selector': {'.': {}, 'f:labelSelectors': {'.': {}, 'f:app': {}}}, 'f:stressors': {'.': {}, 'f:cpu': {'.': {}, 'f:load': {}, 'f:workers': {}}}}}, 'manager': 'OpenAPI-Generator', 'operation': 'Update', 'time': '2025-09-30T08:34:01Z'}, {'apiVersion': 'chaos-mesh.org/v1alpha1', 'fieldsType': 'FieldsV1', 'fieldsV1': {'f:metadata': {'f:finalizers': {'.': {}, 'v:"chaos-mesh/records"': {}}}, 'f:status': {'f:conditions': {}, 'f:experiment': {'f:containerRecords': {}, 'f:desiredPhase': {}}}}, 'manager': 'chaos-controller-manager', 'operation': 'Update', 'time': '2025-09-30T08:39:01Z'}], 'name': 'cpu-stress-database', 'namespace': 'default', 'resourceVersion': '8760574', 'uid': 'fba8f751-70bd-4be7-81c5-eca989835813'}, 'spec': {'duration': '300s', 'mode': 'all', 'selector': {'labelSelectors': {'app': 'post-storage-mongodb'}, 'namespaces': ['default']}, 'stressors': {'cpu': {'load': 95, 'workers': 8}}}, 'status': {'conditions': [{'status': 'True', 'type': 'AllRecovered'}, {'status': 'False', 'type': 'Paused'}, {'status': 'True', 'type': 'Selected'}, {'status': 'False', 'type': 'AllInjected'}], 'experiment': {'containerRecords': [{'events': [{'operation': 'Apply', 'timestamp': '2025-09-30T08:34:01Z', 'type': 'Succeeded'}, {'operation': 'Recover', 'timestamp': '2025-09-30T08:39:01Z', 'type': 'Succeeded'}], 'id': 'default/post-storage-mongodb-d5f69c6b6-7ftvd/post-storage-mongodb', 'injectedCount': 1, 'phase': 'Not Injected', 'recoveredCount': 1, 'selectorKey': '.'}], 'desiredPhase': 'Stop'}}}'
+[36m[2025-09-30 08:39:07 DEBUG] [__init__:472] No controls to apply on 'activity'
+[36m[2025-09-30 08:39:07 DEBUG] [__init__:472] No controls to apply on 'rollback'
+[32m[2025-09-30 08:39:07 INFO] [run:598] Experiment ended with status: completed
+[36m[2025-09-30 08:39:07 DEBUG] [__init__:472] No controls to apply on 'experiment'
+[36m[2025-09-30 08:39:07 DEBUG] [__init__:106] Cleaning up controls
+[36m[2025-09-30 08:39:07 DEBUG] [caching:42] Clearing activities cache
+[36m[2025-10-03 07:10:43 DEBUG] [__init__:101] ###############################################################################
+[36m[2025-10-03 07:10:43 DEBUG] [__init__:102] Running command 'run'
+[36m[2025-10-03 07:10:43 DEBUG] [__init__:106] Using settings file '/root/.chaostoolkit/settings.yaml'
+[36m[2025-10-03 07:10:43 DEBUG] [__init__:101] ###############################################################################
+[36m[2025-10-03 07:10:43 DEBUG] [__init__:102] Running command 'run'
+[36m[2025-10-03 07:10:43 DEBUG] [__init__:106] Using settings file '/root/.chaostoolkit/settings.yaml'
+[36m[2025-10-03 07:10:43 DEBUG] [__init__:101] ###############################################################################
+[36m[2025-10-03 07:10:43 DEBUG] [__init__:102] Running command 'run'
+[36m[2025-10-03 07:10:43 DEBUG] [__init__:106] Using settings file '/root/.chaostoolkit/settings.yaml'
+[36m[2025-10-03 07:10:43 DEBUG] [settings:31] The Chaos Toolkit settings file could not be found at '/root/.chaostoolkit/settings.yaml'.
+[36m[2025-10-03 07:10:43 DEBUG] [settings:31] The Chaos Toolkit settings file could not be found at '/root/.chaostoolkit/settings.yaml'.
+[36m[2025-10-03 07:10:43 DEBUG] [__init__:472] No controls to apply on 'loader'
+[36m[2025-10-03 07:10:43 DEBUG] [__init__:472] No controls to apply on 'loader'
+[36m[2025-10-03 07:10:43 DEBUG] [__init__:472] No controls to apply on 'loader'
+[36m[2025-10-03 07:10:43 DEBUG] [__init__:472] No controls to apply on 'loader'
+[36m[2025-10-03 07:10:43 DEBUG] [caching:24] Building activity cache...
+[36m[2025-10-03 07:10:43 DEBUG] [caching:24] Building activity cache...
+[36m[2025-10-03 07:10:43 DEBUG] [caching:35] Cached 1 activities
+[36m[2025-10-03 07:10:43 DEBUG] [caching:35] Cached 2 activities
+[32m[2025-10-03 07:10:43 INFO] [experiment:59] Validating the experiment's syntax
+[36m[2025-10-03 07:10:43 DEBUG] [configuration:64] Loading configuration...
+[32m[2025-10-03 07:10:43 INFO] [experiment:59] Validating the experiment's syntax
+[36m[2025-10-03 07:10:43 DEBUG] [configuration:64] Loading configuration...
+[36m[2025-10-03 07:10:43 DEBUG] [secret:79] Loading secrets...
+[36m[2025-10-03 07:10:43 DEBUG] [secret:79] Loading secrets...
+[36m[2025-10-03 07:10:43 DEBUG] [secret:104] Done loading secrets
+[36m[2025-10-03 07:10:43 DEBUG] [secret:104] Done loading secrets
+[36m[2025-10-03 07:10:44 DEBUG] [settings:31] The Chaos Toolkit settings file could not be found at '/root/.chaostoolkit/settings.yaml'.
+[36m[2025-10-03 07:10:44 DEBUG] [__init__:472] No controls to apply on 'loader'
+[36m[2025-10-03 07:10:44 DEBUG] [__init__:472] No controls to apply on 'loader'
+[36m[2025-10-03 07:10:44 DEBUG] [caching:24] Building activity cache...
+[36m[2025-10-03 07:10:44 DEBUG] [caching:35] Cached 2 activities
+[32m[2025-10-03 07:10:44 INFO] [experiment:59] Validating the experiment's syntax
+[36m[2025-10-03 07:10:44 DEBUG] [configuration:64] Loading configuration...
+[36m[2025-10-03 07:10:44 DEBUG] [secret:79] Loading secrets...
+[36m[2025-10-03 07:10:44 DEBUG] [secret:104] Done loading secrets
+[32m[2025-10-03 07:10:44 INFO] [experiment:112] Experiment looks valid
+[32m[2025-10-03 07:10:44 INFO] [experiment:112] Experiment looks valid
+[36m[2025-10-03 07:10:44 DEBUG] [caching:42] Clearing activities cache
+[36m[2025-10-03 07:10:44 DEBUG] [caching:42] Clearing activities cache
+[36m[2025-10-03 07:10:44 DEBUG] [run:224] Runtime strategies: hypothesis - default / rollbacks - default
+[36m[2025-10-03 07:10:44 DEBUG] [run:224] Runtime strategies: hypothesis - default / rollbacks - default
+[36m[2025-10-03 07:10:44 DEBUG] [caching:24] Building activity cache...
+[36m[2025-10-03 07:10:44 DEBUG] [caching:24] Building activity cache...
+[36m[2025-10-03 07:10:44 DEBUG] [caching:35] Cached 2 activities
+[36m[2025-10-03 07:10:44 DEBUG] [caching:35] Cached 2 activities
+[36m[2025-10-03 07:10:44 DEBUG] [configuration:64] Loading configuration...
+[36m[2025-10-03 07:10:44 DEBUG] [configuration:64] Loading configuration...
+[36m[2025-10-03 07:10:44 DEBUG] [secret:79] Loading secrets...
+[36m[2025-10-03 07:10:44 DEBUG] [secret:79] Loading secrets...
+[36m[2025-10-03 07:10:44 DEBUG] [secret:104] Done loading secrets
+[36m[2025-10-03 07:10:44 DEBUG] [secret:104] Done loading secrets
+[36m[2025-10-03 07:10:44 DEBUG] [configuration:161] Loading dynamic configuration...
+[36m[2025-10-03 07:10:44 DEBUG] [configuration:161] Loading dynamic configuration...
+[32m[2025-10-03 07:10:44 INFO] [run:440] Running experiment: CPU Stress Test - Database Pod with Timed Rollback
+[32m[2025-10-03 07:10:44 INFO] [run:440] Running experiment: Memory Stress Test - Database Pod with Timed Rollback
+[36m[2025-10-03 07:10:44 DEBUG] [__init__:67] Initializing controls
+[36m[2025-10-03 07:10:44 DEBUG] [__init__:67] Initializing controls
+[32m[2025-10-03 07:10:44 INFO] [run:471] Steady-state strategy: default
+[32m[2025-10-03 07:10:44 INFO] [run:471] Steady-state strategy: default
+[32m[2025-10-03 07:10:44 INFO] [run:477] Rollbacks strategy: default
+[32m[2025-10-03 07:10:44 INFO] [run:485] No steady state hypothesis defined. That's ok, just exploring.
+[36m[2025-10-03 07:10:44 DEBUG] [__init__:472] No controls to apply on 'experiment'
+[32m[2025-10-03 07:10:44 INFO] [run:778] Playing your experiment's method now...
+[32m[2025-10-03 07:10:44 INFO] [run:477] Rollbacks strategy: default
+[36m[2025-10-03 07:10:44 DEBUG] [__init__:472] No controls to apply on 'method'
+[36m[2025-10-03 07:10:44 DEBUG] [__init__:472] No controls to apply on 'activity'
+[32m[2025-10-03 07:10:44 INFO] [run:485] No steady state hypothesis defined. That's ok, just exploring.
+[36m[2025-10-03 07:10:44 DEBUG] [__init__:472] No controls to apply on 'experiment'
+[32m[2025-10-03 07:10:44 INFO] [activity:232] Action: apply-database-cpu-stress
+[32m[2025-10-03 07:10:44 INFO] [run:778] Playing your experiment's method now...
+[36m[2025-10-03 07:10:44 DEBUG] [python:33] Activity 'apply-database-cpu-stress' loaded from '/home/airflow/.local/lib/python3.11/site-packages/chaosk8s/chaosmesh/stress/actions.py'
+[36m[2025-10-03 07:10:44 DEBUG] [__init__:472] No controls to apply on 'method'
+[36m[2025-10-03 07:10:44 DEBUG] [__init__:472] No controls to apply on 'activity'
+[32m[2025-10-03 07:10:44 INFO] [activity:232] Action: apply-cart-memory-stress
+[36m[2025-10-03 07:10:44 DEBUG] [python:33] Activity 'apply-cart-memory-stress' loaded from '/home/airflow/.local/lib/python3.11/site-packages/chaosk8s/chaosmesh/stress/actions.py'
+[36m[2025-10-03 07:10:44 DEBUG] [__init__:79] Using Kubernetes context 'default' from config '/root/.kube/config'
+[36m[2025-10-03 07:10:44 DEBUG] [__init__:79] Using Kubernetes context 'default' from config '/root/.kube/config'
+[32m[2025-10-03 07:10:44 INFO] [experiment:112] Experiment looks valid
+[36m[2025-10-03 07:10:44 DEBUG] [caching:42] Clearing activities cache
+[36m[2025-10-03 07:10:44 DEBUG] [run:224] Runtime strategies: hypothesis - default / rollbacks - default
+[36m[2025-10-03 07:10:44 DEBUG] [caching:24] Building activity cache...
+[36m[2025-10-03 07:10:44 DEBUG] [caching:35] Cached 1 activities
+[36m[2025-10-03 07:10:44 DEBUG] [configuration:64] Loading configuration...
+[36m[2025-10-03 07:10:44 DEBUG] [secret:79] Loading secrets...
+[36m[2025-10-03 07:10:44 DEBUG] [secret:104] Done loading secrets
+[36m[2025-10-03 07:10:44 DEBUG] [configuration:161] Loading dynamic configuration...
+[32m[2025-10-03 07:10:44 INFO] [run:440] Running experiment: Continuous Container Restart Experiment
+[36m[2025-10-03 07:10:44 DEBUG] [__init__:67] Initializing controls
+[32m[2025-10-03 07:10:44 INFO] [run:471] Steady-state strategy: default
+[32m[2025-10-03 07:10:44 INFO] [run:477] Rollbacks strategy: default
+[32m[2025-10-03 07:10:44 INFO] [run:485] No steady state hypothesis defined. That's ok, just exploring.
+[36m[2025-10-03 07:10:44 DEBUG] [__init__:472] No controls to apply on 'experiment'
+[32m[2025-10-03 07:10:44 INFO] [run:778] Playing your experiment's method now...
+[36m[2025-10-03 07:10:44 DEBUG] [__init__:472] No controls to apply on 'method'
+[36m[2025-10-03 07:10:44 DEBUG] [__init__:472] No controls to apply on 'activity'
+[32m[2025-10-03 07:10:44 INFO] [activity:232] Action: continuous-container-restart
+[36m[2025-10-03 07:10:44 DEBUG] [python:33] Activity 'continuous-container-restart' loaded from '/opt/airflow/src/pod/container_restart.py'
+[36m[2025-10-03 07:10:44 DEBUG] [__init__:79] Using Kubernetes context 'default' from config '/root/.kube/config'
+[36m[2025-10-03 07:10:46 DEBUG] [activity:260]   => succeeded with '{'apiVersion': 'chaos-mesh.org/v1alpha1', 'kind': 'StressChaos', 'metadata': {'creationTimestamp': '2025-10-03T07:10:46Z', 'generation': 1, 'managedFields': [{'apiVersion': 'chaos-mesh.org/v1alpha1', 'fieldsType': 'FieldsV1', 'fieldsV1': {'f:spec': {'.': {}, 'f:duration': {}, 'f:mode': {}, 'f:selector': {'.': {}, 'f:labelSelectors': {'.': {}, 'f:app': {}}}, 'f:stressors': {'.': {}, 'f:cpu': {'.': {}, 'f:load': {}, 'f:workers': {}}}}}, 'manager': 'OpenAPI-Generator', 'operation': 'Update', 'time': '2025-10-03T07:10:46Z'}], 'name': 'cpu-stress-database', 'namespace': 'default', 'resourceVersion': '10226850', 'uid': '54e5c642-b746-42cc-a195-b30aacb03e8f'}, 'spec': {'duration': '300s', 'mode': 'all', 'selector': {'labelSelectors': {'app': 'post-storage-mongodb'}, 'namespaces': ['default']}, 'stressors': {'cpu': {'load': 95, 'workers': 8}}}, 'status': {'experiment': {}}}'
+[36m[2025-10-03 07:10:46 DEBUG] [__init__:472] No controls to apply on 'activity'
+[36m[2025-10-03 07:10:46 DEBUG] [__init__:472] No controls to apply on 'activity'
+[32m[2025-10-03 07:10:46 INFO] [activity:232] Probe: wait-for-stress-duration
+[36m[2025-10-03 07:10:46 DEBUG] [process:52] Running: /usr/bin/sleep 305
+[36m[2025-10-03 07:10:46 DEBUG] [activity:260]   => succeeded with '{'apiVersion': 'chaos-mesh.org/v1alpha1', 'kind': 'StressChaos', 'metadata': {'creationTimestamp': '2025-10-03T07:10:46Z', 'generation': 1, 'managedFields': [{'apiVersion': 'chaos-mesh.org/v1alpha1', 'fieldsType': 'FieldsV1', 'fieldsV1': {'f:spec': {'.': {}, 'f:duration': {}, 'f:mode': {}, 'f:selector': {'.': {}, 'f:labelSelectors': {'.': {}, 'f:app': {}}}, 'f:stressors': {'.': {}, 'f:memory': {'.': {}, 'f:oomScoreAdj': {}, 'f:size': {}, 'f:workers': {}}}}}, 'manager': 'OpenAPI-Generator', 'operation': 'Update', 'time': '2025-10-03T07:10:46Z'}], 'name': 'memory-stress-database', 'namespace': 'default', 'resourceVersion': '10226855', 'uid': '2bef91b0-fef7-43e0-a34d-01384c776c65'}, 'spec': {'duration': '300s', 'mode': 'all', 'selector': {'labelSelectors': {'app': 'post-storage-mongodb'}, 'namespaces': ['default']}, 'stressors': {'memory': {'oomScoreAdj': 0, 'size': '240MB', 'workers': 1}}}, 'status': {'experiment': {}}}'
+[36m[2025-10-03 07:10:46 DEBUG] [__init__:472] No controls to apply on 'activity'
+[36m[2025-10-03 07:10:46 DEBUG] [__init__:472] No controls to apply on 'activity'
+[32m[2025-10-03 07:10:46 INFO] [activity:232] Probe: wait-for-memory-stress-duration
+[36m[2025-10-03 07:10:46 DEBUG] [process:52] Running: /usr/bin/sleep 305
+[36m[2025-10-03 07:10:57 DEBUG] [__init__:79] Using Kubernetes context 'default' from config '/root/.kube/config'
+[36m[2025-10-03 07:11:19 DEBUG] [__init__:79] Using Kubernetes context 'default' from config '/root/.kube/config'
+[36m[2025-10-03 07:12:01 DEBUG] [__init__:79] Using Kubernetes context 'default' from config '/root/.kube/config'
+[36m[2025-10-03 07:12:30 DEBUG] [__init__:101] ###############################################################################
+[36m[2025-10-03 07:12:30 DEBUG] [__init__:102] Running command 'run'
+[36m[2025-10-03 07:12:30 DEBUG] [__init__:106] Using settings file '/root/.chaostoolkit/settings.yaml'
+[36m[2025-10-03 07:12:30 DEBUG] [__init__:101] ###############################################################################
+[36m[2025-10-03 07:12:30 DEBUG] [__init__:102] Running command 'run'
+[36m[2025-10-03 07:12:30 DEBUG] [__init__:106] Using settings file '/root/.chaostoolkit/settings.yaml'
+[36m[2025-10-03 07:12:30 DEBUG] [__init__:101] ###############################################################################
+[36m[2025-10-03 07:12:30 DEBUG] [__init__:102] Running command 'run'
+[36m[2025-10-03 07:12:30 DEBUG] [__init__:106] Using settings file '/root/.chaostoolkit/settings.yaml'
+[36m[2025-10-03 07:12:31 DEBUG] [settings:31] The Chaos Toolkit settings file could not be found at '/root/.chaostoolkit/settings.yaml'.
+[36m[2025-10-03 07:12:31 DEBUG] [__init__:472] No controls to apply on 'loader'
+[36m[2025-10-03 07:12:31 DEBUG] [__init__:472] No controls to apply on 'loader'
+[36m[2025-10-03 07:12:31 DEBUG] [caching:24] Building activity cache...
+[36m[2025-10-03 07:12:31 DEBUG] [caching:35] Cached 2 activities
+[32m[2025-10-03 07:12:31 INFO] [experiment:59] Validating the experiment's syntax
+[36m[2025-10-03 07:12:31 DEBUG] [configuration:64] Loading configuration...
+[36m[2025-10-03 07:12:31 DEBUG] [secret:79] Loading secrets...
+[36m[2025-10-03 07:12:31 DEBUG] [secret:104] Done loading secrets
+[36m[2025-10-03 07:12:31 DEBUG] [settings:31] The Chaos Toolkit settings file could not be found at '/root/.chaostoolkit/settings.yaml'.
+[36m[2025-10-03 07:12:31 DEBUG] [settings:31] The Chaos Toolkit settings file could not be found at '/root/.chaostoolkit/settings.yaml'.
+[36m[2025-10-03 07:12:31 DEBUG] [__init__:472] No controls to apply on 'loader'
+[36m[2025-10-03 07:12:31 DEBUG] [__init__:472] No controls to apply on 'loader'
+[36m[2025-10-03 07:12:31 DEBUG] [__init__:472] No controls to apply on 'loader'
+[36m[2025-10-03 07:12:31 DEBUG] [caching:24] Building activity cache...
+[36m[2025-10-03 07:12:31 DEBUG] [caching:35] Cached 2 activities
+[32m[2025-10-03 07:12:31 INFO] [experiment:59] Validating the experiment's syntax
+[36m[2025-10-03 07:12:31 DEBUG] [configuration:64] Loading configuration...
+[36m[2025-10-03 07:12:31 DEBUG] [secret:79] Loading secrets...
+[36m[2025-10-03 07:12:31 DEBUG] [secret:104] Done loading secrets
+[36m[2025-10-03 07:12:31 DEBUG] [__init__:472] No controls to apply on 'loader'
+[36m[2025-10-03 07:12:31 DEBUG] [caching:24] Building activity cache...
+[36m[2025-10-03 07:12:31 DEBUG] [caching:35] Cached 1 activities
+[32m[2025-10-03 07:12:31 INFO] [experiment:59] Validating the experiment's syntax
+[36m[2025-10-03 07:12:31 DEBUG] [configuration:64] Loading configuration...
+[36m[2025-10-03 07:12:31 DEBUG] [secret:79] Loading secrets...
+[36m[2025-10-03 07:12:31 DEBUG] [secret:104] Done loading secrets
+[32m[2025-10-03 07:12:32 INFO] [experiment:112] Experiment looks valid
+[36m[2025-10-03 07:12:32 DEBUG] [caching:42] Clearing activities cache
+[36m[2025-10-03 07:12:32 DEBUG] [run:224] Runtime strategies: hypothesis - default / rollbacks - default
+[36m[2025-10-03 07:12:32 DEBUG] [caching:24] Building activity cache...
+[36m[2025-10-03 07:12:32 DEBUG] [caching:35] Cached 2 activities
+[36m[2025-10-03 07:12:32 DEBUG] [configuration:64] Loading configuration...
+[36m[2025-10-03 07:12:32 DEBUG] [secret:79] Loading secrets...
+[36m[2025-10-03 07:12:32 DEBUG] [secret:104] Done loading secrets
+[36m[2025-10-03 07:12:32 DEBUG] [configuration:161] Loading dynamic configuration...
+[32m[2025-10-03 07:12:32 INFO] [run:440] Running experiment: CPU Stress Test - Database Pod with Timed Rollback
+[36m[2025-10-03 07:12:32 DEBUG] [__init__:67] Initializing controls
+[32m[2025-10-03 07:12:32 INFO] [run:471] Steady-state strategy: default
+[32m[2025-10-03 07:12:32 INFO] [run:477] Rollbacks strategy: default
+[32m[2025-10-03 07:12:32 INFO] [run:485] No steady state hypothesis defined. That's ok, just exploring.
+[36m[2025-10-03 07:12:32 DEBUG] [__init__:472] No controls to apply on 'experiment'
+[32m[2025-10-03 07:12:32 INFO] [run:778] Playing your experiment's method now...
+[36m[2025-10-03 07:12:32 DEBUG] [__init__:472] No controls to apply on 'method'
+[36m[2025-10-03 07:12:32 DEBUG] [__init__:472] No controls to apply on 'activity'
+[32m[2025-10-03 07:12:32 INFO] [activity:232] Action: apply-database-cpu-stress
+[36m[2025-10-03 07:12:32 DEBUG] [python:33] Activity 'apply-database-cpu-stress' loaded from '/home/airflow/.local/lib/python3.11/site-packages/chaosk8s/chaosmesh/stress/actions.py'
+[36m[2025-10-03 07:12:32 DEBUG] [__init__:79] Using Kubernetes context 'default' from config '/root/.kube/config'
+[32m[2025-10-03 07:12:32 INFO] [experiment:112] Experiment looks valid
+[36m[2025-10-03 07:12:32 DEBUG] [caching:42] Clearing activities cache
+[36m[2025-10-03 07:12:32 DEBUG] [run:224] Runtime strategies: hypothesis - default / rollbacks - default
+[36m[2025-10-03 07:12:32 DEBUG] [caching:24] Building activity cache...
+[36m[2025-10-03 07:12:32 DEBUG] [caching:35] Cached 2 activities
+[36m[2025-10-03 07:12:32 DEBUG] [configuration:64] Loading configuration...
+[36m[2025-10-03 07:12:32 DEBUG] [secret:79] Loading secrets...
+[36m[2025-10-03 07:12:32 DEBUG] [secret:104] Done loading secrets
+[36m[2025-10-03 07:12:32 DEBUG] [configuration:161] Loading dynamic configuration...
+[32m[2025-10-03 07:12:32 INFO] [run:440] Running experiment: Memory Stress Test - Database Pod with Timed Rollback
+[36m[2025-10-03 07:12:32 DEBUG] [__init__:67] Initializing controls
+[32m[2025-10-03 07:12:32 INFO] [run:471] Steady-state strategy: default
+[32m[2025-10-03 07:12:32 INFO] [run:477] Rollbacks strategy: default
+[32m[2025-10-03 07:12:32 INFO] [run:485] No steady state hypothesis defined. That's ok, just exploring.
+[36m[2025-10-03 07:12:32 DEBUG] [__init__:472] No controls to apply on 'experiment'
+[32m[2025-10-03 07:12:32 INFO] [run:778] Playing your experiment's method now...
+[36m[2025-10-03 07:12:32 DEBUG] [__init__:472] No controls to apply on 'method'
+[36m[2025-10-03 07:12:32 DEBUG] [__init__:472] No controls to apply on 'activity'
+[32m[2025-10-03 07:12:32 INFO] [activity:232] Action: apply-cart-memory-stress
+[36m[2025-10-03 07:12:32 DEBUG] [python:33] Activity 'apply-cart-memory-stress' loaded from '/home/airflow/.local/lib/python3.11/site-packages/chaosk8s/chaosmesh/stress/actions.py'
+[36m[2025-10-03 07:12:32 DEBUG] [__init__:79] Using Kubernetes context 'default' from config '/root/.kube/config'
+[32m[2025-10-03 07:12:32 INFO] [experiment:112] Experiment looks valid
+[36m[2025-10-03 07:12:32 DEBUG] [caching:42] Clearing activities cache
+[36m[2025-10-03 07:12:32 DEBUG] [run:224] Runtime strategies: hypothesis - default / rollbacks - default
+[36m[2025-10-03 07:12:32 DEBUG] [caching:24] Building activity cache...
+[36m[2025-10-03 07:12:32 DEBUG] [caching:35] Cached 1 activities
+[36m[2025-10-03 07:12:32 DEBUG] [configuration:64] Loading configuration...
+[36m[2025-10-03 07:12:32 DEBUG] [secret:79] Loading secrets...
+[36m[2025-10-03 07:12:32 DEBUG] [secret:104] Done loading secrets
+[36m[2025-10-03 07:12:32 DEBUG] [configuration:161] Loading dynamic configuration...
+[32m[2025-10-03 07:12:32 INFO] [run:440] Running experiment: Continuous Container Restart Experiment
+[36m[2025-10-03 07:12:32 DEBUG] [__init__:67] Initializing controls
+[32m[2025-10-03 07:12:32 INFO] [run:471] Steady-state strategy: default
+[32m[2025-10-03 07:12:32 INFO] [run:477] Rollbacks strategy: default
+[32m[2025-10-03 07:12:32 INFO] [run:485] No steady state hypothesis defined. That's ok, just exploring.
+[36m[2025-10-03 07:12:32 DEBUG] [__init__:472] No controls to apply on 'experiment'
+[32m[2025-10-03 07:12:32 INFO] [run:778] Playing your experiment's method now...
+[36m[2025-10-03 07:12:32 DEBUG] [__init__:472] No controls to apply on 'method'
+[36m[2025-10-03 07:12:32 DEBUG] [__init__:472] No controls to apply on 'activity'
+[32m[2025-10-03 07:12:32 INFO] [activity:232] Action: continuous-container-restart
+[36m[2025-10-03 07:12:32 DEBUG] [python:33] Activity 'continuous-container-restart' loaded from '/opt/airflow/src/pod/container_restart.py'
+[36m[2025-10-03 07:12:32 DEBUG] [__init__:79] Using Kubernetes context 'default' from config '/root/.kube/config'
+[36m[2025-10-03 07:12:34 DEBUG] [actions:106] Custom resource object chaos-mesh.org/v1alpha1 already exists
+[36m[2025-10-03 07:12:34 DEBUG] [actions:106] Custom resource object chaos-mesh.org/v1alpha1 already exists
+[36m[2025-10-03 07:12:34 DEBUG] [activity:260]   => succeeded with '{'kind': 'Status', 'apiVersion': 'v1', 'metadata': {}, 'status': 'Failure', 'message': 'stresschaos.chaos-mesh.org "memory-stress-database" already exists', 'reason': 'AlreadyExists', 'details': {'name': 'memory-stress-database', 'group': 'chaos-mesh.org', 'kind': 'stresschaos'}, 'code': 409}'
+[36m[2025-10-03 07:12:34 DEBUG] [activity:260]   => succeeded with '{'kind': 'Status', 'apiVersion': 'v1', 'metadata': {}, 'status': 'Failure', 'message': 'stresschaos.chaos-mesh.org "cpu-stress-database" already exists', 'reason': 'AlreadyExists', 'details': {'name': 'cpu-stress-database', 'group': 'chaos-mesh.org', 'kind': 'stresschaos'}, 'code': 409}'
+[36m[2025-10-03 07:12:34 DEBUG] [__init__:472] No controls to apply on 'activity'
+[36m[2025-10-03 07:12:34 DEBUG] [__init__:472] No controls to apply on 'activity'
+[36m[2025-10-03 07:12:34 DEBUG] [__init__:472] No controls to apply on 'activity'
+[36m[2025-10-03 07:12:34 DEBUG] [__init__:472] No controls to apply on 'activity'
+[32m[2025-10-03 07:12:34 INFO] [activity:232] Probe: wait-for-stress-duration
+[32m[2025-10-03 07:12:34 INFO] [activity:232] Probe: wait-for-memory-stress-duration
+[36m[2025-10-03 07:12:34 DEBUG] [process:52] Running: /usr/bin/sleep 305
+[36m[2025-10-03 07:12:34 DEBUG] [process:52] Running: /usr/bin/sleep 305
+[36m[2025-10-03 07:12:43 DEBUG] [__init__:79] Using Kubernetes context 'default' from config '/root/.kube/config'
+[36m[2025-10-03 07:12:49 DEBUG] [__init__:79] Using Kubernetes context 'default' from config '/root/.kube/config'
+[33m[2025-10-03 07:12:53 WARNING] [exit:163] Caught SIGTERM signal, interrupting experiment now
+[33m[2025-10-03 07:12:53 WARNING] [exit:163] Caught SIGTERM signal, interrupting experiment now
+[33m[2025-10-03 07:12:53 WARNING] [exit:163] Caught SIGTERM signal, interrupting experiment now
+[36m[2025-10-03 07:12:53 DEBUG] [activity:317] Activity failed
+    Traceback (most recent call last):
+      File "/home/airflow/.local/lib/python3.11/site-packages/chaoslib/activity.py", line 312, in run_activity
+        result = run_process_activity(activity, configuration, secrets)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+      File "/home/airflow/.local/lib/python3.11/site-packages/chaoslib/provider/process.py", line 53, in run_process_activity
+        proc = subprocess.run(
+               ^^^^^^^^^^^^^^^
+      File "/usr/local/lib/python3.11/subprocess.py", line 550, in run
+        stdout, stderr = process.communicate(input, timeout=timeout)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+      File "/usr/local/lib/python3.11/subprocess.py", line 1209, in communicate
+        stdout, stderr = self._communicate(input, endtime, timeout)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+      File "/usr/local/lib/python3.11/subprocess.py", line 2115, in _communicate
+        ready = selector.select(timeout)
+                ^^^^^^^^^^^^^^^^^^^^^^^^
+      File "/usr/local/lib/python3.11/selectors.py", line 415, in select
+        fd_event_list = self._selector.poll(timeout)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+      File "/home/airflow/.local/lib/python3.11/site-packages/chaoslib/exit.py", line 164, in _terminate_now
+        raise InterruptExecution("SIGTERM signal received")
+    chaoslib.exceptions.InterruptExecution: SIGTERM signal received
+[36m[2025-10-03 07:12:53 DEBUG] [__init__:472] No controls to apply on 'activity'
+[36m[2025-10-03 07:12:53 DEBUG] [__init__:472] No controls to apply on 'method'
+[31m[2025-10-03 07:12:53 CRITICAL] [run:552] SIGTERM signal received
+[36m[2025-10-03 07:12:53 DEBUG] [activity:317] Activity failed
+    Traceback (most recent call last):
+      File "/home/airflow/.local/lib/python3.11/site-packages/chaoslib/activity.py", line 312, in run_activity
+        result = run_process_activity(activity, configuration, secrets)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+      File "/home/airflow/.local/lib/python3.11/site-packages/chaoslib/provider/process.py", line 53, in run_process_activity
+        proc = subprocess.run(
+               ^^^^^^^^^^^^^^^
+      File "/usr/local/lib/python3.11/subprocess.py", line 550, in run
+        stdout, stderr = process.communicate(input, timeout=timeout)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+      File "/usr/local/lib/python3.11/subprocess.py", line 1209, in communicate
+        stdout, stderr = self._communicate(input, endtime, timeout)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+      File "/usr/local/lib/python3.11/subprocess.py", line 2115, in _communicate
+        ready = selector.select(timeout)
+                ^^^^^^^^^^^^^^^^^^^^^^^^
+      File "/usr/local/lib/python3.11/selectors.py", line 415, in select
+        fd_event_list = self._selector.poll(timeout)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+      File "/home/airflow/.local/lib/python3.11/site-packages/chaoslib/exit.py", line 164, in _terminate_now
+        raise InterruptExecution("SIGTERM signal received")
+    chaoslib.exceptions.InterruptExecution: SIGTERM signal received
+[32m[2025-10-03 07:12:53 INFO] [run:598] Experiment ended with status: interrupted
+[36m[2025-10-03 07:12:53 DEBUG] [__init__:472] No controls to apply on 'activity'
+[36m[2025-10-03 07:12:53 DEBUG] [__init__:472] No controls to apply on 'method'
+[36m[2025-10-03 07:12:53 DEBUG] [__init__:472] No controls to apply on 'experiment'
+[36m[2025-10-03 07:12:53 DEBUG] [__init__:106] Cleaning up controls
+[31m[2025-10-03 07:12:53 CRITICAL] [run:552] SIGTERM signal received
+[32m[2025-10-03 07:12:53 INFO] [run:598] Experiment ended with status: interrupted
+[36m[2025-10-03 07:12:53 DEBUG] [__init__:472] No controls to apply on 'experiment'
+[36m[2025-10-03 07:12:53 DEBUG] [__init__:106] Cleaning up controls
+[36m[2025-10-03 07:12:53 DEBUG] [caching:42] Clearing activities cache
+[36m[2025-10-03 07:12:53 DEBUG] [caching:42] Clearing activities cache
+[36m[2025-10-03 07:12:58 DEBUG] [__init__:79] Using Kubernetes context 'default' from config '/root/.kube/config'
+[36m[2025-10-03 07:13:02 DEBUG] [__init__:79] Using Kubernetes context 'default' from config '/root/.kube/config'
+[36m[2025-10-03 07:13:13 DEBUG] [__init__:79] Using Kubernetes context 'default' from config '/root/.kube/config'
+[33m[2025-10-03 07:13:20 WARNING] [exit:163] Caught SIGTERM signal, interrupting experiment now
+[36m[2025-10-03 07:13:20 DEBUG] [activity:317] Activity failed
+    Traceback (most recent call last):
+      File "/home/airflow/.local/lib/python3.11/site-packages/chaoslib/activity.py", line 312, in run_activity
+        result = run_process_activity(activity, configuration, secrets)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+      File "/home/airflow/.local/lib/python3.11/site-packages/chaoslib/provider/process.py", line 53, in run_process_activity
+        proc = subprocess.run(
+               ^^^^^^^^^^^^^^^
+      File "/usr/local/lib/python3.11/subprocess.py", line 550, in run
+        stdout, stderr = process.communicate(input, timeout=timeout)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+      File "/usr/local/lib/python3.11/subprocess.py", line 1209, in communicate
+        stdout, stderr = self._communicate(input, endtime, timeout)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+      File "/usr/local/lib/python3.11/subprocess.py", line 2115, in _communicate
+        ready = selector.select(timeout)
+                ^^^^^^^^^^^^^^^^^^^^^^^^
+      File "/usr/local/lib/python3.11/selectors.py", line 415, in select
+        fd_event_list = self._selector.poll(timeout)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+      File "/home/airflow/.local/lib/python3.11/site-packages/chaoslib/exit.py", line 164, in _terminate_now
+        raise InterruptExecution("SIGTERM signal received")
+    chaoslib.exceptions.InterruptExecution: SIGTERM signal received
+[36m[2025-10-03 07:13:20 DEBUG] [__init__:472] No controls to apply on 'activity'
+[36m[2025-10-03 07:13:20 DEBUG] [__init__:472] No controls to apply on 'method'
+[31m[2025-10-03 07:13:20 CRITICAL] [run:552] SIGTERM signal received
+[32m[2025-10-03 07:13:20 INFO] [run:598] Experiment ended with status: interrupted
+[36m[2025-10-03 07:13:20 DEBUG] [__init__:472] No controls to apply on 'experiment'
+[36m[2025-10-03 07:13:20 DEBUG] [__init__:106] Cleaning up controls
+[36m[2025-10-03 07:13:20 DEBUG] [caching:42] Clearing activities cache
+[33m[2025-10-03 07:13:20 WARNING] [exit:163] Caught SIGTERM signal, interrupting experiment now
+[33m[2025-10-03 07:13:21 WARNING] [exit:163] Caught SIGTERM signal, interrupting experiment now
+[36m[2025-10-03 07:13:21 DEBUG] [activity:317] Activity failed
+    Traceback (most recent call last):
+      File "/home/airflow/.local/lib/python3.11/site-packages/chaoslib/activity.py", line 312, in run_activity
+        result = run_process_activity(activity, configuration, secrets)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+      File "/home/airflow/.local/lib/python3.11/site-packages/chaoslib/provider/process.py", line 53, in run_process_activity
+        proc = subprocess.run(
+               ^^^^^^^^^^^^^^^
+      File "/usr/local/lib/python3.11/subprocess.py", line 550, in run
+        stdout, stderr = process.communicate(input, timeout=timeout)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+      File "/usr/local/lib/python3.11/subprocess.py", line 1209, in communicate
+        stdout, stderr = self._communicate(input, endtime, timeout)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+      File "/usr/local/lib/python3.11/subprocess.py", line 2115, in _communicate
+        ready = selector.select(timeout)
+                ^^^^^^^^^^^^^^^^^^^^^^^^
+      File "/usr/local/lib/python3.11/selectors.py", line 415, in select
+        fd_event_list = self._selector.poll(timeout)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+      File "/home/airflow/.local/lib/python3.11/site-packages/chaoslib/exit.py", line 164, in _terminate_now
+        raise InterruptExecution("SIGTERM signal received")
+    chaoslib.exceptions.InterruptExecution: SIGTERM signal received
+[36m[2025-10-03 07:13:21 DEBUG] [__init__:472] No controls to apply on 'activity'
+[36m[2025-10-03 07:13:21 DEBUG] [__init__:472] No controls to apply on 'method'
+[31m[2025-10-03 07:13:21 CRITICAL] [run:552] SIGTERM signal received
+[32m[2025-10-03 07:13:21 INFO] [run:598] Experiment ended with status: interrupted
+[36m[2025-10-03 07:13:21 DEBUG] [__init__:472] No controls to apply on 'experiment'
+[36m[2025-10-03 07:13:21 DEBUG] [__init__:106] Cleaning up controls
+[36m[2025-10-03 07:13:21 DEBUG] [caching:42] Clearing activities cache
+[36m[2025-10-03 07:13:25 DEBUG] [__init__:79] Using Kubernetes context 'default' from config '/root/.kube/config'
+[36m[2025-10-06 06:19:13 DEBUG] [__init__:101] ###############################################################################
+[36m[2025-10-06 06:19:13 DEBUG] [__init__:102] Running command 'run'
+[36m[2025-10-06 06:19:13 DEBUG] [__init__:106] Using settings file '/root/.chaostoolkit/settings.yaml'
+[36m[2025-10-06 06:19:14 DEBUG] [settings:31] The Chaos Toolkit settings file could not be found at '/root/.chaostoolkit/settings.yaml'.
+[36m[2025-10-06 06:19:14 DEBUG] [__init__:472] No controls to apply on 'loader'
+[36m[2025-10-06 06:19:14 DEBUG] [__init__:472] No controls to apply on 'loader'
+[36m[2025-10-06 06:19:14 DEBUG] [caching:24] Building activity cache...
+[36m[2025-10-06 06:19:14 DEBUG] [caching:35] Cached 1 activities
+[32m[2025-10-06 06:19:14 INFO] [experiment:59] Validating the experiment's syntax
+[36m[2025-10-06 06:19:14 DEBUG] [configuration:64] Loading configuration...
+[36m[2025-10-06 06:19:14 DEBUG] [secret:79] Loading secrets...
+[36m[2025-10-06 06:19:14 DEBUG] [secret:104] Done loading secrets
+[32m[2025-10-06 06:19:14 INFO] [experiment:112] Experiment looks valid
+[36m[2025-10-06 06:19:14 DEBUG] [caching:42] Clearing activities cache
+[36m[2025-10-06 06:19:14 DEBUG] [run:224] Runtime strategies: hypothesis - default / rollbacks - default
+[36m[2025-10-06 06:19:14 DEBUG] [caching:24] Building activity cache...
+[36m[2025-10-06 06:19:14 DEBUG] [caching:35] Cached 1 activities
+[36m[2025-10-06 06:19:14 DEBUG] [configuration:64] Loading configuration...
+[36m[2025-10-06 06:19:14 DEBUG] [secret:79] Loading secrets...
+[36m[2025-10-06 06:19:14 DEBUG] [secret:104] Done loading secrets
+[36m[2025-10-06 06:19:14 DEBUG] [configuration:161] Loading dynamic configuration...
+[32m[2025-10-06 06:19:14 INFO] [run:440] Running experiment: Continuous Container Restart Experiment
+[36m[2025-10-06 06:19:14 DEBUG] [__init__:67] Initializing controls
+[32m[2025-10-06 06:19:14 INFO] [run:471] Steady-state strategy: default
+[32m[2025-10-06 06:19:14 INFO] [run:477] Rollbacks strategy: default
+[32m[2025-10-06 06:19:14 INFO] [run:485] No steady state hypothesis defined. That's ok, just exploring.
+[36m[2025-10-06 06:19:14 DEBUG] [__init__:472] No controls to apply on 'experiment'
+[32m[2025-10-06 06:19:14 INFO] [run:778] Playing your experiment's method now...
+[36m[2025-10-06 06:19:14 DEBUG] [__init__:472] No controls to apply on 'method'
+[36m[2025-10-06 06:19:14 DEBUG] [__init__:472] No controls to apply on 'activity'
+[32m[2025-10-06 06:19:14 INFO] [activity:232] Action: continuous-container-restart
+[36m[2025-10-06 06:19:14 DEBUG] [python:33] Activity 'continuous-container-restart' loaded from '/opt/airflow/src/pod/container_restart.py'
+[36m[2025-10-06 06:22:30 DEBUG] [activity:260]   => succeeded with '{'restart_cycles': 40, 'total_containers_restarted': 0, 'duration': 195.029310464859, 'status': 'completed', 'target': 'app=post-storage-mongodb', 'namespace': 'default', 'container_name': 'post-storage-mongodb'}'
+[36m[2025-10-06 06:22:30 DEBUG] [__init__:472] No controls to apply on 'activity'
+[36m[2025-10-06 06:22:30 DEBUG] [__init__:472] No controls to apply on 'method'
+[32m[2025-10-06 06:22:30 INFO] [run:1072] Let's rollback...
+[36m[2025-10-06 06:22:30 DEBUG] [__init__:472] No controls to apply on 'rollback'
+[32m[2025-10-06 06:22:30 INFO] [rollback:36] Rollback: verify-pods-running
+[36m[2025-10-06 06:22:30 DEBUG] [__init__:472] No controls to apply on 'activity'
+[32m[2025-10-06 06:22:30 INFO] [activity:232] Probe: verify-pods-running
+[36m[2025-10-06 06:22:30 DEBUG] [python:33] Activity 'verify-pods-running' loaded from '/home/airflow/.local/lib/python3.11/site-packages/chaosk8s/pod/probes.py'
+[36m[2025-10-06 06:22:30 DEBUG] [__init__:79] Using Kubernetes context 'default' from config '/root/.kube/config'
+[36m[2025-10-06 06:22:31 DEBUG] [probes:110] Found 1 pods matching label 'app=post-storage-mongodb' in ns 'default'
+[36m[2025-10-06 06:22:31 DEBUG] [activity:260]   => succeeded with 'True'
+[36m[2025-10-06 06:22:31 DEBUG] [__init__:472] No controls to apply on 'activity'
+[36m[2025-10-06 06:22:31 DEBUG] [__init__:472] No controls to apply on 'rollback'
+[32m[2025-10-06 06:22:31 INFO] [run:598] Experiment ended with status: completed
+[36m[2025-10-06 06:22:31 DEBUG] [__init__:472] No controls to apply on 'experiment'
+[36m[2025-10-06 06:22:31 DEBUG] [__init__:106] Cleaning up controls
+[36m[2025-10-06 06:22:31 DEBUG] [caching:42] Clearing activities cache
+[36m[2025-10-06 07:28:25 DEBUG] [__init__:101] ###############################################################################
+[36m[2025-10-06 07:28:25 DEBUG] [__init__:102] Running command 'run'
+[36m[2025-10-06 07:28:25 DEBUG] [__init__:106] Using settings file '/root/.chaostoolkit/settings.yaml'
+[36m[2025-10-06 07:28:26 DEBUG] [settings:31] The Chaos Toolkit settings file could not be found at '/root/.chaostoolkit/settings.yaml'.
+[36m[2025-10-06 07:28:26 DEBUG] [__init__:472] No controls to apply on 'loader'
+[36m[2025-10-06 07:28:26 DEBUG] [__init__:472] No controls to apply on 'loader'
+[36m[2025-10-06 07:28:26 DEBUG] [caching:24] Building activity cache...
+[36m[2025-10-06 07:28:26 DEBUG] [caching:35] Cached 1 activities
+[32m[2025-10-06 07:28:26 INFO] [experiment:59] Validating the experiment's syntax
+[36m[2025-10-06 07:28:26 DEBUG] [configuration:64] Loading configuration...
+[36m[2025-10-06 07:28:26 DEBUG] [secret:79] Loading secrets...
+[36m[2025-10-06 07:28:26 DEBUG] [secret:104] Done loading secrets
+[32m[2025-10-06 07:28:26 INFO] [experiment:112] Experiment looks valid
+[36m[2025-10-06 07:28:26 DEBUG] [caching:42] Clearing activities cache
+[36m[2025-10-06 07:28:26 DEBUG] [run:224] Runtime strategies: hypothesis - default / rollbacks - default
+[36m[2025-10-06 07:28:26 DEBUG] [caching:24] Building activity cache...
+[36m[2025-10-06 07:28:26 DEBUG] [caching:35] Cached 1 activities
+[36m[2025-10-06 07:28:26 DEBUG] [configuration:64] Loading configuration...
+[36m[2025-10-06 07:28:26 DEBUG] [secret:79] Loading secrets...
+[36m[2025-10-06 07:28:26 DEBUG] [secret:104] Done loading secrets
+[36m[2025-10-06 07:28:26 DEBUG] [configuration:161] Loading dynamic configuration...
+[32m[2025-10-06 07:28:26 INFO] [run:440] Running experiment: Change MongoDB maxIncomingConnections setting
+[36m[2025-10-06 07:28:26 DEBUG] [__init__:67] Initializing controls
+[32m[2025-10-06 07:28:26 INFO] [run:471] Steady-state strategy: default
+[32m[2025-10-06 07:28:26 INFO] [run:477] Rollbacks strategy: default
+[32m[2025-10-06 07:28:26 INFO] [run:485] No steady state hypothesis defined. That's ok, just exploring.
+[36m[2025-10-06 07:28:26 DEBUG] [__init__:472] No controls to apply on 'experiment'
+[32m[2025-10-06 07:28:26 INFO] [run:778] Playing your experiment's method now...
+[36m[2025-10-06 07:28:26 DEBUG] [__init__:472] No controls to apply on 'method'
+[36m[2025-10-06 07:28:26 DEBUG] [__init__:472] No controls to apply on 'activity'
+[32m[2025-10-06 07:28:26 INFO] [activity:232] Action: change-max-connections
+[36m[2025-10-06 07:28:26 DEBUG] [python:33] Activity 'change-max-connections' loaded from '/opt/airflow/src/pod/mongodb_actions.py'
+[36m[2025-10-06 07:29:34 DEBUG] [activity:260]   => succeeded with 'False'
+[36m[2025-10-06 07:29:34 DEBUG] [__init__:472] No controls to apply on 'activity'
+[36m[2025-10-06 07:29:34 DEBUG] [__init__:472] No controls to apply on 'method'
+[32m[2025-10-06 07:29:34 INFO] [run:1072] Let's rollback...
+[36m[2025-10-06 07:29:34 DEBUG] [__init__:472] No controls to apply on 'rollback'
+[32m[2025-10-06 07:29:34 INFO] [rollback:33] No declared rollbacks, let's move on.
+[36m[2025-10-06 07:29:34 DEBUG] [__init__:472] No controls to apply on 'rollback'
+[32m[2025-10-06 07:29:34 INFO] [run:598] Experiment ended with status: completed
+[36m[2025-10-06 07:29:34 DEBUG] [__init__:472] No controls to apply on 'experiment'
+[36m[2025-10-06 07:29:34 DEBUG] [__init__:106] Cleaning up controls
+[36m[2025-10-06 07:29:34 DEBUG] [caching:42] Clearing activities cache
+[36m[2025-10-06 08:38:35 DEBUG] [__init__:101] ###############################################################################
+[36m[2025-10-06 08:38:35 DEBUG] [__init__:102] Running command 'run'
+[36m[2025-10-06 08:38:35 DEBUG] [__init__:106] Using settings file '/root/.chaostoolkit/settings.yaml'
+[36m[2025-10-06 08:38:37 DEBUG] [settings:31] The Chaos Toolkit settings file could not be found at '/root/.chaostoolkit/settings.yaml'.
+[36m[2025-10-06 08:38:37 DEBUG] [__init__:472] No controls to apply on 'loader'
+[36m[2025-10-06 08:38:37 DEBUG] [__init__:472] No controls to apply on 'loader'
+[36m[2025-10-06 08:38:37 DEBUG] [caching:24] Building activity cache...
+[36m[2025-10-06 08:38:37 DEBUG] [caching:35] Cached 1 activities
+[32m[2025-10-06 08:38:37 INFO] [experiment:59] Validating the experiment's syntax
+[36m[2025-10-06 08:38:37 DEBUG] [configuration:64] Loading configuration...
+[36m[2025-10-06 08:38:37 DEBUG] [secret:79] Loading secrets...
+[36m[2025-10-06 08:38:37 DEBUG] [secret:104] Done loading secrets
+[32m[2025-10-06 08:38:37 INFO] [experiment:112] Experiment looks valid
+[36m[2025-10-06 08:38:37 DEBUG] [caching:42] Clearing activities cache
+[36m[2025-10-06 08:38:37 DEBUG] [run:224] Runtime strategies: hypothesis - default / rollbacks - default
+[36m[2025-10-06 08:38:37 DEBUG] [caching:24] Building activity cache...
+[36m[2025-10-06 08:38:37 DEBUG] [caching:35] Cached 1 activities
+[36m[2025-10-06 08:38:37 DEBUG] [configuration:64] Loading configuration...
+[36m[2025-10-06 08:38:37 DEBUG] [secret:79] Loading secrets...
+[36m[2025-10-06 08:38:37 DEBUG] [secret:104] Done loading secrets
+[36m[2025-10-06 08:38:37 DEBUG] [configuration:161] Loading dynamic configuration...
+[32m[2025-10-06 08:38:37 INFO] [run:440] Running experiment: Continuous Container Restart Experiment
+[36m[2025-10-06 08:38:37 DEBUG] [__init__:67] Initializing controls
+[32m[2025-10-06 08:38:37 INFO] [run:471] Steady-state strategy: default
+[32m[2025-10-06 08:38:37 INFO] [run:477] Rollbacks strategy: default
+[32m[2025-10-06 08:38:37 INFO] [run:485] No steady state hypothesis defined. That's ok, just exploring.
+[36m[2025-10-06 08:38:37 DEBUG] [__init__:472] No controls to apply on 'experiment'
+[32m[2025-10-06 08:38:37 INFO] [run:778] Playing your experiment's method now...
+[36m[2025-10-06 08:38:37 DEBUG] [__init__:472] No controls to apply on 'method'
+[36m[2025-10-06 08:38:37 DEBUG] [__init__:472] No controls to apply on 'activity'
+[32m[2025-10-06 08:38:37 INFO] [activity:232] Action: continuous-container-restart
+[36m[2025-10-06 08:38:37 DEBUG] [python:33] Activity 'continuous-container-restart' loaded from '/opt/airflow/src/pod/container_restart.py'
+[36m[2025-10-06 08:39:21 DEBUG] [__init__:101] ###############################################################################
+[36m[2025-10-06 08:39:21 DEBUG] [__init__:102] Running command 'run'
+[36m[2025-10-06 08:39:21 DEBUG] [__init__:106] Using settings file '/root/.chaostoolkit/settings.yaml'
+[36m[2025-10-06 08:39:21 DEBUG] [settings:31] The Chaos Toolkit settings file could not be found at '/root/.chaostoolkit/settings.yaml'.
+[36m[2025-10-06 08:39:21 DEBUG] [__init__:472] No controls to apply on 'loader'
+[36m[2025-10-06 08:39:21 DEBUG] [__init__:472] No controls to apply on 'loader'
+[36m[2025-10-06 08:39:21 DEBUG] [caching:24] Building activity cache...
+[36m[2025-10-06 08:39:21 DEBUG] [caching:35] Cached 1 activities
+[32m[2025-10-06 08:39:21 INFO] [experiment:59] Validating the experiment's syntax
+[36m[2025-10-06 08:39:21 DEBUG] [configuration:64] Loading configuration...
+[36m[2025-10-06 08:39:21 DEBUG] [secret:79] Loading secrets...
+[36m[2025-10-06 08:39:21 DEBUG] [secret:104] Done loading secrets
+[32m[2025-10-06 08:39:22 INFO] [experiment:112] Experiment looks valid
+[36m[2025-10-06 08:39:22 DEBUG] [caching:42] Clearing activities cache
+[36m[2025-10-06 08:39:22 DEBUG] [run:224] Runtime strategies: hypothesis - default / rollbacks - default
+[36m[2025-10-06 08:39:22 DEBUG] [caching:24] Building activity cache...
+[36m[2025-10-06 08:39:22 DEBUG] [caching:35] Cached 1 activities
+[36m[2025-10-06 08:39:22 DEBUG] [configuration:64] Loading configuration...
+[36m[2025-10-06 08:39:22 DEBUG] [secret:79] Loading secrets...
+[36m[2025-10-06 08:39:22 DEBUG] [secret:104] Done loading secrets
+[36m[2025-10-06 08:39:22 DEBUG] [configuration:161] Loading dynamic configuration...
+[32m[2025-10-06 08:39:22 INFO] [run:440] Running experiment: Continuous Container Restart Experiment
+[36m[2025-10-06 08:39:22 DEBUG] [__init__:67] Initializing controls
+[32m[2025-10-06 08:39:22 INFO] [run:471] Steady-state strategy: default
+[32m[2025-10-06 08:39:22 INFO] [run:477] Rollbacks strategy: default
+[32m[2025-10-06 08:39:22 INFO] [run:485] No steady state hypothesis defined. That's ok, just exploring.
+[36m[2025-10-06 08:39:22 DEBUG] [__init__:472] No controls to apply on 'experiment'
+[32m[2025-10-06 08:39:22 INFO] [run:778] Playing your experiment's method now...
+[36m[2025-10-06 08:39:22 DEBUG] [__init__:472] No controls to apply on 'method'
+[36m[2025-10-06 08:39:22 DEBUG] [__init__:472] No controls to apply on 'activity'
+[32m[2025-10-06 08:39:22 INFO] [activity:232] Action: continuous-container-restart
+[36m[2025-10-06 08:39:22 DEBUG] [python:33] Activity 'continuous-container-restart' loaded from '/opt/airflow/src/pod/container_restart.py'
+[36m[2025-10-06 08:42:37 DEBUG] [activity:260]   => succeeded with '{'restart_cycles': 40, 'total_containers_restarted': 0, 'duration': 195.021635055542, 'status': 'completed', 'target': 'app=post-storage-mongodb', 'namespace': 'default', 'container_name': 'post-storage-mongodb'}'
+[36m[2025-10-06 08:42:37 DEBUG] [__init__:472] No controls to apply on 'activity'
+[36m[2025-10-06 08:42:37 DEBUG] [__init__:472] No controls to apply on 'method'
+[32m[2025-10-06 08:42:37 INFO] [run:1072] Let's rollback...
+[36m[2025-10-06 08:42:37 DEBUG] [__init__:472] No controls to apply on 'rollback'
+[32m[2025-10-06 08:42:37 INFO] [rollback:36] Rollback: verify-pods-running
+[36m[2025-10-06 08:42:37 DEBUG] [__init__:472] No controls to apply on 'activity'
+[32m[2025-10-06 08:42:37 INFO] [activity:232] Probe: verify-pods-running
+[36m[2025-10-06 08:42:37 DEBUG] [python:33] Activity 'verify-pods-running' loaded from '/home/airflow/.local/lib/python3.11/site-packages/chaosk8s/pod/probes.py'
+[36m[2025-10-06 08:42:37 DEBUG] [__init__:79] Using Kubernetes context 'default' from config '/root/.kube/config'
+[36m[2025-10-06 08:42:38 DEBUG] [probes:110] Found 1 pods matching label 'app=post-storage-mongodb' in ns 'default'
+[36m[2025-10-06 08:42:38 DEBUG] [activity:260]   => succeeded with 'True'
+[36m[2025-10-06 08:42:38 DEBUG] [__init__:472] No controls to apply on 'activity'
+[36m[2025-10-06 08:42:38 DEBUG] [__init__:472] No controls to apply on 'rollback'
+[32m[2025-10-06 08:42:38 INFO] [run:598] Experiment ended with status: completed
+[36m[2025-10-06 08:42:38 DEBUG] [__init__:472] No controls to apply on 'experiment'
+[36m[2025-10-06 08:42:38 DEBUG] [__init__:106] Cleaning up controls
+[36m[2025-10-06 08:42:38 DEBUG] [caching:42] Clearing activities cache
+[36m[2025-10-06 12:23:55 DEBUG] [__init__:101] ###############################################################################
+[36m[2025-10-06 12:23:55 DEBUG] [__init__:102] Running command 'run'
+[36m[2025-10-06 12:23:55 DEBUG] [__init__:106] Using settings file '/root/.chaostoolkit/settings.yaml'
+[36m[2025-10-06 12:23:55 DEBUG] [settings:31] The Chaos Toolkit settings file could not be found at '/root/.chaostoolkit/settings.yaml'.
+[36m[2025-10-06 12:23:55 DEBUG] [__init__:472] No controls to apply on 'loader'
+[36m[2025-10-06 12:23:55 DEBUG] [__init__:472] No controls to apply on 'loader'
+[36m[2025-10-06 12:23:55 DEBUG] [caching:24] Building activity cache...
+[36m[2025-10-06 12:23:55 DEBUG] [caching:35] Cached 2 activities
+[32m[2025-10-06 12:23:55 INFO] [experiment:59] Validating the experiment's syntax
+[36m[2025-10-06 12:23:55 DEBUG] [configuration:64] Loading configuration...
+[36m[2025-10-06 12:23:55 DEBUG] [secret:79] Loading secrets...
+[36m[2025-10-06 12:23:55 DEBUG] [secret:104] Done loading secrets
+[32m[2025-10-06 12:23:56 INFO] [experiment:112] Experiment looks valid
+[36m[2025-10-06 12:23:56 DEBUG] [caching:42] Clearing activities cache
+[36m[2025-10-06 12:23:56 DEBUG] [run:224] Runtime strategies: hypothesis - default / rollbacks - default
+[36m[2025-10-06 12:23:56 DEBUG] [caching:24] Building activity cache...
+[36m[2025-10-06 12:23:56 DEBUG] [caching:35] Cached 2 activities
+[36m[2025-10-06 12:23:56 DEBUG] [configuration:64] Loading configuration...
+[36m[2025-10-06 12:23:56 DEBUG] [secret:79] Loading secrets...
+[36m[2025-10-06 12:23:56 DEBUG] [secret:104] Done loading secrets
+[36m[2025-10-06 12:23:56 DEBUG] [configuration:161] Loading dynamic configuration...
+[32m[2025-10-06 12:23:56 INFO] [run:440] Running experiment: Memory Stress Test - Database Pod with Timed Rollback
+[36m[2025-10-06 12:23:56 DEBUG] [__init__:67] Initializing controls
+[32m[2025-10-06 12:23:56 INFO] [run:471] Steady-state strategy: default
+[32m[2025-10-06 12:23:56 INFO] [run:477] Rollbacks strategy: default
+[32m[2025-10-06 12:23:56 INFO] [run:485] No steady state hypothesis defined. That's ok, just exploring.
+[36m[2025-10-06 12:23:56 DEBUG] [__init__:472] No controls to apply on 'experiment'
+[32m[2025-10-06 12:23:56 INFO] [run:778] Playing your experiment's method now...
+[36m[2025-10-06 12:23:56 DEBUG] [__init__:472] No controls to apply on 'method'
+[36m[2025-10-06 12:23:56 DEBUG] [__init__:472] No controls to apply on 'activity'
+[32m[2025-10-06 12:23:56 INFO] [activity:232] Action: apply-cart-memory-stress
+[36m[2025-10-06 12:23:56 DEBUG] [python:33] Activity 'apply-cart-memory-stress' loaded from '/home/airflow/.local/lib/python3.11/site-packages/chaosk8s/chaosmesh/stress/actions.py'
+[36m[2025-10-06 12:23:56 DEBUG] [__init__:79] Using Kubernetes context 'default' from config '/root/.kube/config'
+[36m[2025-10-06 12:23:57 DEBUG] [activity:260]   => succeeded with '{'apiVersion': 'chaos-mesh.org/v1alpha1', 'kind': 'StressChaos', 'metadata': {'creationTimestamp': '2025-10-06T12:23:57Z', 'generation': 1, 'managedFields': [{'apiVersion': 'chaos-mesh.org/v1alpha1', 'fieldsType': 'FieldsV1', 'fieldsV1': {'f:spec': {'.': {}, 'f:duration': {}, 'f:mode': {}, 'f:selector': {'.': {}, 'f:labelSelectors': {'.': {}, 'f:app': {}}}, 'f:stressors': {'.': {}, 'f:memory': {'.': {}, 'f:oomScoreAdj': {}, 'f:size': {}, 'f:workers': {}}}}}, 'manager': 'OpenAPI-Generator', 'operation': 'Update', 'time': '2025-10-06T12:23:57Z'}], 'name': 'memory-stress-database', 'namespace': 'default', 'resourceVersion': '11861393', 'uid': '6bcc3a53-1d89-486c-a206-000f944ec4b8'}, 'spec': {'duration': '300s', 'mode': 'all', 'selector': {'labelSelectors': {'app': 'post-storage-mongodb'}, 'namespaces': ['default']}, 'stressors': {'memory': {'oomScoreAdj': 0, 'size': '240MB', 'workers': 1}}}, 'status': {'experiment': {}}}'
+[36m[2025-10-06 12:23:57 DEBUG] [__init__:472] No controls to apply on 'activity'
+[36m[2025-10-06 12:23:57 DEBUG] [__init__:472] No controls to apply on 'activity'
+[32m[2025-10-06 12:23:57 INFO] [activity:232] Probe: wait-for-memory-stress-duration
+[36m[2025-10-06 12:23:57 DEBUG] [process:52] Running: /usr/bin/sleep 305
+[36m[2025-10-06 12:29:02 DEBUG] [activity:260]   => succeeded with '{'status': 0, 'stdout': '', 'stderr': ''}'
+[36m[2025-10-06 12:29:02 DEBUG] [__init__:472] No controls to apply on 'activity'
+[36m[2025-10-06 12:29:02 DEBUG] [__init__:472] No controls to apply on 'method'
+[32m[2025-10-06 12:29:02 INFO] [run:1072] Let's rollback...
+[36m[2025-10-06 12:29:02 DEBUG] [__init__:472] No controls to apply on 'rollback'
+[32m[2025-10-06 12:29:02 INFO] [rollback:36] Rollback: cleanup-database-memory-stress
+[36m[2025-10-06 12:29:02 DEBUG] [__init__:472] No controls to apply on 'activity'
+[32m[2025-10-06 12:29:02 INFO] [activity:232] Action: cleanup-database-memory-stress
+[36m[2025-10-06 12:29:02 DEBUG] [python:33] Activity 'cleanup-database-memory-stress' loaded from '/home/airflow/.local/lib/python3.11/site-packages/chaosk8s/chaosmesh/stress/actions.py'
+[36m[2025-10-06 12:29:02 DEBUG] [__init__:79] Using Kubernetes context 'default' from config '/root/.kube/config'
+[36m[2025-10-06 12:29:04 DEBUG] [activity:260]   => succeeded with '{'apiVersion': 'chaos-mesh.org/v1alpha1', 'kind': 'StressChaos', 'metadata': {'creationTimestamp': '2025-10-06T12:23:57Z', 'deletionGracePeriodSeconds': 0, 'deletionTimestamp': '2025-10-06T12:29:04Z', 'finalizers': ['chaos-mesh/records'], 'generation': 9, 'managedFields': [{'apiVersion': 'chaos-mesh.org/v1alpha1', 'fieldsType': 'FieldsV1', 'fieldsV1': {'f:spec': {'.': {}, 'f:duration': {}, 'f:mode': {}, 'f:selector': {'.': {}, 'f:labelSelectors': {'.': {}, 'f:app': {}}}, 'f:stressors': {'.': {}, 'f:memory': {'.': {}, 'f:oomScoreAdj': {}, 'f:size': {}, 'f:workers': {}}}}}, 'manager': 'OpenAPI-Generator', 'operation': 'Update', 'time': '2025-10-06T12:23:57Z'}, {'apiVersion': 'chaos-mesh.org/v1alpha1', 'fieldsType': 'FieldsV1', 'fieldsV1': {'f:metadata': {'f:finalizers': {'.': {}, 'v:"chaos-mesh/records"': {}}}, 'f:status': {'f:conditions': {}, 'f:experiment': {'f:containerRecords': {}, 'f:desiredPhase': {}}}}, 'manager': 'chaos-controller-manager', 'operation': 'Update', 'time': '2025-10-06T12:28:57Z'}], 'name': 'memory-stress-database', 'namespace': 'default', 'resourceVersion': '11863252', 'uid': '6bcc3a53-1d89-486c-a206-000f944ec4b8'}, 'spec': {'duration': '300s', 'mode': 'all', 'selector': {'labelSelectors': {'app': 'post-storage-mongodb'}, 'namespaces': ['default']}, 'stressors': {'memory': {'oomScoreAdj': 0, 'size': '240MB', 'workers': 1}}}, 'status': {'conditions': [{'status': 'True', 'type': 'Selected'}, {'status': 'False', 'type': 'AllInjected'}, {'status': 'True', 'type': 'AllRecovered'}, {'status': 'False', 'type': 'Paused'}], 'experiment': {'containerRecords': [{'events': [{'operation': 'Apply', 'timestamp': '2025-10-06T12:23:57Z', 'type': 'Succeeded'}, {'operation': 'Recover', 'timestamp': '2025-10-06T12:28:57Z', 'type': 'Succeeded'}], 'id': 'default/post-storage-mongodb-d5f69c6b6-7ftvd/post-storage-mongodb', 'injectedCount': 1, 'phase': 'Not Injected', 'recoveredCount': 1, 'selectorKey': '.'}], 'desiredPhase': 'Stop'}}}'
+[36m[2025-10-06 12:29:04 DEBUG] [__init__:472] No controls to apply on 'activity'
+[36m[2025-10-06 12:29:04 DEBUG] [__init__:472] No controls to apply on 'rollback'
+[32m[2025-10-06 12:29:04 INFO] [run:598] Experiment ended with status: completed
+[36m[2025-10-06 12:29:04 DEBUG] [__init__:472] No controls to apply on 'experiment'
+[36m[2025-10-06 12:29:04 DEBUG] [__init__:106] Cleaning up controls
+[36m[2025-10-06 12:29:04 DEBUG] [caching:42] Clearing activities cache
+[36m[2025-10-06 13:03:26 DEBUG] [__init__:101] ###############################################################################
+[36m[2025-10-06 13:03:26 DEBUG] [__init__:102] Running command 'run'
+[36m[2025-10-06 13:03:26 DEBUG] [__init__:106] Using settings file '/root/.chaostoolkit/settings.yaml'
+[36m[2025-10-06 13:03:27 DEBUG] [settings:31] The Chaos Toolkit settings file could not be found at '/root/.chaostoolkit/settings.yaml'.
+[36m[2025-10-06 13:03:27 DEBUG] [__init__:472] No controls to apply on 'loader'
+[36m[2025-10-06 13:03:27 DEBUG] [__init__:472] No controls to apply on 'loader'
+[36m[2025-10-06 13:03:27 DEBUG] [caching:24] Building activity cache...
+[36m[2025-10-06 13:03:27 DEBUG] [caching:35] Cached 2 activities
+[32m[2025-10-06 13:03:27 INFO] [experiment:59] Validating the experiment's syntax
+[36m[2025-10-06 13:03:27 DEBUG] [configuration:64] Loading configuration...
+[36m[2025-10-06 13:03:27 DEBUG] [secret:79] Loading secrets...
+[36m[2025-10-06 13:03:27 DEBUG] [secret:104] Done loading secrets
+[32m[2025-10-06 13:03:27 INFO] [experiment:112] Experiment looks valid
+[36m[2025-10-06 13:03:27 DEBUG] [caching:42] Clearing activities cache
+[36m[2025-10-06 13:03:27 DEBUG] [run:224] Runtime strategies: hypothesis - default / rollbacks - default
+[36m[2025-10-06 13:03:27 DEBUG] [caching:24] Building activity cache...
+[36m[2025-10-06 13:03:27 DEBUG] [caching:35] Cached 2 activities
+[36m[2025-10-06 13:03:27 DEBUG] [configuration:64] Loading configuration...
+[36m[2025-10-06 13:03:27 DEBUG] [secret:79] Loading secrets...
+[36m[2025-10-06 13:03:27 DEBUG] [secret:104] Done loading secrets
+[36m[2025-10-06 13:03:27 DEBUG] [configuration:161] Loading dynamic configuration...
+[32m[2025-10-06 13:03:27 INFO] [run:440] Running experiment: Memory Stress Test - Database Pod with Timed Rollback
+[36m[2025-10-06 13:03:27 DEBUG] [__init__:67] Initializing controls
+[32m[2025-10-06 13:03:27 INFO] [run:471] Steady-state strategy: default
+[32m[2025-10-06 13:03:27 INFO] [run:477] Rollbacks strategy: default
+[32m[2025-10-06 13:03:27 INFO] [run:485] No steady state hypothesis defined. That's ok, just exploring.
+[36m[2025-10-06 13:03:27 DEBUG] [__init__:472] No controls to apply on 'experiment'
+[32m[2025-10-06 13:03:27 INFO] [run:778] Playing your experiment's method now...
+[36m[2025-10-06 13:03:27 DEBUG] [__init__:472] No controls to apply on 'method'
+[36m[2025-10-06 13:03:27 DEBUG] [__init__:472] No controls to apply on 'activity'
+[32m[2025-10-06 13:03:27 INFO] [activity:232] Action: apply-cart-memory-stress
+[36m[2025-10-06 13:03:27 DEBUG] [python:33] Activity 'apply-cart-memory-stress' loaded from '/home/airflow/.local/lib/python3.11/site-packages/chaosk8s/chaosmesh/stress/actions.py'
+[36m[2025-10-06 13:03:27 DEBUG] [__init__:79] Using Kubernetes context 'default' from config '/root/.kube/config'
+[36m[2025-10-06 13:03:29 DEBUG] [activity:260]   => succeeded with '{'apiVersion': 'chaos-mesh.org/v1alpha1', 'kind': 'StressChaos', 'metadata': {'creationTimestamp': '2025-10-06T13:03:29Z', 'generation': 1, 'managedFields': [{'apiVersion': 'chaos-mesh.org/v1alpha1', 'fieldsType': 'FieldsV1', 'fieldsV1': {'f:spec': {'.': {}, 'f:containerNames': {}, 'f:duration': {}, 'f:mode': {}, 'f:selector': {'.': {}, 'f:labelSelectors': {'.': {}, 'f:app': {}}}, 'f:stressors': {'.': {}, 'f:memory': {'.': {}, 'f:oomScoreAdj': {}, 'f:size': {}, 'f:workers': {}}}}}, 'manager': 'OpenAPI-Generator', 'operation': 'Update', 'time': '2025-10-06T13:03:29Z'}], 'name': 'memory-stress-database', 'namespace': 'default', 'resourceVersion': '11875635', 'uid': '384d33bd-53d0-42a4-a44b-d3be74e3c0ae'}, 'spec': {'containerNames': ['post-storage-mongodb'], 'duration': '300s', 'mode': 'all', 'selector': {'labelSelectors': {'app': 'post-storage-mongodb'}, 'namespaces': ['default']}, 'stressors': {'memory': {'oomScoreAdj': 0, 'size': '240MB', 'workers': 1}}}, 'status': {'experiment': {}}}'
+[36m[2025-10-06 13:03:29 DEBUG] [__init__:472] No controls to apply on 'activity'
+[36m[2025-10-06 13:03:29 DEBUG] [__init__:472] No controls to apply on 'activity'
+[32m[2025-10-06 13:03:29 INFO] [activity:232] Probe: wait-for-memory-stress-duration
+[36m[2025-10-06 13:03:29 DEBUG] [process:52] Running: /usr/bin/sleep 305
+[36m[2025-10-06 13:08:34 DEBUG] [activity:260]   => succeeded with '{'status': 0, 'stdout': '', 'stderr': ''}'
+[36m[2025-10-06 13:08:34 DEBUG] [__init__:472] No controls to apply on 'activity'
+[36m[2025-10-06 13:08:34 DEBUG] [__init__:472] No controls to apply on 'method'
+[32m[2025-10-06 13:08:34 INFO] [run:1072] Let's rollback...
+[36m[2025-10-06 13:08:34 DEBUG] [__init__:472] No controls to apply on 'rollback'
+[32m[2025-10-06 13:08:34 INFO] [rollback:36] Rollback: cleanup-database-memory-stress
+[36m[2025-10-06 13:08:34 DEBUG] [__init__:472] No controls to apply on 'activity'
+[32m[2025-10-06 13:08:34 INFO] [activity:232] Action: cleanup-database-memory-stress
+[36m[2025-10-06 13:08:34 DEBUG] [python:33] Activity 'cleanup-database-memory-stress' loaded from '/home/airflow/.local/lib/python3.11/site-packages/chaosk8s/chaosmesh/stress/actions.py'
+[36m[2025-10-06 13:08:34 DEBUG] [__init__:79] Using Kubernetes context 'default' from config '/root/.kube/config'
+[36m[2025-10-06 13:08:36 DEBUG] [activity:260]   => succeeded with '{'apiVersion': 'chaos-mesh.org/v1alpha1', 'kind': 'StressChaos', 'metadata': {'creationTimestamp': '2025-10-06T13:03:29Z', 'deletionGracePeriodSeconds': 0, 'deletionTimestamp': '2025-10-06T13:08:36Z', 'finalizers': ['chaos-mesh/records'], 'generation': 9, 'managedFields': [{'apiVersion': 'chaos-mesh.org/v1alpha1', 'fieldsType': 'FieldsV1', 'fieldsV1': {'f:spec': {'.': {}, 'f:containerNames': {}, 'f:duration': {}, 'f:mode': {}, 'f:selector': {'.': {}, 'f:labelSelectors': {'.': {}, 'f:app': {}}}, 'f:stressors': {'.': {}, 'f:memory': {'.': {}, 'f:oomScoreAdj': {}, 'f:size': {}, 'f:workers': {}}}}}, 'manager': 'OpenAPI-Generator', 'operation': 'Update', 'time': '2025-10-06T13:03:29Z'}, {'apiVersion': 'chaos-mesh.org/v1alpha1', 'fieldsType': 'FieldsV1', 'fieldsV1': {'f:metadata': {'f:finalizers': {'.': {}, 'v:"chaos-mesh/records"': {}}}, 'f:status': {'f:conditions': {}, 'f:experiment': {'f:containerRecords': {}, 'f:desiredPhase': {}}}}, 'manager': 'chaos-controller-manager', 'operation': 'Update', 'time': '2025-10-06T13:08:29Z'}], 'name': 'memory-stress-database', 'namespace': 'default', 'resourceVersion': '11877505', 'uid': '384d33bd-53d0-42a4-a44b-d3be74e3c0ae'}, 'spec': {'containerNames': ['post-storage-mongodb'], 'duration': '300s', 'mode': 'all', 'selector': {'labelSelectors': {'app': 'post-storage-mongodb'}, 'namespaces': ['default']}, 'stressors': {'memory': {'oomScoreAdj': 0, 'size': '240MB', 'workers': 1}}}, 'status': {'conditions': [{'status': 'True', 'type': 'Selected'}, {'status': 'False', 'type': 'AllInjected'}, {'status': 'True', 'type': 'AllRecovered'}, {'status': 'False', 'type': 'Paused'}], 'experiment': {'containerRecords': [{'events': [{'operation': 'Apply', 'timestamp': '2025-10-06T13:03:29Z', 'type': 'Succeeded'}, {'operation': 'Recover', 'timestamp': '2025-10-06T13:08:29Z', 'type': 'Succeeded'}], 'id': 'default/post-storage-mongodb-d5f69c6b6-7ftvd/post-storage-mongodb', 'injectedCount': 1, 'phase': 'Not Injected', 'recoveredCount': 1, 'selectorKey': '.'}], 'desiredPhase': 'Stop'}}}'
+[36m[2025-10-06 13:08:36 DEBUG] [__init__:472] No controls to apply on 'activity'
+[36m[2025-10-06 13:08:36 DEBUG] [__init__:472] No controls to apply on 'rollback'
+[32m[2025-10-06 13:08:36 INFO] [run:598] Experiment ended with status: completed
+[36m[2025-10-06 13:08:36 DEBUG] [__init__:472] No controls to apply on 'experiment'
+[36m[2025-10-06 13:08:36 DEBUG] [__init__:106] Cleaning up controls
+[36m[2025-10-06 13:08:36 DEBUG] [caching:42] Clearing activities cache
+[36m[2025-10-06 13:13:56 DEBUG] [__init__:101] ###############################################################################
+[36m[2025-10-06 13:13:56 DEBUG] [__init__:102] Running command 'run'
+[36m[2025-10-06 13:13:56 DEBUG] [__init__:106] Using settings file '/root/.chaostoolkit/settings.yaml'
+[36m[2025-10-06 13:13:57 DEBUG] [settings:31] The Chaos Toolkit settings file could not be found at '/root/.chaostoolkit/settings.yaml'.
+[36m[2025-10-06 13:13:57 DEBUG] [__init__:472] No controls to apply on 'loader'
+[36m[2025-10-06 13:13:57 DEBUG] [__init__:472] No controls to apply on 'loader'
+[36m[2025-10-06 13:13:57 DEBUG] [caching:24] Building activity cache...
+[36m[2025-10-06 13:13:57 DEBUG] [caching:35] Cached 2 activities
+[32m[2025-10-06 13:13:57 INFO] [experiment:59] Validating the experiment's syntax
+[36m[2025-10-06 13:13:57 DEBUG] [configuration:64] Loading configuration...
+[36m[2025-10-06 13:13:57 DEBUG] [secret:79] Loading secrets...
+[36m[2025-10-06 13:13:57 DEBUG] [secret:104] Done loading secrets
+[32m[2025-10-06 13:13:57 INFO] [experiment:112] Experiment looks valid
+[36m[2025-10-06 13:13:57 DEBUG] [caching:42] Clearing activities cache
+[36m[2025-10-06 13:13:57 DEBUG] [run:224] Runtime strategies: hypothesis - default / rollbacks - default
+[36m[2025-10-06 13:13:57 DEBUG] [caching:24] Building activity cache...
+[36m[2025-10-06 13:13:57 DEBUG] [caching:35] Cached 2 activities
+[36m[2025-10-06 13:13:57 DEBUG] [configuration:64] Loading configuration...
+[36m[2025-10-06 13:13:57 DEBUG] [secret:79] Loading secrets...
+[36m[2025-10-06 13:13:57 DEBUG] [secret:104] Done loading secrets
+[36m[2025-10-06 13:13:57 DEBUG] [configuration:161] Loading dynamic configuration...
+[32m[2025-10-06 13:13:57 INFO] [run:440] Running experiment: Memory Stress Test - Database Pod with Timed Rollback
+[36m[2025-10-06 13:13:57 DEBUG] [__init__:67] Initializing controls
+[32m[2025-10-06 13:13:57 INFO] [run:471] Steady-state strategy: default
+[32m[2025-10-06 13:13:57 INFO] [run:477] Rollbacks strategy: default
+[32m[2025-10-06 13:13:57 INFO] [run:485] No steady state hypothesis defined. That's ok, just exploring.
+[36m[2025-10-06 13:13:57 DEBUG] [__init__:472] No controls to apply on 'experiment'
+[32m[2025-10-06 13:13:57 INFO] [run:778] Playing your experiment's method now...
+[36m[2025-10-06 13:13:57 DEBUG] [__init__:472] No controls to apply on 'method'
+[36m[2025-10-06 13:13:57 DEBUG] [__init__:472] No controls to apply on 'activity'
+[32m[2025-10-06 13:13:57 INFO] [activity:232] Action: apply-cart-memory-stress
+[36m[2025-10-06 13:13:57 DEBUG] [python:33] Activity 'apply-cart-memory-stress' loaded from '/home/airflow/.local/lib/python3.11/site-packages/chaosk8s/chaosmesh/stress/actions.py'
+[36m[2025-10-06 13:13:57 DEBUG] [__init__:79] Using Kubernetes context 'default' from config '/root/.kube/config'
+[36m[2025-10-06 13:13:59 DEBUG] [activity:260]   => succeeded with '{'apiVersion': 'chaos-mesh.org/v1alpha1', 'kind': 'StressChaos', 'metadata': {'creationTimestamp': '2025-10-06T13:13:59Z', 'generation': 1, 'managedFields': [{'apiVersion': 'chaos-mesh.org/v1alpha1', 'fieldsType': 'FieldsV1', 'fieldsV1': {'f:spec': {'.': {}, 'f:containerNames': {}, 'f:duration': {}, 'f:mode': {}, 'f:selector': {'.': {}, 'f:labelSelectors': {'.': {}, 'f:app': {}}}, 'f:stressors': {'.': {}, 'f:memory': {'.': {}, 'f:oomScoreAdj': {}, 'f:size': {}, 'f:workers': {}}}}}, 'manager': 'OpenAPI-Generator', 'operation': 'Update', 'time': '2025-10-06T13:13:58Z'}], 'name': 'memory-stress-database', 'namespace': 'default', 'resourceVersion': '11879407', 'uid': 'a600f0f8-b5aa-4341-baa2-4c5deccff582'}, 'spec': {'containerNames': ['post-storage-mongodb'], 'duration': '300s', 'mode': 'all', 'selector': {'labelSelectors': {'app': 'post-storage-mongodb'}, 'namespaces': ['default']}, 'stressors': {'memory': {'oomScoreAdj': 0, 'size': '240MB', 'workers': 1}}}, 'status': {'experiment': {}}}'
+[36m[2025-10-06 13:13:59 DEBUG] [__init__:472] No controls to apply on 'activity'
+[36m[2025-10-06 13:13:59 DEBUG] [__init__:472] No controls to apply on 'activity'
+[32m[2025-10-06 13:13:59 INFO] [activity:232] Probe: wait-for-memory-stress-duration
+[36m[2025-10-06 13:13:59 DEBUG] [process:52] Running: /usr/bin/sleep 305
+[36m[2025-10-06 13:19:04 DEBUG] [activity:260]   => succeeded with '{'status': 0, 'stdout': '', 'stderr': ''}'
+[36m[2025-10-06 13:19:04 DEBUG] [__init__:472] No controls to apply on 'activity'
+[36m[2025-10-06 13:19:04 DEBUG] [__init__:472] No controls to apply on 'method'
+[32m[2025-10-06 13:19:04 INFO] [run:1072] Let's rollback...
+[36m[2025-10-06 13:19:04 DEBUG] [__init__:472] No controls to apply on 'rollback'
+[32m[2025-10-06 13:19:04 INFO] [rollback:36] Rollback: cleanup-database-memory-stress
+[36m[2025-10-06 13:19:04 DEBUG] [__init__:472] No controls to apply on 'activity'
+[32m[2025-10-06 13:19:04 INFO] [activity:232] Action: cleanup-database-memory-stress
+[36m[2025-10-06 13:19:04 DEBUG] [python:33] Activity 'cleanup-database-memory-stress' loaded from '/home/airflow/.local/lib/python3.11/site-packages/chaosk8s/chaosmesh/stress/actions.py'
+[36m[2025-10-06 13:19:04 DEBUG] [__init__:79] Using Kubernetes context 'default' from config '/root/.kube/config'
+[36m[2025-10-06 13:19:05 DEBUG] [activity:260]   => succeeded with '{'apiVersion': 'chaos-mesh.org/v1alpha1', 'kind': 'StressChaos', 'metadata': {'creationTimestamp': '2025-10-06T13:13:59Z', 'deletionGracePeriodSeconds': 0, 'deletionTimestamp': '2025-10-06T13:19:05Z', 'finalizers': ['chaos-mesh/records'], 'generation': 9, 'managedFields': [{'apiVersion': 'chaos-mesh.org/v1alpha1', 'fieldsType': 'FieldsV1', 'fieldsV1': {'f:spec': {'.': {}, 'f:containerNames': {}, 'f:duration': {}, 'f:mode': {}, 'f:selector': {'.': {}, 'f:labelSelectors': {'.': {}, 'f:app': {}}}, 'f:stressors': {'.': {}, 'f:memory': {'.': {}, 'f:oomScoreAdj': {}, 'f:size': {}, 'f:workers': {}}}}}, 'manager': 'OpenAPI-Generator', 'operation': 'Update', 'time': '2025-10-06T13:13:58Z'}, {'apiVersion': 'chaos-mesh.org/v1alpha1', 'fieldsType': 'FieldsV1', 'fieldsV1': {'f:metadata': {'f:finalizers': {'.': {}, 'v:"chaos-mesh/records"': {}}}, 'f:status': {'f:conditions': {}, 'f:experiment': {'f:containerRecords': {}, 'f:desiredPhase': {}}}}, 'manager': 'chaos-controller-manager', 'operation': 'Update', 'time': '2025-10-06T13:18:59Z'}], 'name': 'memory-stress-database', 'namespace': 'default', 'resourceVersion': '11881324', 'uid': 'a600f0f8-b5aa-4341-baa2-4c5deccff582'}, 'spec': {'containerNames': ['post-storage-mongodb'], 'duration': '300s', 'mode': 'all', 'selector': {'labelSelectors': {'app': 'post-storage-mongodb'}, 'namespaces': ['default']}, 'stressors': {'memory': {'oomScoreAdj': 0, 'size': '240MB', 'workers': 1}}}, 'status': {'conditions': [{'status': 'True', 'type': 'Selected'}, {'status': 'False', 'type': 'AllInjected'}, {'status': 'True', 'type': 'AllRecovered'}, {'status': 'False', 'type': 'Paused'}], 'experiment': {'containerRecords': [{'events': [{'operation': 'Apply', 'timestamp': '2025-10-06T13:13:59Z', 'type': 'Succeeded'}, {'operation': 'Recover', 'timestamp': '2025-10-06T13:18:59Z', 'type': 'Succeeded'}], 'id': 'default/post-storage-mongodb-d5f69c6b6-7ftvd/post-storage-mongodb', 'injectedCount': 1, 'phase': 'Not Injected', 'recoveredCount': 1, 'selectorKey': '.'}], 'desiredPhase': 'Stop'}}}'
+[36m[2025-10-06 13:19:05 DEBUG] [__init__:472] No controls to apply on 'activity'
+[36m[2025-10-06 13:19:05 DEBUG] [__init__:472] No controls to apply on 'rollback'
+[32m[2025-10-06 13:19:05 INFO] [run:598] Experiment ended with status: completed
+[36m[2025-10-06 13:19:05 DEBUG] [__init__:472] No controls to apply on 'experiment'
+[36m[2025-10-06 13:19:05 DEBUG] [__init__:106] Cleaning up controls
+[36m[2025-10-06 13:19:05 DEBUG] [caching:42] Clearing activities cache
+[36m[2025-10-07 06:09:22 DEBUG] [__init__:101] ###############################################################################
+[36m[2025-10-07 06:09:22 DEBUG] [__init__:102] Running command 'run'
+[36m[2025-10-07 06:09:22 DEBUG] [__init__:106] Using settings file '/root/.chaostoolkit/settings.yaml'
+[36m[2025-10-07 06:09:22 DEBUG] [settings:31] The Chaos Toolkit settings file could not be found at '/root/.chaostoolkit/settings.yaml'.
+[36m[2025-10-07 06:09:22 DEBUG] [__init__:472] No controls to apply on 'loader'
+[36m[2025-10-07 06:09:22 DEBUG] [__init__:472] No controls to apply on 'loader'
+[36m[2025-10-07 06:09:22 DEBUG] [caching:24] Building activity cache...
+[36m[2025-10-07 06:09:22 DEBUG] [caching:35] Cached 2 activities
+[32m[2025-10-07 06:09:22 INFO] [experiment:59] Validating the experiment's syntax
+[36m[2025-10-07 06:09:22 DEBUG] [configuration:64] Loading configuration...
+[36m[2025-10-07 06:09:22 DEBUG] [secret:79] Loading secrets...
+[36m[2025-10-07 06:09:22 DEBUG] [secret:104] Done loading secrets
+[32m[2025-10-07 06:09:23 INFO] [experiment:112] Experiment looks valid
+[36m[2025-10-07 06:09:23 DEBUG] [caching:42] Clearing activities cache
+[36m[2025-10-07 06:09:23 DEBUG] [run:224] Runtime strategies: hypothesis - default / rollbacks - default
+[36m[2025-10-07 06:09:23 DEBUG] [caching:24] Building activity cache...
+[36m[2025-10-07 06:09:23 DEBUG] [caching:35] Cached 2 activities
+[36m[2025-10-07 06:09:23 DEBUG] [configuration:64] Loading configuration...
+[36m[2025-10-07 06:09:23 DEBUG] [secret:79] Loading secrets...
+[36m[2025-10-07 06:09:23 DEBUG] [secret:104] Done loading secrets
+[36m[2025-10-07 06:09:23 DEBUG] [configuration:161] Loading dynamic configuration...
+[32m[2025-10-07 06:09:23 INFO] [run:440] Running experiment: Memory Stress Test - Database Pod with Timed Rollback
+[36m[2025-10-07 06:09:23 DEBUG] [__init__:67] Initializing controls
+[32m[2025-10-07 06:09:23 INFO] [run:471] Steady-state strategy: default
+[32m[2025-10-07 06:09:23 INFO] [run:477] Rollbacks strategy: default
+[32m[2025-10-07 06:09:23 INFO] [run:485] No steady state hypothesis defined. That's ok, just exploring.
+[36m[2025-10-07 06:09:23 DEBUG] [__init__:472] No controls to apply on 'experiment'
+[32m[2025-10-07 06:09:23 INFO] [run:778] Playing your experiment's method now...
+[36m[2025-10-07 06:09:23 DEBUG] [__init__:472] No controls to apply on 'method'
+[36m[2025-10-07 06:09:23 DEBUG] [__init__:472] No controls to apply on 'activity'
+[32m[2025-10-07 06:09:23 INFO] [activity:232] Action: apply-cart-memory-stress
+[36m[2025-10-07 06:09:23 DEBUG] [python:33] Activity 'apply-cart-memory-stress' loaded from '/home/airflow/.local/lib/python3.11/site-packages/chaosk8s/chaosmesh/stress/actions.py'
+[36m[2025-10-07 06:09:23 DEBUG] [__init__:79] Using Kubernetes context 'default' from config '/root/.kube/config'
+[36m[2025-10-07 06:09:24 DEBUG] [activity:260]   => succeeded with '{'apiVersion': 'chaos-mesh.org/v1alpha1', 'kind': 'StressChaos', 'metadata': {'creationTimestamp': '2025-10-07T06:09:24Z', 'generation': 1, 'managedFields': [{'apiVersion': 'chaos-mesh.org/v1alpha1', 'fieldsType': 'FieldsV1', 'fieldsV1': {'f:spec': {'.': {}, 'f:duration': {}, 'f:mode': {}, 'f:selector': {'.': {}, 'f:labelSelectors': {'.': {}, 'f:app': {}}}, 'f:stressors': {'.': {}, 'f:memory': {'.': {}, 'f:oomScoreAdj': {}, 'f:size': {}, 'f:workers': {}}}}}, 'manager': 'OpenAPI-Generator', 'operation': 'Update', 'time': '2025-10-07T06:09:24Z'}], 'name': 'memory-stress-database', 'namespace': 'default', 'resourceVersion': '12244436', 'uid': 'ca7a0edd-9a9f-4604-814d-09978b9f4a3c'}, 'spec': {'duration': '300s', 'mode': 'all', 'selector': {'labelSelectors': {'app': 'post-storage-service'}, 'namespaces': ['default']}, 'stressors': {'memory': {'oomScoreAdj': 0, 'size': '240MB', 'workers': 1}}}, 'status': {'experiment': {}}}'
+[36m[2025-10-07 06:09:24 DEBUG] [__init__:472] No controls to apply on 'activity'
+[36m[2025-10-07 06:09:24 DEBUG] [__init__:472] No controls to apply on 'activity'
+[32m[2025-10-07 06:09:24 INFO] [activity:232] Probe: wait-for-memory-stress-duration
+[36m[2025-10-07 06:09:24 DEBUG] [process:52] Running: /usr/bin/sleep 305
+[36m[2025-10-07 06:14:29 DEBUG] [activity:260]   => succeeded with '{'status': 0, 'stdout': '', 'stderr': ''}'
+[36m[2025-10-07 06:14:29 DEBUG] [__init__:472] No controls to apply on 'activity'
+[36m[2025-10-07 06:14:29 DEBUG] [__init__:472] No controls to apply on 'method'
+[32m[2025-10-07 06:14:29 INFO] [run:1072] Let's rollback...
+[36m[2025-10-07 06:14:29 DEBUG] [__init__:472] No controls to apply on 'rollback'
+[32m[2025-10-07 06:14:29 INFO] [rollback:36] Rollback: cleanup-database-memory-stress
+[36m[2025-10-07 06:14:29 DEBUG] [__init__:472] No controls to apply on 'activity'
+[32m[2025-10-07 06:14:29 INFO] [activity:232] Action: cleanup-database-memory-stress
+[36m[2025-10-07 06:14:29 DEBUG] [python:33] Activity 'cleanup-database-memory-stress' loaded from '/home/airflow/.local/lib/python3.11/site-packages/chaosk8s/chaosmesh/stress/actions.py'
+[36m[2025-10-07 06:14:29 DEBUG] [__init__:79] Using Kubernetes context 'default' from config '/root/.kube/config'
+[36m[2025-10-07 06:14:30 DEBUG] [activity:260]   => succeeded with '{'apiVersion': 'chaos-mesh.org/v1alpha1', 'kind': 'StressChaos', 'metadata': {'creationTimestamp': '2025-10-07T06:09:24Z', 'deletionGracePeriodSeconds': 0, 'deletionTimestamp': '2025-10-07T06:14:30Z', 'finalizers': ['chaos-mesh/records'], 'generation': 9, 'managedFields': [{'apiVersion': 'chaos-mesh.org/v1alpha1', 'fieldsType': 'FieldsV1', 'fieldsV1': {'f:spec': {'.': {}, 'f:duration': {}, 'f:mode': {}, 'f:selector': {'.': {}, 'f:labelSelectors': {'.': {}, 'f:app': {}}}, 'f:stressors': {'.': {}, 'f:memory': {'.': {}, 'f:oomScoreAdj': {}, 'f:size': {}, 'f:workers': {}}}}}, 'manager': 'OpenAPI-Generator', 'operation': 'Update', 'time': '2025-10-07T06:09:24Z'}, {'apiVersion': 'chaos-mesh.org/v1alpha1', 'fieldsType': 'FieldsV1', 'fieldsV1': {'f:metadata': {'f:finalizers': {'.': {}, 'v:"chaos-mesh/records"': {}}}, 'f:status': {'f:conditions': {}, 'f:experiment': {'f:containerRecords': {}, 'f:desiredPhase': {}}}}, 'manager': 'chaos-controller-manager', 'operation': 'Update', 'time': '2025-10-07T06:14:24Z'}], 'name': 'memory-stress-database', 'namespace': 'default', 'resourceVersion': '12246296', 'uid': 'ca7a0edd-9a9f-4604-814d-09978b9f4a3c'}, 'spec': {'duration': '300s', 'mode': 'all', 'selector': {'labelSelectors': {'app': 'post-storage-service'}, 'namespaces': ['default']}, 'stressors': {'memory': {'oomScoreAdj': 0, 'size': '240MB', 'workers': 1}}}, 'status': {'conditions': [{'status': 'False', 'type': 'Paused'}, {'status': 'True', 'type': 'Selected'}, {'status': 'False', 'type': 'AllInjected'}, {'status': 'True', 'type': 'AllRecovered'}], 'experiment': {'containerRecords': [{'events': [{'operation': 'Apply', 'timestamp': '2025-10-07T06:09:24Z', 'type': 'Succeeded'}, {'operation': 'Recover', 'timestamp': '2025-10-07T06:14:24Z', 'type': 'Succeeded'}], 'id': 'default/post-storage-service-769cf6947d-k64tz/post-storage-service', 'injectedCount': 1, 'phase': 'Not Injected', 'recoveredCount': 1, 'selectorKey': '.'}], 'desiredPhase': 'Stop'}}}'
+[36m[2025-10-07 06:14:30 DEBUG] [__init__:472] No controls to apply on 'activity'
+[36m[2025-10-07 06:14:30 DEBUG] [__init__:472] No controls to apply on 'rollback'
+[32m[2025-10-07 06:14:30 INFO] [run:598] Experiment ended with status: completed
+[36m[2025-10-07 06:14:30 DEBUG] [__init__:472] No controls to apply on 'experiment'
+[36m[2025-10-07 06:14:30 DEBUG] [__init__:106] Cleaning up controls
+[36m[2025-10-07 06:14:30 DEBUG] [caching:42] Clearing activities cache

@@ -19,7 +19,7 @@
         "func": "stress_endpoint",
         "arguments": {
           "endpoint": "http://4.154.253.199:8080/api/post/compose",
-          "vus": 1,
+          "vus": 1000,
           "duration": "180s",
           "username": "jagan",
           "password": "maplelabs",

@@ -1,0 +1,28 @@
+{
+  "version": "1.0.0",
+  "title": "Load Test with Automatic Database Cleanup",
+  "description": "Run load test then automatically cleanup old posts, keeping latest 10000",
+  "tags": ["load-test", "POST", "k6", "jwt-auth", "auto-cleanup"],
+  "method": [
+    {
+      "name": "Load test POST API with JWT",
+      "type": "action",
+      "provider": {
+        "type": "python",
+        "module": "chaosk6_actions",
+        "func": "stress_endpoint",
+        "arguments": {
+          "endpoint": "http://4.154.253.199:8080/api/post/compose",
+          "vus": 500,
+          "duration": "180s",
+          "username": "jagan",
+          "password": "maplelabs",
+          "log_file": "k6_load_test.log",
+          "method": "POST",
+          "body": "post_type=0&text=Load_Test"
+        }
+      }
+    }
+  ],
+  "rollbacks": []
+}

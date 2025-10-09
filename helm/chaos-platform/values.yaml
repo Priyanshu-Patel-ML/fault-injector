@@ -1,0 +1,133 @@
+replicaCount: 1
+
+image:
+  repository: priyanshu01ce/airflow_chaos
+  pullPolicy: IfNotPresent
+  tag: "latest"
+
+nameOverride: ""
+fullnameOverride: ""
+
+# AKS specific configuration
+cluster:
+  provider: "aks"
+  resourceGroup: "ai-sre-ops"
+
+namespace:
+  name: "chaos-ops"
+  create: true  # Change to true to create the namespace
+
+serviceAccount:
+  create: true
+  name: "chaos-platform-sa"
+  annotations:
+    # Add any Azure-specific annotations if needed
+
+rbac:
+  create: true
+  clusterRole: true  # Enable cluster-wide permissions
+  rules:
+    - apiGroups: [""]
+      resources: ["pods", "pods/log", "pods/exec"]
+      verbs: ["get", "list", "watch", "create", "update", "patch", "delete"]
+    - apiGroups: [""]
+      resources: ["services", "endpoints", "configmaps"]
+      verbs: ["get", "list", "watch", "create", "update", "patch", "delete"]
+    - apiGroups: ["apps"]
+      resources: ["deployments", "replicasets", "daemonsets", "statefulsets"]
+      verbs: ["get", "list", "watch", "create", "update", "patch", "delete"]
+    - apiGroups: ["networking.k8s.io"]
+      resources: ["networkpolicies"]
+      verbs: ["get", "list", "watch", "create", "update", "patch", "delete"]
+    - apiGroups: [""]
+      resources: ["namespaces"]
+      verbs: ["get", "list", "watch"]
+
+service:
+  type: LoadBalancer
+  port: 8080
+  targetPort: 8080
+  annotations:
+    service.beta.kubernetes.io/azure-load-balancer-internal: "false"
+
+ingress:
+  enabled: true
+  className: "nginx"  # Common for AKS
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    nginx.ingress.kubernetes.io/rewrite-target: /
+  hosts:
+    - host: chaos-platform-fault-gen.eastus.cloudapp.azure.com
+      paths:
+        - path: /
+          pathType: Prefix
+  tls: []
+
+resources:
+  limits:
+    cpu: 1000m
+    memory: 2Gi
+  requests:
+    cpu: 250m
+    memory: 512Mi
+
+# AKS node selector for specific node pools if needed
+nodeSelector: {}
+tolerations: []
+affinity: {}
+
+airflow:
+  executor: LocalExecutor
+  webserver:
+    port: 8080
+  config:
+    webserver:
+      secret_key: "your-fixed-secret-key-here"
+    logging:
+      remote_logging: false
+      logging_level: "INFO"
+    core:
+      remote_logging: false
+    kubernetes:
+      delete_worker_pods: false
+      worker_pods_creation_batch_size: 1
+  extraEnv:
+    - name: AIRFLOW__WEBSERVER__SECRET_KEY
+      value: "your-fixed-secret-key-here"
+    - name: AIRFLOW__LOGGING__REMOTE_LOGGING
+      value: "False"
+    - name: AIRFLOW__CORE__REMOTE_LOGGING
+      value: "False"
+  
+chaos:
+  experiments:
+    enabled: true
+    targetNamespaces:
+      - "default"
+      - "production"
+      - "staging"
+      - "development"
+      - "microservices"
+  dags:
+    enabled: true
+
+# Local development configuration
+localDevelopment:
+  enabled: false
+
+# Add ConfigMap configuration
+useConfigMap:
+  enabled: true
+  name: "chaos-experiments"
+  mountPath: "/opt/airflow/src/pod"
+
+# External PostgreSQL (could be Azure Database for PostgreSQL)
+postgresql:
+  enabled: false
+  external:
+    host: "postgres-postgresql.default.svc.cluster.local"
+    port: 5432
+    database: "airflow"
+    username: "airflow"
+    password: "airflow"
+    sslmode: "disable"

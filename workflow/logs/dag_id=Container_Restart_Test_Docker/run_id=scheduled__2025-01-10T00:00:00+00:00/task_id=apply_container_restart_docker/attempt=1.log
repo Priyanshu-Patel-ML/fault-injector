@@ -1,0 +1,1071 @@
+[2025-09-25T04:35:42.783+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-09-25T04:35:42.825+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: Container_Restart_Test_Docker.apply_container_restart_docker scheduled__2025-01-10T00:00:00+00:00 [queued]>
+[2025-09-25T04:35:42.833+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: Container_Restart_Test_Docker.apply_container_restart_docker scheduled__2025-01-10T00:00:00+00:00 [queued]>
+[2025-09-25T04:35:42.833+0000] {taskinstance.py:2865} INFO - Starting attempt 1 of 1
+[2025-09-25T04:35:42.847+0000] {taskinstance.py:2888} INFO - Executing <Task(DockerOperator): apply_container_restart_docker> on 2025-01-10 00:00:00+00:00
+[2025-09-25T04:35:42.854+0000] {standard_task_runner.py:72} INFO - Started process 77 to run task
+[2025-09-25T04:35:42.869+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'Container_Restart_Test_Docker', 'apply_container_restart_docker', 'scheduled__2025-01-10T00:00:00+00:00', '--job-id', '285', '--raw', '--subdir', 'DAGS_FOLDER/dag_factory.py', '--cfg-path', '/tmp/tmpei19solx']
+[2025-09-25T04:35:42.873+0000] {standard_task_runner.py:105} INFO - Job 285: Subtask apply_container_restart_docker
+[2025-09-25T04:35:43.062+0000] {task_command.py:467} INFO - Running <TaskInstance: Container_Restart_Test_Docker.apply_container_restart_docker scheduled__2025-01-10T00:00:00+00:00 [running]> on host BNXL-80508-WL.India.XoriantCorp.com
+[2025-09-25T04:35:43.266+0000] {taskinstance.py:3131} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='Container_Restart_Test_Docker' AIRFLOW_CTX_TASK_ID='apply_container_restart_docker' AIRFLOW_CTX_EXECUTION_DATE='2025-01-10T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-01-10T00:00:00+00:00'
+[2025-09-25T04:35:43.273+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2025-09-25T04:35:43.443+0000] {docker.py:367} INFO - Starting docker container from image priyanshu01ce/***_chaos:latest
+[2025-09-25T04:35:43.882+0000] {docker.py:438} INFO - The container is run as root user. For security, consider using a regular user account.
+[2025-09-25T04:35:54.226+0000] {docker.py:438} INFO - 
+[2025-09-25T04:35:54.237+0000] {docker.py:438} INFO - total 256
+[2025-09-25T04:35:54.237+0000] {docker.py:438} INFO - drwxr-xr-x 4    1000 1000 4096 Sep 25 04:33 .
+[2025-09-25T04:35:54.237+0000] {docker.py:438} INFO - drwxr-xr-x 1 *** root 4096 Sep 24 12:24 ..
+[2025-09-25T04:35:54.238+0000] {docker.py:438} INFO - -rw-r--r-- 1    1000 1000 1193 Sep  8 07:02 API_Latency.json
+[2025-09-25T04:35:54.238+0000] {docker.py:438} INFO - -rw-r--r-- 1    1000 1000 1315 Sep 10 07:15 API_Latency_Test.yaml
+[2025-09-25T04:35:54.238+0000] {docker.py:438} INFO - -rw-r--r-- 1    1000 1000  729 Sep  9 10:30 API_Timeout.json
+[2025-09-25T04:35:54.238+0000] {docker.py:438} INFO - -rw-r--r-- 1    1000 1000 1326 Sep 10 07:30 API_Timeout_Test.yaml
+[2025-09-25T04:35:54.238+0000] {docker.py:438} INFO - -rw-r--r-- 1    1000 1000 2523 Sep 10 14:01 Combined_Parallel_Test.yaml
+[2025-09-25T04:35:54.238+0000] {docker.py:438} INFO - -rw-r--r-- 1    1000 1000 1338 Sep 19 06:37 Continuous_Load_Test.yaml
+[2025-09-25T04:35:54.238+0000] {docker.py:438} INFO - -rw-r--r-- 1    1000 1000 1246 Sep 20 07:07 Load_Test.yaml
+[2025-09-25T04:35:54.239+0000] {docker.py:438} INFO - -rw-r--r-- 1    1000 1000 1315 Sep 17 07:59 MongoDB_Connection_Test.yaml
+[2025-09-25T04:35:54.239+0000] {docker.py:438} INFO - -rw-r--r-- 1    1000 1000 1262 Sep 22 08:11 Stress_test.yaml
+[2025-09-25T04:35:54.239+0000] {docker.py:438} INFO - -rw-r--r-- 1    1000 1000 1017 Sep 24 10:45 Stress_test_kube.yaml
+[2025-09-25T04:35:54.239+0000] {docker.py:438} INFO - drwxr-xr-x 2 root    root 4096 Sep 22 09:05 __pycache__
+[2025-09-25T04:35:54.239+0000] {docker.py:438} INFO - -rw-r--r-- 1    1000 1000 8875 Sep 22 09:04 chaosk6_actions.py
+[2025-09-25T04:35:54.239+0000] {docker.py:438} INFO - -rw-rw-r-- 1 root    root 4553 Sep 25 04:31 chaostoolkit.log
+[2025-09-25T04:35:54.240+0000] {docker.py:438} INFO - -rw-r--r-- 1    1000 1000 3213 Sep  9 09:11 combined-sequential.json
+[2025-09-25T04:35:54.240+0000] {docker.py:438} INFO - -rw-r--r-- 1    1000 1000  502 Sep 16 05:31 connection_test_experiment.json
+[2025-09-25T04:35:54.240+0000] {docker.py:438} INFO - -rw-r--r-- 1    1000 1000 1420 Sep 24 06:53 container_restart.json
+[2025-09-25T04:35:54.240+0000] {docker.py:438} INFO - -rw-r--r-- 1    1000 1000 9681 Sep 24 10:04 container_restart.py
+[2025-09-25T04:35:54.240+0000] {docker.py:438} INFO - -rw-r--r-- 1    1000 1000 1345 Sep 24 07:37 container_restart_docker.yaml
+[2025-09-25T04:35:54.240+0000] {docker.py:438} INFO - -rw-r--r-- 1    1000 1000 1031 Sep 24 07:37 container_restart_kube.yaml
+[2025-09-25T04:35:54.241+0000] {docker.py:438} INFO - -rw-r--r-- 1    1000 1000 1409 Sep 18 12:30 continuous_load_test.json
+[2025-09-25T04:35:54.241+0000] {docker.py:438} INFO - -rw-r--r-- 1    1000 1000 1138 Sep 19 06:36 continuous_load_test.yaml
+[2025-09-25T04:35:54.241+0000] {docker.py:438} INFO - -rw-r--r-- 1    1000 1000  945 Sep 24 10:42 continuous_load_test_kube.yaml
+[2025-09-25T04:35:54.241+0000] {docker.py:438} INFO - -rw-r--r-- 1    1000 1000 1963 Sep 24 17:11 cordon-uncordon-node.json
+[2025-09-25T04:35:54.241+0000] {docker.py:438} INFO - -rw-r--r-- 1    1000 1000 1543 Sep 25 04:33 cordon_test.json
+[2025-09-25T04:35:54.241+0000] {docker.py:438} INFO - -rw-r--r-- 1    1000 1000 1057 Sep 25 04:34 cordon_uncordon_node.yaml
+[2025-09-25T04:35:54.241+0000] {docker.py:438} INFO - -rw-r--r-- 1    1000 1000 1214 Sep 24 17:12 cordon_uncordon_node_kube.yaml
+[2025-09-25T04:35:54.241+0000] {docker.py:438} INFO - -rw-r--r-- 1    1000 1000 1771 Sep 24 07:40 db_cleanup.json
+[2025-09-25T04:35:54.241+0000] {docker.py:438} INFO - -rw-r--r-- 1    1000 1000 6399 Sep 24 07:40 db_cleanup.py
+[2025-09-25T04:35:54.242+0000] {docker.py:438} INFO - -rw-r--r-- 1    1000 1000 1172 Sep 24 07:40 db_cleanup_docker.yaml
+[2025-09-25T04:35:54.242+0000] {docker.py:438} INFO - -rw-r--r-- 1    1000 1000 1097 Sep 24 10:43 db_cleanup_kube.yaml
+[2025-09-25T04:35:54.242+0000] {docker.py:438} INFO - -rw-r--r-- 1 root    root 3086 Sep 22 08:03 journal.json
+[2025-09-25T04:35:54.242+0000] {docker.py:438} INFO - -rw-r--r-- 1 root    root 3970 Sep 20 09:39 k6_continuous_summary.json
+[2025-09-25T04:35:54.242+0000] {docker.py:438} INFO - -rw-r--r-- 1 root    root 3483 Sep 22 08:03 k6_summary.json
+[2025-09-25T04:35:54.242+0000] {docker.py:438} INFO - -rw-r--r-- 1    1000 1000  945 Sep 21 16:40 load_test.json
+[2025-09-25T04:35:54.242+0000] {docker.py:438} INFO - -rw-r--r-- 1    1000 1000  419 Sep 22 07:30 load_test_cleanup.json
+[2025-09-25T04:35:54.242+0000] {docker.py:438} INFO - -rw-r--r-- 1    1000 1000  879 Sep 24 07:14 load_test_kube.yaml
+[2025-09-25T04:35:54.243+0000] {docker.py:438} INFO - -rw-r--r-- 1    1000 1000  528 Sep 17 12:13 max_connection_experiment.json
+[2025-09-25T04:35:54.243+0000] {docker.py:438} INFO - -rw-r--r-- 1    1000 1000 1227 Sep 13 15:20 memory-stress-rollback.json
+[2025-09-25T04:35:54.243+0000] {docker.py:438} INFO - -rw-r--r-- 1    1000 1000 7586 Sep 18 05:54 mongodb_actions.py
+[2025-09-25T04:35:54.243+0000] {docker.py:438} INFO - -rw-r--r-- 1    1000 1000 2136 Sep 18 11:23 mongodb_connection.json
+[2025-09-25T04:35:54.243+0000] {docker.py:438} INFO - -rw-r--r-- 1    1000 1000  597 Sep 16 09:17 mongodb_network_latency_experiment.json
+[2025-09-25T04:35:54.243+0000] {docker.py:438} INFO - -rw-r--r-- 1    1000 1000 3657 Sep 18 05:42 mongodb_probes.py
+[2025-09-25T04:35:54.243+0000] {docker.py:438} INFO - -rw-r--r-- 1    1000 1000 6161 Sep 12 08:04 pod_restart.py
+[2025-09-25T04:35:54.243+0000] {docker.py:438} INFO - -rw-r--r-- 1    1000 1000 1632 Sep 16 08:57 redis_config_faults.py
+[2025-09-25T04:35:54.244+0000] {docker.py:438} INFO - -rw-r--r-- 1    1000 1000  902 Sep 18 08:24 redis_experiment.json
+[2025-09-25T04:35:54.244+0000] {docker.py:438} INFO - -rw-r--r-- 1    1000 1000 1251 Sep 18 09:25 redis_experiment.yaml
+[2025-09-25T04:35:54.244+0000] {docker.py:438} INFO - -rw-r--r-- 1    1000 1000  929 Sep 24 07:35 redis_experiment_kube.yaml
+[2025-09-25T04:35:54.244+0000] {docker.py:438} INFO - -rw-r--r-- 1    1000 1000  945 Sep 18 06:53 redis_load.json
+[2025-09-25T04:35:54.244+0000] {docker.py:438} INFO - -rw-r--r-- 1    1000 1000 1260 Sep 18 11:42 redis_memory_stress.yaml
+[2025-09-25T04:35:54.244+0000] {docker.py:438} INFO - -rw-r--r-- 1    1000 1000 2509 Sep 18 07:30 redis_oarallel_test.yaml
+[2025-09-25T04:35:54.244+0000] {docker.py:438} INFO - -rw-r--r-- 1    1000 1000 1284 Sep 22 07:26 run_load_test_with_cleanup.py
+[2025-09-25T04:35:54.244+0000] {docker.py:438} INFO - drwxr-xr-x 2    1000 1000 4096 Sep 18 09:09 scripts
+[2025-09-25T04:35:54.244+0000] {docker.py:438} INFO - -rw-r--r-- 1    1000 1000  367 Sep 17 07:24 test_params.json
+[2025-09-25T04:35:54.245+0000] {docker.py:438} INFO - Starting continuous container restart experiment...
+[2025-09-25T04:35:55.172+0000] {docker.py:438} INFO - [32m[2025-09-25 04:35:55 INFO] Validating the experiment's syntax
+[2025-09-25T04:35:55.565+0000] {docker.py:438} INFO - [32m[2025-09-25 04:35:55 INFO] Experiment looks valid
+[2025-09-25T04:35:55.566+0000] {docker.py:438} INFO - [32m[2025-09-25 04:35:55 INFO] Running experiment: Continuous Container Restart Experiment
+[2025-09-25T04:35:55.569+0000] {docker.py:438} INFO - [32m[2025-09-25 04:35:55 INFO] Steady-state strategy: default
+[2025-09-25T04:35:55.569+0000] {docker.py:438} INFO - [32m[2025-09-25 04:35:55 INFO] Rollbacks strategy: default
+[2025-09-25T04:35:55.569+0000] {docker.py:438} INFO - [32m[2025-09-25 04:35:55 INFO] No steady state hypothesis defined. That's ok, just exploring.
+[2025-09-25T04:35:55.569+0000] {docker.py:438} INFO - [32m[2025-09-25 04:35:55 INFO] Playing your experiment's method now...
+[2025-09-25T04:35:55.570+0000] {docker.py:438} INFO - [32m[2025-09-25 04:35:55 INFO] Action: continuous-container-restart
+[2025-09-25T04:36:58.795+0000] {docker.py:438} INFO - 🚀 Starting continuous container restart experiment
+[2025-09-25T04:36:58.796+0000] {docker.py:438} INFO - 📅 Interval: 5 seconds
+[2025-09-25T04:36:58.796+0000] {docker.py:438} INFO - ⏱️  Duration: 400 seconds
+[2025-09-25T04:36:58.796+0000] {docker.py:438} INFO - 🎯 Target: app=compose-post-service
+[2025-09-25T04:36:58.796+0000] {docker.py:438} INFO - 📍 Namespace: default
+[2025-09-25T04:36:58.796+0000] {docker.py:438} INFO - 📦 Container: compose-post-service
+[2025-09-25T04:36:58.796+0000] {docker.py:438} INFO - 
+[2025-09-25T04:36:58.797+0000] {docker.py:438} INFO - ============================================================
+[2025-09-25T04:36:58.797+0000] {docker.py:438} INFO - 🔄 Container Restart #1 at 2025-09-25 04:35:55
+[2025-09-25T04:36:58.797+0000] {docker.py:438} INFO - ============================================================
+[2025-09-25T04:36:58.797+0000] {docker.py:438} INFO - 🔄 Container restart function started!
+[2025-09-25T04:36:58.797+0000] {docker.py:438} INFO - 🔧 Loading in-cluster Kubernetes configuration...
+[2025-09-25T04:36:58.797+0000] {docker.py:438} INFO - ❌ Failed to load in-cluster config: Service host/port is not set.
+[2025-09-25T04:36:58.797+0000] {docker.py:438} INFO - 🔧 Trying local kubeconfig...
+[2025-09-25T04:36:58.797+0000] {docker.py:438} INFO - ✅ Successfully loaded local kubeconfig
+[2025-09-25T04:36:58.797+0000] {docker.py:438} INFO - 🔍 Selecting pods with label_selector: app=compose-post-service
+[2025-09-25T04:36:58.798+0000] {docker.py:438} INFO - 📋 Found 1 pods initially
+[2025-09-25T04:36:58.798+0000] {docker.py:438} INFO - 🎲 Random selection: 1 pods
+[2025-09-25T04:36:58.798+0000] {docker.py:438} INFO - ✅ Selected pods: ['compose-post-service-5878b79d-2zg9g']
+[2025-09-25T04:36:58.798+0000] {docker.py:438} INFO - 🎯 Restarting container in pod: compose-post-service-5878b79d-2zg9g
+[2025-09-25T04:36:58.798+0000] {docker.py:438} INFO - ✅ Successfully sent restart signal to container in pod compose-post-service-5878b79d-2zg9g
+[2025-09-25T04:36:58.798+0000] {docker.py:438} INFO - 📤 STDERR: {"metadata":{},"status":"Success"}
+[2025-09-25T04:36:58.798+0000] {docker.py:438} INFO - 🏁 Restart operation completed for 1 containers
+[2025-09-25T04:36:58.798+0000] {docker.py:438} INFO - ✅ Successfully restarted 1 containers
+[2025-09-25T04:36:58.799+0000] {docker.py:438} INFO -    📦 compose-post-service-5878b79d-2zg9g: restart_signal_sent
+[2025-09-25T04:36:58.799+0000] {docker.py:438} INFO - ⏳ Waiting 5 seconds until next restart...
+[2025-09-25T04:36:58.799+0000] {docker.py:438} INFO - 📊 Time remaining: 396 seconds
+[2025-09-25T04:36:58.799+0000] {docker.py:438} INFO - 📈 Total containers restarted so far: 1
+[2025-09-25T04:36:58.799+0000] {docker.py:438} INFO - 
+[2025-09-25T04:36:58.799+0000] {docker.py:438} INFO - ============================================================
+[2025-09-25T04:36:58.799+0000] {docker.py:438} INFO - 🔄 Container Restart #2 at 2025-09-25 04:36:04
+[2025-09-25T04:36:58.800+0000] {docker.py:438} INFO - ============================================================
+[2025-09-25T04:36:58.800+0000] {docker.py:438} INFO - 🔄 Container restart function started!
+[2025-09-25T04:36:58.800+0000] {docker.py:438} INFO - 🔧 Loading in-cluster Kubernetes configuration...
+[2025-09-25T04:36:58.800+0000] {docker.py:438} INFO - ❌ Failed to load in-cluster config: Service host/port is not set.
+[2025-09-25T04:36:58.800+0000] {docker.py:438} INFO - 🔧 Trying local kubeconfig...
+[2025-09-25T04:36:58.800+0000] {docker.py:438} INFO - ✅ Successfully loaded local kubeconfig
+[2025-09-25T04:36:58.800+0000] {docker.py:438} INFO - 🔍 Selecting pods with label_selector: app=compose-post-service
+[2025-09-25T04:36:58.800+0000] {docker.py:438} INFO - 📋 Found 1 pods initially
+[2025-09-25T04:36:58.800+0000] {docker.py:438} INFO - 🎲 Random selection: 1 pods
+[2025-09-25T04:36:58.801+0000] {docker.py:438} INFO - ✅ Selected pods: ['compose-post-service-5878b79d-2zg9g']
+[2025-09-25T04:36:58.801+0000] {docker.py:438} INFO - 🎯 Restarting container in pod: compose-post-service-5878b79d-2zg9g
+[2025-09-25T04:36:58.801+0000] {docker.py:438} INFO - ✅ Successfully sent restart signal to container in pod compose-post-service-5878b79d-2zg9g
+[2025-09-25T04:36:58.801+0000] {docker.py:438} INFO - 📤 STDERR: {"metadata":{},"status":"Success"}
+[2025-09-25T04:36:58.801+0000] {docker.py:438} INFO - 🏁 Restart operation completed for 1 containers
+[2025-09-25T04:36:58.801+0000] {docker.py:438} INFO - ✅ Successfully restarted 1 containers
+[2025-09-25T04:36:58.801+0000] {docker.py:438} INFO -    📦 compose-post-service-5878b79d-2zg9g: restart_signal_sent
+[2025-09-25T04:36:58.801+0000] {docker.py:438} INFO - ⏳ Waiting 5 seconds until next restart...
+[2025-09-25T04:36:58.802+0000] {docker.py:438} INFO - 📊 Time remaining: 387 seconds
+[2025-09-25T04:36:58.802+0000] {docker.py:438} INFO - 📈 Total containers restarted so far: 2
+[2025-09-25T04:36:58.802+0000] {docker.py:438} INFO - 
+[2025-09-25T04:36:58.802+0000] {docker.py:438} INFO - ============================================================
+[2025-09-25T04:36:58.802+0000] {docker.py:438} INFO - 🔄 Container Restart #3 at 2025-09-25 04:36:13
+[2025-09-25T04:36:58.802+0000] {docker.py:438} INFO - ============================================================
+[2025-09-25T04:36:58.802+0000] {docker.py:438} INFO - 🔄 Container restart function started!
+[2025-09-25T04:36:58.802+0000] {docker.py:438} INFO - 🔧 Loading in-cluster Kubernetes configuration...
+[2025-09-25T04:36:58.803+0000] {docker.py:438} INFO - ❌ Failed to load in-cluster config: Service host/port is not set.
+[2025-09-25T04:36:58.803+0000] {docker.py:438} INFO - 🔧 Trying local kubeconfig...
+[2025-09-25T04:36:58.803+0000] {docker.py:438} INFO - ✅ Successfully loaded local kubeconfig
+[2025-09-25T04:36:58.803+0000] {docker.py:438} INFO - 🔍 Selecting pods with label_selector: app=compose-post-service
+[2025-09-25T04:36:58.803+0000] {docker.py:438} INFO - 📋 Found 1 pods initially
+[2025-09-25T04:36:58.804+0000] {docker.py:438} INFO - 🎲 Random selection: 1 pods
+[2025-09-25T04:36:58.804+0000] {docker.py:438} INFO - ✅ Selected pods: ['compose-post-service-5878b79d-2zg9g']
+[2025-09-25T04:36:58.804+0000] {docker.py:438} INFO - 🎯 Restarting container in pod: compose-post-service-5878b79d-2zg9g
+[2025-09-25T04:36:58.804+0000] {docker.py:438} INFO - ✅ Successfully sent restart signal to container in pod compose-post-service-5878b79d-2zg9g
+[2025-09-25T04:36:58.804+0000] {docker.py:438} INFO - 📤 STDERR: {"metadata":{},"status":"Success"}
+[2025-09-25T04:36:58.804+0000] {docker.py:438} INFO - 🏁 Restart operation completed for 1 containers
+[2025-09-25T04:36:58.805+0000] {docker.py:438} INFO - ✅ Successfully restarted 1 containers
+[2025-09-25T04:36:58.805+0000] {docker.py:438} INFO -    📦 compose-post-service-5878b79d-2zg9g: restart_signal_sent
+[2025-09-25T04:36:58.805+0000] {docker.py:438} INFO - ⏳ Waiting 5 seconds until next restart...
+[2025-09-25T04:36:58.805+0000] {docker.py:438} INFO - 📊 Time remaining: 378 seconds
+[2025-09-25T04:36:58.805+0000] {docker.py:438} INFO - 📈 Total containers restarted so far: 3
+[2025-09-25T04:36:58.805+0000] {docker.py:438} INFO - 
+[2025-09-25T04:36:58.805+0000] {docker.py:438} INFO - ============================================================
+[2025-09-25T04:36:58.806+0000] {docker.py:438} INFO - 🔄 Container Restart #4 at 2025-09-25 04:36:23
+[2025-09-25T04:36:58.806+0000] {docker.py:438} INFO - ============================================================
+[2025-09-25T04:36:58.806+0000] {docker.py:438} INFO - 🔄 Container restart function started!
+[2025-09-25T04:36:58.806+0000] {docker.py:438} INFO - 🔧 Loading in-cluster Kubernetes configuration...
+[2025-09-25T04:36:58.806+0000] {docker.py:438} INFO - ❌ Failed to load in-cluster config: Service host/port is not set.
+[2025-09-25T04:36:58.806+0000] {docker.py:438} INFO - 🔧 Trying local kubeconfig...
+[2025-09-25T04:36:58.806+0000] {docker.py:438} INFO - ✅ Successfully loaded local kubeconfig
+[2025-09-25T04:36:58.806+0000] {docker.py:438} INFO - 🔍 Selecting pods with label_selector: app=compose-post-service
+[2025-09-25T04:36:58.807+0000] {docker.py:438} INFO - 📋 Found 1 pods initially
+[2025-09-25T04:36:58.807+0000] {docker.py:438} INFO - 🎲 Random selection: 1 pods
+[2025-09-25T04:36:58.807+0000] {docker.py:438} INFO - ✅ Selected pods: ['compose-post-service-5878b79d-2zg9g']
+[2025-09-25T04:36:58.807+0000] {docker.py:438} INFO - 🎯 Restarting container in pod: compose-post-service-5878b79d-2zg9g
+[2025-09-25T04:36:58.807+0000] {docker.py:438} INFO - ✅ Successfully sent restart signal to container in pod compose-post-service-5878b79d-2zg9g
+[2025-09-25T04:36:58.807+0000] {docker.py:438} INFO - 📤 STDERR: {"metadata":{},"status":"Success"}
+[2025-09-25T04:36:58.807+0000] {docker.py:438} INFO - 🏁 Restart operation completed for 1 containers
+[2025-09-25T04:36:58.807+0000] {docker.py:438} INFO - ✅ Successfully restarted 1 containers
+[2025-09-25T04:36:58.807+0000] {docker.py:438} INFO -    📦 compose-post-service-5878b79d-2zg9g: restart_signal_sent
+[2025-09-25T04:36:58.808+0000] {docker.py:438} INFO - ⏳ Waiting 5 seconds until next restart...
+[2025-09-25T04:36:58.808+0000] {docker.py:438} INFO - 📊 Time remaining: 369 seconds
+[2025-09-25T04:36:58.808+0000] {docker.py:438} INFO - 📈 Total containers restarted so far: 4
+[2025-09-25T04:36:58.808+0000] {docker.py:438} INFO - 
+[2025-09-25T04:36:58.808+0000] {docker.py:438} INFO - ============================================================
+[2025-09-25T04:36:58.808+0000] {docker.py:438} INFO - 🔄 Container Restart #5 at 2025-09-25 04:36:31
+[2025-09-25T04:36:58.808+0000] {docker.py:438} INFO - ============================================================
+[2025-09-25T04:36:58.809+0000] {docker.py:438} INFO - 🔄 Container restart function started!
+[2025-09-25T04:36:58.809+0000] {docker.py:438} INFO - 🔧 Loading in-cluster Kubernetes configuration...
+[2025-09-25T04:36:58.809+0000] {docker.py:438} INFO - ❌ Failed to load in-cluster config: Service host/port is not set.
+[2025-09-25T04:36:58.809+0000] {docker.py:438} INFO - 🔧 Trying local kubeconfig...
+[2025-09-25T04:36:58.809+0000] {docker.py:438} INFO - ✅ Successfully loaded local kubeconfig
+[2025-09-25T04:36:58.809+0000] {docker.py:438} INFO - 🔍 Selecting pods with label_selector: app=compose-post-service
+[2025-09-25T04:36:58.809+0000] {docker.py:438} INFO - 📋 Found 1 pods initially
+[2025-09-25T04:36:58.809+0000] {docker.py:438} INFO - 🎲 Random selection: 1 pods
+[2025-09-25T04:36:58.810+0000] {docker.py:438} INFO - ✅ Selected pods: ['compose-post-service-5878b79d-2zg9g']
+[2025-09-25T04:36:58.810+0000] {docker.py:438} INFO - 🎯 Restarting container in pod: compose-post-service-5878b79d-2zg9g
+[2025-09-25T04:36:58.810+0000] {docker.py:438} INFO - ✅ Successfully sent restart signal to container in pod compose-post-service-5878b79d-2zg9g
+[2025-09-25T04:36:58.810+0000] {docker.py:438} INFO - 📤 STDERR: {"metadata":{},"status":"Success"}
+[2025-09-25T04:36:58.810+0000] {docker.py:438} INFO - 🏁 Restart operation completed for 1 containers
+[2025-09-25T04:36:58.810+0000] {docker.py:438} INFO - ✅ Successfully restarted 1 containers
+[2025-09-25T04:36:58.811+0000] {docker.py:438} INFO -    📦 compose-post-service-5878b79d-2zg9g: restart_signal_sent
+[2025-09-25T04:36:58.811+0000] {docker.py:438} INFO - ⏳ Waiting 5 seconds until next restart...
+[2025-09-25T04:36:58.811+0000] {docker.py:438} INFO - 📊 Time remaining: 360 seconds
+[2025-09-25T04:36:58.811+0000] {docker.py:438} INFO - 📈 Total containers restarted so far: 5
+[2025-09-25T04:36:58.811+0000] {docker.py:438} INFO - 
+[2025-09-25T04:36:58.811+0000] {docker.py:438} INFO - ============================================================
+[2025-09-25T04:36:58.812+0000] {docker.py:438} INFO - 🔄 Container Restart #6 at 2025-09-25 04:36:40
+[2025-09-25T04:36:58.812+0000] {docker.py:438} INFO - ============================================================
+[2025-09-25T04:36:58.812+0000] {docker.py:438} INFO - 🔄 Container restart function started!
+[2025-09-25T04:36:58.812+0000] {docker.py:438} INFO - 🔧 Loading in-cluster Kubernetes configuration...
+[2025-09-25T04:36:58.812+0000] {docker.py:438} INFO - ❌ Failed to load in-cluster config: Service host/port is not set.
+[2025-09-25T04:36:58.812+0000] {docker.py:438} INFO - 🔧 Trying local kubeconfig...
+[2025-09-25T04:36:58.812+0000] {docker.py:438} INFO - ✅ Successfully loaded local kubeconfig
+[2025-09-25T04:36:58.812+0000] {docker.py:438} INFO - 🔍 Selecting pods with label_selector: app=compose-post-service
+[2025-09-25T04:36:58.813+0000] {docker.py:438} INFO - 📋 Found 1 pods initially
+[2025-09-25T04:36:58.813+0000] {docker.py:438} INFO - 🎲 Random selection: 1 pods
+[2025-09-25T04:36:58.813+0000] {docker.py:438} INFO - ✅ Selected pods: ['compose-post-service-5878b79d-2zg9g']
+[2025-09-25T04:36:58.813+0000] {docker.py:438} INFO - 🎯 Restarting container in pod: compose-post-service-5878b79d-2zg9g
+[2025-09-25T04:36:58.813+0000] {docker.py:438} INFO - ✅ Successfully sent restart signal to container in pod compose-post-service-5878b79d-2zg9g
+[2025-09-25T04:36:58.813+0000] {docker.py:438} INFO - 📤 STDERR: {"metadata":{},"status":"Success"}
+[2025-09-25T04:36:58.813+0000] {docker.py:438} INFO - 🏁 Restart operation completed for 1 containers
+[2025-09-25T04:36:58.813+0000] {docker.py:438} INFO - ✅ Successfully restarted 1 containers
+[2025-09-25T04:36:58.813+0000] {docker.py:438} INFO -    📦 compose-post-service-5878b79d-2zg9g: restart_signal_sent
+[2025-09-25T04:36:58.814+0000] {docker.py:438} INFO - ⏳ Waiting 5 seconds until next restart...
+[2025-09-25T04:36:58.814+0000] {docker.py:438} INFO - 📊 Time remaining: 351 seconds
+[2025-09-25T04:36:58.814+0000] {docker.py:438} INFO - 📈 Total containers restarted so far: 6
+[2025-09-25T04:36:58.814+0000] {docker.py:438} INFO - 
+[2025-09-25T04:36:58.814+0000] {docker.py:438} INFO - ============================================================
+[2025-09-25T04:36:58.814+0000] {docker.py:438} INFO - 🔄 Container Restart #7 at 2025-09-25 04:36:49
+[2025-09-25T04:36:58.814+0000] {docker.py:438} INFO - ============================================================
+[2025-09-25T04:36:58.814+0000] {docker.py:438} INFO - 🔄 Container restart function started!
+[2025-09-25T04:36:58.815+0000] {docker.py:438} INFO - 🔧 Loading in-cluster Kubernetes configuration...
+[2025-09-25T04:36:58.815+0000] {docker.py:438} INFO - ❌ Failed to load in-cluster config: Service host/port is not set.
+[2025-09-25T04:36:58.815+0000] {docker.py:438} INFO - 🔧 Trying local kubeconfig...
+[2025-09-25T04:36:58.815+0000] {docker.py:438} INFO - ✅ Successfully loaded local kubeconfig
+[2025-09-25T04:36:58.815+0000] {docker.py:438} INFO - 🔍 Selecting pods with label_selector: app=compose-post-service
+[2025-09-25T04:36:58.815+0000] {docker.py:438} INFO - 📋 Found 1 pods initially
+[2025-09-25T04:36:58.815+0000] {docker.py:438} INFO - 🎲 Random selection: 1 pods
+[2025-09-25T04:36:58.815+0000] {docker.py:438} INFO - ✅ Selected pods: ['compose-post-service-5878b79d-2zg9g']
+[2025-09-25T04:36:58.816+0000] {docker.py:438} INFO - 🎯 Restarting container in pod: compose-post-service-5878b79d-2zg9g
+[2025-09-25T04:36:58.816+0000] {docker.py:438} INFO - ✅ Successfully sent restart signal to container in pod compose-post-service-5878b79d-2zg9g
+[2025-09-25T04:36:58.816+0000] {docker.py:438} INFO - 📤 STDERR: {"metadata":{},"status":"Success"}
+[2025-09-25T04:36:58.816+0000] {docker.py:438} INFO - 🏁 Restart operation completed for 1 containers
+[2025-09-25T04:36:58.816+0000] {docker.py:438} INFO - ✅ Successfully restarted 1 containers
+[2025-09-25T04:36:58.816+0000] {docker.py:438} INFO -    📦 compose-post-service-5878b79d-2zg9g: restart_signal_sent
+[2025-09-25T04:36:58.816+0000] {docker.py:438} INFO - ⏳ Waiting 5 seconds until next restart...
+[2025-09-25T04:36:58.816+0000] {docker.py:438} INFO - 📊 Time remaining: 342 seconds
+[2025-09-25T04:36:58.816+0000] {docker.py:438} INFO - 📈 Total containers restarted so far: 7
+[2025-09-25T04:36:58.817+0000] {docker.py:438} INFO - 
+[2025-09-25T04:36:58.817+0000] {docker.py:438} INFO - ============================================================
+[2025-09-25T04:36:58.817+0000] {docker.py:438} INFO - 🔄 Container Restart #8 at 2025-09-25 04:36:58
+[2025-09-25T04:36:58.817+0000] {docker.py:438} INFO - ============================================================
+[2025-09-25T04:36:58.817+0000] {docker.py:438} INFO - 🔄 Container restart function started!
+[2025-09-25T04:36:58.817+0000] {docker.py:438} INFO - 🔧 Loading in-cluster Kubernetes configuration...
+[2025-09-25T04:36:58.817+0000] {docker.py:438} INFO - ❌ Failed to load in-cluster config: Service host/port is not set.
+[2025-09-25T04:36:58.817+0000] {docker.py:438} INFO - 🔧 Trying local kubeconfig...
+[2025-09-25T04:36:58.817+0000] {docker.py:438} INFO - ✅ Successfully loaded local kubeconfig
+[2025-09-25T04:36:58.818+0000] {docker.py:438} INFO - 🔍 Selecting pods with label_selector: app=compose-post-service
+[2025-09-25T04:38:11.976+0000] {docker.py:438} INFO - 📋 Found 1 pods initially
+[2025-09-25T04:38:11.977+0000] {docker.py:438} INFO - 🎲 Random selection: 1 pods
+[2025-09-25T04:38:11.978+0000] {docker.py:438} INFO - ✅ Selected pods: ['compose-post-service-5878b79d-2zg9g']
+[2025-09-25T04:38:11.978+0000] {docker.py:438} INFO - 🎯 Restarting container in pod: compose-post-service-5878b79d-2zg9g
+[2025-09-25T04:38:11.979+0000] {docker.py:438} INFO - ✅ Successfully sent restart signal to container in pod compose-post-service-5878b79d-2zg9g
+[2025-09-25T04:38:11.979+0000] {docker.py:438} INFO - 📤 STDERR: {"metadata":{},"status":"Success"}
+[2025-09-25T04:38:11.980+0000] {docker.py:438} INFO - 🏁 Restart operation completed for 1 containers
+[2025-09-25T04:38:11.980+0000] {docker.py:438} INFO - ✅ Successfully restarted 1 containers
+[2025-09-25T04:38:11.980+0000] {docker.py:438} INFO -    📦 compose-post-service-5878b79d-2zg9g: restart_signal_sent
+[2025-09-25T04:38:11.980+0000] {docker.py:438} INFO - ⏳ Waiting 5 seconds until next restart...
+[2025-09-25T04:38:11.981+0000] {docker.py:438} INFO - 📊 Time remaining: 332 seconds
+[2025-09-25T04:38:11.981+0000] {docker.py:438} INFO - 📈 Total containers restarted so far: 8
+[2025-09-25T04:38:11.981+0000] {docker.py:438} INFO - 
+[2025-09-25T04:38:11.981+0000] {docker.py:438} INFO - ============================================================
+[2025-09-25T04:38:11.982+0000] {docker.py:438} INFO - 🔄 Container Restart #9 at 2025-09-25 04:37:08
+[2025-09-25T04:38:11.982+0000] {docker.py:438} INFO - ============================================================
+[2025-09-25T04:38:11.982+0000] {docker.py:438} INFO - 🔄 Container restart function started!
+[2025-09-25T04:38:11.982+0000] {docker.py:438} INFO - 🔧 Loading in-cluster Kubernetes configuration...
+[2025-09-25T04:38:11.982+0000] {docker.py:438} INFO - ❌ Failed to load in-cluster config: Service host/port is not set.
+[2025-09-25T04:38:11.983+0000] {docker.py:438} INFO - 🔧 Trying local kubeconfig...
+[2025-09-25T04:38:11.983+0000] {docker.py:438} INFO - ✅ Successfully loaded local kubeconfig
+[2025-09-25T04:38:11.983+0000] {docker.py:438} INFO - 🔍 Selecting pods with label_selector: app=compose-post-service
+[2025-09-25T04:38:11.983+0000] {docker.py:438} INFO - 📋 Found 1 pods initially
+[2025-09-25T04:38:11.983+0000] {docker.py:438} INFO - 🎲 Random selection: 1 pods
+[2025-09-25T04:38:11.983+0000] {docker.py:438} INFO - ✅ Selected pods: ['compose-post-service-5878b79d-2zg9g']
+[2025-09-25T04:38:11.983+0000] {docker.py:438} INFO - 🎯 Restarting container in pod: compose-post-service-5878b79d-2zg9g
+[2025-09-25T04:38:11.984+0000] {docker.py:438} INFO - ✅ Successfully sent restart signal to container in pod compose-post-service-5878b79d-2zg9g
+[2025-09-25T04:38:11.984+0000] {docker.py:438} INFO - 📤 STDERR: {"metadata":{},"status":"Success"}
+[2025-09-25T04:38:11.984+0000] {docker.py:438} INFO - 🏁 Restart operation completed for 1 containers
+[2025-09-25T04:38:11.984+0000] {docker.py:438} INFO - ✅ Successfully restarted 1 containers
+[2025-09-25T04:38:11.984+0000] {docker.py:438} INFO -    📦 compose-post-service-5878b79d-2zg9g: restart_signal_sent
+[2025-09-25T04:38:11.984+0000] {docker.py:438} INFO - ⏳ Waiting 5 seconds until next restart...
+[2025-09-25T04:38:11.984+0000] {docker.py:438} INFO - 📊 Time remaining: 323 seconds
+[2025-09-25T04:38:11.985+0000] {docker.py:438} INFO - 📈 Total containers restarted so far: 9
+[2025-09-25T04:38:11.985+0000] {docker.py:438} INFO - 
+[2025-09-25T04:38:11.985+0000] {docker.py:438} INFO - ============================================================
+[2025-09-25T04:38:11.985+0000] {docker.py:438} INFO - 🔄 Container Restart #10 at 2025-09-25 04:37:17
+[2025-09-25T04:38:11.985+0000] {docker.py:438} INFO - ============================================================
+[2025-09-25T04:38:11.985+0000] {docker.py:438} INFO - 🔄 Container restart function started!
+[2025-09-25T04:38:11.985+0000] {docker.py:438} INFO - 🔧 Loading in-cluster Kubernetes configuration...
+[2025-09-25T04:38:11.986+0000] {docker.py:438} INFO - ❌ Failed to load in-cluster config: Service host/port is not set.
+[2025-09-25T04:38:11.986+0000] {docker.py:438} INFO - 🔧 Trying local kubeconfig...
+[2025-09-25T04:38:11.986+0000] {docker.py:438} INFO - ✅ Successfully loaded local kubeconfig
+[2025-09-25T04:38:11.986+0000] {docker.py:438} INFO - 🔍 Selecting pods with label_selector: app=compose-post-service
+[2025-09-25T04:38:11.986+0000] {docker.py:438} INFO - 📋 Found 1 pods initially
+[2025-09-25T04:38:11.986+0000] {docker.py:438} INFO - 🎲 Random selection: 1 pods
+[2025-09-25T04:38:11.986+0000] {docker.py:438} INFO - ✅ Selected pods: ['compose-post-service-5878b79d-2zg9g']
+[2025-09-25T04:38:11.986+0000] {docker.py:438} INFO - 🎯 Restarting container in pod: compose-post-service-5878b79d-2zg9g
+[2025-09-25T04:38:11.987+0000] {docker.py:438} INFO - ✅ Successfully sent restart signal to container in pod compose-post-service-5878b79d-2zg9g
+[2025-09-25T04:38:11.987+0000] {docker.py:438} INFO - 📤 STDERR: {"metadata":{},"status":"Success"}
+[2025-09-25T04:38:11.987+0000] {docker.py:438} INFO - 🏁 Restart operation completed for 1 containers
+[2025-09-25T04:38:11.987+0000] {docker.py:438} INFO - ✅ Successfully restarted 1 containers
+[2025-09-25T04:38:11.987+0000] {docker.py:438} INFO -    📦 compose-post-service-5878b79d-2zg9g: restart_signal_sent
+[2025-09-25T04:38:11.987+0000] {docker.py:438} INFO - ⏳ Waiting 5 seconds until next restart...
+[2025-09-25T04:38:11.987+0000] {docker.py:438} INFO - 📊 Time remaining: 313 seconds
+[2025-09-25T04:38:11.987+0000] {docker.py:438} INFO - 📈 Total containers restarted so far: 10
+[2025-09-25T04:38:11.988+0000] {docker.py:438} INFO - 
+[2025-09-25T04:38:11.988+0000] {docker.py:438} INFO - ============================================================
+[2025-09-25T04:38:11.988+0000] {docker.py:438} INFO - 🔄 Container Restart #11 at 2025-09-25 04:37:27
+[2025-09-25T04:38:11.988+0000] {docker.py:438} INFO - ============================================================
+[2025-09-25T04:38:11.988+0000] {docker.py:438} INFO - 🔄 Container restart function started!
+[2025-09-25T04:38:11.988+0000] {docker.py:438} INFO - 🔧 Loading in-cluster Kubernetes configuration...
+[2025-09-25T04:38:11.988+0000] {docker.py:438} INFO - ❌ Failed to load in-cluster config: Service host/port is not set.
+[2025-09-25T04:38:11.988+0000] {docker.py:438} INFO - 🔧 Trying local kubeconfig...
+[2025-09-25T04:38:11.989+0000] {docker.py:438} INFO - ✅ Successfully loaded local kubeconfig
+[2025-09-25T04:38:11.989+0000] {docker.py:438} INFO - 🔍 Selecting pods with label_selector: app=compose-post-service
+[2025-09-25T04:38:11.989+0000] {docker.py:438} INFO - 📋 Found 1 pods initially
+[2025-09-25T04:38:11.989+0000] {docker.py:438} INFO - 🎲 Random selection: 1 pods
+[2025-09-25T04:38:11.989+0000] {docker.py:438} INFO - ✅ Selected pods: ['compose-post-service-5878b79d-2zg9g']
+[2025-09-25T04:38:11.989+0000] {docker.py:438} INFO - 🎯 Restarting container in pod: compose-post-service-5878b79d-2zg9g
+[2025-09-25T04:38:11.989+0000] {docker.py:438} INFO - ✅ Successfully sent restart signal to container in pod compose-post-service-5878b79d-2zg9g
+[2025-09-25T04:38:11.990+0000] {docker.py:438} INFO - 📤 STDERR: {"metadata":{},"status":"Success"}
+[2025-09-25T04:38:11.990+0000] {docker.py:438} INFO - 🏁 Restart operation completed for 1 containers
+[2025-09-25T04:38:11.990+0000] {docker.py:438} INFO - ✅ Successfully restarted 1 containers
+[2025-09-25T04:38:11.990+0000] {docker.py:438} INFO -    📦 compose-post-service-5878b79d-2zg9g: restart_signal_sent
+[2025-09-25T04:38:11.990+0000] {docker.py:438} INFO - ⏳ Waiting 5 seconds until next restart...
+[2025-09-25T04:38:11.990+0000] {docker.py:438} INFO - 📊 Time remaining: 304 seconds
+[2025-09-25T04:38:11.990+0000] {docker.py:438} INFO - 📈 Total containers restarted so far: 11
+[2025-09-25T04:38:11.990+0000] {docker.py:438} INFO - 
+[2025-09-25T04:38:11.991+0000] {docker.py:438} INFO - ============================================================
+[2025-09-25T04:38:11.991+0000] {docker.py:438} INFO - 🔄 Container Restart #12 at 2025-09-25 04:37:36
+[2025-09-25T04:38:11.991+0000] {docker.py:438} INFO - ============================================================
+[2025-09-25T04:38:11.991+0000] {docker.py:438} INFO - 🔄 Container restart function started!
+[2025-09-25T04:38:11.991+0000] {docker.py:438} INFO - 🔧 Loading in-cluster Kubernetes configuration...
+[2025-09-25T04:38:11.991+0000] {docker.py:438} INFO - ❌ Failed to load in-cluster config: Service host/port is not set.
+[2025-09-25T04:38:11.991+0000] {docker.py:438} INFO - 🔧 Trying local kubeconfig...
+[2025-09-25T04:38:11.991+0000] {docker.py:438} INFO - ✅ Successfully loaded local kubeconfig
+[2025-09-25T04:38:11.992+0000] {docker.py:438} INFO - 🔍 Selecting pods with label_selector: app=compose-post-service
+[2025-09-25T04:38:11.992+0000] {docker.py:438} INFO - 📋 Found 1 pods initially
+[2025-09-25T04:38:11.992+0000] {docker.py:438} INFO - 🎲 Random selection: 1 pods
+[2025-09-25T04:38:11.992+0000] {docker.py:438} INFO - ✅ Selected pods: ['compose-post-service-5878b79d-2zg9g']
+[2025-09-25T04:38:11.992+0000] {docker.py:438} INFO - 🎯 Restarting container in pod: compose-post-service-5878b79d-2zg9g
+[2025-09-25T04:38:11.992+0000] {docker.py:438} INFO - ✅ Successfully sent restart signal to container in pod compose-post-service-5878b79d-2zg9g
+[2025-09-25T04:38:11.992+0000] {docker.py:438} INFO - 📤 STDERR: {"metadata":{},"status":"Success"}
+[2025-09-25T04:38:11.992+0000] {docker.py:438} INFO - 🏁 Restart operation completed for 1 containers
+[2025-09-25T04:38:11.993+0000] {docker.py:438} INFO - ✅ Successfully restarted 1 containers
+[2025-09-25T04:38:11.993+0000] {docker.py:438} INFO -    📦 compose-post-service-5878b79d-2zg9g: restart_signal_sent
+[2025-09-25T04:38:11.993+0000] {docker.py:438} INFO - ⏳ Waiting 5 seconds until next restart...
+[2025-09-25T04:38:11.993+0000] {docker.py:438} INFO - 📊 Time remaining: 295 seconds
+[2025-09-25T04:38:11.993+0000] {docker.py:438} INFO - 📈 Total containers restarted so far: 12
+[2025-09-25T04:38:11.993+0000] {docker.py:438} INFO - 
+[2025-09-25T04:38:11.994+0000] {docker.py:438} INFO - ============================================================
+[2025-09-25T04:38:11.994+0000] {docker.py:438} INFO - 🔄 Container Restart #13 at 2025-09-25 04:37:45
+[2025-09-25T04:38:11.994+0000] {docker.py:438} INFO - ============================================================
+[2025-09-25T04:38:11.994+0000] {docker.py:438} INFO - 🔄 Container restart function started!
+[2025-09-25T04:38:11.994+0000] {docker.py:438} INFO - 🔧 Loading in-cluster Kubernetes configuration...
+[2025-09-25T04:38:11.994+0000] {docker.py:438} INFO - ❌ Failed to load in-cluster config: Service host/port is not set.
+[2025-09-25T04:38:11.994+0000] {docker.py:438} INFO - 🔧 Trying local kubeconfig...
+[2025-09-25T04:38:11.995+0000] {docker.py:438} INFO - ✅ Successfully loaded local kubeconfig
+[2025-09-25T04:38:11.995+0000] {docker.py:438} INFO - 🔍 Selecting pods with label_selector: app=compose-post-service
+[2025-09-25T04:38:11.995+0000] {docker.py:438} INFO - 📋 Found 1 pods initially
+[2025-09-25T04:38:11.995+0000] {docker.py:438} INFO - 🎲 Random selection: 1 pods
+[2025-09-25T04:38:11.995+0000] {docker.py:438} INFO - ✅ Selected pods: ['compose-post-service-5878b79d-2zg9g']
+[2025-09-25T04:38:11.995+0000] {docker.py:438} INFO - 🎯 Restarting container in pod: compose-post-service-5878b79d-2zg9g
+[2025-09-25T04:38:11.995+0000] {docker.py:438} INFO - ✅ Successfully sent restart signal to container in pod compose-post-service-5878b79d-2zg9g
+[2025-09-25T04:38:11.996+0000] {docker.py:438} INFO - 📤 STDERR: {"metadata":{},"status":"Success"}
+[2025-09-25T04:38:11.996+0000] {docker.py:438} INFO - 🏁 Restart operation completed for 1 containers
+[2025-09-25T04:38:11.996+0000] {docker.py:438} INFO - ✅ Successfully restarted 1 containers
+[2025-09-25T04:38:11.996+0000] {docker.py:438} INFO -    📦 compose-post-service-5878b79d-2zg9g: restart_signal_sent
+[2025-09-25T04:38:11.996+0000] {docker.py:438} INFO - ⏳ Waiting 5 seconds until next restart...
+[2025-09-25T04:38:11.996+0000] {docker.py:438} INFO - 📊 Time remaining: 286 seconds
+[2025-09-25T04:38:11.996+0000] {docker.py:438} INFO - 📈 Total containers restarted so far: 13
+[2025-09-25T04:38:11.996+0000] {docker.py:438} INFO - 
+[2025-09-25T04:38:11.997+0000] {docker.py:438} INFO - ============================================================
+[2025-09-25T04:38:11.997+0000] {docker.py:438} INFO - 🔄 Container Restart #14 at 2025-09-25 04:37:54
+[2025-09-25T04:38:11.997+0000] {docker.py:438} INFO - ============================================================
+[2025-09-25T04:38:11.997+0000] {docker.py:438} INFO - 🔄 Container restart function started!
+[2025-09-25T04:38:11.997+0000] {docker.py:438} INFO - 🔧 Loading in-cluster Kubernetes configuration...
+[2025-09-25T04:38:11.997+0000] {docker.py:438} INFO - ❌ Failed to load in-cluster config: Service host/port is not set.
+[2025-09-25T04:38:11.997+0000] {docker.py:438} INFO - 🔧 Trying local kubeconfig...
+[2025-09-25T04:38:11.997+0000] {docker.py:438} INFO - ✅ Successfully loaded local kubeconfig
+[2025-09-25T04:38:11.998+0000] {docker.py:438} INFO - 🔍 Selecting pods with label_selector: app=compose-post-service
+[2025-09-25T04:38:11.998+0000] {docker.py:438} INFO - 📋 Found 1 pods initially
+[2025-09-25T04:38:11.998+0000] {docker.py:438} INFO - 🎲 Random selection: 1 pods
+[2025-09-25T04:38:11.998+0000] {docker.py:438} INFO - ✅ Selected pods: ['compose-post-service-5878b79d-2zg9g']
+[2025-09-25T04:38:11.998+0000] {docker.py:438} INFO - 🎯 Restarting container in pod: compose-post-service-5878b79d-2zg9g
+[2025-09-25T04:38:11.998+0000] {docker.py:438} INFO - ✅ Successfully sent restart signal to container in pod compose-post-service-5878b79d-2zg9g
+[2025-09-25T04:38:11.998+0000] {docker.py:438} INFO - 📤 STDERR: {"metadata":{},"status":"Success"}
+[2025-09-25T04:38:11.998+0000] {docker.py:438} INFO - 🏁 Restart operation completed for 1 containers
+[2025-09-25T04:38:11.999+0000] {docker.py:438} INFO - ✅ Successfully restarted 1 containers
+[2025-09-25T04:38:11.999+0000] {docker.py:438} INFO -    📦 compose-post-service-5878b79d-2zg9g: restart_signal_sent
+[2025-09-25T04:38:11.999+0000] {docker.py:438} INFO - ⏳ Waiting 5 seconds until next restart...
+[2025-09-25T04:38:11.999+0000] {docker.py:438} INFO - 📊 Time remaining: 277 seconds
+[2025-09-25T04:38:11.999+0000] {docker.py:438} INFO - 📈 Total containers restarted so far: 14
+[2025-09-25T04:38:11.999+0000] {docker.py:438} INFO - 
+[2025-09-25T04:38:11.999+0000] {docker.py:438} INFO - ============================================================
+[2025-09-25T04:38:12.000+0000] {docker.py:438} INFO - 🔄 Container Restart #15 at 2025-09-25 04:38:03
+[2025-09-25T04:38:12.000+0000] {docker.py:438} INFO - ============================================================
+[2025-09-25T04:38:12.000+0000] {docker.py:438} INFO - 🔄 Container restart function started!
+[2025-09-25T04:38:12.000+0000] {docker.py:438} INFO - 🔧 Loading in-cluster Kubernetes configuration...
+[2025-09-25T04:38:12.000+0000] {docker.py:438} INFO - ❌ Failed to load in-cluster config: Service host/port is not set.
+[2025-09-25T04:38:12.000+0000] {docker.py:438} INFO - 🔧 Trying local kubeconfig...
+[2025-09-25T04:38:12.000+0000] {docker.py:438} INFO - ✅ Successfully loaded local kubeconfig
+[2025-09-25T04:38:12.000+0000] {docker.py:438} INFO - 🔍 Selecting pods with label_selector: app=compose-post-service
+[2025-09-25T04:38:12.001+0000] {docker.py:438} INFO - 📋 Found 1 pods initially
+[2025-09-25T04:38:12.001+0000] {docker.py:438} INFO - 🎲 Random selection: 1 pods
+[2025-09-25T04:38:12.001+0000] {docker.py:438} INFO - ✅ Selected pods: ['compose-post-service-5878b79d-2zg9g']
+[2025-09-25T04:38:12.001+0000] {docker.py:438} INFO - 🎯 Restarting container in pod: compose-post-service-5878b79d-2zg9g
+[2025-09-25T04:38:12.001+0000] {docker.py:438} INFO - ✅ Successfully sent restart signal to container in pod compose-post-service-5878b79d-2zg9g
+[2025-09-25T04:38:12.001+0000] {docker.py:438} INFO - 📤 STDERR: {"metadata":{},"status":"Success"}
+[2025-09-25T04:38:12.001+0000] {docker.py:438} INFO - 🏁 Restart operation completed for 1 containers
+[2025-09-25T04:38:12.002+0000] {docker.py:438} INFO - ✅ Successfully restarted 1 containers
+[2025-09-25T04:38:12.002+0000] {docker.py:438} INFO -    📦 compose-post-service-5878b79d-2zg9g: restart_signal_sent
+[2025-09-25T04:38:12.002+0000] {docker.py:438} INFO - ⏳ Waiting 5 seconds until next restart...
+[2025-09-25T04:38:12.002+0000] {docker.py:438} INFO - 📊 Time remaining: 269 seconds
+[2025-09-25T04:38:12.002+0000] {docker.py:438} INFO - 📈 Total containers restarted so far: 15
+[2025-09-25T04:38:12.002+0000] {docker.py:438} INFO - 
+[2025-09-25T04:38:12.002+0000] {docker.py:438} INFO - ============================================================
+[2025-09-25T04:39:17.907+0000] {docker.py:438} INFO - 🔄 Container Restart #16 at 2025-09-25 04:38:11
+[2025-09-25T04:39:17.908+0000] {docker.py:438} INFO - ============================================================
+[2025-09-25T04:39:17.908+0000] {docker.py:438} INFO - 🔄 Container restart function started!
+[2025-09-25T04:39:17.908+0000] {docker.py:438} INFO - 🔧 Loading in-cluster Kubernetes configuration...
+[2025-09-25T04:39:17.908+0000] {docker.py:438} INFO - ❌ Failed to load in-cluster config: Service host/port is not set.
+[2025-09-25T04:39:17.908+0000] {docker.py:438} INFO - 🔧 Trying local kubeconfig...
+[2025-09-25T04:39:17.909+0000] {docker.py:438} INFO - ✅ Successfully loaded local kubeconfig
+[2025-09-25T04:39:17.909+0000] {docker.py:438} INFO - 🔍 Selecting pods with label_selector: app=compose-post-service
+[2025-09-25T04:39:17.909+0000] {docker.py:438} INFO - 📋 Found 1 pods initially
+[2025-09-25T04:39:17.909+0000] {docker.py:438} INFO - 🎲 Random selection: 1 pods
+[2025-09-25T04:39:17.909+0000] {docker.py:438} INFO - ✅ Selected pods: ['compose-post-service-5878b79d-2zg9g']
+[2025-09-25T04:39:17.909+0000] {docker.py:438} INFO - 🎯 Restarting container in pod: compose-post-service-5878b79d-2zg9g
+[2025-09-25T04:39:17.909+0000] {docker.py:438} INFO - ✅ Successfully sent restart signal to container in pod compose-post-service-5878b79d-2zg9g
+[2025-09-25T04:39:17.910+0000] {docker.py:438} INFO - 📤 STDERR: {"metadata":{},"status":"Success"}
+[2025-09-25T04:39:17.910+0000] {docker.py:438} INFO - 🏁 Restart operation completed for 1 containers
+[2025-09-25T04:39:17.910+0000] {docker.py:438} INFO - ✅ Successfully restarted 1 containers
+[2025-09-25T04:39:17.910+0000] {docker.py:438} INFO -    📦 compose-post-service-5878b79d-2zg9g: restart_signal_sent
+[2025-09-25T04:39:17.910+0000] {docker.py:438} INFO - ⏳ Waiting 5 seconds until next restart...
+[2025-09-25T04:39:17.910+0000] {docker.py:438} INFO - 📊 Time remaining: 260 seconds
+[2025-09-25T04:39:17.910+0000] {docker.py:438} INFO - 📈 Total containers restarted so far: 16
+[2025-09-25T04:39:17.910+0000] {docker.py:438} INFO - 
+[2025-09-25T04:39:17.911+0000] {docker.py:438} INFO - ============================================================
+[2025-09-25T04:39:17.911+0000] {docker.py:438} INFO - 🔄 Container Restart #17 at 2025-09-25 04:38:20
+[2025-09-25T04:39:17.911+0000] {docker.py:438} INFO - ============================================================
+[2025-09-25T04:39:17.911+0000] {docker.py:438} INFO - 🔄 Container restart function started!
+[2025-09-25T04:39:17.911+0000] {docker.py:438} INFO - 🔧 Loading in-cluster Kubernetes configuration...
+[2025-09-25T04:39:17.911+0000] {docker.py:438} INFO - ❌ Failed to load in-cluster config: Service host/port is not set.
+[2025-09-25T04:39:17.911+0000] {docker.py:438} INFO - 🔧 Trying local kubeconfig...
+[2025-09-25T04:39:17.911+0000] {docker.py:438} INFO - ✅ Successfully loaded local kubeconfig
+[2025-09-25T04:39:17.912+0000] {docker.py:438} INFO - 🔍 Selecting pods with label_selector: app=compose-post-service
+[2025-09-25T04:39:17.912+0000] {docker.py:438} INFO - 📋 Found 1 pods initially
+[2025-09-25T04:39:17.912+0000] {docker.py:438} INFO - 🎲 Random selection: 1 pods
+[2025-09-25T04:39:17.912+0000] {docker.py:438} INFO - ✅ Selected pods: ['compose-post-service-5878b79d-2zg9g']
+[2025-09-25T04:39:17.912+0000] {docker.py:438} INFO - 🎯 Restarting container in pod: compose-post-service-5878b79d-2zg9g
+[2025-09-25T04:39:17.912+0000] {docker.py:438} INFO - ✅ Successfully sent restart signal to container in pod compose-post-service-5878b79d-2zg9g
+[2025-09-25T04:39:17.912+0000] {docker.py:438} INFO - 📤 STDERR: {"metadata":{},"status":"Success"}
+[2025-09-25T04:39:17.912+0000] {docker.py:438} INFO - 🏁 Restart operation completed for 1 containers
+[2025-09-25T04:39:17.912+0000] {docker.py:438} INFO - ✅ Successfully restarted 1 containers
+[2025-09-25T04:39:17.913+0000] {docker.py:438} INFO -    📦 compose-post-service-5878b79d-2zg9g: restart_signal_sent
+[2025-09-25T04:39:17.913+0000] {docker.py:438} INFO - ⏳ Waiting 5 seconds until next restart...
+[2025-09-25T04:39:17.913+0000] {docker.py:438} INFO - 📊 Time remaining: 251 seconds
+[2025-09-25T04:39:17.913+0000] {docker.py:438} INFO - 📈 Total containers restarted so far: 17
+[2025-09-25T04:39:17.913+0000] {docker.py:438} INFO - 
+[2025-09-25T04:39:17.913+0000] {docker.py:438} INFO - ============================================================
+[2025-09-25T04:39:17.913+0000] {docker.py:438} INFO - 🔄 Container Restart #18 at 2025-09-25 04:38:29
+[2025-09-25T04:39:17.914+0000] {docker.py:438} INFO - ============================================================
+[2025-09-25T04:39:17.914+0000] {docker.py:438} INFO - 🔄 Container restart function started!
+[2025-09-25T04:39:17.914+0000] {docker.py:438} INFO - 🔧 Loading in-cluster Kubernetes configuration...
+[2025-09-25T04:39:17.914+0000] {docker.py:438} INFO - ❌ Failed to load in-cluster config: Service host/port is not set.
+[2025-09-25T04:39:17.914+0000] {docker.py:438} INFO - 🔧 Trying local kubeconfig...
+[2025-09-25T04:39:17.914+0000] {docker.py:438} INFO - ✅ Successfully loaded local kubeconfig
+[2025-09-25T04:39:17.914+0000] {docker.py:438} INFO - 🔍 Selecting pods with label_selector: app=compose-post-service
+[2025-09-25T04:39:17.915+0000] {docker.py:438} INFO - 📋 Found 1 pods initially
+[2025-09-25T04:39:17.915+0000] {docker.py:438} INFO - 🎲 Random selection: 1 pods
+[2025-09-25T04:39:17.915+0000] {docker.py:438} INFO - ✅ Selected pods: ['compose-post-service-5878b79d-2zg9g']
+[2025-09-25T04:39:17.915+0000] {docker.py:438} INFO - 🎯 Restarting container in pod: compose-post-service-5878b79d-2zg9g
+[2025-09-25T04:39:17.915+0000] {docker.py:438} INFO - ✅ Successfully sent restart signal to container in pod compose-post-service-5878b79d-2zg9g
+[2025-09-25T04:39:17.916+0000] {docker.py:438} INFO - 📤 STDERR: {"metadata":{},"status":"Success"}
+[2025-09-25T04:39:17.916+0000] {docker.py:438} INFO - 🏁 Restart operation completed for 1 containers
+[2025-09-25T04:39:17.916+0000] {docker.py:438} INFO - ✅ Successfully restarted 1 containers
+[2025-09-25T04:39:17.916+0000] {docker.py:438} INFO -    📦 compose-post-service-5878b79d-2zg9g: restart_signal_sent
+[2025-09-25T04:39:17.916+0000] {docker.py:438} INFO - ⏳ Waiting 5 seconds until next restart...
+[2025-09-25T04:39:17.916+0000] {docker.py:438} INFO - 📊 Time remaining: 242 seconds
+[2025-09-25T04:39:17.917+0000] {docker.py:438} INFO - 📈 Total containers restarted so far: 18
+[2025-09-25T04:39:17.917+0000] {docker.py:438} INFO - 
+[2025-09-25T04:39:17.917+0000] {docker.py:438} INFO - ============================================================
+[2025-09-25T04:39:17.917+0000] {docker.py:438} INFO - 🔄 Container Restart #19 at 2025-09-25 04:38:38
+[2025-09-25T04:39:17.917+0000] {docker.py:438} INFO - ============================================================
+[2025-09-25T04:39:17.917+0000] {docker.py:438} INFO - 🔄 Container restart function started!
+[2025-09-25T04:39:17.917+0000] {docker.py:438} INFO - 🔧 Loading in-cluster Kubernetes configuration...
+[2025-09-25T04:39:17.918+0000] {docker.py:438} INFO - ❌ Failed to load in-cluster config: Service host/port is not set.
+[2025-09-25T04:39:17.918+0000] {docker.py:438} INFO - 🔧 Trying local kubeconfig...
+[2025-09-25T04:39:17.918+0000] {docker.py:438} INFO - ✅ Successfully loaded local kubeconfig
+[2025-09-25T04:39:17.918+0000] {docker.py:438} INFO - 🔍 Selecting pods with label_selector: app=compose-post-service
+[2025-09-25T04:39:17.918+0000] {docker.py:438} INFO - 📋 Found 1 pods initially
+[2025-09-25T04:39:17.918+0000] {docker.py:438} INFO - 🎲 Random selection: 1 pods
+[2025-09-25T04:39:17.918+0000] {docker.py:438} INFO - ✅ Selected pods: ['compose-post-service-5878b79d-2zg9g']
+[2025-09-25T04:39:17.919+0000] {docker.py:438} INFO - 🎯 Restarting container in pod: compose-post-service-5878b79d-2zg9g
+[2025-09-25T04:39:17.919+0000] {docker.py:438} INFO - ✅ Successfully sent restart signal to container in pod compose-post-service-5878b79d-2zg9g
+[2025-09-25T04:39:17.919+0000] {docker.py:438} INFO - 📤 STDERR: {"metadata":{},"status":"Success"}
+[2025-09-25T04:39:17.919+0000] {docker.py:438} INFO - 🏁 Restart operation completed for 1 containers
+[2025-09-25T04:39:17.919+0000] {docker.py:438} INFO - ✅ Successfully restarted 1 containers
+[2025-09-25T04:39:17.919+0000] {docker.py:438} INFO -    📦 compose-post-service-5878b79d-2zg9g: restart_signal_sent
+[2025-09-25T04:39:17.919+0000] {docker.py:438} INFO - ⏳ Waiting 5 seconds until next restart...
+[2025-09-25T04:39:17.920+0000] {docker.py:438} INFO - 📊 Time remaining: 233 seconds
+[2025-09-25T04:39:17.920+0000] {docker.py:438} INFO - 📈 Total containers restarted so far: 19
+[2025-09-25T04:39:17.920+0000] {docker.py:438} INFO - 
+[2025-09-25T04:39:17.920+0000] {docker.py:438} INFO - ============================================================
+[2025-09-25T04:39:17.920+0000] {docker.py:438} INFO - 🔄 Container Restart #20 at 2025-09-25 04:38:47
+[2025-09-25T04:39:17.920+0000] {docker.py:438} INFO - ============================================================
+[2025-09-25T04:39:17.920+0000] {docker.py:438} INFO - 🔄 Container restart function started!
+[2025-09-25T04:39:17.920+0000] {docker.py:438} INFO - 🔧 Loading in-cluster Kubernetes configuration...
+[2025-09-25T04:39:17.921+0000] {docker.py:438} INFO - ❌ Failed to load in-cluster config: Service host/port is not set.
+[2025-09-25T04:39:17.921+0000] {docker.py:438} INFO - 🔧 Trying local kubeconfig...
+[2025-09-25T04:39:17.921+0000] {docker.py:438} INFO - ✅ Successfully loaded local kubeconfig
+[2025-09-25T04:39:17.921+0000] {docker.py:438} INFO - 🔍 Selecting pods with label_selector: app=compose-post-service
+[2025-09-25T04:39:17.921+0000] {docker.py:438} INFO - 📋 Found 1 pods initially
+[2025-09-25T04:39:17.921+0000] {docker.py:438} INFO - 🎲 Random selection: 1 pods
+[2025-09-25T04:39:17.921+0000] {docker.py:438} INFO - ✅ Selected pods: ['compose-post-service-5878b79d-2zg9g']
+[2025-09-25T04:39:17.921+0000] {docker.py:438} INFO - 🎯 Restarting container in pod: compose-post-service-5878b79d-2zg9g
+[2025-09-25T04:39:17.922+0000] {docker.py:438} INFO - ✅ Successfully sent restart signal to container in pod compose-post-service-5878b79d-2zg9g
+[2025-09-25T04:39:17.922+0000] {docker.py:438} INFO - 📤 STDERR: {"metadata":{},"status":"Success"}
+[2025-09-25T04:39:17.922+0000] {docker.py:438} INFO - 🏁 Restart operation completed for 1 containers
+[2025-09-25T04:39:17.922+0000] {docker.py:438} INFO - ✅ Successfully restarted 1 containers
+[2025-09-25T04:39:17.922+0000] {docker.py:438} INFO -    📦 compose-post-service-5878b79d-2zg9g: restart_signal_sent
+[2025-09-25T04:39:17.922+0000] {docker.py:438} INFO - ⏳ Waiting 5 seconds until next restart...
+[2025-09-25T04:39:17.922+0000] {docker.py:438} INFO - 📊 Time remaining: 224 seconds
+[2025-09-25T04:39:17.922+0000] {docker.py:438} INFO - 📈 Total containers restarted so far: 20
+[2025-09-25T04:39:17.923+0000] {docker.py:438} INFO - 
+[2025-09-25T04:39:17.923+0000] {docker.py:438} INFO - ============================================================
+[2025-09-25T04:39:17.923+0000] {docker.py:438} INFO - 🔄 Container Restart #21 at 2025-09-25 04:38:56
+[2025-09-25T04:39:17.923+0000] {docker.py:438} INFO - ============================================================
+[2025-09-25T04:39:17.923+0000] {docker.py:438} INFO - 🔄 Container restart function started!
+[2025-09-25T04:39:17.923+0000] {docker.py:438} INFO - 🔧 Loading in-cluster Kubernetes configuration...
+[2025-09-25T04:39:17.923+0000] {docker.py:438} INFO - ❌ Failed to load in-cluster config: Service host/port is not set.
+[2025-09-25T04:39:17.923+0000] {docker.py:438} INFO - 🔧 Trying local kubeconfig...
+[2025-09-25T04:39:17.923+0000] {docker.py:438} INFO - ✅ Successfully loaded local kubeconfig
+[2025-09-25T04:39:17.924+0000] {docker.py:438} INFO - 🔍 Selecting pods with label_selector: app=compose-post-service
+[2025-09-25T04:39:17.924+0000] {docker.py:438} INFO - 📋 Found 1 pods initially
+[2025-09-25T04:39:17.924+0000] {docker.py:438} INFO - 🎲 Random selection: 1 pods
+[2025-09-25T04:39:17.924+0000] {docker.py:438} INFO - ✅ Selected pods: ['compose-post-service-5878b79d-2zg9g']
+[2025-09-25T04:39:17.924+0000] {docker.py:438} INFO - 🎯 Restarting container in pod: compose-post-service-5878b79d-2zg9g
+[2025-09-25T04:39:17.924+0000] {docker.py:438} INFO - ✅ Successfully sent restart signal to container in pod compose-post-service-5878b79d-2zg9g
+[2025-09-25T04:39:17.924+0000] {docker.py:438} INFO - 📤 STDERR: {"metadata":{},"status":"Success"}
+[2025-09-25T04:39:17.924+0000] {docker.py:438} INFO - 🏁 Restart operation completed for 1 containers
+[2025-09-25T04:39:17.925+0000] {docker.py:438} INFO - ✅ Successfully restarted 1 containers
+[2025-09-25T04:39:17.925+0000] {docker.py:438} INFO -    📦 compose-post-service-5878b79d-2zg9g: restart_signal_sent
+[2025-09-25T04:39:17.925+0000] {docker.py:438} INFO - ⏳ Waiting 5 seconds until next restart...
+[2025-09-25T04:39:17.925+0000] {docker.py:438} INFO - 📊 Time remaining: 215 seconds
+[2025-09-25T04:39:17.925+0000] {docker.py:438} INFO - 📈 Total containers restarted so far: 21
+[2025-09-25T04:39:17.925+0000] {docker.py:438} INFO - 
+[2025-09-25T04:39:17.925+0000] {docker.py:438} INFO - ============================================================
+[2025-09-25T04:39:17.925+0000] {docker.py:438} INFO - 🔄 Container Restart #22 at 2025-09-25 04:39:05
+[2025-09-25T04:39:17.925+0000] {docker.py:438} INFO - ============================================================
+[2025-09-25T04:39:17.926+0000] {docker.py:438} INFO - 🔄 Container restart function started!
+[2025-09-25T04:39:17.926+0000] {docker.py:438} INFO - 🔧 Loading in-cluster Kubernetes configuration...
+[2025-09-25T04:39:17.926+0000] {docker.py:438} INFO - ❌ Failed to load in-cluster config: Service host/port is not set.
+[2025-09-25T04:39:17.926+0000] {docker.py:438} INFO - 🔧 Trying local kubeconfig...
+[2025-09-25T04:39:17.926+0000] {docker.py:438} INFO - ✅ Successfully loaded local kubeconfig
+[2025-09-25T04:39:17.926+0000] {docker.py:438} INFO - 🔍 Selecting pods with label_selector: app=compose-post-service
+[2025-09-25T04:39:17.926+0000] {docker.py:438} INFO - 📋 Found 1 pods initially
+[2025-09-25T04:39:17.927+0000] {docker.py:438} INFO - 🎲 Random selection: 1 pods
+[2025-09-25T04:39:17.927+0000] {docker.py:438} INFO - ✅ Selected pods: ['compose-post-service-5878b79d-2zg9g']
+[2025-09-25T04:39:17.927+0000] {docker.py:438} INFO - 🎯 Restarting container in pod: compose-post-service-5878b79d-2zg9g
+[2025-09-25T04:39:17.927+0000] {docker.py:438} INFO - ✅ Successfully sent restart signal to container in pod compose-post-service-5878b79d-2zg9g
+[2025-09-25T04:39:17.927+0000] {docker.py:438} INFO - 📤 STDERR: {"metadata":{},"status":"Success"}
+[2025-09-25T04:39:17.927+0000] {docker.py:438} INFO - 🏁 Restart operation completed for 1 containers
+[2025-09-25T04:39:17.927+0000] {docker.py:438} INFO - ✅ Successfully restarted 1 containers
+[2025-09-25T04:39:17.927+0000] {docker.py:438} INFO -    📦 compose-post-service-5878b79d-2zg9g: restart_signal_sent
+[2025-09-25T04:39:17.927+0000] {docker.py:438} INFO - ⏳ Waiting 5 seconds until next restart...
+[2025-09-25T04:39:17.928+0000] {docker.py:438} INFO - 📊 Time remaining: 207 seconds
+[2025-09-25T04:39:17.928+0000] {docker.py:438} INFO - 📈 Total containers restarted so far: 22
+[2025-09-25T04:39:17.928+0000] {docker.py:438} INFO - 
+[2025-09-25T04:39:17.928+0000] {docker.py:438} INFO - ============================================================
+[2025-09-25T04:39:17.928+0000] {docker.py:438} INFO - 🔄 Container Restart #23 at 2025-09-25 04:39:13
+[2025-09-25T04:39:17.928+0000] {docker.py:438} INFO - ============================================================
+[2025-09-25T04:39:17.928+0000] {docker.py:438} INFO - 🔄 Container restart function started!
+[2025-09-25T04:39:17.928+0000] {docker.py:438} INFO - 🔧 Loading in-cluster Kubernetes configuration...
+[2025-09-25T04:39:17.929+0000] {docker.py:438} INFO - ❌ Failed to load in-cluster config: Service host/port is not set.
+[2025-09-25T04:39:17.929+0000] {docker.py:438} INFO - 🔧 Trying local kubeconfig...
+[2025-09-25T04:39:17.929+0000] {docker.py:438} INFO - ✅ Successfully loaded local kubeconfig
+[2025-09-25T04:39:17.929+0000] {docker.py:438} INFO - 🔍 Selecting pods with label_selector: app=compose-post-service
+[2025-09-25T04:39:17.929+0000] {docker.py:438} INFO - 📋 Found 1 pods initially
+[2025-09-25T04:39:17.929+0000] {docker.py:438} INFO - 🎲 Random selection: 1 pods
+[2025-09-25T04:39:17.929+0000] {docker.py:438} INFO - ✅ Selected pods: ['compose-post-service-5878b79d-2zg9g']
+[2025-09-25T04:39:17.929+0000] {docker.py:438} INFO - 🎯 Restarting container in pod: compose-post-service-5878b79d-2zg9g
+[2025-09-25T04:39:17.930+0000] {docker.py:438} INFO - ✅ Successfully sent restart signal to container in pod compose-post-service-5878b79d-2zg9g
+[2025-09-25T04:40:27.106+0000] {docker.py:438} INFO - 📤 STDERR: {"metadata":{},"status":"Success"}
+[2025-09-25T04:40:27.108+0000] {docker.py:438} INFO - 🏁 Restart operation completed for 1 containers
+[2025-09-25T04:40:27.108+0000] {docker.py:438} INFO - ✅ Successfully restarted 1 containers
+[2025-09-25T04:40:27.108+0000] {docker.py:438} INFO -    📦 compose-post-service-5878b79d-2zg9g: restart_signal_sent
+[2025-09-25T04:40:27.109+0000] {docker.py:438} INFO - ⏳ Waiting 5 seconds until next restart...
+[2025-09-25T04:40:27.109+0000] {docker.py:438} INFO - 📊 Time remaining: 198 seconds
+[2025-09-25T04:40:27.109+0000] {docker.py:438} INFO - 📈 Total containers restarted so far: 23
+[2025-09-25T04:40:27.109+0000] {docker.py:438} INFO - 
+[2025-09-25T04:40:27.110+0000] {docker.py:438} INFO - ============================================================
+[2025-09-25T04:40:27.110+0000] {docker.py:438} INFO - 🔄 Container Restart #24 at 2025-09-25 04:39:22
+[2025-09-25T04:40:27.110+0000] {docker.py:438} INFO - ============================================================
+[2025-09-25T04:40:27.110+0000] {docker.py:438} INFO - 🔄 Container restart function started!
+[2025-09-25T04:40:27.110+0000] {docker.py:438} INFO - 🔧 Loading in-cluster Kubernetes configuration...
+[2025-09-25T04:40:27.110+0000] {docker.py:438} INFO - ❌ Failed to load in-cluster config: Service host/port is not set.
+[2025-09-25T04:40:27.111+0000] {docker.py:438} INFO - 🔧 Trying local kubeconfig...
+[2025-09-25T04:40:27.111+0000] {docker.py:438} INFO - ✅ Successfully loaded local kubeconfig
+[2025-09-25T04:40:27.111+0000] {docker.py:438} INFO - 🔍 Selecting pods with label_selector: app=compose-post-service
+[2025-09-25T04:40:27.111+0000] {docker.py:438} INFO - 📋 Found 1 pods initially
+[2025-09-25T04:40:27.112+0000] {docker.py:438} INFO - 🎲 Random selection: 1 pods
+[2025-09-25T04:40:27.112+0000] {docker.py:438} INFO - ✅ Selected pods: ['compose-post-service-5878b79d-2zg9g']
+[2025-09-25T04:40:27.112+0000] {docker.py:438} INFO - 🎯 Restarting container in pod: compose-post-service-5878b79d-2zg9g
+[2025-09-25T04:40:27.112+0000] {docker.py:438} INFO - ✅ Successfully sent restart signal to container in pod compose-post-service-5878b79d-2zg9g
+[2025-09-25T04:40:27.112+0000] {docker.py:438} INFO - 📤 STDERR: {"metadata":{},"status":"Success"}
+[2025-09-25T04:40:27.112+0000] {docker.py:438} INFO - 🏁 Restart operation completed for 1 containers
+[2025-09-25T04:40:27.113+0000] {docker.py:438} INFO - ✅ Successfully restarted 1 containers
+[2025-09-25T04:40:27.113+0000] {docker.py:438} INFO -    📦 compose-post-service-5878b79d-2zg9g: restart_signal_sent
+[2025-09-25T04:40:27.113+0000] {docker.py:438} INFO - ⏳ Waiting 5 seconds until next restart...
+[2025-09-25T04:40:27.113+0000] {docker.py:438} INFO - 📊 Time remaining: 189 seconds
+[2025-09-25T04:40:27.113+0000] {docker.py:438} INFO - 📈 Total containers restarted so far: 24
+[2025-09-25T04:40:27.114+0000] {docker.py:438} INFO - 
+[2025-09-25T04:40:27.114+0000] {docker.py:438} INFO - ============================================================
+[2025-09-25T04:40:27.114+0000] {docker.py:438} INFO - 🔄 Container Restart #25 at 2025-09-25 04:39:31
+[2025-09-25T04:40:27.114+0000] {docker.py:438} INFO - ============================================================
+[2025-09-25T04:40:27.114+0000] {docker.py:438} INFO - 🔄 Container restart function started!
+[2025-09-25T04:40:27.115+0000] {docker.py:438} INFO - 🔧 Loading in-cluster Kubernetes configuration...
+[2025-09-25T04:40:27.115+0000] {docker.py:438} INFO - ❌ Failed to load in-cluster config: Service host/port is not set.
+[2025-09-25T04:40:27.115+0000] {docker.py:438} INFO - 🔧 Trying local kubeconfig...
+[2025-09-25T04:40:27.115+0000] {docker.py:438} INFO - ✅ Successfully loaded local kubeconfig
+[2025-09-25T04:40:27.115+0000] {docker.py:438} INFO - 🔍 Selecting pods with label_selector: app=compose-post-service
+[2025-09-25T04:40:27.116+0000] {docker.py:438} INFO - 📋 Found 1 pods initially
+[2025-09-25T04:40:27.116+0000] {docker.py:438} INFO - 🎲 Random selection: 1 pods
+[2025-09-25T04:40:27.116+0000] {docker.py:438} INFO - ✅ Selected pods: ['compose-post-service-5878b79d-2zg9g']
+[2025-09-25T04:40:27.116+0000] {docker.py:438} INFO - 🎯 Restarting container in pod: compose-post-service-5878b79d-2zg9g
+[2025-09-25T04:40:27.116+0000] {docker.py:438} INFO - ✅ Successfully sent restart signal to container in pod compose-post-service-5878b79d-2zg9g
+[2025-09-25T04:40:27.117+0000] {docker.py:438} INFO - 📤 STDERR: {"metadata":{},"status":"Success"}
+[2025-09-25T04:40:27.117+0000] {docker.py:438} INFO - 🏁 Restart operation completed for 1 containers
+[2025-09-25T04:40:27.117+0000] {docker.py:438} INFO - ✅ Successfully restarted 1 containers
+[2025-09-25T04:40:27.117+0000] {docker.py:438} INFO -    📦 compose-post-service-5878b79d-2zg9g: restart_signal_sent
+[2025-09-25T04:40:27.117+0000] {docker.py:438} INFO - ⏳ Waiting 5 seconds until next restart...
+[2025-09-25T04:40:27.117+0000] {docker.py:438} INFO - 📊 Time remaining: 180 seconds
+[2025-09-25T04:40:27.117+0000] {docker.py:438} INFO - 📈 Total containers restarted so far: 25
+[2025-09-25T04:40:27.118+0000] {docker.py:438} INFO - 
+[2025-09-25T04:40:27.118+0000] {docker.py:438} INFO - ============================================================
+[2025-09-25T04:40:27.118+0000] {docker.py:438} INFO - 🔄 Container Restart #26 at 2025-09-25 04:39:40
+[2025-09-25T04:40:27.118+0000] {docker.py:438} INFO - ============================================================
+[2025-09-25T04:40:27.118+0000] {docker.py:438} INFO - 🔄 Container restart function started!
+[2025-09-25T04:40:27.118+0000] {docker.py:438} INFO - 🔧 Loading in-cluster Kubernetes configuration...
+[2025-09-25T04:40:27.118+0000] {docker.py:438} INFO - ❌ Failed to load in-cluster config: Service host/port is not set.
+[2025-09-25T04:40:27.119+0000] {docker.py:438} INFO - 🔧 Trying local kubeconfig...
+[2025-09-25T04:40:27.119+0000] {docker.py:438} INFO - ✅ Successfully loaded local kubeconfig
+[2025-09-25T04:40:27.119+0000] {docker.py:438} INFO - 🔍 Selecting pods with label_selector: app=compose-post-service
+[2025-09-25T04:40:27.119+0000] {docker.py:438} INFO - 📋 Found 1 pods initially
+[2025-09-25T04:40:27.119+0000] {docker.py:438} INFO - 🎲 Random selection: 1 pods
+[2025-09-25T04:40:27.120+0000] {docker.py:438} INFO - ✅ Selected pods: ['compose-post-service-5878b79d-2zg9g']
+[2025-09-25T04:40:27.120+0000] {docker.py:438} INFO - 🎯 Restarting container in pod: compose-post-service-5878b79d-2zg9g
+[2025-09-25T04:40:27.120+0000] {docker.py:438} INFO - ✅ Successfully sent restart signal to container in pod compose-post-service-5878b79d-2zg9g
+[2025-09-25T04:40:27.120+0000] {docker.py:438} INFO - 📤 STDERR: {"metadata":{},"status":"Success"}
+[2025-09-25T04:40:27.121+0000] {docker.py:438} INFO - 🏁 Restart operation completed for 1 containers
+[2025-09-25T04:40:27.121+0000] {docker.py:438} INFO - ✅ Successfully restarted 1 containers
+[2025-09-25T04:40:27.121+0000] {docker.py:438} INFO -    📦 compose-post-service-5878b79d-2zg9g: restart_signal_sent
+[2025-09-25T04:40:27.122+0000] {docker.py:438} INFO - ⏳ Waiting 5 seconds until next restart...
+[2025-09-25T04:40:27.122+0000] {docker.py:438} INFO - 📊 Time remaining: 171 seconds
+[2025-09-25T04:40:27.122+0000] {docker.py:438} INFO - 📈 Total containers restarted so far: 26
+[2025-09-25T04:40:27.122+0000] {docker.py:438} INFO - 
+[2025-09-25T04:40:27.123+0000] {docker.py:438} INFO - ============================================================
+[2025-09-25T04:40:27.123+0000] {docker.py:438} INFO - 🔄 Container Restart #27 at 2025-09-25 04:39:49
+[2025-09-25T04:40:27.123+0000] {docker.py:438} INFO - ============================================================
+[2025-09-25T04:40:27.123+0000] {docker.py:438} INFO - 🔄 Container restart function started!
+[2025-09-25T04:40:27.124+0000] {docker.py:438} INFO - 🔧 Loading in-cluster Kubernetes configuration...
+[2025-09-25T04:40:27.124+0000] {docker.py:438} INFO - ❌ Failed to load in-cluster config: Service host/port is not set.
+[2025-09-25T04:40:27.124+0000] {docker.py:438} INFO - 🔧 Trying local kubeconfig...
+[2025-09-25T04:40:27.124+0000] {docker.py:438} INFO - ✅ Successfully loaded local kubeconfig
+[2025-09-25T04:40:27.124+0000] {docker.py:438} INFO - 🔍 Selecting pods with label_selector: app=compose-post-service
+[2025-09-25T04:40:27.125+0000] {docker.py:438} INFO - 📋 Found 1 pods initially
+[2025-09-25T04:40:27.125+0000] {docker.py:438} INFO - 🎲 Random selection: 1 pods
+[2025-09-25T04:40:27.125+0000] {docker.py:438} INFO - ✅ Selected pods: ['compose-post-service-5878b79d-2zg9g']
+[2025-09-25T04:40:27.125+0000] {docker.py:438} INFO - 🎯 Restarting container in pod: compose-post-service-5878b79d-2zg9g
+[2025-09-25T04:40:27.126+0000] {docker.py:438} INFO - ✅ Successfully sent restart signal to container in pod compose-post-service-5878b79d-2zg9g
+[2025-09-25T04:40:27.126+0000] {docker.py:438} INFO - 📤 STDERR: {"metadata":{},"status":"Success"}
+[2025-09-25T04:40:27.126+0000] {docker.py:438} INFO - 🏁 Restart operation completed for 1 containers
+[2025-09-25T04:40:27.126+0000] {docker.py:438} INFO - ✅ Successfully restarted 1 containers
+[2025-09-25T04:40:27.127+0000] {docker.py:438} INFO -    📦 compose-post-service-5878b79d-2zg9g: restart_signal_sent
+[2025-09-25T04:40:27.127+0000] {docker.py:438} INFO - ⏳ Waiting 5 seconds until next restart...
+[2025-09-25T04:40:27.127+0000] {docker.py:438} INFO - 📊 Time remaining: 161 seconds
+[2025-09-25T04:40:27.127+0000] {docker.py:438} INFO - 📈 Total containers restarted so far: 27
+[2025-09-25T04:40:27.127+0000] {docker.py:438} INFO - 
+[2025-09-25T04:40:27.128+0000] {docker.py:438} INFO - ============================================================
+[2025-09-25T04:40:27.128+0000] {docker.py:438} INFO - 🔄 Container Restart #28 at 2025-09-25 04:39:59
+[2025-09-25T04:40:27.128+0000] {docker.py:438} INFO - ============================================================
+[2025-09-25T04:40:27.128+0000] {docker.py:438} INFO - 🔄 Container restart function started!
+[2025-09-25T04:40:27.129+0000] {docker.py:438} INFO - 🔧 Loading in-cluster Kubernetes configuration...
+[2025-09-25T04:40:27.129+0000] {docker.py:438} INFO - ❌ Failed to load in-cluster config: Service host/port is not set.
+[2025-09-25T04:40:27.129+0000] {docker.py:438} INFO - 🔧 Trying local kubeconfig...
+[2025-09-25T04:40:27.129+0000] {docker.py:438} INFO - ✅ Successfully loaded local kubeconfig
+[2025-09-25T04:40:27.129+0000] {docker.py:438} INFO - 🔍 Selecting pods with label_selector: app=compose-post-service
+[2025-09-25T04:40:27.129+0000] {docker.py:438} INFO - 📋 Found 1 pods initially
+[2025-09-25T04:40:27.130+0000] {docker.py:438} INFO - 🎲 Random selection: 1 pods
+[2025-09-25T04:40:27.130+0000] {docker.py:438} INFO - ✅ Selected pods: ['compose-post-service-5878b79d-2zg9g']
+[2025-09-25T04:40:27.130+0000] {docker.py:438} INFO - 🎯 Restarting container in pod: compose-post-service-5878b79d-2zg9g
+[2025-09-25T04:40:27.130+0000] {docker.py:438} INFO - ✅ Successfully sent restart signal to container in pod compose-post-service-5878b79d-2zg9g
+[2025-09-25T04:40:27.130+0000] {docker.py:438} INFO - 📤 STDERR: {"metadata":{},"status":"Success"}
+[2025-09-25T04:40:27.130+0000] {docker.py:438} INFO - 🏁 Restart operation completed for 1 containers
+[2025-09-25T04:40:27.130+0000] {docker.py:438} INFO - ✅ Successfully restarted 1 containers
+[2025-09-25T04:40:27.130+0000] {docker.py:438} INFO -    📦 compose-post-service-5878b79d-2zg9g: restart_signal_sent
+[2025-09-25T04:40:27.131+0000] {docker.py:438} INFO - ⏳ Waiting 5 seconds until next restart...
+[2025-09-25T04:40:27.131+0000] {docker.py:438} INFO - 📊 Time remaining: 152 seconds
+[2025-09-25T04:40:27.131+0000] {docker.py:438} INFO - 📈 Total containers restarted so far: 28
+[2025-09-25T04:40:27.131+0000] {docker.py:438} INFO - 
+[2025-09-25T04:40:27.131+0000] {docker.py:438} INFO - ============================================================
+[2025-09-25T04:40:27.131+0000] {docker.py:438} INFO - 🔄 Container Restart #29 at 2025-09-25 04:40:08
+[2025-09-25T04:40:27.131+0000] {docker.py:438} INFO - ============================================================
+[2025-09-25T04:40:27.132+0000] {docker.py:438} INFO - 🔄 Container restart function started!
+[2025-09-25T04:40:27.132+0000] {docker.py:438} INFO - 🔧 Loading in-cluster Kubernetes configuration...
+[2025-09-25T04:40:27.132+0000] {docker.py:438} INFO - ❌ Failed to load in-cluster config: Service host/port is not set.
+[2025-09-25T04:40:27.132+0000] {docker.py:438} INFO - 🔧 Trying local kubeconfig...
+[2025-09-25T04:40:27.132+0000] {docker.py:438} INFO - ✅ Successfully loaded local kubeconfig
+[2025-09-25T04:40:27.132+0000] {docker.py:438} INFO - 🔍 Selecting pods with label_selector: app=compose-post-service
+[2025-09-25T04:40:27.132+0000] {docker.py:438} INFO - 📋 Found 1 pods initially
+[2025-09-25T04:40:27.132+0000] {docker.py:438} INFO - 🎲 Random selection: 1 pods
+[2025-09-25T04:40:27.133+0000] {docker.py:438} INFO - ✅ Selected pods: ['compose-post-service-5878b79d-2zg9g']
+[2025-09-25T04:40:27.133+0000] {docker.py:438} INFO - 🎯 Restarting container in pod: compose-post-service-5878b79d-2zg9g
+[2025-09-25T04:40:27.133+0000] {docker.py:438} INFO - ✅ Successfully sent restart signal to container in pod compose-post-service-5878b79d-2zg9g
+[2025-09-25T04:40:27.133+0000] {docker.py:438} INFO - 📤 STDERR: {"metadata":{},"status":"Success"}
+[2025-09-25T04:40:27.133+0000] {docker.py:438} INFO - 🏁 Restart operation completed for 1 containers
+[2025-09-25T04:40:27.133+0000] {docker.py:438} INFO - ✅ Successfully restarted 1 containers
+[2025-09-25T04:40:27.133+0000] {docker.py:438} INFO -    📦 compose-post-service-5878b79d-2zg9g: restart_signal_sent
+[2025-09-25T04:40:27.133+0000] {docker.py:438} INFO - ⏳ Waiting 5 seconds until next restart...
+[2025-09-25T04:40:27.134+0000] {docker.py:438} INFO - 📊 Time remaining: 143 seconds
+[2025-09-25T04:40:27.134+0000] {docker.py:438} INFO - 📈 Total containers restarted so far: 29
+[2025-09-25T04:40:27.134+0000] {docker.py:438} INFO - 
+[2025-09-25T04:40:27.134+0000] {docker.py:438} INFO - ============================================================
+[2025-09-25T04:40:27.134+0000] {docker.py:438} INFO - 🔄 Container Restart #30 at 2025-09-25 04:40:17
+[2025-09-25T04:40:27.134+0000] {docker.py:438} INFO - ============================================================
+[2025-09-25T04:40:27.134+0000] {docker.py:438} INFO - 🔄 Container restart function started!
+[2025-09-25T04:40:27.134+0000] {docker.py:438} INFO - 🔧 Loading in-cluster Kubernetes configuration...
+[2025-09-25T04:40:27.135+0000] {docker.py:438} INFO - ❌ Failed to load in-cluster config: Service host/port is not set.
+[2025-09-25T04:40:27.135+0000] {docker.py:438} INFO - 🔧 Trying local kubeconfig...
+[2025-09-25T04:40:27.135+0000] {docker.py:438} INFO - ✅ Successfully loaded local kubeconfig
+[2025-09-25T04:40:27.135+0000] {docker.py:438} INFO - 🔍 Selecting pods with label_selector: app=compose-post-service
+[2025-09-25T04:40:27.135+0000] {docker.py:438} INFO - 📋 Found 1 pods initially
+[2025-09-25T04:40:27.135+0000] {docker.py:438} INFO - 🎲 Random selection: 1 pods
+[2025-09-25T04:40:27.135+0000] {docker.py:438} INFO - ✅ Selected pods: ['compose-post-service-5878b79d-2zg9g']
+[2025-09-25T04:40:27.136+0000] {docker.py:438} INFO - 🎯 Restarting container in pod: compose-post-service-5878b79d-2zg9g
+[2025-09-25T04:40:27.136+0000] {docker.py:438} INFO - ✅ Successfully sent restart signal to container in pod compose-post-service-5878b79d-2zg9g
+[2025-09-25T04:40:27.136+0000] {docker.py:438} INFO - 📤 STDERR: {"metadata":{},"status":"Success"}
+[2025-09-25T04:40:27.136+0000] {docker.py:438} INFO - 🏁 Restart operation completed for 1 containers
+[2025-09-25T04:40:27.136+0000] {docker.py:438} INFO - ✅ Successfully restarted 1 containers
+[2025-09-25T04:40:27.136+0000] {docker.py:438} INFO -    📦 compose-post-service-5878b79d-2zg9g: restart_signal_sent
+[2025-09-25T04:40:27.137+0000] {docker.py:438} INFO - ⏳ Waiting 5 seconds until next restart...
+[2025-09-25T04:40:27.137+0000] {docker.py:438} INFO - 📊 Time remaining: 133 seconds
+[2025-09-25T04:40:27.137+0000] {docker.py:438} INFO - 📈 Total containers restarted so far: 30
+[2025-09-25T04:40:27.137+0000] {docker.py:438} INFO - 
+[2025-09-25T04:40:27.137+0000] {docker.py:438} INFO - ============================================================
+[2025-09-25T04:40:27.138+0000] {docker.py:438} INFO - 🔄 Container Restart #31 at 2025-09-25 04:40:27
+[2025-09-25T04:40:27.138+0000] {docker.py:438} INFO - ============================================================
+[2025-09-25T04:40:27.138+0000] {docker.py:438} INFO - 🔄 Container restart function started!
+[2025-09-25T04:40:27.138+0000] {docker.py:438} INFO - 🔧 Loading in-cluster Kubernetes configuration...
+[2025-09-25T04:40:27.139+0000] {docker.py:438} INFO - ❌ Failed to load in-cluster config: Service host/port is not set.
+[2025-09-25T04:40:27.139+0000] {docker.py:438} INFO - 🔧 Trying local kubeconfig...
+[2025-09-25T04:41:35.935+0000] {docker.py:438} INFO - ✅ Successfully loaded local kubeconfig
+[2025-09-25T04:41:35.937+0000] {docker.py:438} INFO - 🔍 Selecting pods with label_selector: app=compose-post-service
+[2025-09-25T04:41:35.937+0000] {docker.py:438} INFO - 📋 Found 1 pods initially
+[2025-09-25T04:41:35.938+0000] {docker.py:438} INFO - 🎲 Random selection: 1 pods
+[2025-09-25T04:41:35.938+0000] {docker.py:438} INFO - ✅ Selected pods: ['compose-post-service-5878b79d-2zg9g']
+[2025-09-25T04:41:35.938+0000] {docker.py:438} INFO - 🎯 Restarting container in pod: compose-post-service-5878b79d-2zg9g
+[2025-09-25T04:41:35.938+0000] {docker.py:438} INFO - ✅ Successfully sent restart signal to container in pod compose-post-service-5878b79d-2zg9g
+[2025-09-25T04:41:35.938+0000] {docker.py:438} INFO - 📤 STDERR: {"metadata":{},"status":"Success"}
+[2025-09-25T04:41:35.938+0000] {docker.py:438} INFO - 🏁 Restart operation completed for 1 containers
+[2025-09-25T04:41:35.939+0000] {docker.py:438} INFO - ✅ Successfully restarted 1 containers
+[2025-09-25T04:41:35.939+0000] {docker.py:438} INFO -    📦 compose-post-service-5878b79d-2zg9g: restart_signal_sent
+[2025-09-25T04:41:35.939+0000] {docker.py:438} INFO - ⏳ Waiting 5 seconds until next restart...
+[2025-09-25T04:41:35.939+0000] {docker.py:438} INFO - 📊 Time remaining: 125 seconds
+[2025-09-25T04:41:35.939+0000] {docker.py:438} INFO - 📈 Total containers restarted so far: 31
+[2025-09-25T04:41:35.939+0000] {docker.py:438} INFO - 
+[2025-09-25T04:41:35.939+0000] {docker.py:438} INFO - ============================================================
+[2025-09-25T04:41:35.940+0000] {docker.py:438} INFO - 🔄 Container Restart #32 at 2025-09-25 04:40:35
+[2025-09-25T04:41:35.940+0000] {docker.py:438} INFO - ============================================================
+[2025-09-25T04:41:35.940+0000] {docker.py:438} INFO - 🔄 Container restart function started!
+[2025-09-25T04:41:35.940+0000] {docker.py:438} INFO - 🔧 Loading in-cluster Kubernetes configuration...
+[2025-09-25T04:41:35.940+0000] {docker.py:438} INFO - ❌ Failed to load in-cluster config: Service host/port is not set.
+[2025-09-25T04:41:35.940+0000] {docker.py:438} INFO - 🔧 Trying local kubeconfig...
+[2025-09-25T04:41:35.940+0000] {docker.py:438} INFO - ✅ Successfully loaded local kubeconfig
+[2025-09-25T04:41:35.941+0000] {docker.py:438} INFO - 🔍 Selecting pods with label_selector: app=compose-post-service
+[2025-09-25T04:41:35.941+0000] {docker.py:438} INFO - 📋 Found 1 pods initially
+[2025-09-25T04:41:35.941+0000] {docker.py:438} INFO - 🎲 Random selection: 1 pods
+[2025-09-25T04:41:35.941+0000] {docker.py:438} INFO - ✅ Selected pods: ['compose-post-service-5878b79d-2zg9g']
+[2025-09-25T04:41:35.941+0000] {docker.py:438} INFO - 🎯 Restarting container in pod: compose-post-service-5878b79d-2zg9g
+[2025-09-25T04:41:35.942+0000] {docker.py:438} INFO - ✅ Successfully sent restart signal to container in pod compose-post-service-5878b79d-2zg9g
+[2025-09-25T04:41:35.942+0000] {docker.py:438} INFO - 📤 STDERR: {"metadata":{},"status":"Success"}
+[2025-09-25T04:41:35.942+0000] {docker.py:438} INFO - 🏁 Restart operation completed for 1 containers
+[2025-09-25T04:41:35.942+0000] {docker.py:438} INFO - ✅ Successfully restarted 1 containers
+[2025-09-25T04:41:35.943+0000] {docker.py:438} INFO -    📦 compose-post-service-5878b79d-2zg9g: restart_signal_sent
+[2025-09-25T04:41:35.943+0000] {docker.py:438} INFO - ⏳ Waiting 5 seconds until next restart...
+[2025-09-25T04:41:35.943+0000] {docker.py:438} INFO - 📊 Time remaining: 115 seconds
+[2025-09-25T04:41:35.943+0000] {docker.py:438} INFO - 📈 Total containers restarted so far: 32
+[2025-09-25T04:41:35.943+0000] {docker.py:438} INFO - 
+[2025-09-25T04:41:35.944+0000] {docker.py:438} INFO - ============================================================
+[2025-09-25T04:41:35.944+0000] {docker.py:438} INFO - 🔄 Container Restart #33 at 2025-09-25 04:40:45
+[2025-09-25T04:41:35.944+0000] {docker.py:438} INFO - ============================================================
+[2025-09-25T04:41:35.944+0000] {docker.py:438} INFO - 🔄 Container restart function started!
+[2025-09-25T04:41:35.944+0000] {docker.py:438} INFO - 🔧 Loading in-cluster Kubernetes configuration...
+[2025-09-25T04:41:35.945+0000] {docker.py:438} INFO - ❌ Failed to load in-cluster config: Service host/port is not set.
+[2025-09-25T04:41:35.945+0000] {docker.py:438} INFO - 🔧 Trying local kubeconfig...
+[2025-09-25T04:41:35.945+0000] {docker.py:438} INFO - ✅ Successfully loaded local kubeconfig
+[2025-09-25T04:41:35.945+0000] {docker.py:438} INFO - 🔍 Selecting pods with label_selector: app=compose-post-service
+[2025-09-25T04:41:35.945+0000] {docker.py:438} INFO - 📋 Found 1 pods initially
+[2025-09-25T04:41:35.946+0000] {docker.py:438} INFO - 🎲 Random selection: 1 pods
+[2025-09-25T04:41:35.946+0000] {docker.py:438} INFO - ✅ Selected pods: ['compose-post-service-5878b79d-2zg9g']
+[2025-09-25T04:41:35.946+0000] {docker.py:438} INFO - 🎯 Restarting container in pod: compose-post-service-5878b79d-2zg9g
+[2025-09-25T04:41:35.946+0000] {docker.py:438} INFO - ✅ Successfully sent restart signal to container in pod compose-post-service-5878b79d-2zg9g
+[2025-09-25T04:41:35.946+0000] {docker.py:438} INFO - 📤 STDERR: {"metadata":{},"status":"Success"}
+[2025-09-25T04:41:35.947+0000] {docker.py:438} INFO - 🏁 Restart operation completed for 1 containers
+[2025-09-25T04:41:35.947+0000] {docker.py:438} INFO - ✅ Successfully restarted 1 containers
+[2025-09-25T04:41:35.947+0000] {docker.py:438} INFO -    📦 compose-post-service-5878b79d-2zg9g: restart_signal_sent
+[2025-09-25T04:41:35.947+0000] {docker.py:438} INFO - ⏳ Waiting 5 seconds until next restart...
+[2025-09-25T04:41:35.947+0000] {docker.py:438} INFO - 📊 Time remaining: 106 seconds
+[2025-09-25T04:41:35.948+0000] {docker.py:438} INFO - 📈 Total containers restarted so far: 33
+[2025-09-25T04:41:35.948+0000] {docker.py:438} INFO - 
+[2025-09-25T04:41:35.948+0000] {docker.py:438} INFO - ============================================================
+[2025-09-25T04:41:35.948+0000] {docker.py:438} INFO - 🔄 Container Restart #34 at 2025-09-25 04:40:54
+[2025-09-25T04:41:35.948+0000] {docker.py:438} INFO - ============================================================
+[2025-09-25T04:41:35.949+0000] {docker.py:438} INFO - 🔄 Container restart function started!
+[2025-09-25T04:41:35.949+0000] {docker.py:438} INFO - 🔧 Loading in-cluster Kubernetes configuration...
+[2025-09-25T04:41:35.949+0000] {docker.py:438} INFO - ❌ Failed to load in-cluster config: Service host/port is not set.
+[2025-09-25T04:41:35.949+0000] {docker.py:438} INFO - 🔧 Trying local kubeconfig...
+[2025-09-25T04:41:35.949+0000] {docker.py:438} INFO - ✅ Successfully loaded local kubeconfig
+[2025-09-25T04:41:35.950+0000] {docker.py:438} INFO - 🔍 Selecting pods with label_selector: app=compose-post-service
+[2025-09-25T04:41:35.950+0000] {docker.py:438} INFO - 📋 Found 1 pods initially
+[2025-09-25T04:41:35.950+0000] {docker.py:438} INFO - 🎲 Random selection: 1 pods
+[2025-09-25T04:41:35.950+0000] {docker.py:438} INFO - ✅ Selected pods: ['compose-post-service-5878b79d-2zg9g']
+[2025-09-25T04:41:35.950+0000] {docker.py:438} INFO - 🎯 Restarting container in pod: compose-post-service-5878b79d-2zg9g
+[2025-09-25T04:41:35.951+0000] {docker.py:438} INFO - ✅ Successfully sent restart signal to container in pod compose-post-service-5878b79d-2zg9g
+[2025-09-25T04:41:35.951+0000] {docker.py:438} INFO - 📤 STDERR: {"metadata":{},"status":"Success"}
+[2025-09-25T04:41:35.951+0000] {docker.py:438} INFO - 🏁 Restart operation completed for 1 containers
+[2025-09-25T04:41:35.951+0000] {docker.py:438} INFO - ✅ Successfully restarted 1 containers
+[2025-09-25T04:41:35.951+0000] {docker.py:438} INFO -    📦 compose-post-service-5878b79d-2zg9g: restart_signal_sent
+[2025-09-25T04:41:35.952+0000] {docker.py:438} INFO - ⏳ Waiting 5 seconds until next restart...
+[2025-09-25T04:41:35.952+0000] {docker.py:438} INFO - 📊 Time remaining: 97 seconds
+[2025-09-25T04:41:35.952+0000] {docker.py:438} INFO - 📈 Total containers restarted so far: 34
+[2025-09-25T04:41:35.952+0000] {docker.py:438} INFO - 
+[2025-09-25T04:41:35.953+0000] {docker.py:438} INFO - ============================================================
+[2025-09-25T04:41:35.953+0000] {docker.py:438} INFO - 🔄 Container Restart #35 at 2025-09-25 04:41:03
+[2025-09-25T04:41:35.953+0000] {docker.py:438} INFO - ============================================================
+[2025-09-25T04:41:35.953+0000] {docker.py:438} INFO - 🔄 Container restart function started!
+[2025-09-25T04:41:35.953+0000] {docker.py:438} INFO - 🔧 Loading in-cluster Kubernetes configuration...
+[2025-09-25T04:41:35.954+0000] {docker.py:438} INFO - ❌ Failed to load in-cluster config: Service host/port is not set.
+[2025-09-25T04:41:35.954+0000] {docker.py:438} INFO - 🔧 Trying local kubeconfig...
+[2025-09-25T04:41:35.954+0000] {docker.py:438} INFO - ✅ Successfully loaded local kubeconfig
+[2025-09-25T04:41:35.954+0000] {docker.py:438} INFO - 🔍 Selecting pods with label_selector: app=compose-post-service
+[2025-09-25T04:41:35.954+0000] {docker.py:438} INFO - 📋 Found 1 pods initially
+[2025-09-25T04:41:35.955+0000] {docker.py:438} INFO - 🎲 Random selection: 1 pods
+[2025-09-25T04:41:35.955+0000] {docker.py:438} INFO - ✅ Selected pods: ['compose-post-service-5878b79d-2zg9g']
+[2025-09-25T04:41:35.955+0000] {docker.py:438} INFO - 🎯 Restarting container in pod: compose-post-service-5878b79d-2zg9g
+[2025-09-25T04:41:35.955+0000] {docker.py:438} INFO - ✅ Successfully sent restart signal to container in pod compose-post-service-5878b79d-2zg9g
+[2025-09-25T04:41:35.955+0000] {docker.py:438} INFO - 📤 STDERR: {"metadata":{},"status":"Success"}
+[2025-09-25T04:41:35.956+0000] {docker.py:438} INFO - 🏁 Restart operation completed for 1 containers
+[2025-09-25T04:41:35.956+0000] {docker.py:438} INFO - ✅ Successfully restarted 1 containers
+[2025-09-25T04:41:35.956+0000] {docker.py:438} INFO -    📦 compose-post-service-5878b79d-2zg9g: restart_signal_sent
+[2025-09-25T04:41:35.956+0000] {docker.py:438} INFO - ⏳ Waiting 5 seconds until next restart...
+[2025-09-25T04:41:35.956+0000] {docker.py:438} INFO - 📊 Time remaining: 87 seconds
+[2025-09-25T04:41:35.957+0000] {docker.py:438} INFO - 📈 Total containers restarted so far: 35
+[2025-09-25T04:41:35.957+0000] {docker.py:438} INFO - 
+[2025-09-25T04:41:35.957+0000] {docker.py:438} INFO - ============================================================
+[2025-09-25T04:41:35.957+0000] {docker.py:438} INFO - 🔄 Container Restart #36 at 2025-09-25 04:41:13
+[2025-09-25T04:41:35.957+0000] {docker.py:438} INFO - ============================================================
+[2025-09-25T04:41:35.958+0000] {docker.py:438} INFO - 🔄 Container restart function started!
+[2025-09-25T04:41:35.958+0000] {docker.py:438} INFO - 🔧 Loading in-cluster Kubernetes configuration...
+[2025-09-25T04:41:35.958+0000] {docker.py:438} INFO - ❌ Failed to load in-cluster config: Service host/port is not set.
+[2025-09-25T04:41:35.958+0000] {docker.py:438} INFO - 🔧 Trying local kubeconfig...
+[2025-09-25T04:41:35.958+0000] {docker.py:438} INFO - ✅ Successfully loaded local kubeconfig
+[2025-09-25T04:41:35.959+0000] {docker.py:438} INFO - 🔍 Selecting pods with label_selector: app=compose-post-service
+[2025-09-25T04:41:35.959+0000] {docker.py:438} INFO - 📋 Found 1 pods initially
+[2025-09-25T04:41:35.959+0000] {docker.py:438} INFO - 🎲 Random selection: 1 pods
+[2025-09-25T04:41:35.959+0000] {docker.py:438} INFO - ✅ Selected pods: ['compose-post-service-5878b79d-2zg9g']
+[2025-09-25T04:41:35.959+0000] {docker.py:438} INFO - 🎯 Restarting container in pod: compose-post-service-5878b79d-2zg9g
+[2025-09-25T04:41:35.960+0000] {docker.py:438} INFO - ✅ Successfully sent restart signal to container in pod compose-post-service-5878b79d-2zg9g
+[2025-09-25T04:41:35.960+0000] {docker.py:438} INFO - 📤 STDERR: {"metadata":{},"status":"Success"}
+[2025-09-25T04:41:35.960+0000] {docker.py:438} INFO - 🏁 Restart operation completed for 1 containers
+[2025-09-25T04:41:35.960+0000] {docker.py:438} INFO - ✅ Successfully restarted 1 containers
+[2025-09-25T04:41:35.960+0000] {docker.py:438} INFO -    📦 compose-post-service-5878b79d-2zg9g: restart_signal_sent
+[2025-09-25T04:41:35.960+0000] {docker.py:438} INFO - ⏳ Waiting 5 seconds until next restart...
+[2025-09-25T04:41:35.961+0000] {docker.py:438} INFO - 📊 Time remaining: 78 seconds
+[2025-09-25T04:41:35.961+0000] {docker.py:438} INFO - 📈 Total containers restarted so far: 36
+[2025-09-25T04:41:35.961+0000] {docker.py:438} INFO - 
+[2025-09-25T04:41:35.961+0000] {docker.py:438} INFO - ============================================================
+[2025-09-25T04:41:35.961+0000] {docker.py:438} INFO - 🔄 Container Restart #37 at 2025-09-25 04:41:22
+[2025-09-25T04:41:35.962+0000] {docker.py:438} INFO - ============================================================
+[2025-09-25T04:41:35.962+0000] {docker.py:438} INFO - 🔄 Container restart function started!
+[2025-09-25T04:41:35.962+0000] {docker.py:438} INFO - 🔧 Loading in-cluster Kubernetes configuration...
+[2025-09-25T04:41:35.962+0000] {docker.py:438} INFO - ❌ Failed to load in-cluster config: Service host/port is not set.
+[2025-09-25T04:41:35.962+0000] {docker.py:438} INFO - 🔧 Trying local kubeconfig...
+[2025-09-25T04:41:35.963+0000] {docker.py:438} INFO - ✅ Successfully loaded local kubeconfig
+[2025-09-25T04:41:35.963+0000] {docker.py:438} INFO - 🔍 Selecting pods with label_selector: app=compose-post-service
+[2025-09-25T04:41:35.963+0000] {docker.py:438} INFO - 📋 Found 1 pods initially
+[2025-09-25T04:41:35.963+0000] {docker.py:438} INFO - 🎲 Random selection: 1 pods
+[2025-09-25T04:41:35.963+0000] {docker.py:438} INFO - ✅ Selected pods: ['compose-post-service-5878b79d-2zg9g']
+[2025-09-25T04:41:35.963+0000] {docker.py:438} INFO - 🎯 Restarting container in pod: compose-post-service-5878b79d-2zg9g
+[2025-09-25T04:41:35.964+0000] {docker.py:438} INFO - ✅ Successfully sent restart signal to container in pod compose-post-service-5878b79d-2zg9g
+[2025-09-25T04:41:35.964+0000] {docker.py:438} INFO - 📤 STDERR: {"metadata":{},"status":"Success"}
+[2025-09-25T04:41:35.964+0000] {docker.py:438} INFO - 🏁 Restart operation completed for 1 containers
+[2025-09-25T04:41:35.964+0000] {docker.py:438} INFO - ✅ Successfully restarted 1 containers
+[2025-09-25T04:41:35.964+0000] {docker.py:438} INFO -    📦 compose-post-service-5878b79d-2zg9g: restart_signal_sent
+[2025-09-25T04:41:35.965+0000] {docker.py:438} INFO - ⏳ Waiting 5 seconds until next restart...
+[2025-09-25T04:41:35.965+0000] {docker.py:438} INFO - 📊 Time remaining: 68 seconds
+[2025-09-25T04:41:35.965+0000] {docker.py:438} INFO - 📈 Total containers restarted so far: 37
+[2025-09-25T04:41:35.965+0000] {docker.py:438} INFO - 
+[2025-09-25T04:41:35.965+0000] {docker.py:438} INFO - ============================================================
+[2025-09-25T04:41:35.966+0000] {docker.py:438} INFO - 🔄 Container Restart #38 at 2025-09-25 04:41:32
+[2025-09-25T04:41:35.966+0000] {docker.py:438} INFO - ============================================================
+[2025-09-25T04:41:35.966+0000] {docker.py:438} INFO - 🔄 Container restart function started!
+[2025-09-25T04:41:35.966+0000] {docker.py:438} INFO - 🔧 Loading in-cluster Kubernetes configuration...
+[2025-09-25T04:41:35.966+0000] {docker.py:438} INFO - ❌ Failed to load in-cluster config: Service host/port is not set.
+[2025-09-25T04:41:35.966+0000] {docker.py:438} INFO - 🔧 Trying local kubeconfig...
+[2025-09-25T04:41:35.967+0000] {docker.py:438} INFO - ✅ Successfully loaded local kubeconfig
+[2025-09-25T04:41:35.967+0000] {docker.py:438} INFO - 🔍 Selecting pods with label_selector: app=compose-post-service
+[2025-09-25T04:41:35.967+0000] {docker.py:438} INFO - 📋 Found 1 pods initially
+[2025-09-25T04:41:35.967+0000] {docker.py:438} INFO - 🎲 Random selection: 1 pods
+[2025-09-25T04:41:35.967+0000] {docker.py:438} INFO - ✅ Selected pods: ['compose-post-service-5878b79d-2zg9g']
+[2025-09-25T04:41:35.968+0000] {docker.py:438} INFO - 🎯 Restarting container in pod: compose-post-service-5878b79d-2zg9g
+[2025-09-25T04:41:35.968+0000] {docker.py:438} INFO - ✅ Successfully sent restart signal to container in pod compose-post-service-5878b79d-2zg9g
+[2025-09-25T04:41:35.968+0000] {docker.py:438} INFO - 📤 STDERR: {"metadata":{},"status":"Success"}
+[2025-09-25T04:41:35.968+0000] {docker.py:438} INFO - 🏁 Restart operation completed for 1 containers
+[2025-09-25T04:41:35.968+0000] {docker.py:438} INFO - ✅ Successfully restarted 1 containers
+[2025-09-25T04:41:35.969+0000] {docker.py:438} INFO -    📦 compose-post-service-5878b79d-2zg9g: restart_signal_sent
+[2025-09-25T04:41:35.969+0000] {docker.py:438} INFO - ⏳ Waiting 5 seconds until next restart...
+[2025-09-25T04:41:35.969+0000] {docker.py:438} INFO - 📊 Time remaining: 60 seconds
+[2025-09-25T04:42:30.773+0000] {docker.py:438} INFO - [32m[2025-09-25 04:42:30 INFO] Let's rollback...
+[2025-09-25T04:42:30.773+0000] {docker.py:438} INFO - [32m[2025-09-25 04:42:30 INFO] Rollback: verify-pods-running
+[2025-09-25T04:42:30.774+0000] {docker.py:438} INFO - [32m[2025-09-25 04:42:30 INFO] Probe: verify-pods-running
+[2025-09-25T04:42:32.437+0000] {docker.py:438} INFO - [32m[2025-09-25 04:42:32 INFO] Experiment ended with status: completed
+[2025-09-25T04:42:32.449+0000] {docker.py:438} INFO - 📈 Total containers restarted so far: 38
+[2025-09-25T04:42:32.450+0000] {docker.py:438} INFO - 
+[2025-09-25T04:42:32.450+0000] {docker.py:438} INFO - ============================================================
+[2025-09-25T04:42:32.450+0000] {docker.py:438} INFO - 🔄 Container Restart #39 at 2025-09-25 04:41:40
+[2025-09-25T04:42:32.450+0000] {docker.py:438} INFO - ============================================================
+[2025-09-25T04:42:32.450+0000] {docker.py:438} INFO - 🔄 Container restart function started!
+[2025-09-25T04:42:32.451+0000] {docker.py:438} INFO - 🔧 Loading in-cluster Kubernetes configuration...
+[2025-09-25T04:42:32.451+0000] {docker.py:438} INFO - ❌ Failed to load in-cluster config: Service host/port is not set.
+[2025-09-25T04:42:32.451+0000] {docker.py:438} INFO - 🔧 Trying local kubeconfig...
+[2025-09-25T04:42:32.451+0000] {docker.py:438} INFO - ✅ Successfully loaded local kubeconfig
+[2025-09-25T04:42:32.451+0000] {docker.py:438} INFO - 🔍 Selecting pods with label_selector: app=compose-post-service
+[2025-09-25T04:42:32.451+0000] {docker.py:438} INFO - 📋 Found 1 pods initially
+[2025-09-25T04:42:32.451+0000] {docker.py:438} INFO - 🎲 Random selection: 1 pods
+[2025-09-25T04:42:32.452+0000] {docker.py:438} INFO - ✅ Selected pods: ['compose-post-service-5878b79d-2zg9g']
+[2025-09-25T04:42:32.452+0000] {docker.py:438} INFO - 🎯 Restarting container in pod: compose-post-service-5878b79d-2zg9g
+[2025-09-25T04:42:32.452+0000] {docker.py:438} INFO - ✅ Successfully sent restart signal to container in pod compose-post-service-5878b79d-2zg9g
+[2025-09-25T04:42:32.452+0000] {docker.py:438} INFO - 📤 STDERR: {"metadata":{},"status":"Success"}
+[2025-09-25T04:42:32.452+0000] {docker.py:438} INFO - 🏁 Restart operation completed for 1 containers
+[2025-09-25T04:42:32.452+0000] {docker.py:438} INFO - ✅ Successfully restarted 1 containers
+[2025-09-25T04:42:32.453+0000] {docker.py:438} INFO -    📦 compose-post-service-5878b79d-2zg9g: restart_signal_sent
+[2025-09-25T04:42:32.453+0000] {docker.py:438} INFO - ⏳ Waiting 5 seconds until next restart...
+[2025-09-25T04:42:32.453+0000] {docker.py:438} INFO - 📊 Time remaining: 51 seconds
+[2025-09-25T04:42:32.453+0000] {docker.py:438} INFO - 📈 Total containers restarted so far: 39
+[2025-09-25T04:42:32.453+0000] {docker.py:438} INFO - 
+[2025-09-25T04:42:32.453+0000] {docker.py:438} INFO - ============================================================
+[2025-09-25T04:42:32.453+0000] {docker.py:438} INFO - 🔄 Container Restart #40 at 2025-09-25 04:41:49
+[2025-09-25T04:42:32.453+0000] {docker.py:438} INFO - ============================================================
+[2025-09-25T04:42:32.454+0000] {docker.py:438} INFO - 🔄 Container restart function started!
+[2025-09-25T04:42:32.454+0000] {docker.py:438} INFO - 🔧 Loading in-cluster Kubernetes configuration...
+[2025-09-25T04:42:32.454+0000] {docker.py:438} INFO - ❌ Failed to load in-cluster config: Service host/port is not set.
+[2025-09-25T04:42:32.454+0000] {docker.py:438} INFO - 🔧 Trying local kubeconfig...
+[2025-09-25T04:42:32.454+0000] {docker.py:438} INFO - ✅ Successfully loaded local kubeconfig
+[2025-09-25T04:42:32.455+0000] {docker.py:438} INFO - 🔍 Selecting pods with label_selector: app=compose-post-service
+[2025-09-25T04:42:32.455+0000] {docker.py:438} INFO - 📋 Found 1 pods initially
+[2025-09-25T04:42:32.455+0000] {docker.py:438} INFO - 🎲 Random selection: 1 pods
+[2025-09-25T04:42:32.455+0000] {docker.py:438} INFO - ✅ Selected pods: ['compose-post-service-5878b79d-2zg9g']
+[2025-09-25T04:42:32.455+0000] {docker.py:438} INFO - 🎯 Restarting container in pod: compose-post-service-5878b79d-2zg9g
+[2025-09-25T04:42:32.455+0000] {docker.py:438} INFO - ✅ Successfully sent restart signal to container in pod compose-post-service-5878b79d-2zg9g
+[2025-09-25T04:42:32.456+0000] {docker.py:438} INFO - 📤 STDERR: {"metadata":{},"status":"Success"}
+[2025-09-25T04:42:32.456+0000] {docker.py:438} INFO - 🏁 Restart operation completed for 1 containers
+[2025-09-25T04:42:32.456+0000] {docker.py:438} INFO - ✅ Successfully restarted 1 containers
+[2025-09-25T04:42:32.456+0000] {docker.py:438} INFO -    📦 compose-post-service-5878b79d-2zg9g: restart_signal_sent
+[2025-09-25T04:42:32.456+0000] {docker.py:438} INFO - ⏳ Waiting 5 seconds until next restart...
+[2025-09-25T04:42:32.457+0000] {docker.py:438} INFO - 📊 Time remaining: 41 seconds
+[2025-09-25T04:42:32.457+0000] {docker.py:438} INFO - 📈 Total containers restarted so far: 40
+[2025-09-25T04:42:32.457+0000] {docker.py:438} INFO - 
+[2025-09-25T04:42:32.457+0000] {docker.py:438} INFO - ============================================================
+[2025-09-25T04:42:32.457+0000] {docker.py:438} INFO - 🔄 Container Restart #41 at 2025-09-25 04:41:59
+[2025-09-25T04:42:32.458+0000] {docker.py:438} INFO - ============================================================
+[2025-09-25T04:42:32.458+0000] {docker.py:438} INFO - 🔄 Container restart function started!
+[2025-09-25T04:42:32.458+0000] {docker.py:438} INFO - 🔧 Loading in-cluster Kubernetes configuration...
+[2025-09-25T04:42:32.458+0000] {docker.py:438} INFO - ❌ Failed to load in-cluster config: Service host/port is not set.
+[2025-09-25T04:42:32.458+0000] {docker.py:438} INFO - 🔧 Trying local kubeconfig...
+[2025-09-25T04:42:32.459+0000] {docker.py:438} INFO - ✅ Successfully loaded local kubeconfig
+[2025-09-25T04:42:32.459+0000] {docker.py:438} INFO - 🔍 Selecting pods with label_selector: app=compose-post-service
+[2025-09-25T04:42:32.459+0000] {docker.py:438} INFO - 📋 Found 1 pods initially
+[2025-09-25T04:42:32.459+0000] {docker.py:438} INFO - 🎲 Random selection: 1 pods
+[2025-09-25T04:42:32.459+0000] {docker.py:438} INFO - ✅ Selected pods: ['compose-post-service-5878b79d-2zg9g']
+[2025-09-25T04:42:32.460+0000] {docker.py:438} INFO - 🎯 Restarting container in pod: compose-post-service-5878b79d-2zg9g
+[2025-09-25T04:42:32.460+0000] {docker.py:438} INFO - ✅ Successfully sent restart signal to container in pod compose-post-service-5878b79d-2zg9g
+[2025-09-25T04:42:32.460+0000] {docker.py:438} INFO - 📤 STDERR: {"metadata":{},"status":"Success"}
+[2025-09-25T04:42:32.460+0000] {docker.py:438} INFO - 🏁 Restart operation completed for 1 containers
+[2025-09-25T04:42:32.460+0000] {docker.py:438} INFO - ✅ Successfully restarted 1 containers
+[2025-09-25T04:42:32.460+0000] {docker.py:438} INFO -    📦 compose-post-service-5878b79d-2zg9g: restart_signal_sent
+[2025-09-25T04:42:32.461+0000] {docker.py:438} INFO - ⏳ Waiting 5 seconds until next restart...
+[2025-09-25T04:42:32.461+0000] {docker.py:438} INFO - 📊 Time remaining: 32 seconds
+[2025-09-25T04:42:32.461+0000] {docker.py:438} INFO - 📈 Total containers restarted so far: 41
+[2025-09-25T04:42:32.461+0000] {docker.py:438} INFO - 
+[2025-09-25T04:42:32.461+0000] {docker.py:438} INFO - ============================================================
+[2025-09-25T04:42:32.462+0000] {docker.py:438} INFO - 🔄 Container Restart #42 at 2025-09-25 04:42:08
+[2025-09-25T04:42:32.462+0000] {docker.py:438} INFO - ============================================================
+[2025-09-25T04:42:32.462+0000] {docker.py:438} INFO - 🔄 Container restart function started!
+[2025-09-25T04:42:32.462+0000] {docker.py:438} INFO - 🔧 Loading in-cluster Kubernetes configuration...
+[2025-09-25T04:42:32.462+0000] {docker.py:438} INFO - ❌ Failed to load in-cluster config: Service host/port is not set.
+[2025-09-25T04:42:32.462+0000] {docker.py:438} INFO - 🔧 Trying local kubeconfig...
+[2025-09-25T04:42:32.462+0000] {docker.py:438} INFO - ✅ Successfully loaded local kubeconfig
+[2025-09-25T04:42:32.463+0000] {docker.py:438} INFO - 🔍 Selecting pods with label_selector: app=compose-post-service
+[2025-09-25T04:42:32.463+0000] {docker.py:438} INFO - 📋 Found 1 pods initially
+[2025-09-25T04:42:32.463+0000] {docker.py:438} INFO - 🎲 Random selection: 1 pods
+[2025-09-25T04:42:32.463+0000] {docker.py:438} INFO - ✅ Selected pods: ['compose-post-service-5878b79d-2zg9g']
+[2025-09-25T04:42:32.463+0000] {docker.py:438} INFO - 🎯 Restarting container in pod: compose-post-service-5878b79d-2zg9g
+[2025-09-25T04:42:32.463+0000] {docker.py:438} INFO - ✅ Successfully sent restart signal to container in pod compose-post-service-5878b79d-2zg9g
+[2025-09-25T04:42:32.463+0000] {docker.py:438} INFO - 📤 STDERR: {"metadata":{},"status":"Success"}
+[2025-09-25T04:42:32.464+0000] {docker.py:438} INFO - 🏁 Restart operation completed for 1 containers
+[2025-09-25T04:42:32.464+0000] {docker.py:438} INFO - ✅ Successfully restarted 1 containers
+[2025-09-25T04:42:32.464+0000] {docker.py:438} INFO -    📦 compose-post-service-5878b79d-2zg9g: restart_signal_sent
+[2025-09-25T04:42:32.464+0000] {docker.py:438} INFO - ⏳ Waiting 5 seconds until next restart...
+[2025-09-25T04:42:32.464+0000] {docker.py:438} INFO - 📊 Time remaining: 23 seconds
+[2025-09-25T04:42:32.464+0000] {docker.py:438} INFO - 📈 Total containers restarted so far: 42
+[2025-09-25T04:42:32.464+0000] {docker.py:438} INFO - 
+[2025-09-25T04:42:32.465+0000] {docker.py:438} INFO - ============================================================
+[2025-09-25T04:42:32.465+0000] {docker.py:438} INFO - 🔄 Container Restart #43 at 2025-09-25 04:42:17
+[2025-09-25T04:42:32.465+0000] {docker.py:438} INFO - ============================================================
+[2025-09-25T04:42:32.465+0000] {docker.py:438} INFO - 🔄 Container restart function started!
+[2025-09-25T04:42:32.465+0000] {docker.py:438} INFO - 🔧 Loading in-cluster Kubernetes configuration...
+[2025-09-25T04:42:32.465+0000] {docker.py:438} INFO - ❌ Failed to load in-cluster config: Service host/port is not set.
+[2025-09-25T04:42:32.465+0000] {docker.py:438} INFO - 🔧 Trying local kubeconfig...
+[2025-09-25T04:42:32.466+0000] {docker.py:438} INFO - ✅ Successfully loaded local kubeconfig
+[2025-09-25T04:42:32.466+0000] {docker.py:438} INFO - 🔍 Selecting pods with label_selector: app=compose-post-service
+[2025-09-25T04:42:32.466+0000] {docker.py:438} INFO - 📋 Found 1 pods initially
+[2025-09-25T04:42:32.466+0000] {docker.py:438} INFO - 🎲 Random selection: 1 pods
+[2025-09-25T04:42:32.466+0000] {docker.py:438} INFO - ✅ Selected pods: ['compose-post-service-5878b79d-2zg9g']
+[2025-09-25T04:42:32.466+0000] {docker.py:438} INFO - 🎯 Restarting container in pod: compose-post-service-5878b79d-2zg9g
+[2025-09-25T04:42:32.466+0000] {docker.py:438} INFO - ✅ Successfully sent restart signal to container in pod compose-post-service-5878b79d-2zg9g
+[2025-09-25T04:42:32.467+0000] {docker.py:438} INFO - 📤 STDERR: {"metadata":{},"status":"Success"}
+[2025-09-25T04:42:32.467+0000] {docker.py:438} INFO - 🏁 Restart operation completed for 1 containers
+[2025-09-25T04:42:32.467+0000] {docker.py:438} INFO - ✅ Successfully restarted 1 containers
+[2025-09-25T04:42:32.467+0000] {docker.py:438} INFO -    📦 compose-post-service-5878b79d-2zg9g: restart_signal_sent
+[2025-09-25T04:42:32.467+0000] {docker.py:438} INFO - ⏳ Waiting 5 seconds until next restart...
+[2025-09-25T04:42:32.467+0000] {docker.py:438} INFO - 📊 Time remaining: 14 seconds
+[2025-09-25T04:42:32.467+0000] {docker.py:438} INFO - 📈 Total containers restarted so far: 43
+[2025-09-25T04:42:32.467+0000] {docker.py:438} INFO - 
+[2025-09-25T04:42:32.468+0000] {docker.py:438} INFO - ============================================================
+[2025-09-25T04:42:32.468+0000] {docker.py:438} INFO - 🔄 Container Restart #44 at 2025-09-25 04:42:26
+[2025-09-25T04:42:32.468+0000] {docker.py:438} INFO - ============================================================
+[2025-09-25T04:42:32.468+0000] {docker.py:438} INFO - 🔄 Container restart function started!
+[2025-09-25T04:42:32.468+0000] {docker.py:438} INFO - 🔧 Loading in-cluster Kubernetes configuration...
+[2025-09-25T04:42:32.468+0000] {docker.py:438} INFO - ❌ Failed to load in-cluster config: Service host/port is not set.
+[2025-09-25T04:42:32.468+0000] {docker.py:438} INFO - 🔧 Trying local kubeconfig...
+[2025-09-25T04:42:32.469+0000] {docker.py:438} INFO - ✅ Successfully loaded local kubeconfig
+[2025-09-25T04:42:32.469+0000] {docker.py:438} INFO - 🔍 Selecting pods with label_selector: app=compose-post-service
+[2025-09-25T04:42:32.469+0000] {docker.py:438} INFO - 📋 Found 1 pods initially
+[2025-09-25T04:42:32.469+0000] {docker.py:438} INFO - 🎲 Random selection: 1 pods
+[2025-09-25T04:42:32.469+0000] {docker.py:438} INFO - ✅ Selected pods: ['compose-post-service-5878b79d-2zg9g']
+[2025-09-25T04:42:32.469+0000] {docker.py:438} INFO - 🎯 Restarting container in pod: compose-post-service-5878b79d-2zg9g
+[2025-09-25T04:42:32.469+0000] {docker.py:438} INFO - ✅ Successfully sent restart signal to container in pod compose-post-service-5878b79d-2zg9g
+[2025-09-25T04:42:32.470+0000] {docker.py:438} INFO - 📤 STDERR: {"metadata":{},"status":"Success"}
+[2025-09-25T04:42:32.470+0000] {docker.py:438} INFO - 🏁 Restart operation completed for 1 containers
+[2025-09-25T04:42:32.470+0000] {docker.py:438} INFO - ✅ Successfully restarted 1 containers
+[2025-09-25T04:42:32.470+0000] {docker.py:438} INFO -    📦 compose-post-service-5878b79d-2zg9g: restart_signal_sent
+[2025-09-25T04:42:32.470+0000] {docker.py:438} INFO - ⏰ Less than 5 seconds remaining, stopping experiment
+[2025-09-25T04:42:32.470+0000] {docker.py:438} INFO - 
+[2025-09-25T04:42:32.470+0000] {docker.py:438} INFO - ============================================================
+[2025-09-25T04:42:32.470+0000] {docker.py:438} INFO - 🏁 Container Restart Experiment Completed!
+[2025-09-25T04:42:32.471+0000] {docker.py:438} INFO - ============================================================
+[2025-09-25T04:42:32.471+0000] {docker.py:438} INFO - 📈 Total restart cycles: 44
+[2025-09-25T04:42:32.471+0000] {docker.py:438} INFO - 📦 Total containers restarted: 44
+[2025-09-25T04:42:32.471+0000] {docker.py:438} INFO - ⏱️  Total duration: 395 seconds
+[2025-09-25T04:42:32.471+0000] {docker.py:438} INFO - 📊 Average cycle time: 9.0 seconds
+[2025-09-25T04:42:32.472+0000] {docker.py:438} INFO - 🎯 Target selector: app=compose-post-service
+[2025-09-25T04:42:32.472+0000] {docker.py:438} INFO - 📍 Namespace: default
+[2025-09-25T04:42:32.580+0000] {docker.py:438} INFO - Container restart experiment completed successfully
+[2025-09-25T04:42:32.822+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2025-09-25T04:42:32.823+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=Container_Restart_Test_Docker, task_id=apply_container_restart_docker, run_id=scheduled__2025-01-10T00:00:00+00:00, execution_date=20250110T000000, start_date=20250925T043542, end_date=20250925T044232
+[2025-09-25T04:42:32.860+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-09-25T04:42:32.874+0000] {taskinstance.py:3900} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-09-25T04:42:32.876+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

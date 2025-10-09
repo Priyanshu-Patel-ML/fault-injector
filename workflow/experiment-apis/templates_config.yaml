@@ -1,0 +1,20 @@
+templates:
+  - id: pod_cpu_stress_rollback
+    path: /opt/airflow/src/pod/cpu-stress-rollback.json
+    display_name: "Pod CPU Stress with Rollback"
+
+  - id: pod_memory_stress_rollback
+    path: /opt/airflow/src/pod/memory-stress-rollback.json
+    display_name: "Pod Memory Stress with Rollback"
+
+  - id: pod_restart
+    path: /opt/airflow/src/pod/pod_restart.json
+    display_name: "Continuous Pod Restart"
+
+  - id: node_cordon_new
+    path: /opt/airflow/src/node/cordon-nodes_new.json
+    display_name: "Node Cordon (New)"
+
+  - id: node_cordon
+    path: /opt/airflow/src/node/cordon-nodes.json
+    display_name: "Node Cordon"

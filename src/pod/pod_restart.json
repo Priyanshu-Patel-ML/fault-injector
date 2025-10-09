@@ -1,0 +1,24 @@
+{
+    "version": "1.0.0",
+    "title": "Continuous Pod Restart Experiment",
+    "description": "Restart pods continuously at specified intervals using custom parameters",
+    "method": [
+        {
+            "name": "continuous-restart",
+            "type": "action",
+            "provider": {
+                "type": "python",
+                "module": "pod_restart",
+                "func": "restart_pods_continuous",
+                "arguments": {
+                    "label_selector": "app=petclinic",
+                    "qty": 2,
+                    "rand": true,
+                    "ns": "default",
+                    "interval": 60,
+                    "duration": 300
+                }
+            }
+        }
+    ]
+}

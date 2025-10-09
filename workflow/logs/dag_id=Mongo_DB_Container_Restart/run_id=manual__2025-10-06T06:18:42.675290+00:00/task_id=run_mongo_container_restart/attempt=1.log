@@ -1,0 +1,403 @@
+[2025-10-06T06:18:57.418+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-10-06T06:18:57.462+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: Mongo_DB_Container_Restart.run_mongo_container_restart manual__2025-10-06T06:18:42.675290+00:00 [queued]>
+[2025-10-06T06:18:57.479+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: Mongo_DB_Container_Restart.run_mongo_container_restart manual__2025-10-06T06:18:42.675290+00:00 [queued]>
+[2025-10-06T06:18:57.480+0000] {taskinstance.py:2865} INFO - Starting attempt 1 of 1
+[2025-10-06T06:18:57.512+0000] {taskinstance.py:2888} INFO - Executing <Task(DockerOperator): run_mongo_container_restart> on 2025-10-06 06:18:42.675290+00:00
+[2025-10-06T06:18:57.530+0000] {standard_task_runner.py:72} INFO - Started process 49 to run task
+[2025-10-06T06:18:57.591+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'Mongo_DB_Container_Restart', 'run_mongo_container_restart', 'manual__2025-10-06T06:18:42.675290+00:00', '--job-id', '366', '--raw', '--subdir', 'DAGS_FOLDER/dag_factory.py', '--cfg-path', '/tmp/tmppjv60qkk']
+[2025-10-06T06:18:57.593+0000] {standard_task_runner.py:105} INFO - Job 366: Subtask run_mongo_container_restart
+[2025-10-06T06:18:57.940+0000] {task_command.py:467} INFO - Running <TaskInstance: Mongo_DB_Container_Restart.run_mongo_container_restart manual__2025-10-06T06:18:42.675290+00:00 [running]> on host BNXL-80508-WL.India.XoriantCorp.com
+[2025-10-06T06:18:58.275+0000] {taskinstance.py:3131} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='Mongo_DB_Container_Restart' AIRFLOW_CTX_TASK_ID='run_mongo_container_restart' AIRFLOW_CTX_EXECUTION_DATE='2025-10-06T06:18:42.675290+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-10-06T06:18:42.675290+00:00'
+[2025-10-06T06:18:58.291+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2025-10-06T06:18:58.838+0000] {docker.py:367} INFO - Starting docker container from image ***_chaos:latest
+[2025-10-06T06:18:59.652+0000] {docker.py:438} INFO - The container is run as root user. For security, consider using a regular user account.
+[2025-10-06T06:19:13.316+0000] {docker.py:438} INFO - 
+[2025-10-06T06:19:13.323+0000] {docker.py:438} INFO - Starting MongoDB container restart experiment
+[2025-10-06T06:19:14.548+0000] {docker.py:438} INFO - [32m[2025-10-06 06:19:14 INFO] Validating the experiment's syntax
+[2025-10-06T06:19:14.965+0000] {docker.py:438} INFO - [32m[2025-10-06 06:19:14 INFO] Experiment looks valid
+[2025-10-06T06:19:14.966+0000] {docker.py:438} INFO - [32m[2025-10-06 06:19:14 INFO] Running experiment: Continuous Container Restart Experiment
+[2025-10-06T06:19:14.969+0000] {docker.py:438} INFO - [32m[2025-10-06 06:19:14 INFO] Steady-state strategy: default
+[2025-10-06T06:19:14.970+0000] {docker.py:438} INFO - [32m[2025-10-06 06:19:14 INFO] Rollbacks strategy: default
+[2025-10-06T06:19:14.970+0000] {docker.py:438} INFO - [32m[2025-10-06 06:19:14 INFO] No steady state hypothesis defined. That's ok, just exploring.
+[2025-10-06T06:19:14.970+0000] {docker.py:438} INFO - [32m[2025-10-06 06:19:14 INFO] Playing your experiment's method now...
+[2025-10-06T06:19:14.971+0000] {docker.py:438} INFO - [32m[2025-10-06 06:19:14 INFO] Action: continuous-container-restart
+[2025-10-06T06:20:29.984+0000] {docker.py:438} INFO - 🚀 [DEBUG] Entered restart_containers_continuous()
+[2025-10-06T06:20:29.985+0000] {docker.py:438} INFO -    Params => label_selector=app=post-storage-mongodb, interval=5, duration=200, ns=default, container_name=post-storage-mongodb
+[2025-10-06T06:20:29.985+0000] {docker.py:438} INFO - 
+[2025-10-06T06:20:29.986+0000] {docker.py:438} INFO - ============================================================
+[2025-10-06T06:20:29.986+0000] {docker.py:438} INFO - 🔄 [DEBUG] Container Restart Cycle #1 at 2025-10-06 06:19:14
+[2025-10-06T06:20:29.986+0000] {docker.py:438} INFO - ============================================================
+[2025-10-06T06:20:29.986+0000] {docker.py:438} INFO - 🔄 [DEBUG] Entered restart_containers()
+[2025-10-06T06:20:29.986+0000] {docker.py:438} INFO - ❌ [DEBUG] Failed to create k8s api client: Service host/port is not set.
+[2025-10-06T06:20:29.987+0000] {docker.py:438} INFO - ❌ [DEBUG] Exception calling restart_containers in cycle #1: Service host/port is not set.
+[2025-10-06T06:20:29.987+0000] {docker.py:438} INFO - ✅ [DEBUG] Successfully restarted this cycle: 0
+[2025-10-06T06:20:29.987+0000] {docker.py:438} INFO - ⏳ [DEBUG] Waiting 5 seconds until next cycle. Time remaining: 200s
+[2025-10-06T06:20:29.987+0000] {docker.py:438} INFO - 
+[2025-10-06T06:20:29.987+0000] {docker.py:438} INFO - ============================================================
+[2025-10-06T06:20:29.988+0000] {docker.py:438} INFO - 🔄 [DEBUG] Container Restart Cycle #2 at 2025-10-06 06:19:19
+[2025-10-06T06:20:29.988+0000] {docker.py:438} INFO - ============================================================
+[2025-10-06T06:20:29.988+0000] {docker.py:438} INFO - 🔄 [DEBUG] Entered restart_containers()
+[2025-10-06T06:20:29.988+0000] {docker.py:438} INFO - ❌ [DEBUG] Failed to create k8s api client: Service host/port is not set.
+[2025-10-06T06:20:29.988+0000] {docker.py:438} INFO - ❌ [DEBUG] Exception calling restart_containers in cycle #2: Service host/port is not set.
+[2025-10-06T06:20:29.988+0000] {docker.py:438} INFO - ✅ [DEBUG] Successfully restarted this cycle: 0
+[2025-10-06T06:20:29.989+0000] {docker.py:438} INFO - ⏳ [DEBUG] Waiting 5 seconds until next cycle. Time remaining: 195s
+[2025-10-06T06:20:29.989+0000] {docker.py:438} INFO - 
+[2025-10-06T06:20:29.989+0000] {docker.py:438} INFO - ============================================================
+[2025-10-06T06:20:29.989+0000] {docker.py:438} INFO - 🔄 [DEBUG] Container Restart Cycle #3 at 2025-10-06 06:19:24
+[2025-10-06T06:20:29.989+0000] {docker.py:438} INFO - ============================================================
+[2025-10-06T06:20:29.989+0000] {docker.py:438} INFO - 🔄 [DEBUG] Entered restart_containers()
+[2025-10-06T06:20:29.990+0000] {docker.py:438} INFO - ❌ [DEBUG] Failed to create k8s api client: Service host/port is not set.
+[2025-10-06T06:20:29.990+0000] {docker.py:438} INFO - ❌ [DEBUG] Exception calling restart_containers in cycle #3: Service host/port is not set.
+[2025-10-06T06:20:29.990+0000] {docker.py:438} INFO - ✅ [DEBUG] Successfully restarted this cycle: 0
+[2025-10-06T06:20:29.990+0000] {docker.py:438} INFO - ⏳ [DEBUG] Waiting 5 seconds until next cycle. Time remaining: 190s
+[2025-10-06T06:20:29.991+0000] {docker.py:438} INFO - 
+[2025-10-06T06:20:29.991+0000] {docker.py:438} INFO - ============================================================
+[2025-10-06T06:20:29.991+0000] {docker.py:438} INFO - 🔄 [DEBUG] Container Restart Cycle #4 at 2025-10-06 06:19:29
+[2025-10-06T06:20:29.991+0000] {docker.py:438} INFO - ============================================================
+[2025-10-06T06:20:29.991+0000] {docker.py:438} INFO - 🔄 [DEBUG] Entered restart_containers()
+[2025-10-06T06:20:29.992+0000] {docker.py:438} INFO - ❌ [DEBUG] Failed to create k8s api client: Service host/port is not set.
+[2025-10-06T06:20:29.992+0000] {docker.py:438} INFO - ❌ [DEBUG] Exception calling restart_containers in cycle #4: Service host/port is not set.
+[2025-10-06T06:20:29.992+0000] {docker.py:438} INFO - ✅ [DEBUG] Successfully restarted this cycle: 0
+[2025-10-06T06:20:29.992+0000] {docker.py:438} INFO - ⏳ [DEBUG] Waiting 5 seconds until next cycle. Time remaining: 185s
+[2025-10-06T06:20:29.992+0000] {docker.py:438} INFO - 
+[2025-10-06T06:20:29.992+0000] {docker.py:438} INFO - ============================================================
+[2025-10-06T06:20:29.993+0000] {docker.py:438} INFO - 🔄 [DEBUG] Container Restart Cycle #5 at 2025-10-06 06:19:34
+[2025-10-06T06:20:29.993+0000] {docker.py:438} INFO - ============================================================
+[2025-10-06T06:20:29.993+0000] {docker.py:438} INFO - 🔄 [DEBUG] Entered restart_containers()
+[2025-10-06T06:20:29.993+0000] {docker.py:438} INFO - ❌ [DEBUG] Failed to create k8s api client: Service host/port is not set.
+[2025-10-06T06:20:29.993+0000] {docker.py:438} INFO - ❌ [DEBUG] Exception calling restart_containers in cycle #5: Service host/port is not set.
+[2025-10-06T06:20:29.994+0000] {docker.py:438} INFO - ✅ [DEBUG] Successfully restarted this cycle: 0
+[2025-10-06T06:20:29.994+0000] {docker.py:438} INFO - ⏳ [DEBUG] Waiting 5 seconds until next cycle. Time remaining: 180s
+[2025-10-06T06:20:29.994+0000] {docker.py:438} INFO - 
+[2025-10-06T06:20:29.994+0000] {docker.py:438} INFO - ============================================================
+[2025-10-06T06:20:29.994+0000] {docker.py:438} INFO - 🔄 [DEBUG] Container Restart Cycle #6 at 2025-10-06 06:19:39
+[2025-10-06T06:20:29.995+0000] {docker.py:438} INFO - ============================================================
+[2025-10-06T06:20:29.995+0000] {docker.py:438} INFO - 🔄 [DEBUG] Entered restart_containers()
+[2025-10-06T06:20:29.995+0000] {docker.py:438} INFO - ❌ [DEBUG] Failed to create k8s api client: Service host/port is not set.
+[2025-10-06T06:20:29.995+0000] {docker.py:438} INFO - ❌ [DEBUG] Exception calling restart_containers in cycle #6: Service host/port is not set.
+[2025-10-06T06:20:29.995+0000] {docker.py:438} INFO - ✅ [DEBUG] Successfully restarted this cycle: 0
+[2025-10-06T06:20:29.995+0000] {docker.py:438} INFO - ⏳ [DEBUG] Waiting 5 seconds until next cycle. Time remaining: 175s
+[2025-10-06T06:20:29.996+0000] {docker.py:438} INFO - 
+[2025-10-06T06:20:29.996+0000] {docker.py:438} INFO - ============================================================
+[2025-10-06T06:20:29.996+0000] {docker.py:438} INFO - 🔄 [DEBUG] Container Restart Cycle #7 at 2025-10-06 06:19:44
+[2025-10-06T06:20:29.996+0000] {docker.py:438} INFO - ============================================================
+[2025-10-06T06:20:29.996+0000] {docker.py:438} INFO - 🔄 [DEBUG] Entered restart_containers()
+[2025-10-06T06:20:29.996+0000] {docker.py:438} INFO - ❌ [DEBUG] Failed to create k8s api client: Service host/port is not set.
+[2025-10-06T06:20:29.997+0000] {docker.py:438} INFO - ❌ [DEBUG] Exception calling restart_containers in cycle #7: Service host/port is not set.
+[2025-10-06T06:20:29.997+0000] {docker.py:438} INFO - ✅ [DEBUG] Successfully restarted this cycle: 0
+[2025-10-06T06:20:29.997+0000] {docker.py:438} INFO - ⏳ [DEBUG] Waiting 5 seconds until next cycle. Time remaining: 170s
+[2025-10-06T06:20:29.997+0000] {docker.py:438} INFO - 
+[2025-10-06T06:20:29.997+0000] {docker.py:438} INFO - ============================================================
+[2025-10-06T06:20:29.997+0000] {docker.py:438} INFO - 🔄 [DEBUG] Container Restart Cycle #8 at 2025-10-06 06:19:49
+[2025-10-06T06:20:29.998+0000] {docker.py:438} INFO - ============================================================
+[2025-10-06T06:20:29.998+0000] {docker.py:438} INFO - 🔄 [DEBUG] Entered restart_containers()
+[2025-10-06T06:20:29.998+0000] {docker.py:438} INFO - ❌ [DEBUG] Failed to create k8s api client: Service host/port is not set.
+[2025-10-06T06:20:29.998+0000] {docker.py:438} INFO - ❌ [DEBUG] Exception calling restart_containers in cycle #8: Service host/port is not set.
+[2025-10-06T06:20:29.998+0000] {docker.py:438} INFO - ✅ [DEBUG] Successfully restarted this cycle: 0
+[2025-10-06T06:20:29.999+0000] {docker.py:438} INFO - ⏳ [DEBUG] Waiting 5 seconds until next cycle. Time remaining: 165s
+[2025-10-06T06:20:29.999+0000] {docker.py:438} INFO - 
+[2025-10-06T06:20:29.999+0000] {docker.py:438} INFO - ============================================================
+[2025-10-06T06:20:30.000+0000] {docker.py:438} INFO - 🔄 [DEBUG] Container Restart Cycle #9 at 2025-10-06 06:19:54
+[2025-10-06T06:20:30.000+0000] {docker.py:438} INFO - ============================================================
+[2025-10-06T06:20:30.000+0000] {docker.py:438} INFO - 🔄 [DEBUG] Entered restart_containers()
+[2025-10-06T06:20:30.000+0000] {docker.py:438} INFO - ❌ [DEBUG] Failed to create k8s api client: Service host/port is not set.
+[2025-10-06T06:20:30.000+0000] {docker.py:438} INFO - ❌ [DEBUG] Exception calling restart_containers in cycle #9: Service host/port is not set.
+[2025-10-06T06:20:30.001+0000] {docker.py:438} INFO - ✅ [DEBUG] Successfully restarted this cycle: 0
+[2025-10-06T06:20:30.001+0000] {docker.py:438} INFO - ⏳ [DEBUG] Waiting 5 seconds until next cycle. Time remaining: 160s
+[2025-10-06T06:20:30.001+0000] {docker.py:438} INFO - 
+[2025-10-06T06:20:30.001+0000] {docker.py:438} INFO - ============================================================
+[2025-10-06T06:20:30.001+0000] {docker.py:438} INFO - 🔄 [DEBUG] Container Restart Cycle #10 at 2025-10-06 06:19:59
+[2025-10-06T06:20:30.002+0000] {docker.py:438} INFO - ============================================================
+[2025-10-06T06:20:30.002+0000] {docker.py:438} INFO - 🔄 [DEBUG] Entered restart_containers()
+[2025-10-06T06:20:30.002+0000] {docker.py:438} INFO - ❌ [DEBUG] Failed to create k8s api client: Service host/port is not set.
+[2025-10-06T06:20:30.002+0000] {docker.py:438} INFO - ❌ [DEBUG] Exception calling restart_containers in cycle #10: Service host/port is not set.
+[2025-10-06T06:20:30.002+0000] {docker.py:438} INFO - ✅ [DEBUG] Successfully restarted this cycle: 0
+[2025-10-06T06:20:30.003+0000] {docker.py:438} INFO - ⏳ [DEBUG] Waiting 5 seconds until next cycle. Time remaining: 155s
+[2025-10-06T06:20:30.003+0000] {docker.py:438} INFO - 
+[2025-10-06T06:20:30.003+0000] {docker.py:438} INFO - ============================================================
+[2025-10-06T06:20:30.003+0000] {docker.py:438} INFO - 🔄 [DEBUG] Container Restart Cycle #11 at 2025-10-06 06:20:04
+[2025-10-06T06:20:30.003+0000] {docker.py:438} INFO - ============================================================
+[2025-10-06T06:20:30.003+0000] {docker.py:438} INFO - 🔄 [DEBUG] Entered restart_containers()
+[2025-10-06T06:20:30.004+0000] {docker.py:438} INFO - ❌ [DEBUG] Failed to create k8s api client: Service host/port is not set.
+[2025-10-06T06:20:30.004+0000] {docker.py:438} INFO - ❌ [DEBUG] Exception calling restart_containers in cycle #11: Service host/port is not set.
+[2025-10-06T06:20:30.004+0000] {docker.py:438} INFO - ✅ [DEBUG] Successfully restarted this cycle: 0
+[2025-10-06T06:20:30.004+0000] {docker.py:438} INFO - ⏳ [DEBUG] Waiting 5 seconds until next cycle. Time remaining: 150s
+[2025-10-06T06:20:30.004+0000] {docker.py:438} INFO - 
+[2025-10-06T06:20:30.004+0000] {docker.py:438} INFO - ============================================================
+[2025-10-06T06:20:30.005+0000] {docker.py:438} INFO - 🔄 [DEBUG] Container Restart Cycle #12 at 2025-10-06 06:20:09
+[2025-10-06T06:20:30.005+0000] {docker.py:438} INFO - ============================================================
+[2025-10-06T06:20:30.005+0000] {docker.py:438} INFO - 🔄 [DEBUG] Entered restart_containers()
+[2025-10-06T06:20:30.005+0000] {docker.py:438} INFO - ❌ [DEBUG] Failed to create k8s api client: Service host/port is not set.
+[2025-10-06T06:20:30.005+0000] {docker.py:438} INFO - ❌ [DEBUG] Exception calling restart_containers in cycle #12: Service host/port is not set.
+[2025-10-06T06:20:30.005+0000] {docker.py:438} INFO - ✅ [DEBUG] Successfully restarted this cycle: 0
+[2025-10-06T06:20:30.005+0000] {docker.py:438} INFO - ⏳ [DEBUG] Waiting 5 seconds until next cycle. Time remaining: 145s
+[2025-10-06T06:20:30.006+0000] {docker.py:438} INFO - 
+[2025-10-06T06:20:30.006+0000] {docker.py:438} INFO - ============================================================
+[2025-10-06T06:20:30.006+0000] {docker.py:438} INFO - 🔄 [DEBUG] Container Restart Cycle #13 at 2025-10-06 06:20:14
+[2025-10-06T06:20:30.006+0000] {docker.py:438} INFO - ============================================================
+[2025-10-06T06:20:30.006+0000] {docker.py:438} INFO - 🔄 [DEBUG] Entered restart_containers()
+[2025-10-06T06:20:30.006+0000] {docker.py:438} INFO - ❌ [DEBUG] Failed to create k8s api client: Service host/port is not set.
+[2025-10-06T06:20:30.007+0000] {docker.py:438} INFO - ❌ [DEBUG] Exception calling restart_containers in cycle #13: Service host/port is not set.
+[2025-10-06T06:20:30.007+0000] {docker.py:438} INFO - ✅ [DEBUG] Successfully restarted this cycle: 0
+[2025-10-06T06:20:30.007+0000] {docker.py:438} INFO - ⏳ [DEBUG] Waiting 5 seconds until next cycle. Time remaining: 140s
+[2025-10-06T06:20:30.007+0000] {docker.py:438} INFO - 
+[2025-10-06T06:20:30.007+0000] {docker.py:438} INFO - ============================================================
+[2025-10-06T06:20:30.008+0000] {docker.py:438} INFO - 🔄 [DEBUG] Container Restart Cycle #14 at 2025-10-06 06:20:19
+[2025-10-06T06:20:30.008+0000] {docker.py:438} INFO - ============================================================
+[2025-10-06T06:20:30.008+0000] {docker.py:438} INFO - 🔄 [DEBUG] Entered restart_containers()
+[2025-10-06T06:20:30.009+0000] {docker.py:438} INFO - ❌ [DEBUG] Failed to create k8s api client: Service host/port is not set.
+[2025-10-06T06:20:30.009+0000] {docker.py:438} INFO - ❌ [DEBUG] Exception calling restart_containers in cycle #14: Service host/port is not set.
+[2025-10-06T06:20:30.009+0000] {docker.py:438} INFO - ✅ [DEBUG] Successfully restarted this cycle: 0
+[2025-10-06T06:20:30.009+0000] {docker.py:438} INFO - ⏳ [DEBUG] Waiting 5 seconds until next cycle. Time remaining: 135s
+[2025-10-06T06:20:30.010+0000] {docker.py:438} INFO - 
+[2025-10-06T06:20:30.010+0000] {docker.py:438} INFO - ============================================================
+[2025-10-06T06:20:30.010+0000] {docker.py:438} INFO - 🔄 [DEBUG] Container Restart Cycle #15 at 2025-10-06 06:20:24
+[2025-10-06T06:20:30.010+0000] {docker.py:438} INFO - ============================================================
+[2025-10-06T06:20:30.011+0000] {docker.py:438} INFO - 🔄 [DEBUG] Entered restart_containers()
+[2025-10-06T06:20:30.011+0000] {docker.py:438} INFO - ❌ [DEBUG] Failed to create k8s api client: Service host/port is not set.
+[2025-10-06T06:20:30.011+0000] {docker.py:438} INFO - ❌ [DEBUG] Exception calling restart_containers in cycle #15: Service host/port is not set.
+[2025-10-06T06:20:30.011+0000] {docker.py:438} INFO - ✅ [DEBUG] Successfully restarted this cycle: 0
+[2025-10-06T06:20:30.012+0000] {docker.py:438} INFO - ⏳ [DEBUG] Waiting 5 seconds until next cycle. Time remaining: 130s
+[2025-10-06T06:20:30.012+0000] {docker.py:438} INFO - 
+[2025-10-06T06:20:30.012+0000] {docker.py:438} INFO - ============================================================
+[2025-10-06T06:20:30.012+0000] {docker.py:438} INFO - 🔄 [DEBUG] Container Restart Cycle #16 at 2025-10-06 06:20:29
+[2025-10-06T06:20:30.012+0000] {docker.py:438} INFO - ============================================================
+[2025-10-06T06:20:30.013+0000] {docker.py:438} INFO - 🔄 [DEBUG] Entered restart_containers()
+[2025-10-06T06:20:30.013+0000] {docker.py:438} INFO - ❌ [DEBUG] Failed to create k8s api client: Service host/port is not set.
+[2025-10-06T06:21:49.998+0000] {docker.py:438} INFO - ❌ [DEBUG] Exception calling restart_containers in cycle #16: Service host/port is not set.
+[2025-10-06T06:21:49.999+0000] {docker.py:438} INFO - ✅ [DEBUG] Successfully restarted this cycle: 0
+[2025-10-06T06:21:49.999+0000] {docker.py:438} INFO - ⏳ [DEBUG] Waiting 5 seconds until next cycle. Time remaining: 125s
+[2025-10-06T06:21:50.000+0000] {docker.py:438} INFO - 
+[2025-10-06T06:21:50.000+0000] {docker.py:438} INFO - ============================================================
+[2025-10-06T06:21:50.000+0000] {docker.py:438} INFO - 🔄 [DEBUG] Container Restart Cycle #17 at 2025-10-06 06:20:34
+[2025-10-06T06:21:50.000+0000] {docker.py:438} INFO - ============================================================
+[2025-10-06T06:21:50.001+0000] {docker.py:438} INFO - 🔄 [DEBUG] Entered restart_containers()
+[2025-10-06T06:21:50.001+0000] {docker.py:438} INFO - ❌ [DEBUG] Failed to create k8s api client: Service host/port is not set.
+[2025-10-06T06:21:50.001+0000] {docker.py:438} INFO - ❌ [DEBUG] Exception calling restart_containers in cycle #17: Service host/port is not set.
+[2025-10-06T06:21:50.001+0000] {docker.py:438} INFO - ✅ [DEBUG] Successfully restarted this cycle: 0
+[2025-10-06T06:21:50.002+0000] {docker.py:438} INFO - ⏳ [DEBUG] Waiting 5 seconds until next cycle. Time remaining: 120s
+[2025-10-06T06:21:50.002+0000] {docker.py:438} INFO - 
+[2025-10-06T06:21:50.002+0000] {docker.py:438} INFO - ============================================================
+[2025-10-06T06:21:50.003+0000] {docker.py:438} INFO - 🔄 [DEBUG] Container Restart Cycle #18 at 2025-10-06 06:20:39
+[2025-10-06T06:21:50.003+0000] {docker.py:438} INFO - ============================================================
+[2025-10-06T06:21:50.003+0000] {docker.py:438} INFO - 🔄 [DEBUG] Entered restart_containers()
+[2025-10-06T06:21:50.004+0000] {docker.py:438} INFO - ❌ [DEBUG] Failed to create k8s api client: Service host/port is not set.
+[2025-10-06T06:21:50.004+0000] {docker.py:438} INFO - ❌ [DEBUG] Exception calling restart_containers in cycle #18: Service host/port is not set.
+[2025-10-06T06:21:50.004+0000] {docker.py:438} INFO - ✅ [DEBUG] Successfully restarted this cycle: 0
+[2025-10-06T06:21:50.005+0000] {docker.py:438} INFO - ⏳ [DEBUG] Waiting 5 seconds until next cycle. Time remaining: 115s
+[2025-10-06T06:21:50.005+0000] {docker.py:438} INFO - 
+[2025-10-06T06:21:50.005+0000] {docker.py:438} INFO - ============================================================
+[2025-10-06T06:21:50.005+0000] {docker.py:438} INFO - 🔄 [DEBUG] Container Restart Cycle #19 at 2025-10-06 06:20:44
+[2025-10-06T06:21:50.006+0000] {docker.py:438} INFO - ============================================================
+[2025-10-06T06:21:50.006+0000] {docker.py:438} INFO - 🔄 [DEBUG] Entered restart_containers()
+[2025-10-06T06:21:50.006+0000] {docker.py:438} INFO - ❌ [DEBUG] Failed to create k8s api client: Service host/port is not set.
+[2025-10-06T06:21:50.007+0000] {docker.py:438} INFO - ❌ [DEBUG] Exception calling restart_containers in cycle #19: Service host/port is not set.
+[2025-10-06T06:21:50.007+0000] {docker.py:438} INFO - ✅ [DEBUG] Successfully restarted this cycle: 0
+[2025-10-06T06:21:50.007+0000] {docker.py:438} INFO - ⏳ [DEBUG] Waiting 5 seconds until next cycle. Time remaining: 110s
+[2025-10-06T06:21:50.008+0000] {docker.py:438} INFO - 
+[2025-10-06T06:21:50.008+0000] {docker.py:438} INFO - ============================================================
+[2025-10-06T06:21:50.008+0000] {docker.py:438} INFO - 🔄 [DEBUG] Container Restart Cycle #20 at 2025-10-06 06:20:49
+[2025-10-06T06:21:50.009+0000] {docker.py:438} INFO - ============================================================
+[2025-10-06T06:21:50.009+0000] {docker.py:438} INFO - 🔄 [DEBUG] Entered restart_containers()
+[2025-10-06T06:21:50.009+0000] {docker.py:438} INFO - ❌ [DEBUG] Failed to create k8s api client: Service host/port is not set.
+[2025-10-06T06:21:50.010+0000] {docker.py:438} INFO - ❌ [DEBUG] Exception calling restart_containers in cycle #20: Service host/port is not set.
+[2025-10-06T06:21:50.010+0000] {docker.py:438} INFO - ✅ [DEBUG] Successfully restarted this cycle: 0
+[2025-10-06T06:21:50.010+0000] {docker.py:438} INFO - ⏳ [DEBUG] Waiting 5 seconds until next cycle. Time remaining: 105s
+[2025-10-06T06:21:50.011+0000] {docker.py:438} INFO - 
+[2025-10-06T06:21:50.011+0000] {docker.py:438} INFO - ============================================================
+[2025-10-06T06:21:50.011+0000] {docker.py:438} INFO - 🔄 [DEBUG] Container Restart Cycle #21 at 2025-10-06 06:20:54
+[2025-10-06T06:21:50.012+0000] {docker.py:438} INFO - ============================================================
+[2025-10-06T06:21:50.012+0000] {docker.py:438} INFO - 🔄 [DEBUG] Entered restart_containers()
+[2025-10-06T06:21:50.012+0000] {docker.py:438} INFO - ❌ [DEBUG] Failed to create k8s api client: Service host/port is not set.
+[2025-10-06T06:21:50.013+0000] {docker.py:438} INFO - ❌ [DEBUG] Exception calling restart_containers in cycle #21: Service host/port is not set.
+[2025-10-06T06:21:50.013+0000] {docker.py:438} INFO - ✅ [DEBUG] Successfully restarted this cycle: 0
+[2025-10-06T06:21:50.014+0000] {docker.py:438} INFO - ⏳ [DEBUG] Waiting 5 seconds until next cycle. Time remaining: 100s
+[2025-10-06T06:21:50.015+0000] {docker.py:438} INFO - 
+[2025-10-06T06:21:50.015+0000] {docker.py:438} INFO - ============================================================
+[2025-10-06T06:21:50.016+0000] {docker.py:438} INFO - 🔄 [DEBUG] Container Restart Cycle #22 at 2025-10-06 06:20:59
+[2025-10-06T06:21:50.017+0000] {docker.py:438} INFO - ============================================================
+[2025-10-06T06:21:50.021+0000] {docker.py:438} INFO - 🔄 [DEBUG] Entered restart_containers()
+[2025-10-06T06:21:50.021+0000] {docker.py:438} INFO - ❌ [DEBUG] Failed to create k8s api client: Service host/port is not set.
+[2025-10-06T06:21:50.022+0000] {docker.py:438} INFO - ❌ [DEBUG] Exception calling restart_containers in cycle #22: Service host/port is not set.
+[2025-10-06T06:21:50.022+0000] {docker.py:438} INFO - ✅ [DEBUG] Successfully restarted this cycle: 0
+[2025-10-06T06:21:50.022+0000] {docker.py:438} INFO - ⏳ [DEBUG] Waiting 5 seconds until next cycle. Time remaining: 95s
+[2025-10-06T06:21:50.022+0000] {docker.py:438} INFO - 
+[2025-10-06T06:21:50.023+0000] {docker.py:438} INFO - ============================================================
+[2025-10-06T06:21:50.023+0000] {docker.py:438} INFO - 🔄 [DEBUG] Container Restart Cycle #23 at 2025-10-06 06:21:04
+[2025-10-06T06:21:50.023+0000] {docker.py:438} INFO - ============================================================
+[2025-10-06T06:21:50.023+0000] {docker.py:438} INFO - 🔄 [DEBUG] Entered restart_containers()
+[2025-10-06T06:21:50.023+0000] {docker.py:438} INFO - ❌ [DEBUG] Failed to create k8s api client: Service host/port is not set.
+[2025-10-06T06:21:50.024+0000] {docker.py:438} INFO - ❌ [DEBUG] Exception calling restart_containers in cycle #23: Service host/port is not set.
+[2025-10-06T06:21:50.024+0000] {docker.py:438} INFO - ✅ [DEBUG] Successfully restarted this cycle: 0
+[2025-10-06T06:21:50.024+0000] {docker.py:438} INFO - ⏳ [DEBUG] Waiting 5 seconds until next cycle. Time remaining: 90s
+[2025-10-06T06:21:50.024+0000] {docker.py:438} INFO - 
+[2025-10-06T06:21:50.025+0000] {docker.py:438} INFO - ============================================================
+[2025-10-06T06:21:50.025+0000] {docker.py:438} INFO - 🔄 [DEBUG] Container Restart Cycle #24 at 2025-10-06 06:21:09
+[2025-10-06T06:21:50.025+0000] {docker.py:438} INFO - ============================================================
+[2025-10-06T06:21:50.025+0000] {docker.py:438} INFO - 🔄 [DEBUG] Entered restart_containers()
+[2025-10-06T06:21:50.025+0000] {docker.py:438} INFO - ❌ [DEBUG] Failed to create k8s api client: Service host/port is not set.
+[2025-10-06T06:21:50.026+0000] {docker.py:438} INFO - ❌ [DEBUG] Exception calling restart_containers in cycle #24: Service host/port is not set.
+[2025-10-06T06:21:50.026+0000] {docker.py:438} INFO - ✅ [DEBUG] Successfully restarted this cycle: 0
+[2025-10-06T06:21:50.026+0000] {docker.py:438} INFO - ⏳ [DEBUG] Waiting 5 seconds until next cycle. Time remaining: 85s
+[2025-10-06T06:21:50.026+0000] {docker.py:438} INFO - 
+[2025-10-06T06:21:50.026+0000] {docker.py:438} INFO - ============================================================
+[2025-10-06T06:21:50.026+0000] {docker.py:438} INFO - 🔄 [DEBUG] Container Restart Cycle #25 at 2025-10-06 06:21:14
+[2025-10-06T06:21:50.027+0000] {docker.py:438} INFO - ============================================================
+[2025-10-06T06:21:50.027+0000] {docker.py:438} INFO - 🔄 [DEBUG] Entered restart_containers()
+[2025-10-06T06:21:50.027+0000] {docker.py:438} INFO - ❌ [DEBUG] Failed to create k8s api client: Service host/port is not set.
+[2025-10-06T06:21:50.027+0000] {docker.py:438} INFO - ❌ [DEBUG] Exception calling restart_containers in cycle #25: Service host/port is not set.
+[2025-10-06T06:21:50.027+0000] {docker.py:438} INFO - ✅ [DEBUG] Successfully restarted this cycle: 0
+[2025-10-06T06:21:50.028+0000] {docker.py:438} INFO - ⏳ [DEBUG] Waiting 5 seconds until next cycle. Time remaining: 80s
+[2025-10-06T06:21:50.028+0000] {docker.py:438} INFO - 
+[2025-10-06T06:21:50.028+0000] {docker.py:438} INFO - ============================================================
+[2025-10-06T06:21:50.028+0000] {docker.py:438} INFO - 🔄 [DEBUG] Container Restart Cycle #26 at 2025-10-06 06:21:19
+[2025-10-06T06:21:50.028+0000] {docker.py:438} INFO - ============================================================
+[2025-10-06T06:21:50.029+0000] {docker.py:438} INFO - 🔄 [DEBUG] Entered restart_containers()
+[2025-10-06T06:21:50.029+0000] {docker.py:438} INFO - ❌ [DEBUG] Failed to create k8s api client: Service host/port is not set.
+[2025-10-06T06:21:50.029+0000] {docker.py:438} INFO - ❌ [DEBUG] Exception calling restart_containers in cycle #26: Service host/port is not set.
+[2025-10-06T06:21:50.029+0000] {docker.py:438} INFO - ✅ [DEBUG] Successfully restarted this cycle: 0
+[2025-10-06T06:21:50.029+0000] {docker.py:438} INFO - ⏳ [DEBUG] Waiting 5 seconds until next cycle. Time remaining: 75s
+[2025-10-06T06:21:50.030+0000] {docker.py:438} INFO - 
+[2025-10-06T06:21:50.030+0000] {docker.py:438} INFO - ============================================================
+[2025-10-06T06:21:50.030+0000] {docker.py:438} INFO - 🔄 [DEBUG] Container Restart Cycle #27 at 2025-10-06 06:21:24
+[2025-10-06T06:21:50.030+0000] {docker.py:438} INFO - ============================================================
+[2025-10-06T06:21:50.031+0000] {docker.py:438} INFO - 🔄 [DEBUG] Entered restart_containers()
+[2025-10-06T06:21:50.031+0000] {docker.py:438} INFO - ❌ [DEBUG] Failed to create k8s api client: Service host/port is not set.
+[2025-10-06T06:21:50.031+0000] {docker.py:438} INFO - ❌ [DEBUG] Exception calling restart_containers in cycle #27: Service host/port is not set.
+[2025-10-06T06:21:50.031+0000] {docker.py:438} INFO - ✅ [DEBUG] Successfully restarted this cycle: 0
+[2025-10-06T06:21:50.031+0000] {docker.py:438} INFO - ⏳ [DEBUG] Waiting 5 seconds until next cycle. Time remaining: 70s
+[2025-10-06T06:21:50.032+0000] {docker.py:438} INFO - 
+[2025-10-06T06:21:50.036+0000] {docker.py:438} INFO - ============================================================
+[2025-10-06T06:21:50.036+0000] {docker.py:438} INFO - 🔄 [DEBUG] Container Restart Cycle #28 at 2025-10-06 06:21:29
+[2025-10-06T06:21:50.037+0000] {docker.py:438} INFO - ============================================================
+[2025-10-06T06:21:50.037+0000] {docker.py:438} INFO - 🔄 [DEBUG] Entered restart_containers()
+[2025-10-06T06:21:50.038+0000] {docker.py:438} INFO - ❌ [DEBUG] Failed to create k8s api client: Service host/port is not set.
+[2025-10-06T06:21:50.038+0000] {docker.py:438} INFO - ❌ [DEBUG] Exception calling restart_containers in cycle #28: Service host/port is not set.
+[2025-10-06T06:21:50.038+0000] {docker.py:438} INFO - ✅ [DEBUG] Successfully restarted this cycle: 0
+[2025-10-06T06:21:50.039+0000] {docker.py:438} INFO - ⏳ [DEBUG] Waiting 5 seconds until next cycle. Time remaining: 65s
+[2025-10-06T06:21:50.039+0000] {docker.py:438} INFO - 
+[2025-10-06T06:21:50.039+0000] {docker.py:438} INFO - ============================================================
+[2025-10-06T06:21:50.039+0000] {docker.py:438} INFO - 🔄 [DEBUG] Container Restart Cycle #29 at 2025-10-06 06:21:34
+[2025-10-06T06:21:50.040+0000] {docker.py:438} INFO - ============================================================
+[2025-10-06T06:21:50.040+0000] {docker.py:438} INFO - 🔄 [DEBUG] Entered restart_containers()
+[2025-10-06T06:21:50.040+0000] {docker.py:438} INFO - ❌ [DEBUG] Failed to create k8s api client: Service host/port is not set.
+[2025-10-06T06:21:50.041+0000] {docker.py:438} INFO - ❌ [DEBUG] Exception calling restart_containers in cycle #29: Service host/port is not set.
+[2025-10-06T06:21:50.041+0000] {docker.py:438} INFO - ✅ [DEBUG] Successfully restarted this cycle: 0
+[2025-10-06T06:21:50.041+0000] {docker.py:438} INFO - ⏳ [DEBUG] Waiting 5 seconds until next cycle. Time remaining: 60s
+[2025-10-06T06:21:50.042+0000] {docker.py:438} INFO - 
+[2025-10-06T06:21:50.042+0000] {docker.py:438} INFO - ============================================================
+[2025-10-06T06:21:50.042+0000] {docker.py:438} INFO - 🔄 [DEBUG] Container Restart Cycle #30 at 2025-10-06 06:21:39
+[2025-10-06T06:21:50.042+0000] {docker.py:438} INFO - ============================================================
+[2025-10-06T06:21:50.043+0000] {docker.py:438} INFO - 🔄 [DEBUG] Entered restart_containers()
+[2025-10-06T06:21:50.043+0000] {docker.py:438} INFO - ❌ [DEBUG] Failed to create k8s api client: Service host/port is not set.
+[2025-10-06T06:21:50.043+0000] {docker.py:438} INFO - ❌ [DEBUG] Exception calling restart_containers in cycle #30: Service host/port is not set.
+[2025-10-06T06:21:50.043+0000] {docker.py:438} INFO - ✅ [DEBUG] Successfully restarted this cycle: 0
+[2025-10-06T06:21:50.044+0000] {docker.py:438} INFO - ⏳ [DEBUG] Waiting 5 seconds until next cycle. Time remaining: 55s
+[2025-10-06T06:21:50.044+0000] {docker.py:438} INFO - 
+[2025-10-06T06:21:50.044+0000] {docker.py:438} INFO - ============================================================
+[2025-10-06T06:21:50.045+0000] {docker.py:438} INFO - 🔄 [DEBUG] Container Restart Cycle #31 at 2025-10-06 06:21:44
+[2025-10-06T06:21:50.045+0000] {docker.py:438} INFO - ============================================================
+[2025-10-06T06:21:50.046+0000] {docker.py:438} INFO - 🔄 [DEBUG] Entered restart_containers()
+[2025-10-06T06:21:50.046+0000] {docker.py:438} INFO - ❌ [DEBUG] Failed to create k8s api client: Service host/port is not set.
+[2025-10-06T06:21:50.046+0000] {docker.py:438} INFO - ❌ [DEBUG] Exception calling restart_containers in cycle #31: Service host/port is not set.
+[2025-10-06T06:21:50.047+0000] {docker.py:438} INFO - ✅ [DEBUG] Successfully restarted this cycle: 0
+[2025-10-06T06:21:50.047+0000] {docker.py:438} INFO - ⏳ [DEBUG] Waiting 5 seconds until next cycle. Time remaining: 50s
+[2025-10-06T06:21:50.048+0000] {docker.py:438} INFO - 
+[2025-10-06T06:21:50.048+0000] {docker.py:438} INFO - ============================================================
+[2025-10-06T06:21:50.049+0000] {docker.py:438} INFO - 🔄 [DEBUG] Container Restart Cycle #32 at 2025-10-06 06:21:49
+[2025-10-06T06:21:50.049+0000] {docker.py:438} INFO - ============================================================
+[2025-10-06T06:21:50.049+0000] {docker.py:438} INFO - 🔄 [DEBUG] Entered restart_containers()
+[2025-10-06T06:21:50.049+0000] {docker.py:438} INFO - ❌ [DEBUG] Failed to create k8s api client: Service host/port is not set.
+[2025-10-06T06:22:30.006+0000] {docker.py:438} INFO - [32m[2025-10-06 06:22:30 INFO] Let's rollback...
+[2025-10-06T06:22:30.007+0000] {docker.py:438} INFO - [32m[2025-10-06 06:22:30 INFO] Rollback: verify-pods-running
+[2025-10-06T06:22:30.008+0000] {docker.py:438} INFO - [32m[2025-10-06 06:22:30 INFO] Probe: verify-pods-running
+[2025-10-06T06:22:31.548+0000] {docker.py:438} INFO - [32m[2025-10-06 06:22:31 INFO] Experiment ended with status: completed
+[2025-10-06T06:22:31.564+0000] {docker.py:438} INFO - ❌ [DEBUG] Exception calling restart_containers in cycle #32: Service host/port is not set.
+[2025-10-06T06:22:31.565+0000] {docker.py:438} INFO - ✅ [DEBUG] Successfully restarted this cycle: 0
+[2025-10-06T06:22:31.565+0000] {docker.py:438} INFO - ⏳ [DEBUG] Waiting 5 seconds until next cycle. Time remaining: 45s
+[2025-10-06T06:22:31.566+0000] {docker.py:438} INFO - 
+[2025-10-06T06:22:31.566+0000] {docker.py:438} INFO - ============================================================
+[2025-10-06T06:22:31.566+0000] {docker.py:438} INFO - 🔄 [DEBUG] Container Restart Cycle #33 at 2025-10-06 06:21:54
+[2025-10-06T06:22:31.566+0000] {docker.py:438} INFO - ============================================================
+[2025-10-06T06:22:31.567+0000] {docker.py:438} INFO - 🔄 [DEBUG] Entered restart_containers()
+[2025-10-06T06:22:31.567+0000] {docker.py:438} INFO - ❌ [DEBUG] Failed to create k8s api client: Service host/port is not set.
+[2025-10-06T06:22:31.567+0000] {docker.py:438} INFO - ❌ [DEBUG] Exception calling restart_containers in cycle #33: Service host/port is not set.
+[2025-10-06T06:22:31.568+0000] {docker.py:438} INFO - ✅ [DEBUG] Successfully restarted this cycle: 0
+[2025-10-06T06:22:31.568+0000] {docker.py:438} INFO - ⏳ [DEBUG] Waiting 5 seconds until next cycle. Time remaining: 40s
+[2025-10-06T06:22:31.569+0000] {docker.py:438} INFO - 
+[2025-10-06T06:22:31.569+0000] {docker.py:438} INFO - ============================================================
+[2025-10-06T06:22:31.569+0000] {docker.py:438} INFO - 🔄 [DEBUG] Container Restart Cycle #34 at 2025-10-06 06:21:59
+[2025-10-06T06:22:31.570+0000] {docker.py:438} INFO - ============================================================
+[2025-10-06T06:22:31.570+0000] {docker.py:438} INFO - 🔄 [DEBUG] Entered restart_containers()
+[2025-10-06T06:22:31.570+0000] {docker.py:438} INFO - ❌ [DEBUG] Failed to create k8s api client: Service host/port is not set.
+[2025-10-06T06:22:31.571+0000] {docker.py:438} INFO - ❌ [DEBUG] Exception calling restart_containers in cycle #34: Service host/port is not set.
+[2025-10-06T06:22:31.571+0000] {docker.py:438} INFO - ✅ [DEBUG] Successfully restarted this cycle: 0
+[2025-10-06T06:22:31.571+0000] {docker.py:438} INFO - ⏳ [DEBUG] Waiting 5 seconds until next cycle. Time remaining: 35s
+[2025-10-06T06:22:31.571+0000] {docker.py:438} INFO - 
+[2025-10-06T06:22:31.572+0000] {docker.py:438} INFO - ============================================================
+[2025-10-06T06:22:31.572+0000] {docker.py:438} INFO - 🔄 [DEBUG] Container Restart Cycle #35 at 2025-10-06 06:22:04
+[2025-10-06T06:22:31.572+0000] {docker.py:438} INFO - ============================================================
+[2025-10-06T06:22:31.572+0000] {docker.py:438} INFO - 🔄 [DEBUG] Entered restart_containers()
+[2025-10-06T06:22:31.573+0000] {docker.py:438} INFO - ❌ [DEBUG] Failed to create k8s api client: Service host/port is not set.
+[2025-10-06T06:22:31.573+0000] {docker.py:438} INFO - ❌ [DEBUG] Exception calling restart_containers in cycle #35: Service host/port is not set.
+[2025-10-06T06:22:31.573+0000] {docker.py:438} INFO - ✅ [DEBUG] Successfully restarted this cycle: 0
+[2025-10-06T06:22:31.573+0000] {docker.py:438} INFO - ⏳ [DEBUG] Waiting 5 seconds until next cycle. Time remaining: 30s
+[2025-10-06T06:22:31.574+0000] {docker.py:438} INFO - 
+[2025-10-06T06:22:31.574+0000] {docker.py:438} INFO - ============================================================
+[2025-10-06T06:22:31.574+0000] {docker.py:438} INFO - 🔄 [DEBUG] Container Restart Cycle #36 at 2025-10-06 06:22:09
+[2025-10-06T06:22:31.584+0000] {docker.py:438} INFO - ============================================================
+[2025-10-06T06:22:31.585+0000] {docker.py:438} INFO - 🔄 [DEBUG] Entered restart_containers()
+[2025-10-06T06:22:31.585+0000] {docker.py:438} INFO - ❌ [DEBUG] Failed to create k8s api client: Service host/port is not set.
+[2025-10-06T06:22:31.586+0000] {docker.py:438} INFO - ❌ [DEBUG] Exception calling restart_containers in cycle #36: Service host/port is not set.
+[2025-10-06T06:22:31.586+0000] {docker.py:438} INFO - ✅ [DEBUG] Successfully restarted this cycle: 0
+[2025-10-06T06:22:31.587+0000] {docker.py:438} INFO - ⏳ [DEBUG] Waiting 5 seconds until next cycle. Time remaining: 25s
+[2025-10-06T06:22:31.587+0000] {docker.py:438} INFO - 
+[2025-10-06T06:22:31.588+0000] {docker.py:438} INFO - ============================================================
+[2025-10-06T06:22:31.588+0000] {docker.py:438} INFO - 🔄 [DEBUG] Container Restart Cycle #37 at 2025-10-06 06:22:14
+[2025-10-06T06:22:31.588+0000] {docker.py:438} INFO - ============================================================
+[2025-10-06T06:22:31.589+0000] {docker.py:438} INFO - 🔄 [DEBUG] Entered restart_containers()
+[2025-10-06T06:22:31.589+0000] {docker.py:438} INFO - ❌ [DEBUG] Failed to create k8s api client: Service host/port is not set.
+[2025-10-06T06:22:31.589+0000] {docker.py:438} INFO - ❌ [DEBUG] Exception calling restart_containers in cycle #37: Service host/port is not set.
+[2025-10-06T06:22:31.590+0000] {docker.py:438} INFO - ✅ [DEBUG] Successfully restarted this cycle: 0
+[2025-10-06T06:22:31.590+0000] {docker.py:438} INFO - ⏳ [DEBUG] Waiting 5 seconds until next cycle. Time remaining: 20s
+[2025-10-06T06:22:31.600+0000] {docker.py:438} INFO - 
+[2025-10-06T06:22:31.600+0000] {docker.py:438} INFO - ============================================================
+[2025-10-06T06:22:31.601+0000] {docker.py:438} INFO - 🔄 [DEBUG] Container Restart Cycle #38 at 2025-10-06 06:22:19
+[2025-10-06T06:22:31.601+0000] {docker.py:438} INFO - ============================================================
+[2025-10-06T06:22:31.602+0000] {docker.py:438} INFO - 🔄 [DEBUG] Entered restart_containers()
+[2025-10-06T06:22:31.602+0000] {docker.py:438} INFO - ❌ [DEBUG] Failed to create k8s api client: Service host/port is not set.
+[2025-10-06T06:22:31.602+0000] {docker.py:438} INFO - ❌ [DEBUG] Exception calling restart_containers in cycle #38: Service host/port is not set.
+[2025-10-06T06:22:31.603+0000] {docker.py:438} INFO - ✅ [DEBUG] Successfully restarted this cycle: 0
+[2025-10-06T06:22:31.603+0000] {docker.py:438} INFO - ⏳ [DEBUG] Waiting 5 seconds until next cycle. Time remaining: 15s
+[2025-10-06T06:22:31.603+0000] {docker.py:438} INFO - 
+[2025-10-06T06:22:31.604+0000] {docker.py:438} INFO - ============================================================
+[2025-10-06T06:22:31.604+0000] {docker.py:438} INFO - 🔄 [DEBUG] Container Restart Cycle #39 at 2025-10-06 06:22:25
+[2025-10-06T06:22:31.604+0000] {docker.py:438} INFO - ============================================================
+[2025-10-06T06:22:31.604+0000] {docker.py:438} INFO - 🔄 [DEBUG] Entered restart_containers()
+[2025-10-06T06:22:31.605+0000] {docker.py:438} INFO - ❌ [DEBUG] Failed to create k8s api client: Service host/port is not set.
+[2025-10-06T06:22:31.605+0000] {docker.py:438} INFO - ❌ [DEBUG] Exception calling restart_containers in cycle #39: Service host/port is not set.
+[2025-10-06T06:22:31.605+0000] {docker.py:438} INFO - ✅ [DEBUG] Successfully restarted this cycle: 0
+[2025-10-06T06:22:31.606+0000] {docker.py:438} INFO - ⏳ [DEBUG] Waiting 5 seconds until next cycle. Time remaining: 10s
+[2025-10-06T06:22:31.606+0000] {docker.py:438} INFO - 
+[2025-10-06T06:22:31.616+0000] {docker.py:438} INFO - ============================================================
+[2025-10-06T06:22:31.616+0000] {docker.py:438} INFO - 🔄 [DEBUG] Container Restart Cycle #40 at 2025-10-06 06:22:30
+[2025-10-06T06:22:31.617+0000] {docker.py:438} INFO - ============================================================
+[2025-10-06T06:22:31.617+0000] {docker.py:438} INFO - 🔄 [DEBUG] Entered restart_containers()
+[2025-10-06T06:22:31.618+0000] {docker.py:438} INFO - ❌ [DEBUG] Failed to create k8s api client: Service host/port is not set.
+[2025-10-06T06:22:31.618+0000] {docker.py:438} INFO - ❌ [DEBUG] Exception calling restart_containers in cycle #40: Service host/port is not set.
+[2025-10-06T06:22:31.619+0000] {docker.py:438} INFO - ✅ [DEBUG] Successfully restarted this cycle: 0
+[2025-10-06T06:22:31.619+0000] {docker.py:438} INFO - ⏰ [DEBUG] Less than 5 seconds remaining (5s). Stopping continuous run.
+[2025-10-06T06:22:31.620+0000] {docker.py:438} INFO - 
+[2025-10-06T06:22:31.620+0000] {docker.py:438} INFO - ============================================================
+[2025-10-06T06:22:31.620+0000] {docker.py:438} INFO - 🏁 [DEBUG] Continuous restart experiment completed
+[2025-10-06T06:22:31.620+0000] {docker.py:438} INFO - 📈 Total cycles: 40
+[2025-10-06T06:22:31.621+0000] {docker.py:438} INFO - 📦 Total containers restarted: 0
+[2025-10-06T06:22:31.621+0000] {docker.py:438} INFO - ⏱️ Total duration: 195 seconds
+[2025-10-06T06:22:31.621+0000] {docker.py:438} INFO - 📊 Average cycle time: 4.9 seconds
+[2025-10-06T06:22:31.971+0000] {docker.py:438} INFO - MongoDB container restart experiment completed successfully
+[2025-10-06T06:22:32.537+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2025-10-06T06:22:32.537+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=Mongo_DB_Container_Restart, task_id=run_mongo_container_restart, run_id=manual__2025-10-06T06:18:42.675290+00:00, execution_date=20251006T061842, start_date=20251006T061857, end_date=20251006T062232
+[2025-10-06T06:22:32.605+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-10-06T06:22:32.625+0000] {standard_task_runner.py:217} INFO - Process not found (most likely exited), stop collecting metrics
+[2025-10-06T06:22:32.628+0000] {taskinstance.py:3900} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-10-06T06:22:32.630+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

@@ -1,0 +1,2 @@
+# Force restart the deployment to pick up new config
+kubectl rollout restart deployment/chaos-platform -n chaos-ops

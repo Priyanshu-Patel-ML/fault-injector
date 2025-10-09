@@ -1,0 +1,31 @@
+Continuous_Load_Test_Kube:
+  schedule: "@once"
+  start_date: "2025-01-18"
+  description: "Continuous Load Test - POST Compose & GET Timeline APIs - Kubernetes Pod"
+  default_view: "graph"
+  orientation: "LR"
+  catchup: false
+  default_args:
+    owner: "airflow"
+    depends_on_past: false
+    retries: 0
+  tasks:
+    - task_id: run_continuous_multi_endpoint_load_test_kube
+      operator: airflow.providers.cncf.kubernetes.operators.pod.KubernetesPodOperator
+      name: "continuous-multi-endpoint-load-test-k8s"
+      namespace: "chaos-ops"
+      image: "priyanshu01ce/airflow_chaos:latest"
+      get_logs: true
+      is_delete_operator_pod: false
+      in_cluster: true
+      service_account_name: "chaos-platform-sa"
+      cmds:
+        - bash
+        - -c
+      arguments:
+        - |
+          cd /opt/airflow/src/pod
+          ls -la
+          chaos run continuous_load_test.json
+      env_vars:
+        PYTHONPATH: "/opt/airflow/src/pod"

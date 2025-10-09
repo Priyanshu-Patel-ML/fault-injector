@@ -1,0 +1,34 @@
+DB_Cleanup_Kube:
+  schedule: "*/1 * * * *"  # Every 1 minute
+  start_date: "2025-01-10"
+  description: "Database Cleanup - Auto cleanup MongoDB posts every minute - Kubernetes Pod"
+  default_view: "graph"
+  orientation: "LR"
+  catchup: false
+  max_active_runs: 1
+  default_args:
+    owner: "airflow"
+    depends_on_past: false
+    retries: 1
+    retry_delay_seconds: 30
+  tasks:
+    - task_id: run_db_cleanup_kube
+      operator: airflow.providers.cncf.kubernetes.operators.pod.KubernetesPodOperator
+      name: "db-cleanup-k8s"
+      namespace: "chaos-ops"
+      image: "priyanshu01ce/airflow_chaos:latest"
+      get_logs: true
+      is_delete_operator_pod: true  # Clean up pods after completion for frequent runs
+      in_cluster: true
+      service_account_name: "chaos-platform-sa"
+      cmds:
+        - bash
+        - -c
+      arguments:
+        - |
+          cd /opt/airflow/src/pod
+          echo "Starting database cleanup check..."
+          chaos run db_cleanup.json
+          echo "Database cleanup completed successfully"
+      env_vars:
+        PYTHONPATH: "/opt/airflow/src/pod"

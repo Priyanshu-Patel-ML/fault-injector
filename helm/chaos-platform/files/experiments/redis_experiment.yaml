@@ -1,0 +1,38 @@
+Redis_Experiment_Test:
+  schedule: "@once"
+  start_date: "2025-01-10"
+  description: "Redis memory stress test with 100KB limit and noeviction policy for 3 minutes"
+  default_view: "graph"
+  orientation: "LR"
+  catchup: false
+  default_args:
+    owner: "airflow"
+    depends_on_past: false
+    retries: 0
+  tasks:
+    - task_id: apply_redis_experiment
+      operator: airflow.providers.docker.operators.docker.DockerOperator
+      image: "airflow_chaos:latest"
+      api_version: "auto"
+      auto_remove: true
+      user: "root"
+      mount_tmp_dir: false
+      docker_url: "unix://var/run/docker.sock"
+      network_mode: "host"
+      mounts:
+        - source: "/home/priyanshupatel/fault-injector/src/pod"
+          target: "/opt/airflow/src/pod"
+          type: "bind"
+        - source: "/home/priyanshupatel/.kube/config"
+          target: "/root/.kube/config"
+          type: "bind"
+          read_only: true
+      environment:
+        KUBECONFIG: "/root/.kube/config"
+      command: >
+        bash -c '
+        cd /opt/airflow/src/pod &&
+        echo "Starting Redis memory stress experiment..." &&
+        chaos run redis_experiment.json &&
+        echo "Redis experiment completed successfully"'
+      container_name: "redis_experiment_chaos"

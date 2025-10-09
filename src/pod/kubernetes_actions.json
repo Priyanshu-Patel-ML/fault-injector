@@ -1,0 +1,40 @@
+{
+  "version": "1.0.0",
+  "title": "Simple Social Network Reset",
+  "description": "Complete reset and reinitialization in one action",
+  "tags": ["kubernetes", "social-network", "reset"],
+  "configuration": {
+    "namespace": {
+      "type": "env",
+      "key": "KUBERNETES_NAMESPACE",
+      "default": "default"
+    },
+    "social_network_ip": {
+      "type": "env",
+      "key": "SOCIAL_NETWORK_IP",
+      "default": "4.154.253.199"
+    },
+    "social_network_port": {
+      "type": "env",
+      "key": "SOCIAL_NETWORK_PORT",
+      "default": "8080"
+    }
+  },
+  "method": [
+    {
+      "type": "action",
+      "name": "complete-reset-and-reinit",
+      "provider": {
+        "type": "python",
+        "module": "kubernetes_actions",
+        "func": "complete_reset_and_reinit",
+        "arguments": {
+          "namespace": "${namespace}",
+          "ip": "${social_network_ip}",
+          "port": "${social_network_port}",
+          "include_posts": true
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+[2025-10-06T07:28:17.975+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-10-06T07:28:17.995+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: Max_Connection_Experiment.run_max_connection_experiment scheduled__2025-01-18T00:00:00+00:00 [queued]>
+[2025-10-06T07:28:18.006+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: Max_Connection_Experiment.run_max_connection_experiment scheduled__2025-01-18T00:00:00+00:00 [queued]>
+[2025-10-06T07:28:18.006+0000] {taskinstance.py:2865} INFO - Starting attempt 1 of 1
+[2025-10-06T07:28:18.025+0000] {taskinstance.py:2888} INFO - Executing <Task(DockerOperator): run_max_connection_experiment> on 2025-01-18 00:00:00+00:00
+[2025-10-06T07:28:18.034+0000] {standard_task_runner.py:72} INFO - Started process 52 to run task
+[2025-10-06T07:28:18.039+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'Max_Connection_Experiment', 'run_max_connection_experiment', 'scheduled__2025-01-18T00:00:00+00:00', '--job-id', '367', '--raw', '--subdir', 'DAGS_FOLDER/dag_factory.py', '--cfg-path', '/tmp/tmptpvzb7xk']
+[2025-10-06T07:28:18.041+0000] {standard_task_runner.py:105} INFO - Job 367: Subtask run_max_connection_experiment
+[2025-10-06T07:28:18.090+0000] {task_command.py:467} INFO - Running <TaskInstance: Max_Connection_Experiment.run_max_connection_experiment scheduled__2025-01-18T00:00:00+00:00 [running]> on host BNXL-80508-WL.India.XoriantCorp.com
+[2025-10-06T07:28:18.167+0000] {taskinstance.py:3131} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='Max_Connection_Experiment' AIRFLOW_CTX_TASK_ID='run_max_connection_experiment' AIRFLOW_CTX_EXECUTION_DATE='2025-01-18T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-01-18T00:00:00+00:00'
+[2025-10-06T07:28:18.168+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2025-10-06T07:28:18.222+0000] {docker.py:367} INFO - Starting docker container from image priyanshu01ce/***_chaos:latest
+[2025-10-06T07:28:18.619+0000] {docker.py:438} INFO - The container is run as root user. For security, consider using a regular user account.
+[2025-10-06T07:28:25.656+0000] {docker.py:438} INFO - 
+[2025-10-06T07:28:25.658+0000] {docker.py:438} INFO - Starting MongoDB max connections experiment...
+[2025-10-06T07:28:26.413+0000] {docker.py:438} INFO - [32m[2025-10-06 07:28:26 INFO] Validating the experiment's syntax
+[2025-10-06T07:28:26.423+0000] {docker.py:438} INFO - [32m[2025-10-06 07:28:26 INFO] Experiment looks valid
+[2025-10-06T07:28:26.423+0000] {docker.py:438} INFO - [32m[2025-10-06 07:28:26 INFO] Running experiment: Change MongoDB maxIncomingConnections setting
+[2025-10-06T07:28:26.426+0000] {docker.py:438} INFO - [32m[2025-10-06 07:28:26 INFO] Steady-state strategy: default
+[2025-10-06T07:28:26.426+0000] {docker.py:438} INFO - [32m[2025-10-06 07:28:26 INFO] Rollbacks strategy: default
+[2025-10-06T07:28:26.426+0000] {docker.py:438} INFO - [32m[2025-10-06 07:28:26 INFO] No steady state hypothesis defined. That's ok, just exploring.
+[2025-10-06T07:28:26.427+0000] {docker.py:438} INFO - [32m[2025-10-06 07:28:26 INFO] Playing your experiment's method now...
+[2025-10-06T07:28:26.427+0000] {docker.py:438} INFO - [32m[2025-10-06 07:28:26 INFO] Action: change-max-connections
+[2025-10-06T07:29:02.248+0000] {docker.py:438} INFO - E1006 07:29:02.247723      16 request.go:1196] "Unexpected error when reading response body" err="context deadline exceeded"
+[2025-10-06T07:29:34.250+0000] {docker.py:438} INFO - E1006 07:29:34.249815      16 request.go:1196] "Unexpected error when reading response body" err="net/http: request canceled (Client.Timeout or context cancellation while reading body)"
+[2025-10-06T07:29:34.251+0000] {docker.py:438} INFO - error: error validating "/tmp/updated-mongodb-configmap.yaml": error validating data: failed to download openapi: unexpected error when reading response body. Please retry. Original error: net/http: request canceled (Client.Timeout or context cancellation while reading body); if you choose to ignore these errors, turn validation off with --validate=false
+[2025-10-06T07:29:34.255+0000] {docker.py:438} INFO - [32m[2025-10-06 07:29:34 INFO] Let's rollback...
+[2025-10-06T07:29:34.256+0000] {docker.py:438} INFO - [32m[2025-10-06 07:29:34 INFO] No declared rollbacks, let's move on.
+[2025-10-06T07:29:34.257+0000] {docker.py:438} INFO - [32m[2025-10-06 07:29:34 INFO] Experiment ended with status: completed
+[2025-10-06T07:29:34.259+0000] {docker.py:438} INFO - Updating MongoDB maxIncomingConnections to 10...
+[2025-10-06T07:29:34.260+0000] {docker.py:438} INFO - Failed to apply ConfigMap: Command '['kubectl', 'apply', '-f', '/tmp/updated-mongodb-configmap.yaml']' returned non-zero exit status 1.
+[2025-10-06T07:29:34.307+0000] {docker.py:438} INFO - MongoDB max connections experiment completed successfully
+[2025-10-06T07:29:34.483+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2025-10-06T07:29:34.483+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=Max_Connection_Experiment, task_id=run_max_connection_experiment, run_id=scheduled__2025-01-18T00:00:00+00:00, execution_date=20250118T000000, start_date=20251006T072817, end_date=20251006T072934
+[2025-10-06T07:29:34.522+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-10-06T07:29:34.541+0000] {taskinstance.py:3900} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-10-06T07:29:34.544+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

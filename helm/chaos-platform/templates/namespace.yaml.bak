@@ -1,0 +1,11 @@
+{{- if .Values.namespace.create }}
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: {{ .Values.namespace.name }}
+  labels:
+    name: {{ .Values.namespace.name }}
+    {{- include "chaos-platform.labels" . | nindent 4 }}
+  annotations:
+    kubernetes.io/managed-by: "Helm"
+{{- end }}

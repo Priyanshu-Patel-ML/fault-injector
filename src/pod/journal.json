@@ -4,44 +4,55 @@
   "node": "BNXL-80508-WL",
   "experiment": {
     "version": "1.0.0",
-    "title": "Local Redis Memory Stress Test",
-    "description": "Apply memory pressure to local Redis instance with eviction testing",
+    "title": "Memory Stress Test - Database Pod with Timed Rollback",
+    "description": "Apply memory stress to database pod with automatic cleanup after duration",
     "method": [
       {
-        "name": "redis-memory-stress-complete",
         "type": "action",
+        "name": "apply-cart-memory-stress",
         "provider": {
           "type": "python",
-          "module": "redis_config_faults",
-          "func": "redis_memory_stress_test",
+          "module": "chaosk8s.chaosmesh.stress.actions",
+          "func": "stress_memory",
           "arguments": {
-            "host": "4.246.16.132",
-            "port": 6379,
-            "limit_in_kb": 100,
-            "eviction_policy": "noeviction",
-            "duration": 180
+            "name": "memory-stress-database",
+            "label_selectors": "app=post-storage-service",
+            "workers": 1,
+            "size": "240MB",
+            "duration": "300s",
+            "ns": "default",
+            "mode": "all"
           }
+        }
+      },
+      {
+        "type": "probe",
+        "name": "wait-for-memory-stress-duration",
+        "provider": {
+          "type": "process",
+          "path": "sleep",
+          "arguments": "305"
         }
       }
     ],
     "rollbacks": [
       {
-        "name": "reset-redis-memory",
         "type": "action",
+        "name": "cleanup-database-memory-stress",
         "provider": {
           "type": "python",
-          "module": "redis_config_faults",
-          "func": "reset_maxmemory",
+          "module": "chaosk8s.chaosmesh.stress.actions",
+          "func": "delete_stressor",
           "arguments": {
-            "host": "4.246.16.132",
-            "port": 6379
+            "name": "memory-stress-database",
+            "ns": "default"
           }
         }
       }
     ],
     "dry": null
   },
-  "start": "2025-09-20T13:39:15.295709+00:00",
+  "start": "2025-10-07T06:09:23.103234+00:00",
   "status": "completed",
   "deviated": false,
   "steady_states": {
@@ -52,58 +63,270 @@
   "run": [
     {
       "activity": {
-        "name": "redis-memory-stress-complete",
         "type": "action",
+        "name": "apply-cart-memory-stress",
         "provider": {
           "type": "python",
-          "module": "redis_config_faults",
-          "func": "redis_memory_stress_test",
+          "module": "chaosk8s.chaosmesh.stress.actions",
+          "func": "stress_memory",
           "arguments": {
-            "host": "4.246.16.132",
-            "port": 6379,
-            "limit_in_kb": 100,
-            "eviction_policy": "noeviction",
-            "duration": 180
+            "name": "memory-stress-database",
+            "label_selectors": "app=post-storage-service",
+            "workers": 1,
+            "size": "240MB",
+            "duration": "300s",
+            "ns": "default",
+            "mode": "all"
           }
         }
       },
       "output": {
-        "used_memory": "20.03M",
-        "evicted_keys": 0,
-        "duration": 180
+        "apiVersion": "chaos-mesh.org/v1alpha1",
+        "kind": "StressChaos",
+        "metadata": {
+          "creationTimestamp": "2025-10-07T06:09:24Z",
+          "generation": 1,
+          "managedFields": [
+            {
+              "apiVersion": "chaos-mesh.org/v1alpha1",
+              "fieldsType": "FieldsV1",
+              "fieldsV1": {
+                "f:spec": {
+                  ".": {},
+                  "f:duration": {},
+                  "f:mode": {},
+                  "f:selector": {
+                    ".": {},
+                    "f:labelSelectors": {
+                      ".": {},
+                      "f:app": {}
+                    }
+                  },
+                  "f:stressors": {
+                    ".": {},
+                    "f:memory": {
+                      ".": {},
+                      "f:oomScoreAdj": {},
+                      "f:size": {},
+                      "f:workers": {}
+                    }
+                  }
+                }
+              },
+              "manager": "OpenAPI-Generator",
+              "operation": "Update",
+              "time": "2025-10-07T06:09:24Z"
+            }
+          ],
+          "name": "memory-stress-database",
+          "namespace": "default",
+          "resourceVersion": "12244436",
+          "uid": "ca7a0edd-9a9f-4604-814d-09978b9f4a3c"
+        },
+        "spec": {
+          "duration": "300s",
+          "mode": "all",
+          "selector": {
+            "labelSelectors": {
+              "app": "post-storage-service"
+            },
+            "namespaces": [
+              "default"
+            ]
+          },
+          "stressors": {
+            "memory": {
+              "oomScoreAdj": 0,
+              "size": "240MB",
+              "workers": 1
+            }
+          }
+        },
+        "status": {
+          "experiment": {}
+        }
       },
-      "start": "2025-09-20T13:39:15.296543+00:00",
+      "start": "2025-10-07T06:09:23.104077+00:00",
       "status": "succeeded",
-      "end": "2025-09-20T13:42:04.315313+00:00",
-      "duration": 169.01877
+      "end": "2025-10-07T06:09:24.419915+00:00",
+      "duration": 1.315838
+    },
+    {
+      "activity": {
+        "type": "probe",
+        "name": "wait-for-memory-stress-duration",
+        "provider": {
+          "type": "process",
+          "path": "sleep",
+          "arguments": "305"
+        }
+      },
+      "output": {
+        "status": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      "start": "2025-10-07T06:09:24.420258+00:00",
+      "status": "succeeded",
+      "end": "2025-10-07T06:14:29.427453+00:00",
+      "duration": 305.007195
     }
   ],
   "rollbacks": [
     {
       "activity": {
-        "name": "reset-redis-memory",
         "type": "action",
+        "name": "cleanup-database-memory-stress",
         "provider": {
           "type": "python",
-          "module": "redis_config_faults",
-          "func": "reset_maxmemory",
+          "module": "chaosk8s.chaosmesh.stress.actions",
+          "func": "delete_stressor",
           "arguments": {
-            "host": "4.246.16.132",
-            "port": 6379
+            "name": "memory-stress-database",
+            "ns": "default"
           }
         }
       },
       "output": {
-        "status": "reset",
-        "maxmemory": "0",
-        "policy": "noeviction"
+        "apiVersion": "chaos-mesh.org/v1alpha1",
+        "kind": "StressChaos",
+        "metadata": {
+          "creationTimestamp": "2025-10-07T06:09:24Z",
+          "deletionGracePeriodSeconds": 0,
+          "deletionTimestamp": "2025-10-07T06:14:30Z",
+          "finalizers": [
+            "chaos-mesh/records"
+          ],
+          "generation": 9,
+          "managedFields": [
+            {
+              "apiVersion": "chaos-mesh.org/v1alpha1",
+              "fieldsType": "FieldsV1",
+              "fieldsV1": {
+                "f:spec": {
+                  ".": {},
+                  "f:duration": {},
+                  "f:mode": {},
+                  "f:selector": {
+                    ".": {},
+                    "f:labelSelectors": {
+                      ".": {},
+                      "f:app": {}
+                    }
+                  },
+                  "f:stressors": {
+                    ".": {},
+                    "f:memory": {
+                      ".": {},
+                      "f:oomScoreAdj": {},
+                      "f:size": {},
+                      "f:workers": {}
+                    }
+                  }
+                }
+              },
+              "manager": "OpenAPI-Generator",
+              "operation": "Update",
+              "time": "2025-10-07T06:09:24Z"
+            },
+            {
+              "apiVersion": "chaos-mesh.org/v1alpha1",
+              "fieldsType": "FieldsV1",
+              "fieldsV1": {
+                "f:metadata": {
+                  "f:finalizers": {
+                    ".": {},
+                    "v:\"chaos-mesh/records\"": {}
+                  }
+                },
+                "f:status": {
+                  "f:conditions": {},
+                  "f:experiment": {
+                    "f:containerRecords": {},
+                    "f:desiredPhase": {}
+                  }
+                }
+              },
+              "manager": "chaos-controller-manager",
+              "operation": "Update",
+              "time": "2025-10-07T06:14:24Z"
+            }
+          ],
+          "name": "memory-stress-database",
+          "namespace": "default",
+          "resourceVersion": "12246296",
+          "uid": "ca7a0edd-9a9f-4604-814d-09978b9f4a3c"
+        },
+        "spec": {
+          "duration": "300s",
+          "mode": "all",
+          "selector": {
+            "labelSelectors": {
+              "app": "post-storage-service"
+            },
+            "namespaces": [
+              "default"
+            ]
+          },
+          "stressors": {
+            "memory": {
+              "oomScoreAdj": 0,
+              "size": "240MB",
+              "workers": 1
+            }
+          }
+        },
+        "status": {
+          "conditions": [
+            {
+              "status": "False",
+              "type": "Paused"
+            },
+            {
+              "status": "True",
+              "type": "Selected"
+            },
+            {
+              "status": "False",
+              "type": "AllInjected"
+            },
+            {
+              "status": "True",
+              "type": "AllRecovered"
+            }
+          ],
+          "experiment": {
+            "containerRecords": [
+              {
+                "events": [
+                  {
+                    "operation": "Apply",
+                    "timestamp": "2025-10-07T06:09:24Z",
+                    "type": "Succeeded"
+                  },
+                  {
+                    "operation": "Recover",
+                    "timestamp": "2025-10-07T06:14:24Z",
+                    "type": "Succeeded"
+                  }
+                ],
+                "id": "default/post-storage-service-769cf6947d-k64tz/post-storage-service",
+                "injectedCount": 1,
+                "phase": "Not Injected",
+                "recoveredCount": 1,
+                "selectorKey": "."
+              }
+            ],
+            "desiredPhase": "Stop"
+          }
+        }
       },
-      "start": "2025-09-20T13:42:04.316639+00:00",
+      "start": "2025-10-07T06:14:29.428608+00:00",
       "status": "succeeded",
-      "end": "2025-09-20T13:42:05.746730+00:00",
-      "duration": 1.430091
+      "end": "2025-10-07T06:14:30.557817+00:00",
+      "duration": 1.129209
     }
   ],
-  "end": "2025-09-20T13:42:05.746851+00:00",
-  "duration": 170.45290517807007
+  "end": "2025-10-07T06:14:30.558103+00:00",
+  "duration": 307.4576606750488
 }

@@ -1,0 +1,143 @@
+[2025-09-25T04:34:44.022+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-09-25T04:34:44.046+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: Cordon_Uncordon_Node_Test.apply_cordon_uncordon_node manual__2025-09-25T04:34:41.066026+00:00 [queued]>
+[2025-09-25T04:34:44.055+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: Cordon_Uncordon_Node_Test.apply_cordon_uncordon_node manual__2025-09-25T04:34:41.066026+00:00 [queued]>
+[2025-09-25T04:34:44.056+0000] {taskinstance.py:2865} INFO - Starting attempt 1 of 1
+[2025-09-25T04:34:44.069+0000] {taskinstance.py:2888} INFO - Executing <Task(DockerOperator): apply_cordon_uncordon_node> on 2025-09-25 04:34:41.066026+00:00
+[2025-09-25T04:34:44.076+0000] {standard_task_runner.py:72} INFO - Started process 74 to run task
+[2025-09-25T04:34:44.092+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'Cordon_Uncordon_Node_Test', 'apply_cordon_uncordon_node', 'manual__2025-09-25T04:34:41.066026+00:00', '--job-id', '284', '--raw', '--subdir', 'DAGS_FOLDER/dag_factory.py', '--cfg-path', '/tmp/tmposii90g2']
+[2025-09-25T04:34:44.093+0000] {standard_task_runner.py:105} INFO - Job 284: Subtask apply_cordon_uncordon_node
+[2025-09-25T04:34:44.286+0000] {task_command.py:467} INFO - Running <TaskInstance: Cordon_Uncordon_Node_Test.apply_cordon_uncordon_node manual__2025-09-25T04:34:41.066026+00:00 [running]> on host BNXL-80508-WL.India.XoriantCorp.com
+[2025-09-25T04:34:44.461+0000] {taskinstance.py:3131} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='Cordon_Uncordon_Node_Test' AIRFLOW_CTX_TASK_ID='apply_cordon_uncordon_node' AIRFLOW_CTX_EXECUTION_DATE='2025-09-25T04:34:41.066026+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-09-25T04:34:41.066026+00:00'
+[2025-09-25T04:34:44.466+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2025-09-25T04:34:44.651+0000] {docker.py:367} INFO - Starting docker container from image ***_chaos:latest
+[2025-09-25T04:34:44.655+0000] {taskinstance.py:3310} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/models/taskinstance.py", line 767, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/models/taskinstance.py", line 733, in _execute_callable
+    return ExecutionCallableRunner(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/models/baseoperator.py", line 406, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/providers/docker/operators/docker.py", line 513, in execute
+    return self._run_image()
+           ^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/providers/docker/operators/docker.py", line 384, in _run_image
+    return self._run_image_with_mounts(self.mounts, add_tmp_variable=False)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/providers/docker/operators/docker.py", line 399, in _run_image_with_mounts
+    self.container = self.cli.create_container(
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/docker/api/container.py", line 432, in create_container
+    config = self.create_container_config(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/docker/api/container.py", line 443, in create_container_config
+    return ContainerConfig(self._version, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/docker/types/containers.py", line 716, in __init__
+    command = split_command(command)
+              ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/docker/utils/utils.py", line 487, in split_command
+    return shlex.split(command)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/shlex.py", line 315, in split
+    return list(lex)
+           ^^^^^^^^^
+  File "/usr/local/lib/python3.11/shlex.py", line 300, in __next__
+    token = self.get_token()
+            ^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/shlex.py", line 109, in get_token
+    raw = self.read_token()
+          ^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/shlex.py", line 191, in read_token
+    raise ValueError("No closing quotation")
+ValueError: No closing quotation
+[2025-09-25T04:34:44.669+0000] {taskinstance.py:1225} INFO - Marking task as FAILED. dag_id=Cordon_Uncordon_Node_Test, task_id=apply_cordon_uncordon_node, run_id=manual__2025-09-25T04:34:41.066026+00:00, execution_date=20250925T043441, start_date=20250925T043444, end_date=20250925T043444
+[2025-09-25T04:34:44.683+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2025-09-25T04:34:44.683+0000] {standard_task_runner.py:124} ERROR - Failed to execute job 284 for task apply_cordon_uncordon_node (No closing quotation; 74)
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/task/task_runner/standard_task_runner.py", line 117, in _start_by_fork
+    ret = args.func(args, dag=self.dag)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/cli/cli_config.py", line 49, in command
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/utils/cli.py", line 115, in wrapper
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/cli/commands/task_command.py", line 483, in task_run
+    task_return_code = _run_task_by_selected_method(args, _dag, ti)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/cli/commands/task_command.py", line 256, in _run_task_by_selected_method
+    return _run_raw_task(args, ti)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/cli/commands/task_command.py", line 341, in _run_raw_task
+    return ti._run_raw_task(
+           ^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/utils/session.py", line 97, in wrapper
+    return func(*args, session=session, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/models/taskinstance.py", line 3004, in _run_raw_task
+    return _run_raw_task(
+           ^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/models/taskinstance.py", line 273, in _run_raw_task
+    TaskInstance._execute_task_with_callbacks(
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/models/taskinstance.py", line 3158, in _execute_task_with_callbacks
+    result = self._execute_task(context, task_orig)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/models/taskinstance.py", line 3182, in _execute_task
+    return _execute_task(self, context, task_orig)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/models/taskinstance.py", line 767, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/models/taskinstance.py", line 733, in _execute_callable
+    return ExecutionCallableRunner(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/models/baseoperator.py", line 406, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/providers/docker/operators/docker.py", line 513, in execute
+    return self._run_image()
+           ^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/providers/docker/operators/docker.py", line 384, in _run_image
+    return self._run_image_with_mounts(self.mounts, add_tmp_variable=False)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/providers/docker/operators/docker.py", line 399, in _run_image_with_mounts
+    self.container = self.cli.create_container(
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/docker/api/container.py", line 432, in create_container
+    config = self.create_container_config(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/docker/api/container.py", line 443, in create_container_config
+    return ContainerConfig(self._version, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/docker/types/containers.py", line 716, in __init__
+    command = split_command(command)
+              ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/docker/utils/utils.py", line 487, in split_command
+    return shlex.split(command)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/shlex.py", line 315, in split
+    return list(lex)
+           ^^^^^^^^^
+  File "/usr/local/lib/python3.11/shlex.py", line 300, in __next__
+    token = self.get_token()
+            ^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/shlex.py", line 109, in get_token
+    raw = self.read_token()
+          ^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/shlex.py", line 191, in read_token
+    raise ValueError("No closing quotation")
+ValueError: No closing quotation
+[2025-09-25T04:34:44.721+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 1
+[2025-09-25T04:34:44.743+0000] {taskinstance.py:3900} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-09-25T04:34:44.746+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

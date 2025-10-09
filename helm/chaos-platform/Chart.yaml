@@ -1,0 +1,15 @@
+apiVersion: v2
+name: chaos-platform
+description: A Helm chart for Chaos Engineering Platform with Airflow
+type: application
+version: 0.1.0
+appVersion: "2.10.2"
+keywords:
+  - chaos-engineering
+  - airflow
+  - kubernetes
+  - load-testing
+home: https://github.com/your-org/chaos-platform
+maintainers:
+  - name: Priyanshu Patel
+    email: priyanshu01ce@example.com

@@ -1,0 +1,186 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    deployment.kubernetes.io/revision: "17"
+    meta.helm.sh/release-name: chaos-platform
+    meta.helm.sh/release-namespace: chaos-ops
+  creationTimestamp: "2025-09-24T07:14:52Z"
+  generation: 17
+  labels:
+    app.kubernetes.io/instance: chaos-platform
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/name: chaos-platform
+    app.kubernetes.io/version: 2.10.2
+    helm.sh/chart: chaos-platform-0.1.0
+  name: chaos-platform
+  namespace: chaos-ops
+  resourceVersion: "6758133"
+  uid: 20213232-4433-4a8e-a750-805e0751a76d
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      app.kubernetes.io/instance: chaos-platform
+      app.kubernetes.io/name: chaos-platform
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      annotations:
+        kubectl.kubernetes.io/restartedAt: "2025-09-26T10:55:12Z"
+      creationTimestamp: null
+      labels:
+        app.kubernetes.io/instance: chaos-platform
+        app.kubernetes.io/name: chaos-platform
+    spec:
+      containers:
+      - args:
+        - |
+          # Copy files to avoid symlink issues
+          cp /tmp/dags/* /opt/airflow/dags/ 2>/dev/null || true
+          cp /tmp/experiments/* /opt/airflow/src/pod/ 2>/dev/null || true
+          # Start webserver
+          airflow webserver --port 8080
+        command:
+        - /bin/bash
+        - -c
+        env:
+        - name: PYTHONPATH
+          value: /opt/airflow/src/pod:/opt/airflow/src/node
+        - name: AIRFLOW__CORE__EXECUTOR
+          value: LocalExecutor
+        - name: AIRFLOW__DATABASE__SQL_ALCHEMY_CONN
+          value: postgresql+psycopg2://airflow:airflow@postgres-postgresql.default.svc.cluster.local:5432/airflow
+        image: priyanshu01ce/airflow_chaos:latest
+        imagePullPolicy: IfNotPresent
+        name: airflow-webserver
+        ports:
+        - containerPort: 8080
+          name: http
+          protocol: TCP
+        resources:
+          limits:
+            cpu: "1"
+            memory: 2Gi
+          requests:
+            cpu: 250m
+            memory: 512Mi
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        volumeMounts:
+        - mountPath: /tmp/experiments
+          name: chaos-experiments
+        - mountPath: /tmp/dags
+          name: chaos-dags
+        - mountPath: /opt/airflow/dags
+          name: dags-volume
+        - mountPath: /opt/airflow/src/pod
+          name: local-pod-folder
+          subPath: src/pod
+      - args:
+        - |
+          # Copy files to avoid symlink issues
+          cp /tmp/dags/* /opt/airflow/dags/ 2>/dev/null || true
+          cp /tmp/experiments/* /opt/airflow/src/pod/ 2>/dev/null || true
+          # Start scheduler
+          airflow scheduler
+        command:
+        - /bin/bash
+        - -c
+        env:
+        - name: PYTHONPATH
+          value: /opt/airflow/src/pod:/opt/airflow/src/node
+        - name: AIRFLOW__CORE__EXECUTOR
+          value: LocalExecutor
+        - name: AIRFLOW__DATABASE__SQL_ALCHEMY_CONN
+          value: postgresql+psycopg2://airflow:airflow@postgres-postgresql.default.svc.cluster.local:5432/airflow
+        image: priyanshu01ce/airflow_chaos:latest
+        imagePullPolicy: IfNotPresent
+        name: airflow-scheduler
+        resources: {}
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        volumeMounts:
+        - mountPath: /tmp/experiments
+          name: chaos-experiments
+        - mountPath: /tmp/dags
+          name: chaos-dags
+        - mountPath: /opt/airflow/dags
+          name: dags-volume
+        - mountPath: /opt/airflow/src/pod
+          name: local-pod-folder
+          subPath: src/pod
+      dnsPolicy: ClusterFirstWithHostNet
+      hostNetwork: true
+      initContainers:
+      - args:
+        - |
+          echo "Initializing Airflow database..."
+          airflow db init
+          airflow users create \
+            --username admin \
+            --password admin \
+            --firstname Admin \
+            --lastname User \
+            --role Admin \
+            --email admin@example.com || true
+          echo "Database initialization completed"
+        command:
+        - /bin/bash
+        - -c
+        env:
+        - name: AIRFLOW__DATABASE__SQL_ALCHEMY_CONN
+          value: postgresql+psycopg2://airflow:airflow@postgres-postgresql.default.svc.cluster.local:5432/airflow
+        image: priyanshu01ce/airflow_chaos:latest
+        imagePullPolicy: Always
+        name: airflow-db-init
+        resources: {}
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      serviceAccount: chaos-platform-sa
+      serviceAccountName: chaos-platform-sa
+      terminationGracePeriodSeconds: 30
+      volumes:
+      - configMap:
+          defaultMode: 420
+          name: chaos-platform-experiments
+        name: chaos-experiments
+      - configMap:
+          defaultMode: 420
+          name: chaos-platform-dags
+        name: chaos-dags
+      - emptyDir: {}
+        name: dags-volume
+      - hostPath:
+          path: /home/priyanshupatel/fault-injector
+          type: Directory
+        name: local-pod-folder
+status:
+  availableReplicas: 1
+  conditions:
+  - lastTransitionTime: "2025-09-24T09:04:37Z"
+    lastUpdateTime: "2025-09-24T09:04:37Z"
+    message: Deployment has minimum availability.
+    reason: MinimumReplicasAvailable
+    status: "True"
+    type: Available
+  - lastTransitionTime: "2025-09-26T11:05:13Z"
+    lastUpdateTime: "2025-09-26T11:05:13Z"
+    message: ReplicaSet "chaos-platform-6475c6d7dd" has timed out progressing.
+    reason: ProgressDeadlineExceeded
+    status: "False"
+    type: Progressing
+  observedGeneration: 17
+  readyReplicas: 1
+  replicas: 2
+  unavailableReplicas: 1
+  updatedReplicas: 1

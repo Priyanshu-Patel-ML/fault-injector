@@ -1,0 +1,32 @@
+Redis_Experiment_Test_Kube:
+  schedule: "@once"
+  start_date: "2025-01-10"
+  description: "Redis memory stress test with 100KB limit and noeviction policy for 3 minutes - Kubernetes Pod"
+  default_view: "graph"
+  orientation: "LR"
+  catchup: false
+  default_args:
+    owner: "airflow"
+    depends_on_past: false
+    retries: 0
+  tasks:
+    - task_id: apply_redis_experiment_kube
+      operator: airflow.providers.cncf.kubernetes.operators.pod.KubernetesPodOperator
+      name: "redis-experiment-k8s"
+      namespace: "chaos-ops"
+      image: "priyanshu01ce/airflow_chaos:latest"
+      get_logs: true
+      is_delete_operator_pod: false
+      in_cluster: true
+      service_account_name: "chaos-platform-sa"
+      cmds:
+        - bash
+        - -c
+      arguments:
+        - |
+          cd /opt/airflow/src/pod
+          ls -la
+          chaos run redis_experiment.json
+      env_vars:
+        PYTHONPATH: "/opt/airflow/src/pod"
+

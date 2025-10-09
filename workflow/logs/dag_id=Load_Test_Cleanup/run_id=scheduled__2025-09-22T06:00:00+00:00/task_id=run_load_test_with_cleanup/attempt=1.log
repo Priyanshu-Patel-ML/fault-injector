@@ -1,0 +1,32 @@
+[2025-09-22T08:00:01.450+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-09-22T08:00:01.466+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: Load_Test_Cleanup.run_load_test_with_cleanup scheduled__2025-09-22T06:00:00+00:00 [queued]>
+[2025-09-22T08:00:01.474+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: Load_Test_Cleanup.run_load_test_with_cleanup scheduled__2025-09-22T06:00:00+00:00 [queued]>
+[2025-09-22T08:00:01.474+0000] {taskinstance.py:2865} INFO - Starting attempt 1 of 1
+[2025-09-22T08:00:01.487+0000] {taskinstance.py:2888} INFO - Executing <Task(DockerOperator): run_load_test_with_cleanup> on 2025-09-22 06:00:00+00:00
+[2025-09-22T08:00:01.492+0000] {standard_task_runner.py:72} INFO - Started process 56 to run task
+[2025-09-22T08:00:01.496+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'Load_Test_Cleanup', 'run_load_test_with_cleanup', 'scheduled__2025-09-22T06:00:00+00:00', '--job-id', '278', '--raw', '--subdir', 'DAGS_FOLDER/dag_factory.py', '--cfg-path', '/tmp/tmph_b_y4hv']
+[2025-09-22T08:00:01.497+0000] {standard_task_runner.py:105} INFO - Job 278: Subtask run_load_test_with_cleanup
+[2025-09-22T08:00:01.546+0000] {task_command.py:467} INFO - Running <TaskInstance: Load_Test_Cleanup.run_load_test_with_cleanup scheduled__2025-09-22T06:00:00+00:00 [running]> on host BNXL-80508-WL.India.XoriantCorp.com
+[2025-09-22T08:00:01.620+0000] {taskinstance.py:3131} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='Load_Test_Cleanup' AIRFLOW_CTX_TASK_ID='run_load_test_with_cleanup' AIRFLOW_CTX_EXECUTION_DATE='2025-09-22T06:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-09-22T06:00:00+00:00'
+[2025-09-22T08:00:01.621+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2025-09-22T08:00:01.685+0000] {docker.py:367} INFO - Starting docker container from image ***_chaos:latest
+[2025-09-22T08:00:01.908+0000] {docker.py:438} INFO - The container is run as root user. For security, consider using a regular user account.
+[2025-09-22T08:00:08.514+0000] {docker.py:438} INFO - 
+[2025-09-22T08:00:08.516+0000] {docker.py:438} INFO - Starting Load Test with Auto Cleanup...
+[2025-09-22T08:00:09.355+0000] {docker.py:438} INFO - [32m[2025-09-22 08:00:09 INFO] Validating the experiment's syntax
+[2025-09-22T08:00:09.356+0000] {docker.py:438} INFO - [32m[2025-09-22 08:00:09 INFO] Experiment looks valid
+[2025-09-22T08:00:09.356+0000] {docker.py:438} INFO - [32m[2025-09-22 08:00:09 INFO] Running experiment: Load Test with Auto Cleanup via Script
+[2025-09-22T08:00:09.359+0000] {docker.py:438} INFO - [32m[2025-09-22 08:00:09 INFO] Steady-state strategy: default
+[2025-09-22T08:00:09.359+0000] {docker.py:438} INFO - [32m[2025-09-22 08:00:09 INFO] Rollbacks strategy: default
+[2025-09-22T08:00:09.359+0000] {docker.py:438} INFO - [32m[2025-09-22 08:00:09 INFO] No steady state hypothesis defined. That's ok, just exploring.
+[2025-09-22T08:00:09.360+0000] {docker.py:438} INFO - [32m[2025-09-22 08:00:09 INFO] Playing your experiment's method now...
+[2025-09-22T08:00:09.361+0000] {docker.py:438} INFO - [32m[2025-09-22 08:00:09 INFO] Action: Execute load test with auto cleanup
+[2025-09-22T08:03:25.639+0000] {docker.py:438} INFO - [32m[2025-09-22 08:03:25 INFO] Let's rollback...
+[2025-09-22T08:03:25.640+0000] {docker.py:438} INFO - [32m[2025-09-22 08:03:25 INFO] No declared rollbacks, let's move on.
+[2025-09-22T08:03:25.641+0000] {docker.py:438} INFO - [32m[2025-09-22 08:03:25 INFO] Experiment ended with status: completed
+[2025-09-22T08:03:25.678+0000] {docker.py:438} INFO - Load test with cleanup completed successfully
+[2025-09-22T08:03:25.839+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2025-09-22T08:03:25.839+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=Load_Test_Cleanup, task_id=run_load_test_with_cleanup, run_id=scheduled__2025-09-22T06:00:00+00:00, execution_date=20250922T060000, start_date=20250922T080001, end_date=20250922T080325
+[2025-09-22T08:03:25.897+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-09-22T08:03:25.911+0000] {taskinstance.py:3900} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-09-22T08:03:25.913+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

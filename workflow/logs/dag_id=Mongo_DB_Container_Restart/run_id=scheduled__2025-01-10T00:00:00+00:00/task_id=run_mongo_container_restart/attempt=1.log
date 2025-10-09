@@ -1,0 +1,757 @@
+[2025-09-29T05:28:51.887+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-09-29T05:28:51.907+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: Mongo_DB_Container_Restart.run_mongo_container_restart scheduled__2025-01-10T00:00:00+00:00 [queued]>
+[2025-09-29T05:28:51.922+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: Mongo_DB_Container_Restart.run_mongo_container_restart scheduled__2025-01-10T00:00:00+00:00 [queued]>
+[2025-09-29T05:28:51.922+0000] {taskinstance.py:2865} INFO - Starting attempt 1 of 1
+[2025-09-29T05:28:51.940+0000] {taskinstance.py:2888} INFO - Executing <Task(DockerOperator): run_mongo_container_restart> on 2025-01-10 00:00:00+00:00
+[2025-09-29T05:28:51.946+0000] {standard_task_runner.py:72} INFO - Started process 252 to run task
+[2025-09-29T05:28:51.953+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'Mongo_DB_Container_Restart', 'run_mongo_container_restart', 'scheduled__2025-01-10T00:00:00+00:00', '--job-id', '343', '--raw', '--subdir', 'DAGS_FOLDER/dag_factory.py', '--cfg-path', '/tmp/tmp0io38swq']
+[2025-09-29T05:28:51.954+0000] {standard_task_runner.py:105} INFO - Job 343: Subtask run_mongo_container_restart
+[2025-09-29T05:28:52.021+0000] {task_command.py:467} INFO - Running <TaskInstance: Mongo_DB_Container_Restart.run_mongo_container_restart scheduled__2025-01-10T00:00:00+00:00 [running]> on host BNXL-80508-WL.India.XoriantCorp.com
+[2025-09-29T05:28:52.143+0000] {taskinstance.py:3131} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='Mongo_DB_Container_Restart' AIRFLOW_CTX_TASK_ID='run_mongo_container_restart' AIRFLOW_CTX_EXECUTION_DATE='2025-01-10T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-01-10T00:00:00+00:00'
+[2025-09-29T05:28:52.144+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2025-09-29T05:28:52.394+0000] {docker.py:367} INFO - Starting docker container from image ***_chaos:latest
+[2025-09-29T05:28:53.062+0000] {docker.py:438} INFO - The container is run as root user. For security, consider using a regular user account.
+[2025-09-29T05:29:03.055+0000] {docker.py:438} INFO - 
+[2025-09-29T05:29:03.058+0000] {docker.py:438} INFO - Starting MongoDB container restart experiment
+[2025-09-29T05:29:04.153+0000] {docker.py:438} INFO - [32m[2025-09-29 05:29:04 INFO] Validating the experiment's syntax
+[2025-09-29T05:29:04.472+0000] {docker.py:438} INFO - [32m[2025-09-29 05:29:04 INFO] Experiment looks valid
+[2025-09-29T05:29:04.473+0000] {docker.py:438} INFO - [32m[2025-09-29 05:29:04 INFO] Running experiment: Continuous Container Restart Experiment
+[2025-09-29T05:29:04.476+0000] {docker.py:438} INFO - [32m[2025-09-29 05:29:04 INFO] Steady-state strategy: default
+[2025-09-29T05:29:04.476+0000] {docker.py:438} INFO - [32m[2025-09-29 05:29:04 INFO] Rollbacks strategy: default
+[2025-09-29T05:29:04.476+0000] {docker.py:438} INFO - [32m[2025-09-29 05:29:04 INFO] No steady state hypothesis defined. That's ok, just exploring.
+[2025-09-29T05:29:04.477+0000] {docker.py:438} INFO - [32m[2025-09-29 05:29:04 INFO] Playing your experiment's method now...
+[2025-09-29T05:29:04.477+0000] {docker.py:438} INFO - [32m[2025-09-29 05:29:04 INFO] Action: continuous-container-restart
+[2025-09-29T05:29:32.924+0000] {docker.py:438} INFO - 🚀 [DEBUG] Entered restart_containers_continuous()
+[2025-09-29T05:29:32.925+0000] {docker.py:438} INFO -    Params => label_selector=app=post-storage-mongodb, interval=5, duration=200, ns=default, container_name=post-storage-mongodb
+[2025-09-29T05:29:32.925+0000] {docker.py:438} INFO - 
+[2025-09-29T05:29:32.925+0000] {docker.py:438} INFO - ============================================================
+[2025-09-29T05:29:32.925+0000] {docker.py:438} INFO - 🔄 [DEBUG] Container Restart Cycle #1 at 2025-09-29 05:29:04
+[2025-09-29T05:29:32.926+0000] {docker.py:438} INFO - ============================================================
+[2025-09-29T05:29:32.926+0000] {docker.py:438} INFO - 🔄 [DEBUG] Entered restart_containers()
+[2025-09-29T05:29:32.926+0000] {docker.py:438} INFO -    Params => label_selector=app=post-storage-mongodb, name_pattern=None, qty=2, rand=True, mode=fixed, ns=default, order=alphabetic, container_name=post-storage-mongodb, restart_command=None
+[2025-09-29T05:29:32.926+0000] {docker.py:438} INFO - 🔑 [DEBUG] Kubernetes API client created
+[2025-09-29T05:29:32.926+0000] {docker.py:438} INFO - 🔍 [DEBUG] Selecting pods now...
+[2025-09-29T05:29:32.926+0000] {docker.py:438} INFO - 🔍 [DEBUG] Entered _select_pods()
+[2025-09-29T05:29:32.927+0000] {docker.py:438} INFO -    Params => label_selector=app=post-storage-mongodb, name_pattern=None, all=False, rand=True, mode=fixed, qty=2, ns=default, order=alphabetic
+[2025-09-29T05:29:32.927+0000] {docker.py:438} INFO -    [DEBUG] Listing pods with label_selector=app=post-storage-mongodb
+[2025-09-29T05:29:32.927+0000] {docker.py:438} INFO - 📋 [DEBUG] Found 1 pods initially
+[2025-09-29T05:29:32.927+0000] {docker.py:438} INFO - 🎲 [DEBUG] Random selection chosen: 1 pods
+[2025-09-29T05:29:32.928+0000] {docker.py:438} INFO - ✅ [DEBUG] Selected pods: ['post-storage-mongodb-d5f69c6b6-7ftvd']
+[2025-09-29T05:29:32.928+0000] {docker.py:438} INFO - 📋 [DEBUG] Pods selected: 1
+[2025-09-29T05:29:32.928+0000] {docker.py:438} INFO - 
+[2025-09-29T05:29:32.928+0000] {docker.py:438} INFO - 🎯 [DEBUG] Processing pod: post-storage-mongodb-d5f69c6b6-7ftvd
+[2025-09-29T05:29:32.929+0000] {docker.py:438} INFO - 📦 [DEBUG] Using provided container: post-storage-mongodb
+[2025-09-29T05:29:32.929+0000] {docker.py:438} INFO - 🔍 [DEBUG] _get_restart_count() called for pod=post-storage-mongodb-d5f69c6b6-7ftvd, ns=default, container=post-storage-mongodb
+[2025-09-29T05:29:32.929+0000] {docker.py:438} INFO -    [DEBUG] Found 3 container_status entries
+[2025-09-29T05:29:32.929+0000] {docker.py:438} INFO -    [DEBUG] container: istio-proxy, restart_count: 0
+[2025-09-29T05:29:32.930+0000] {docker.py:438} INFO -    [DEBUG] container: mongodb-exporter, restart_count: 0
+[2025-09-29T05:29:32.930+0000] {docker.py:438} INFO -    [DEBUG] container: post-storage-mongodb, restart_count: 4
+[2025-09-29T05:29:32.930+0000] {docker.py:438} INFO -    ✅ [DEBUG] Matched container post-storage-mongodb, restart_count=4
+[2025-09-29T05:29:32.930+0000] {docker.py:438} INFO - 📊 [DEBUG] Restart count before action: 4
+[2025-09-29T05:29:32.930+0000] {docker.py:438} INFO - 🔧 [DEBUG] Restart strategies to try: [['sh', '-c', 'kill -INT 1'], ['sh', '-c', 'kill -2 1'], ['sh', '-c', 'kill -TERM 1'], ['sh', '-c', 'kill -9 1']]
+[2025-09-29T05:29:32.931+0000] {docker.py:438} INFO - ➡️ [DEBUG] Trying restart strategy #1: sh -c kill -INT 1
+[2025-09-29T05:29:32.931+0000] {docker.py:438} INFO -    [DEBUG] Exec stream opened successfully, running command...
+[2025-09-29T05:29:32.932+0000] {docker.py:438} INFO -    [DEBUG] run_forever returned/finished
+[2025-09-29T05:29:32.932+0000] {docker.py:438} INFO -    📤 [DEBUG] STDOUT (truncated): 
+[2025-09-29T05:29:32.933+0000] {docker.py:438} INFO -    📤 [DEBUG] STDERR (truncated): 
+[2025-09-29T05:29:32.933+0000] {docker.py:438} INFO -    📤 [DEBUG] CTRL_ERR: {"metadata":{},"status":"Success"}
+[2025-09-29T05:29:32.933+0000] {docker.py:438} INFO -    ⏳ [DEBUG] Waiting up to 60s for restart count to increment...
+[2025-09-29T05:29:32.933+0000] {docker.py:438} INFO - 🔍 [DEBUG] _get_restart_count() called for pod=post-storage-mongodb-d5f69c6b6-7ftvd, ns=default, container=post-storage-mongodb
+[2025-09-29T05:29:32.934+0000] {docker.py:438} INFO -    [DEBUG] Found 3 container_status entries
+[2025-09-29T05:29:32.934+0000] {docker.py:438} INFO -    [DEBUG] container: istio-proxy, restart_count: 0
+[2025-09-29T05:29:32.934+0000] {docker.py:438} INFO -    [DEBUG] container: mongodb-exporter, restart_count: 0
+[2025-09-29T05:29:32.934+0000] {docker.py:438} INFO -    [DEBUG] container: post-storage-mongodb, restart_count: 4
+[2025-09-29T05:29:32.934+0000] {docker.py:438} INFO -    ✅ [DEBUG] Matched container post-storage-mongodb, restart_count=4
+[2025-09-29T05:29:32.934+0000] {docker.py:438} INFO -    [DEBUG] Polled restart count: 4 (before was 4)
+[2025-09-29T05:29:32.935+0000] {docker.py:438} INFO - 🔍 [DEBUG] _get_restart_count() called for pod=post-storage-mongodb-d5f69c6b6-7ftvd, ns=default, container=post-storage-mongodb
+[2025-09-29T05:29:32.935+0000] {docker.py:438} INFO -    [DEBUG] Found 3 container_status entries
+[2025-09-29T05:29:32.935+0000] {docker.py:438} INFO -    [DEBUG] container: istio-proxy, restart_count: 0
+[2025-09-29T05:29:32.935+0000] {docker.py:438} INFO -    [DEBUG] container: mongodb-exporter, restart_count: 0
+[2025-09-29T05:29:32.935+0000] {docker.py:438} INFO -    [DEBUG] container: post-storage-mongodb, restart_count: 5
+[2025-09-29T05:29:32.936+0000] {docker.py:438} INFO -    ✅ [DEBUG] Matched container post-storage-mongodb, restart_count=5
+[2025-09-29T05:29:32.936+0000] {docker.py:438} INFO -    [DEBUG] Polled restart count: 5 (before was 4)
+[2025-09-29T05:29:32.936+0000] {docker.py:438} INFO -    ✅ [DEBUG] Restart observed: 4 -> 5
+[2025-09-29T05:29:32.936+0000] {docker.py:438} INFO -    🎉 [DEBUG] Restart verified, breaking out of strategies loop
+[2025-09-29T05:29:32.936+0000] {docker.py:438} INFO - 🔍 [DEBUG] _get_restart_count() called for pod=post-storage-mongodb-d5f69c6b6-7ftvd, ns=default, container=post-storage-mongodb
+[2025-09-29T05:29:32.936+0000] {docker.py:438} INFO -    [DEBUG] Found 3 container_status entries
+[2025-09-29T05:29:32.937+0000] {docker.py:438} INFO -    [DEBUG] container: istio-proxy, restart_count: 0
+[2025-09-29T05:29:32.937+0000] {docker.py:438} INFO -    [DEBUG] container: mongodb-exporter, restart_count: 0
+[2025-09-29T05:29:32.937+0000] {docker.py:438} INFO -    [DEBUG] container: post-storage-mongodb, restart_count: 5
+[2025-09-29T05:29:32.937+0000] {docker.py:438} INFO -    ✅ [DEBUG] Matched container post-storage-mongodb, restart_count=5
+[2025-09-29T05:29:32.937+0000] {docker.py:438} INFO - ✅ [DEBUG] Restart recorded for post-storage-mongodb-d5f69c6b6-7ftvd: 4 -> 5
+[2025-09-29T05:29:32.937+0000] {docker.py:438} INFO - 
+[2025-09-29T05:29:32.938+0000] {docker.py:438} INFO - 🏁 [DEBUG] restart_containers() finished. Processed 1 pods
+[2025-09-29T05:29:32.938+0000] {docker.py:438} INFO -    [DEBUG] restart_containers returned 1 entries
+[2025-09-29T05:29:32.938+0000] {docker.py:438} INFO - ✅ [DEBUG] Successfully restarted this cycle: 1
+[2025-09-29T05:29:32.938+0000] {docker.py:438} INFO -    📦 [DEBUG] post-storage-mongodb-d5f69c6b6-7ftvd: restart_verified
+[2025-09-29T05:29:32.938+0000] {docker.py:438} INFO - ⏳ [DEBUG] Waiting 5 seconds until next cycle. Time remaining: 192s
+[2025-09-29T05:29:32.938+0000] {docker.py:438} INFO - 
+[2025-09-29T05:29:32.939+0000] {docker.py:438} INFO - ============================================================
+[2025-09-29T05:29:32.939+0000] {docker.py:438} INFO - 🔄 [DEBUG] Container Restart Cycle #2 at 2025-09-29 05:29:17
+[2025-09-29T05:29:32.939+0000] {docker.py:438} INFO - ============================================================
+[2025-09-29T05:29:32.939+0000] {docker.py:438} INFO - 🔄 [DEBUG] Entered restart_containers()
+[2025-09-29T05:29:32.939+0000] {docker.py:438} INFO -    Params => label_selector=app=post-storage-mongodb, name_pattern=None, qty=2, rand=True, mode=fixed, ns=default, order=alphabetic, container_name=post-storage-mongodb, restart_command=None
+[2025-09-29T05:29:32.939+0000] {docker.py:438} INFO - 🔑 [DEBUG] Kubernetes API client created
+[2025-09-29T05:29:32.940+0000] {docker.py:438} INFO - 🔍 [DEBUG] Selecting pods now...
+[2025-09-29T05:29:32.940+0000] {docker.py:438} INFO - 🔍 [DEBUG] Entered _select_pods()
+[2025-09-29T05:29:32.940+0000] {docker.py:438} INFO -    Params => label_selector=app=post-storage-mongodb, name_pattern=None, all=False, rand=True, mode=fixed, qty=2, ns=default, order=alphabetic
+[2025-09-29T05:29:32.940+0000] {docker.py:438} INFO -    [DEBUG] Listing pods with label_selector=app=post-storage-mongodb
+[2025-09-29T05:29:32.940+0000] {docker.py:438} INFO - 📋 [DEBUG] Found 1 pods initially
+[2025-09-29T05:29:32.940+0000] {docker.py:438} INFO - 🎲 [DEBUG] Random selection chosen: 1 pods
+[2025-09-29T05:29:32.940+0000] {docker.py:438} INFO - ✅ [DEBUG] Selected pods: ['post-storage-mongodb-d5f69c6b6-7ftvd']
+[2025-09-29T05:29:32.941+0000] {docker.py:438} INFO - 📋 [DEBUG] Pods selected: 1
+[2025-09-29T05:29:32.941+0000] {docker.py:438} INFO - 
+[2025-09-29T05:29:32.941+0000] {docker.py:438} INFO - 🎯 [DEBUG] Processing pod: post-storage-mongodb-d5f69c6b6-7ftvd
+[2025-09-29T05:29:32.941+0000] {docker.py:438} INFO - 📦 [DEBUG] Using provided container: post-storage-mongodb
+[2025-09-29T05:29:32.941+0000] {docker.py:438} INFO - 🔍 [DEBUG] _get_restart_count() called for pod=post-storage-mongodb-d5f69c6b6-7ftvd, ns=default, container=post-storage-mongodb
+[2025-09-29T05:29:32.942+0000] {docker.py:438} INFO -    [DEBUG] Found 3 container_status entries
+[2025-09-29T05:29:32.942+0000] {docker.py:438} INFO -    [DEBUG] container: istio-proxy, restart_count: 0
+[2025-09-29T05:29:32.942+0000] {docker.py:438} INFO -    [DEBUG] container: mongodb-exporter, restart_count: 0
+[2025-09-29T05:29:32.942+0000] {docker.py:438} INFO -    [DEBUG] container: post-storage-mongodb, restart_count: 5
+[2025-09-29T05:29:32.942+0000] {docker.py:438} INFO -    ✅ [DEBUG] Matched container post-storage-mongodb, restart_count=5
+[2025-09-29T05:29:32.942+0000] {docker.py:438} INFO - 📊 [DEBUG] Restart count before action: 5
+[2025-09-29T05:29:32.943+0000] {docker.py:438} INFO - 🔧 [DEBUG] Restart strategies to try: [['sh', '-c', 'kill -INT 1'], ['sh', '-c', 'kill -2 1'], ['sh', '-c', 'kill -TERM 1'], ['sh', '-c', 'kill -9 1']]
+[2025-09-29T05:29:32.943+0000] {docker.py:438} INFO - ➡️ [DEBUG] Trying restart strategy #1: sh -c kill -INT 1
+[2025-09-29T05:29:32.943+0000] {docker.py:438} INFO -    [DEBUG] Exec stream opened successfully, running command...
+[2025-09-29T05:29:32.944+0000] {docker.py:438} INFO -    [DEBUG] run_forever returned/finished
+[2025-09-29T05:29:32.944+0000] {docker.py:438} INFO -    📤 [DEBUG] STDOUT (truncated): 
+[2025-09-29T05:29:32.944+0000] {docker.py:438} INFO -    📤 [DEBUG] STDERR (truncated): 
+[2025-09-29T05:29:32.944+0000] {docker.py:438} INFO -    📤 [DEBUG] CTRL_ERR: {"metadata":{},"status":"Success"}
+[2025-09-29T05:29:32.944+0000] {docker.py:438} INFO -    ⏳ [DEBUG] Waiting up to 60s for restart count to increment...
+[2025-09-29T05:29:32.945+0000] {docker.py:438} INFO - 🔍 [DEBUG] _get_restart_count() called for pod=post-storage-mongodb-d5f69c6b6-7ftvd, ns=default, container=post-storage-mongodb
+[2025-09-29T05:29:32.945+0000] {docker.py:438} INFO -    [DEBUG] Found 3 container_status entries
+[2025-09-29T05:29:32.945+0000] {docker.py:438} INFO -    [DEBUG] container: istio-proxy, restart_count: 0
+[2025-09-29T05:29:32.945+0000] {docker.py:438} INFO -    [DEBUG] container: mongodb-exporter, restart_count: 0
+[2025-09-29T05:29:32.946+0000] {docker.py:438} INFO -    [DEBUG] container: post-storage-mongodb, restart_count: 5
+[2025-09-29T05:29:32.946+0000] {docker.py:438} INFO -    ✅ [DEBUG] Matched container post-storage-mongodb, restart_count=5
+[2025-09-29T05:29:32.947+0000] {docker.py:438} INFO -    [DEBUG] Polled restart count: 5 (before was 5)
+[2025-09-29T05:29:32.947+0000] {docker.py:438} INFO - 🔍 [DEBUG] _get_restart_count() called for pod=post-storage-mongodb-d5f69c6b6-7ftvd, ns=default, container=post-storage-mongodb
+[2025-09-29T05:29:32.947+0000] {docker.py:438} INFO -    [DEBUG] Found 3 container_status entries
+[2025-09-29T05:29:32.948+0000] {docker.py:438} INFO -    [DEBUG] container: istio-proxy, restart_count: 0
+[2025-09-29T05:29:32.948+0000] {docker.py:438} INFO -    [DEBUG] container: mongodb-exporter, restart_count: 0
+[2025-09-29T05:29:32.948+0000] {docker.py:438} INFO -    [DEBUG] container: post-storage-mongodb, restart_count: 5
+[2025-09-29T05:29:32.949+0000] {docker.py:438} INFO -    ✅ [DEBUG] Matched container post-storage-mongodb, restart_count=5
+[2025-09-29T05:29:32.949+0000] {docker.py:438} INFO -    [DEBUG] Polled restart count: 5 (before was 5)
+[2025-09-29T05:29:32.949+0000] {docker.py:438} INFO - 🔍 [DEBUG] _get_restart_count() called for pod=post-storage-mongodb-d5f69c6b6-7ftvd, ns=default, container=post-storage-mongodb
+[2025-09-29T05:29:32.949+0000] {docker.py:438} INFO -    [DEBUG] Found 3 container_status entries
+[2025-09-29T05:29:32.949+0000] {docker.py:438} INFO -    [DEBUG] container: istio-proxy, restart_count: 0
+[2025-09-29T05:29:32.950+0000] {docker.py:438} INFO -    [DEBUG] container: mongodb-exporter, restart_count: 0
+[2025-09-29T05:29:32.950+0000] {docker.py:438} INFO -    [DEBUG] container: post-storage-mongodb, restart_count: 5
+[2025-09-29T05:29:32.950+0000] {docker.py:438} INFO -    ✅ [DEBUG] Matched container post-storage-mongodb, restart_count=5
+[2025-09-29T05:29:32.950+0000] {docker.py:438} INFO -    [DEBUG] Polled restart count: 5 (before was 5)
+[2025-09-29T05:29:32.950+0000] {docker.py:438} INFO - 🔍 [DEBUG] _get_restart_count() called for pod=post-storage-mongodb-d5f69c6b6-7ftvd, ns=default, container=post-storage-mongodb
+[2025-09-29T05:29:32.951+0000] {docker.py:438} INFO -    [DEBUG] Found 3 container_status entries
+[2025-09-29T05:29:32.951+0000] {docker.py:438} INFO -    [DEBUG] container: istio-proxy, restart_count: 0
+[2025-09-29T05:29:32.951+0000] {docker.py:438} INFO -    [DEBUG] container: mongodb-exporter, restart_count: 0
+[2025-09-29T05:29:32.951+0000] {docker.py:438} INFO -    [DEBUG] container: post-storage-mongodb, restart_count: 5
+[2025-09-29T05:29:32.951+0000] {docker.py:438} INFO -    ✅ [DEBUG] Matched container post-storage-mongodb, restart_count=5
+[2025-09-29T05:29:32.951+0000] {docker.py:438} INFO -    [DEBUG] Polled restart count: 5 (before was 5)
+[2025-09-29T05:29:32.952+0000] {docker.py:438} INFO - 🔍 [DEBUG] _get_restart_count() called for pod=post-storage-mongodb-d5f69c6b6-7ftvd, ns=default, container=post-storage-mongodb
+[2025-09-29T05:29:32.952+0000] {docker.py:438} INFO -    [DEBUG] Found 3 container_status entries
+[2025-09-29T05:29:32.952+0000] {docker.py:438} INFO -    [DEBUG] container: istio-proxy, restart_count: 0
+[2025-09-29T05:29:32.952+0000] {docker.py:438} INFO -    [DEBUG] container: mongodb-exporter, restart_count: 0
+[2025-09-29T05:30:09.385+0000] {docker.py:438} INFO - [DEBUG] container: post-storage-mongodb, restart_count: 5
+[2025-09-29T05:30:09.385+0000] {docker.py:438} INFO -    ✅ [DEBUG] Matched container post-storage-mongodb, restart_count=5
+[2025-09-29T05:30:09.386+0000] {docker.py:438} INFO -    [DEBUG] Polled restart count: 5 (before was 5)
+[2025-09-29T05:30:09.386+0000] {docker.py:438} INFO - 🔍 [DEBUG] _get_restart_count() called for pod=post-storage-mongodb-d5f69c6b6-7ftvd, ns=default, container=post-storage-mongodb
+[2025-09-29T05:30:09.386+0000] {docker.py:438} INFO -    [DEBUG] Found 3 container_status entries
+[2025-09-29T05:30:09.386+0000] {docker.py:438} INFO -    [DEBUG] container: istio-proxy, restart_count: 0
+[2025-09-29T05:30:09.387+0000] {docker.py:438} INFO -    [DEBUG] container: mongodb-exporter, restart_count: 0
+[2025-09-29T05:30:09.387+0000] {docker.py:438} INFO -    [DEBUG] container: post-storage-mongodb, restart_count: 5
+[2025-09-29T05:30:09.387+0000] {docker.py:438} INFO -    ✅ [DEBUG] Matched container post-storage-mongodb, restart_count=5
+[2025-09-29T05:30:09.387+0000] {docker.py:438} INFO -    [DEBUG] Polled restart count: 5 (before was 5)
+[2025-09-29T05:30:09.388+0000] {docker.py:438} INFO - 🔍 [DEBUG] _get_restart_count() called for pod=post-storage-mongodb-d5f69c6b6-7ftvd, ns=default, container=post-storage-mongodb
+[2025-09-29T05:30:09.388+0000] {docker.py:438} INFO -    [DEBUG] Found 3 container_status entries
+[2025-09-29T05:30:09.388+0000] {docker.py:438} INFO -    [DEBUG] container: istio-proxy, restart_count: 0
+[2025-09-29T05:30:09.388+0000] {docker.py:438} INFO -    [DEBUG] container: mongodb-exporter, restart_count: 0
+[2025-09-29T05:30:09.388+0000] {docker.py:438} INFO -    [DEBUG] container: post-storage-mongodb, restart_count: 6
+[2025-09-29T05:30:09.389+0000] {docker.py:438} INFO -    ✅ [DEBUG] Matched container post-storage-mongodb, restart_count=6
+[2025-09-29T05:30:09.389+0000] {docker.py:438} INFO -    [DEBUG] Polled restart count: 6 (before was 5)
+[2025-09-29T05:30:09.389+0000] {docker.py:438} INFO -    ✅ [DEBUG] Restart observed: 5 -> 6
+[2025-09-29T05:30:09.389+0000] {docker.py:438} INFO -    🎉 [DEBUG] Restart verified, breaking out of strategies loop
+[2025-09-29T05:30:09.389+0000] {docker.py:438} INFO - 🔍 [DEBUG] _get_restart_count() called for pod=post-storage-mongodb-d5f69c6b6-7ftvd, ns=default, container=post-storage-mongodb
+[2025-09-29T05:30:09.390+0000] {docker.py:438} INFO -    [DEBUG] Found 3 container_status entries
+[2025-09-29T05:30:09.390+0000] {docker.py:438} INFO -    [DEBUG] container: istio-proxy, restart_count: 0
+[2025-09-29T05:30:09.390+0000] {docker.py:438} INFO -    [DEBUG] container: mongodb-exporter, restart_count: 0
+[2025-09-29T05:30:09.390+0000] {docker.py:438} INFO -    [DEBUG] container: post-storage-mongodb, restart_count: 6
+[2025-09-29T05:30:09.390+0000] {docker.py:438} INFO -    ✅ [DEBUG] Matched container post-storage-mongodb, restart_count=6
+[2025-09-29T05:30:09.390+0000] {docker.py:438} INFO - ✅ [DEBUG] Restart recorded for post-storage-mongodb-d5f69c6b6-7ftvd: 5 -> 6
+[2025-09-29T05:30:09.390+0000] {docker.py:438} INFO - 
+[2025-09-29T05:30:09.391+0000] {docker.py:438} INFO - 🏁 [DEBUG] restart_containers() finished. Processed 1 pods
+[2025-09-29T05:30:09.391+0000] {docker.py:438} INFO -    [DEBUG] restart_containers returned 1 entries
+[2025-09-29T05:30:09.391+0000] {docker.py:438} INFO - ✅ [DEBUG] Successfully restarted this cycle: 1
+[2025-09-29T05:30:09.391+0000] {docker.py:438} INFO -    📦 [DEBUG] post-storage-mongodb-d5f69c6b6-7ftvd: restart_verified
+[2025-09-29T05:30:09.391+0000] {docker.py:438} INFO - ⏳ [DEBUG] Waiting 5 seconds until next cycle. Time remaining: 166s
+[2025-09-29T05:30:09.391+0000] {docker.py:438} INFO - 
+[2025-09-29T05:30:09.392+0000] {docker.py:438} INFO - ============================================================
+[2025-09-29T05:30:09.392+0000] {docker.py:438} INFO - 🔄 [DEBUG] Container Restart Cycle #3 at 2025-09-29 05:29:43
+[2025-09-29T05:30:09.392+0000] {docker.py:438} INFO - ============================================================
+[2025-09-29T05:30:09.392+0000] {docker.py:438} INFO - 🔄 [DEBUG] Entered restart_containers()
+[2025-09-29T05:30:09.392+0000] {docker.py:438} INFO -    Params => label_selector=app=post-storage-mongodb, name_pattern=None, qty=2, rand=True, mode=fixed, ns=default, order=alphabetic, container_name=post-storage-mongodb, restart_command=None
+[2025-09-29T05:30:09.392+0000] {docker.py:438} INFO - 🔑 [DEBUG] Kubernetes API client created
+[2025-09-29T05:30:09.393+0000] {docker.py:438} INFO - 🔍 [DEBUG] Selecting pods now...
+[2025-09-29T05:30:09.393+0000] {docker.py:438} INFO - 🔍 [DEBUG] Entered _select_pods()
+[2025-09-29T05:30:09.393+0000] {docker.py:438} INFO -    Params => label_selector=app=post-storage-mongodb, name_pattern=None, all=False, rand=True, mode=fixed, qty=2, ns=default, order=alphabetic
+[2025-09-29T05:30:09.393+0000] {docker.py:438} INFO -    [DEBUG] Listing pods with label_selector=app=post-storage-mongodb
+[2025-09-29T05:30:09.393+0000] {docker.py:438} INFO - 📋 [DEBUG] Found 1 pods initially
+[2025-09-29T05:30:09.393+0000] {docker.py:438} INFO - 🎲 [DEBUG] Random selection chosen: 1 pods
+[2025-09-29T05:30:09.394+0000] {docker.py:438} INFO - ✅ [DEBUG] Selected pods: ['post-storage-mongodb-d5f69c6b6-7ftvd']
+[2025-09-29T05:30:09.394+0000] {docker.py:438} INFO - 📋 [DEBUG] Pods selected: 1
+[2025-09-29T05:30:09.394+0000] {docker.py:438} INFO - 
+[2025-09-29T05:30:09.394+0000] {docker.py:438} INFO - 🎯 [DEBUG] Processing pod: post-storage-mongodb-d5f69c6b6-7ftvd
+[2025-09-29T05:30:09.394+0000] {docker.py:438} INFO - 📦 [DEBUG] Using provided container: post-storage-mongodb
+[2025-09-29T05:30:09.394+0000] {docker.py:438} INFO - 🔍 [DEBUG] _get_restart_count() called for pod=post-storage-mongodb-d5f69c6b6-7ftvd, ns=default, container=post-storage-mongodb
+[2025-09-29T05:30:09.395+0000] {docker.py:438} INFO -    [DEBUG] Found 3 container_status entries
+[2025-09-29T05:30:09.395+0000] {docker.py:438} INFO -    [DEBUG] container: istio-proxy, restart_count: 0
+[2025-09-29T05:30:09.395+0000] {docker.py:438} INFO -    [DEBUG] container: mongodb-exporter, restart_count: 0
+[2025-09-29T05:30:09.395+0000] {docker.py:438} INFO -    [DEBUG] container: post-storage-mongodb, restart_count: 6
+[2025-09-29T05:30:09.395+0000] {docker.py:438} INFO -    ✅ [DEBUG] Matched container post-storage-mongodb, restart_count=6
+[2025-09-29T05:30:09.395+0000] {docker.py:438} INFO - 📊 [DEBUG] Restart count before action: 6
+[2025-09-29T05:30:09.395+0000] {docker.py:438} INFO - 🔧 [DEBUG] Restart strategies to try: [['sh', '-c', 'kill -INT 1'], ['sh', '-c', 'kill -2 1'], ['sh', '-c', 'kill -TERM 1'], ['sh', '-c', 'kill -9 1']]
+[2025-09-29T05:30:09.396+0000] {docker.py:438} INFO - ➡️ [DEBUG] Trying restart strategy #1: sh -c kill -INT 1
+[2025-09-29T05:30:09.396+0000] {docker.py:438} INFO -    [DEBUG] Exec stream opened successfully, running command...
+[2025-09-29T05:30:09.396+0000] {docker.py:438} INFO -    [DEBUG] run_forever returned/finished
+[2025-09-29T05:30:09.396+0000] {docker.py:438} INFO -    📤 [DEBUG] STDOUT (truncated): 
+[2025-09-29T05:30:09.396+0000] {docker.py:438} INFO -    📤 [DEBUG] STDERR (truncated): 
+[2025-09-29T05:30:09.396+0000] {docker.py:438} INFO -    📤 [DEBUG] CTRL_ERR: {"metadata":{},"status":"Success"}
+[2025-09-29T05:30:09.396+0000] {docker.py:438} INFO -    ⏳ [DEBUG] Waiting up to 60s for restart count to increment...
+[2025-09-29T05:30:09.397+0000] {docker.py:438} INFO - 🔍 [DEBUG] _get_restart_count() called for pod=post-storage-mongodb-d5f69c6b6-7ftvd, ns=default, container=post-storage-mongodb
+[2025-09-29T05:30:09.397+0000] {docker.py:438} INFO -    [DEBUG] Found 3 container_status entries
+[2025-09-29T05:30:09.397+0000] {docker.py:438} INFO -    [DEBUG] container: istio-proxy, restart_count: 0
+[2025-09-29T05:30:09.397+0000] {docker.py:438} INFO -    [DEBUG] container: mongodb-exporter, restart_count: 0
+[2025-09-29T05:30:09.397+0000] {docker.py:438} INFO -    [DEBUG] container: post-storage-mongodb, restart_count: 6
+[2025-09-29T05:30:09.397+0000] {docker.py:438} INFO -    ✅ [DEBUG] Matched container post-storage-mongodb, restart_count=6
+[2025-09-29T05:30:09.397+0000] {docker.py:438} INFO -    [DEBUG] Polled restart count: 6 (before was 6)
+[2025-09-29T05:30:09.398+0000] {docker.py:438} INFO - 🔍 [DEBUG] _get_restart_count() called for pod=post-storage-mongodb-d5f69c6b6-7ftvd, ns=default, container=post-storage-mongodb
+[2025-09-29T05:30:09.398+0000] {docker.py:438} INFO -    [DEBUG] Found 3 container_status entries
+[2025-09-29T05:30:09.398+0000] {docker.py:438} INFO -    [DEBUG] container: istio-proxy, restart_count: 0
+[2025-09-29T05:30:09.398+0000] {docker.py:438} INFO -    [DEBUG] container: mongodb-exporter, restart_count: 0
+[2025-09-29T05:30:09.398+0000] {docker.py:438} INFO -    [DEBUG] container: post-storage-mongodb, restart_count: 6
+[2025-09-29T05:30:09.398+0000] {docker.py:438} INFO -    ✅ [DEBUG] Matched container post-storage-mongodb, restart_count=6
+[2025-09-29T05:30:09.398+0000] {docker.py:438} INFO -    [DEBUG] Polled restart count: 6 (before was 6)
+[2025-09-29T05:30:09.399+0000] {docker.py:438} INFO - 🔍 [DEBUG] _get_restart_count() called for pod=post-storage-mongodb-d5f69c6b6-7ftvd, ns=default, container=post-storage-mongodb
+[2025-09-29T05:30:09.399+0000] {docker.py:438} INFO -    [DEBUG] Found 3 container_status entries
+[2025-09-29T05:30:09.399+0000] {docker.py:438} INFO -    [DEBUG] container: istio-proxy, restart_count: 0
+[2025-09-29T05:30:09.399+0000] {docker.py:438} INFO -    [DEBUG] container: mongodb-exporter, restart_count: 0
+[2025-09-29T05:30:09.399+0000] {docker.py:438} INFO -    [DEBUG] container: post-storage-mongodb, restart_count: 6
+[2025-09-29T05:30:09.399+0000] {docker.py:438} INFO -    ✅ [DEBUG] Matched container post-storage-mongodb, restart_count=6
+[2025-09-29T05:30:09.399+0000] {docker.py:438} INFO -    [DEBUG] Polled restart count: 6 (before was 6)
+[2025-09-29T05:30:09.400+0000] {docker.py:438} INFO - 🔍 [DEBUG] _get_restart_count() called for pod=post-storage-mongodb-d5f69c6b6-7ftvd, ns=default, container=post-storage-mongodb
+[2025-09-29T05:30:09.400+0000] {docker.py:438} INFO -    [DEBUG] Found 3 container_status entries
+[2025-09-29T05:30:09.400+0000] {docker.py:438} INFO -    [DEBUG] container: istio-proxy, restart_count: 0
+[2025-09-29T05:30:09.400+0000] {docker.py:438} INFO -    [DEBUG] container: mongodb-exporter, restart_count: 0
+[2025-09-29T05:30:09.400+0000] {docker.py:438} INFO -    [DEBUG] container: post-storage-mongodb, restart_count: 6
+[2025-09-29T05:30:09.400+0000] {docker.py:438} INFO -    ✅ [DEBUG] Matched container post-storage-mongodb, restart_count=6
+[2025-09-29T05:30:09.401+0000] {docker.py:438} INFO -    [DEBUG] Polled restart count: 6 (before was 6)
+[2025-09-29T05:30:09.401+0000] {docker.py:438} INFO - 🔍 [DEBUG] _get_restart_count() called for pod=post-storage-mongodb-d5f69c6b6-7ftvd, ns=default, container=post-storage-mongodb
+[2025-09-29T05:30:09.401+0000] {docker.py:438} INFO -    [DEBUG] Found 3 container_status entries
+[2025-09-29T05:30:09.401+0000] {docker.py:438} INFO -    [DEBUG] container: istio-proxy, restart_count: 0
+[2025-09-29T05:30:09.401+0000] {docker.py:438} INFO -    [DEBUG] container: mongodb-exporter, restart_count: 0
+[2025-09-29T05:30:09.401+0000] {docker.py:438} INFO -    [DEBUG] container: post-storage-mongodb, restart_count: 6
+[2025-09-29T05:30:09.401+0000] {docker.py:438} INFO -    ✅ [DEBUG] Matched container post-storage-mongodb, restart_count=6
+[2025-09-29T05:30:09.402+0000] {docker.py:438} INFO -    [DEBUG] Polled restart count: 6 (before was 6)
+[2025-09-29T05:30:09.402+0000] {docker.py:438} INFO - 🔍 [DEBUG] _get_restart_count() called for pod=post-storage-mongodb-d5f69c6b6-7ftvd, ns=default, container=post-storage-mongodb
+[2025-09-29T05:30:09.402+0000] {docker.py:438} INFO -    [DEBUG] Found 3 container_status entries
+[2025-09-29T05:30:09.402+0000] {docker.py:438} INFO -    [DEBUG] container: istio-proxy, restart_count: 0
+[2025-09-29T05:30:09.402+0000] {docker.py:438} INFO -    [DEBUG] container: mongodb-exporter, restart_count: 0
+[2025-09-29T05:30:09.402+0000] {docker.py:438} INFO -    [DEBUG] container: post-storage-mongodb, restart_count: 6
+[2025-09-29T05:30:09.402+0000] {docker.py:438} INFO -    ✅ [DEBUG] Matched container post-storage-mongodb, restart_count=6
+[2025-09-29T05:30:09.403+0000] {docker.py:438} INFO -    [DEBUG] Polled restart count: 6 (before was 6)
+[2025-09-29T05:30:09.403+0000] {docker.py:438} INFO - 🔍 [DEBUG] _get_restart_count() called for pod=post-storage-mongodb-d5f69c6b6-7ftvd, ns=default, container=post-storage-mongodb
+[2025-09-29T05:30:09.403+0000] {docker.py:438} INFO -    [DEBUG] Found 3 container_status entries
+[2025-09-29T05:30:09.403+0000] {docker.py:438} INFO -    [DEBUG] container: istio-proxy, restart_count: 0
+[2025-09-29T05:30:09.403+0000] {docker.py:438} INFO -    [DEBUG] container: mongodb-exporter, restart_count: 0
+[2025-09-29T05:30:09.403+0000] {docker.py:438} INFO -    [DEBUG] container: post-storage-mongodb, restart_count: 6
+[2025-09-29T05:30:09.404+0000] {docker.py:438} INFO -    ✅ [DEBUG] Matched container post-storage-mongodb, restart_count=6
+[2025-09-29T05:30:09.404+0000] {docker.py:438} INFO -    [DEBUG] Polled restart count: 6 (before was 6)
+[2025-09-29T05:30:09.404+0000] {docker.py:438} INFO - 🔍 [DEBUG] _get_restart_count() called for pod=post-storage-mongodb-d5f69c6b6-7ftvd, ns=default, container=post-storage-mongodb
+[2025-09-29T05:30:09.404+0000] {docker.py:438} INFO -    [DEBUG] Found 3 container_status entries
+[2025-09-29T05:30:09.404+0000] {docker.py:438} INFO -    [DEBUG] container: istio-proxy, restart_count: 0
+[2025-09-29T05:30:09.404+0000] {docker.py:438} INFO -    [DEBUG] container: mongodb-exporter, restart_count: 0
+[2025-09-29T05:30:09.404+0000] {docker.py:438} INFO -    [DEBUG] container: post-storage-mongodb, restart_count: 6
+[2025-09-29T05:30:09.405+0000] {docker.py:438} INFO -    ✅ [DEBUG] Matched container post-storage-mongodb, restart_count=6
+[2025-09-29T05:30:09.405+0000] {docker.py:438} INFO -    [DEBUG] Polled restart count: 6 (before was 6)
+[2025-09-29T05:30:09.405+0000] {docker.py:438} INFO - 🔍 [DEBUG] _get_restart_count() called for pod=post-storage-mongodb-d5f69c6b6-7ftvd, ns=default, container=post-storage-mongodb
+[2025-09-29T05:30:09.405+0000] {docker.py:438} INFO -    [DEBUG] Found 3 container_status entries
+[2025-09-29T05:30:09.405+0000] {docker.py:438} INFO -    [DEBUG] container: istio-proxy, restart_count: 0
+[2025-09-29T05:30:09.405+0000] {docker.py:438} INFO -    [DEBUG] container: mongodb-exporter, restart_count: 0
+[2025-09-29T05:30:09.406+0000] {docker.py:438} INFO -    [DEBUG] container: post-storage-mongodb, restart_count: 6
+[2025-09-29T05:30:09.406+0000] {docker.py:438} INFO -    ✅ [DEBUG] Matched container post-storage-mongodb, restart_count=6
+[2025-09-29T05:30:09.406+0000] {docker.py:438} INFO -    [DEBUG] Polled restart count: 6 (before was 6)
+[2025-09-29T05:30:48.191+0000] {docker.py:438} INFO - 🔍 [DEBUG] _get_restart_count() called for pod=post-storage-mongodb-d5f69c6b6-7ftvd, ns=default, container=post-storage-mongodb
+[2025-09-29T05:30:48.193+0000] {docker.py:438} INFO -    [DEBUG] Found 3 container_status entries
+[2025-09-29T05:30:48.193+0000] {docker.py:438} INFO -    [DEBUG] container: istio-proxy, restart_count: 0
+[2025-09-29T05:30:48.193+0000] {docker.py:438} INFO -    [DEBUG] container: mongodb-exporter, restart_count: 0
+[2025-09-29T05:30:48.193+0000] {docker.py:438} INFO -    [DEBUG] container: post-storage-mongodb, restart_count: 6
+[2025-09-29T05:30:48.194+0000] {docker.py:438} INFO -    ✅ [DEBUG] Matched container post-storage-mongodb, restart_count=6
+[2025-09-29T05:30:48.194+0000] {docker.py:438} INFO -    [DEBUG] Polled restart count: 6 (before was 6)
+[2025-09-29T05:30:48.194+0000] {docker.py:438} INFO - 🔍 [DEBUG] _get_restart_count() called for pod=post-storage-mongodb-d5f69c6b6-7ftvd, ns=default, container=post-storage-mongodb
+[2025-09-29T05:30:48.194+0000] {docker.py:438} INFO -    [DEBUG] Found 3 container_status entries
+[2025-09-29T05:30:48.194+0000] {docker.py:438} INFO -    [DEBUG] container: istio-proxy, restart_count: 0
+[2025-09-29T05:30:48.195+0000] {docker.py:438} INFO -    [DEBUG] container: mongodb-exporter, restart_count: 0
+[2025-09-29T05:30:48.195+0000] {docker.py:438} INFO -    [DEBUG] container: post-storage-mongodb, restart_count: 6
+[2025-09-29T05:30:48.195+0000] {docker.py:438} INFO -    ✅ [DEBUG] Matched container post-storage-mongodb, restart_count=6
+[2025-09-29T05:30:48.195+0000] {docker.py:438} INFO -    [DEBUG] Polled restart count: 6 (before was 6)
+[2025-09-29T05:30:48.195+0000] {docker.py:438} INFO - 🔍 [DEBUG] _get_restart_count() called for pod=post-storage-mongodb-d5f69c6b6-7ftvd, ns=default, container=post-storage-mongodb
+[2025-09-29T05:30:48.195+0000] {docker.py:438} INFO -    [DEBUG] Found 3 container_status entries
+[2025-09-29T05:30:48.196+0000] {docker.py:438} INFO -    [DEBUG] container: istio-proxy, restart_count: 0
+[2025-09-29T05:30:48.196+0000] {docker.py:438} INFO -    [DEBUG] container: mongodb-exporter, restart_count: 0
+[2025-09-29T05:30:48.196+0000] {docker.py:438} INFO -    [DEBUG] container: post-storage-mongodb, restart_count: 6
+[2025-09-29T05:30:48.196+0000] {docker.py:438} INFO -    ✅ [DEBUG] Matched container post-storage-mongodb, restart_count=6
+[2025-09-29T05:30:48.196+0000] {docker.py:438} INFO -    [DEBUG] Polled restart count: 6 (before was 6)
+[2025-09-29T05:30:48.197+0000] {docker.py:438} INFO - 🔍 [DEBUG] _get_restart_count() called for pod=post-storage-mongodb-d5f69c6b6-7ftvd, ns=default, container=post-storage-mongodb
+[2025-09-29T05:30:48.197+0000] {docker.py:438} INFO -    [DEBUG] Found 3 container_status entries
+[2025-09-29T05:30:48.197+0000] {docker.py:438} INFO -    [DEBUG] container: istio-proxy, restart_count: 0
+[2025-09-29T05:30:48.197+0000] {docker.py:438} INFO -    [DEBUG] container: mongodb-exporter, restart_count: 0
+[2025-09-29T05:30:48.197+0000] {docker.py:438} INFO -    [DEBUG] container: post-storage-mongodb, restart_count: 7
+[2025-09-29T05:30:48.198+0000] {docker.py:438} INFO -    ✅ [DEBUG] Matched container post-storage-mongodb, restart_count=7
+[2025-09-29T05:30:48.198+0000] {docker.py:438} INFO -    [DEBUG] Polled restart count: 7 (before was 6)
+[2025-09-29T05:30:48.198+0000] {docker.py:438} INFO -    ✅ [DEBUG] Restart observed: 6 -> 7
+[2025-09-29T05:30:48.198+0000] {docker.py:438} INFO -    🎉 [DEBUG] Restart verified, breaking out of strategies loop
+[2025-09-29T05:30:48.199+0000] {docker.py:438} INFO - 🔍 [DEBUG] _get_restart_count() called for pod=post-storage-mongodb-d5f69c6b6-7ftvd, ns=default, container=post-storage-mongodb
+[2025-09-29T05:30:48.199+0000] {docker.py:438} INFO -    [DEBUG] Found 3 container_status entries
+[2025-09-29T05:30:48.199+0000] {docker.py:438} INFO -    [DEBUG] container: istio-proxy, restart_count: 0
+[2025-09-29T05:30:48.199+0000] {docker.py:438} INFO -    [DEBUG] container: mongodb-exporter, restart_count: 0
+[2025-09-29T05:30:48.199+0000] {docker.py:438} INFO -    [DEBUG] container: post-storage-mongodb, restart_count: 7
+[2025-09-29T05:30:48.199+0000] {docker.py:438} INFO -    ✅ [DEBUG] Matched container post-storage-mongodb, restart_count=7
+[2025-09-29T05:30:48.200+0000] {docker.py:438} INFO - ✅ [DEBUG] Restart recorded for post-storage-mongodb-d5f69c6b6-7ftvd: 6 -> 7
+[2025-09-29T05:30:48.200+0000] {docker.py:438} INFO - 
+[2025-09-29T05:30:48.200+0000] {docker.py:438} INFO - 🏁 [DEBUG] restart_containers() finished. Processed 1 pods
+[2025-09-29T05:30:48.200+0000] {docker.py:438} INFO -    [DEBUG] restart_containers returned 1 entries
+[2025-09-29T05:30:48.200+0000] {docker.py:438} INFO - ✅ [DEBUG] Successfully restarted this cycle: 1
+[2025-09-29T05:30:48.200+0000] {docker.py:438} INFO -    📦 [DEBUG] post-storage-mongodb-d5f69c6b6-7ftvd: restart_verified
+[2025-09-29T05:30:48.201+0000] {docker.py:438} INFO - ⏳ [DEBUG] Waiting 5 seconds until next cycle. Time remaining: 125s
+[2025-09-29T05:30:48.201+0000] {docker.py:438} INFO - 
+[2025-09-29T05:30:48.201+0000] {docker.py:438} INFO - ============================================================
+[2025-09-29T05:30:48.201+0000] {docker.py:438} INFO - 🔄 [DEBUG] Container Restart Cycle #4 at 2025-09-29 05:30:24
+[2025-09-29T05:30:48.201+0000] {docker.py:438} INFO - ============================================================
+[2025-09-29T05:30:48.202+0000] {docker.py:438} INFO - 🔄 [DEBUG] Entered restart_containers()
+[2025-09-29T05:30:48.202+0000] {docker.py:438} INFO -    Params => label_selector=app=post-storage-mongodb, name_pattern=None, qty=2, rand=True, mode=fixed, ns=default, order=alphabetic, container_name=post-storage-mongodb, restart_command=None
+[2025-09-29T05:30:48.202+0000] {docker.py:438} INFO - 🔑 [DEBUG] Kubernetes API client created
+[2025-09-29T05:30:48.202+0000] {docker.py:438} INFO - 🔍 [DEBUG] Selecting pods now...
+[2025-09-29T05:30:48.202+0000] {docker.py:438} INFO - 🔍 [DEBUG] Entered _select_pods()
+[2025-09-29T05:30:48.202+0000] {docker.py:438} INFO -    Params => label_selector=app=post-storage-mongodb, name_pattern=None, all=False, rand=True, mode=fixed, qty=2, ns=default, order=alphabetic
+[2025-09-29T05:30:48.203+0000] {docker.py:438} INFO -    [DEBUG] Listing pods with label_selector=app=post-storage-mongodb
+[2025-09-29T05:30:48.203+0000] {docker.py:438} INFO - 📋 [DEBUG] Found 1 pods initially
+[2025-09-29T05:30:48.203+0000] {docker.py:438} INFO - 🎲 [DEBUG] Random selection chosen: 1 pods
+[2025-09-29T05:30:48.203+0000] {docker.py:438} INFO - ✅ [DEBUG] Selected pods: ['post-storage-mongodb-d5f69c6b6-7ftvd']
+[2025-09-29T05:30:48.203+0000] {docker.py:438} INFO - 📋 [DEBUG] Pods selected: 1
+[2025-09-29T05:30:48.204+0000] {docker.py:438} INFO - 
+[2025-09-29T05:30:48.204+0000] {docker.py:438} INFO - 🎯 [DEBUG] Processing pod: post-storage-mongodb-d5f69c6b6-7ftvd
+[2025-09-29T05:30:48.204+0000] {docker.py:438} INFO - 📦 [DEBUG] Using provided container: post-storage-mongodb
+[2025-09-29T05:30:48.204+0000] {docker.py:438} INFO - 🔍 [DEBUG] _get_restart_count() called for pod=post-storage-mongodb-d5f69c6b6-7ftvd, ns=default, container=post-storage-mongodb
+[2025-09-29T05:30:48.204+0000] {docker.py:438} INFO -    [DEBUG] Found 3 container_status entries
+[2025-09-29T05:30:48.204+0000] {docker.py:438} INFO -    [DEBUG] container: istio-proxy, restart_count: 0
+[2025-09-29T05:30:48.204+0000] {docker.py:438} INFO -    [DEBUG] container: mongodb-exporter, restart_count: 0
+[2025-09-29T05:30:48.205+0000] {docker.py:438} INFO -    [DEBUG] container: post-storage-mongodb, restart_count: 7
+[2025-09-29T05:30:48.205+0000] {docker.py:438} INFO -    ✅ [DEBUG] Matched container post-storage-mongodb, restart_count=7
+[2025-09-29T05:30:48.205+0000] {docker.py:438} INFO - 📊 [DEBUG] Restart count before action: 7
+[2025-09-29T05:30:48.205+0000] {docker.py:438} INFO - 🔧 [DEBUG] Restart strategies to try: [['sh', '-c', 'kill -INT 1'], ['sh', '-c', 'kill -2 1'], ['sh', '-c', 'kill -TERM 1'], ['sh', '-c', 'kill -9 1']]
+[2025-09-29T05:30:48.205+0000] {docker.py:438} INFO - ➡️ [DEBUG] Trying restart strategy #1: sh -c kill -INT 1
+[2025-09-29T05:30:48.205+0000] {docker.py:438} INFO -    [DEBUG] Exec stream opened successfully, running command...
+[2025-09-29T05:30:48.205+0000] {docker.py:438} INFO -    [DEBUG] run_forever returned/finished
+[2025-09-29T05:30:48.206+0000] {docker.py:438} INFO -    📤 [DEBUG] STDOUT (truncated): 
+[2025-09-29T05:30:48.206+0000] {docker.py:438} INFO -    📤 [DEBUG] STDERR (truncated): 
+[2025-09-29T05:30:48.206+0000] {docker.py:438} INFO -    📤 [DEBUG] CTRL_ERR: {"metadata":{},"status":"Success"}
+[2025-09-29T05:30:48.206+0000] {docker.py:438} INFO -    ⏳ [DEBUG] Waiting up to 60s for restart count to increment...
+[2025-09-29T05:30:48.206+0000] {docker.py:438} INFO - 🔍 [DEBUG] _get_restart_count() called for pod=post-storage-mongodb-d5f69c6b6-7ftvd, ns=default, container=post-storage-mongodb
+[2025-09-29T05:30:48.206+0000] {docker.py:438} INFO -    [DEBUG] Found 3 container_status entries
+[2025-09-29T05:30:48.206+0000] {docker.py:438} INFO -    [DEBUG] container: istio-proxy, restart_count: 0
+[2025-09-29T05:30:48.207+0000] {docker.py:438} INFO -    [DEBUG] container: mongodb-exporter, restart_count: 0
+[2025-09-29T05:30:48.207+0000] {docker.py:438} INFO -    [DEBUG] container: post-storage-mongodb, restart_count: 7
+[2025-09-29T05:30:48.207+0000] {docker.py:438} INFO -    ✅ [DEBUG] Matched container post-storage-mongodb, restart_count=7
+[2025-09-29T05:30:48.207+0000] {docker.py:438} INFO -    [DEBUG] Polled restart count: 7 (before was 7)
+[2025-09-29T05:30:48.207+0000] {docker.py:438} INFO - 🔍 [DEBUG] _get_restart_count() called for pod=post-storage-mongodb-d5f69c6b6-7ftvd, ns=default, container=post-storage-mongodb
+[2025-09-29T05:30:48.207+0000] {docker.py:438} INFO -    [DEBUG] Found 3 container_status entries
+[2025-09-29T05:30:48.208+0000] {docker.py:438} INFO -    [DEBUG] container: istio-proxy, restart_count: 0
+[2025-09-29T05:30:48.208+0000] {docker.py:438} INFO -    [DEBUG] container: mongodb-exporter, restart_count: 0
+[2025-09-29T05:30:48.208+0000] {docker.py:438} INFO -    [DEBUG] container: post-storage-mongodb, restart_count: 7
+[2025-09-29T05:30:48.208+0000] {docker.py:438} INFO -    ✅ [DEBUG] Matched container post-storage-mongodb, restart_count=7
+[2025-09-29T05:30:48.208+0000] {docker.py:438} INFO -    [DEBUG] Polled restart count: 7 (before was 7)
+[2025-09-29T05:30:48.209+0000] {docker.py:438} INFO - 🔍 [DEBUG] _get_restart_count() called for pod=post-storage-mongodb-d5f69c6b6-7ftvd, ns=default, container=post-storage-mongodb
+[2025-09-29T05:30:48.209+0000] {docker.py:438} INFO -    [DEBUG] Found 3 container_status entries
+[2025-09-29T05:30:48.209+0000] {docker.py:438} INFO -    [DEBUG] container: istio-proxy, restart_count: 0
+[2025-09-29T05:30:48.209+0000] {docker.py:438} INFO -    [DEBUG] container: mongodb-exporter, restart_count: 0
+[2025-09-29T05:30:48.209+0000] {docker.py:438} INFO -    [DEBUG] container: post-storage-mongodb, restart_count: 7
+[2025-09-29T05:30:48.209+0000] {docker.py:438} INFO -    ✅ [DEBUG] Matched container post-storage-mongodb, restart_count=7
+[2025-09-29T05:30:48.209+0000] {docker.py:438} INFO -    [DEBUG] Polled restart count: 7 (before was 7)
+[2025-09-29T05:30:48.209+0000] {docker.py:438} INFO - 🔍 [DEBUG] _get_restart_count() called for pod=post-storage-mongodb-d5f69c6b6-7ftvd, ns=default, container=post-storage-mongodb
+[2025-09-29T05:30:48.210+0000] {docker.py:438} INFO -    [DEBUG] Found 3 container_status entries
+[2025-09-29T05:30:48.210+0000] {docker.py:438} INFO -    [DEBUG] container: istio-proxy, restart_count: 0
+[2025-09-29T05:30:48.210+0000] {docker.py:438} INFO -    [DEBUG] container: mongodb-exporter, restart_count: 0
+[2025-09-29T05:30:48.210+0000] {docker.py:438} INFO -    [DEBUG] container: post-storage-mongodb, restart_count: 7
+[2025-09-29T05:30:48.210+0000] {docker.py:438} INFO -    ✅ [DEBUG] Matched container post-storage-mongodb, restart_count=7
+[2025-09-29T05:30:48.210+0000] {docker.py:438} INFO -    [DEBUG] Polled restart count: 7 (before was 7)
+[2025-09-29T05:30:48.210+0000] {docker.py:438} INFO - 🔍 [DEBUG] _get_restart_count() called for pod=post-storage-mongodb-d5f69c6b6-7ftvd, ns=default, container=post-storage-mongodb
+[2025-09-29T05:30:48.211+0000] {docker.py:438} INFO -    [DEBUG] Found 3 container_status entries
+[2025-09-29T05:30:48.211+0000] {docker.py:438} INFO -    [DEBUG] container: istio-proxy, restart_count: 0
+[2025-09-29T05:30:48.211+0000] {docker.py:438} INFO -    [DEBUG] container: mongodb-exporter, restart_count: 0
+[2025-09-29T05:30:48.211+0000] {docker.py:438} INFO -    [DEBUG] container: post-storage-mongodb, restart_count: 7
+[2025-09-29T05:30:48.211+0000] {docker.py:438} INFO -    ✅ [DEBUG] Matched container post-storage-mongodb, restart_count=7
+[2025-09-29T05:30:48.211+0000] {docker.py:438} INFO -    [DEBUG] Polled restart count: 7 (before was 7)
+[2025-09-29T05:30:48.211+0000] {docker.py:438} INFO - 🔍 [DEBUG] _get_restart_count() called for pod=post-storage-mongodb-d5f69c6b6-7ftvd, ns=default, container=post-storage-mongodb
+[2025-09-29T05:30:48.212+0000] {docker.py:438} INFO -    [DEBUG] Found 3 container_status entries
+[2025-09-29T05:30:48.212+0000] {docker.py:438} INFO -    [DEBUG] container: istio-proxy, restart_count: 0
+[2025-09-29T05:30:48.212+0000] {docker.py:438} INFO -    [DEBUG] container: mongodb-exporter, restart_count: 0
+[2025-09-29T05:30:48.212+0000] {docker.py:438} INFO -    [DEBUG] container: post-storage-mongodb, restart_count: 7
+[2025-09-29T05:30:48.212+0000] {docker.py:438} INFO -    ✅ [DEBUG] Matched container post-storage-mongodb, restart_count=7
+[2025-09-29T05:30:48.212+0000] {docker.py:438} INFO -    [DEBUG] Polled restart count: 7 (before was 7)
+[2025-09-29T05:30:48.212+0000] {docker.py:438} INFO - 🔍 [DEBUG] _get_restart_count() called for pod=post-storage-mongodb-d5f69c6b6-7ftvd, ns=default, container=post-storage-mongodb
+[2025-09-29T05:30:48.213+0000] {docker.py:438} INFO -    [DEBUG] Found 3 container_status entries
+[2025-09-29T05:30:48.213+0000] {docker.py:438} INFO -    [DEBUG] container: istio-proxy, restart_count: 0
+[2025-09-29T05:30:48.213+0000] {docker.py:438} INFO -    [DEBUG] container: mongodb-exporter, restart_count: 0
+[2025-09-29T05:30:48.213+0000] {docker.py:438} INFO -    [DEBUG] container: post-storage-mongodb, restart_count: 7
+[2025-09-29T05:30:48.213+0000] {docker.py:438} INFO -    ✅ [DEBUG] Matched container post-storage-mongodb, restart_count=7
+[2025-09-29T05:30:48.213+0000] {docker.py:438} INFO -    [DEBUG] Polled restart count: 7 (before was 7)
+[2025-09-29T05:30:48.214+0000] {docker.py:438} INFO - 🔍 [DEBUG] _get_restart_count() called for pod=post-storage-mongodb-d5f69c6b6-7ftvd, ns=default, container=post-storage-mongodb
+[2025-09-29T05:30:48.214+0000] {docker.py:438} INFO -    [DEBUG] Found 3 container_status entries
+[2025-09-29T05:31:28.127+0000] {docker.py:438} INFO - [DEBUG] container: istio-proxy, restart_count: 0
+[2025-09-29T05:31:28.129+0000] {docker.py:438} INFO -    [DEBUG] container: mongodb-exporter, restart_count: 0
+[2025-09-29T05:31:28.129+0000] {docker.py:438} INFO -    [DEBUG] container: post-storage-mongodb, restart_count: 7
+[2025-09-29T05:31:28.129+0000] {docker.py:438} INFO -    ✅ [DEBUG] Matched container post-storage-mongodb, restart_count=7
+[2025-09-29T05:31:28.129+0000] {docker.py:438} INFO -    [DEBUG] Polled restart count: 7 (before was 7)
+[2025-09-29T05:31:28.129+0000] {docker.py:438} INFO - 🔍 [DEBUG] _get_restart_count() called for pod=post-storage-mongodb-d5f69c6b6-7ftvd, ns=default, container=post-storage-mongodb
+[2025-09-29T05:31:28.130+0000] {docker.py:438} INFO -    [DEBUG] Found 3 container_status entries
+[2025-09-29T05:31:28.130+0000] {docker.py:438} INFO -    [DEBUG] container: istio-proxy, restart_count: 0
+[2025-09-29T05:31:28.130+0000] {docker.py:438} INFO -    [DEBUG] container: mongodb-exporter, restart_count: 0
+[2025-09-29T05:31:28.130+0000] {docker.py:438} INFO -    [DEBUG] container: post-storage-mongodb, restart_count: 7
+[2025-09-29T05:31:28.130+0000] {docker.py:438} INFO -    ✅ [DEBUG] Matched container post-storage-mongodb, restart_count=7
+[2025-09-29T05:31:28.130+0000] {docker.py:438} INFO -    [DEBUG] Polled restart count: 7 (before was 7)
+[2025-09-29T05:31:28.130+0000] {docker.py:438} INFO - 🔍 [DEBUG] _get_restart_count() called for pod=post-storage-mongodb-d5f69c6b6-7ftvd, ns=default, container=post-storage-mongodb
+[2025-09-29T05:31:28.131+0000] {docker.py:438} INFO -    [DEBUG] Found 3 container_status entries
+[2025-09-29T05:31:28.131+0000] {docker.py:438} INFO -    [DEBUG] container: istio-proxy, restart_count: 0
+[2025-09-29T05:31:28.131+0000] {docker.py:438} INFO -    [DEBUG] container: mongodb-exporter, restart_count: 0
+[2025-09-29T05:31:28.131+0000] {docker.py:438} INFO -    [DEBUG] container: post-storage-mongodb, restart_count: 7
+[2025-09-29T05:31:28.131+0000] {docker.py:438} INFO -    ✅ [DEBUG] Matched container post-storage-mongodb, restart_count=7
+[2025-09-29T05:31:28.131+0000] {docker.py:438} INFO -    [DEBUG] Polled restart count: 7 (before was 7)
+[2025-09-29T05:31:28.131+0000] {docker.py:438} INFO - 🔍 [DEBUG] _get_restart_count() called for pod=post-storage-mongodb-d5f69c6b6-7ftvd, ns=default, container=post-storage-mongodb
+[2025-09-29T05:31:28.132+0000] {docker.py:438} INFO -    [DEBUG] Found 3 container_status entries
+[2025-09-29T05:31:28.132+0000] {docker.py:438} INFO -    [DEBUG] container: istio-proxy, restart_count: 0
+[2025-09-29T05:31:28.132+0000] {docker.py:438} INFO -    [DEBUG] container: mongodb-exporter, restart_count: 0
+[2025-09-29T05:31:28.132+0000] {docker.py:438} INFO -    [DEBUG] container: post-storage-mongodb, restart_count: 7
+[2025-09-29T05:31:28.132+0000] {docker.py:438} INFO -    ✅ [DEBUG] Matched container post-storage-mongodb, restart_count=7
+[2025-09-29T05:31:28.132+0000] {docker.py:438} INFO -    [DEBUG] Polled restart count: 7 (before was 7)
+[2025-09-29T05:31:28.132+0000] {docker.py:438} INFO - 🔍 [DEBUG] _get_restart_count() called for pod=post-storage-mongodb-d5f69c6b6-7ftvd, ns=default, container=post-storage-mongodb
+[2025-09-29T05:31:28.133+0000] {docker.py:438} INFO -    [DEBUG] Found 3 container_status entries
+[2025-09-29T05:31:28.133+0000] {docker.py:438} INFO -    [DEBUG] container: istio-proxy, restart_count: 0
+[2025-09-29T05:31:28.133+0000] {docker.py:438} INFO -    [DEBUG] container: mongodb-exporter, restart_count: 0
+[2025-09-29T05:31:28.133+0000] {docker.py:438} INFO -    [DEBUG] container: post-storage-mongodb, restart_count: 7
+[2025-09-29T05:31:28.133+0000] {docker.py:438} INFO -    ✅ [DEBUG] Matched container post-storage-mongodb, restart_count=7
+[2025-09-29T05:31:28.133+0000] {docker.py:438} INFO -    [DEBUG] Polled restart count: 7 (before was 7)
+[2025-09-29T05:31:28.134+0000] {docker.py:438} INFO - 🔍 [DEBUG] _get_restart_count() called for pod=post-storage-mongodb-d5f69c6b6-7ftvd, ns=default, container=post-storage-mongodb
+[2025-09-29T05:31:28.134+0000] {docker.py:438} INFO -    [DEBUG] Found 3 container_status entries
+[2025-09-29T05:31:28.134+0000] {docker.py:438} INFO -    [DEBUG] container: istio-proxy, restart_count: 0
+[2025-09-29T05:31:28.134+0000] {docker.py:438} INFO -    [DEBUG] container: mongodb-exporter, restart_count: 0
+[2025-09-29T05:31:28.134+0000] {docker.py:438} INFO -    [DEBUG] container: post-storage-mongodb, restart_count: 7
+[2025-09-29T05:31:28.134+0000] {docker.py:438} INFO -    ✅ [DEBUG] Matched container post-storage-mongodb, restart_count=7
+[2025-09-29T05:31:28.134+0000] {docker.py:438} INFO -    [DEBUG] Polled restart count: 7 (before was 7)
+[2025-09-29T05:31:28.134+0000] {docker.py:438} INFO - 🔍 [DEBUG] _get_restart_count() called for pod=post-storage-mongodb-d5f69c6b6-7ftvd, ns=default, container=post-storage-mongodb
+[2025-09-29T05:31:28.135+0000] {docker.py:438} INFO -    [DEBUG] Found 3 container_status entries
+[2025-09-29T05:31:28.135+0000] {docker.py:438} INFO -    [DEBUG] container: istio-proxy, restart_count: 0
+[2025-09-29T05:31:28.135+0000] {docker.py:438} INFO -    [DEBUG] container: mongodb-exporter, restart_count: 0
+[2025-09-29T05:31:28.135+0000] {docker.py:438} INFO -    [DEBUG] container: post-storage-mongodb, restart_count: 7
+[2025-09-29T05:31:28.136+0000] {docker.py:438} INFO -    ✅ [DEBUG] Matched container post-storage-mongodb, restart_count=7
+[2025-09-29T05:31:28.136+0000] {docker.py:438} INFO -    [DEBUG] Polled restart count: 7 (before was 7)
+[2025-09-29T05:31:28.136+0000] {docker.py:438} INFO - 🔍 [DEBUG] _get_restart_count() called for pod=post-storage-mongodb-d5f69c6b6-7ftvd, ns=default, container=post-storage-mongodb
+[2025-09-29T05:31:28.136+0000] {docker.py:438} INFO -    [DEBUG] Found 3 container_status entries
+[2025-09-29T05:31:28.136+0000] {docker.py:438} INFO -    [DEBUG] container: istio-proxy, restart_count: 0
+[2025-09-29T05:31:28.136+0000] {docker.py:438} INFO -    [DEBUG] container: mongodb-exporter, restart_count: 0
+[2025-09-29T05:31:28.137+0000] {docker.py:438} INFO -    [DEBUG] container: post-storage-mongodb, restart_count: 7
+[2025-09-29T05:31:28.137+0000] {docker.py:438} INFO -    ✅ [DEBUG] Matched container post-storage-mongodb, restart_count=7
+[2025-09-29T05:31:28.137+0000] {docker.py:438} INFO -    [DEBUG] Polled restart count: 7 (before was 7)
+[2025-09-29T05:31:28.137+0000] {docker.py:438} INFO - 🔍 [DEBUG] _get_restart_count() called for pod=post-storage-mongodb-d5f69c6b6-7ftvd, ns=default, container=post-storage-mongodb
+[2025-09-29T05:31:28.137+0000] {docker.py:438} INFO -    [DEBUG] Found 3 container_status entries
+[2025-09-29T05:31:28.137+0000] {docker.py:438} INFO -    [DEBUG] container: istio-proxy, restart_count: 0
+[2025-09-29T05:31:28.138+0000] {docker.py:438} INFO -    [DEBUG] container: mongodb-exporter, restart_count: 0
+[2025-09-29T05:31:28.138+0000] {docker.py:438} INFO -    [DEBUG] container: post-storage-mongodb, restart_count: 7
+[2025-09-29T05:31:28.138+0000] {docker.py:438} INFO -    ✅ [DEBUG] Matched container post-storage-mongodb, restart_count=7
+[2025-09-29T05:31:28.138+0000] {docker.py:438} INFO -    [DEBUG] Polled restart count: 7 (before was 7)
+[2025-09-29T05:31:28.138+0000] {docker.py:438} INFO - 🔍 [DEBUG] _get_restart_count() called for pod=post-storage-mongodb-d5f69c6b6-7ftvd, ns=default, container=post-storage-mongodb
+[2025-09-29T05:31:28.139+0000] {docker.py:438} INFO -    [DEBUG] Found 3 container_status entries
+[2025-09-29T05:31:28.139+0000] {docker.py:438} INFO -    [DEBUG] container: istio-proxy, restart_count: 0
+[2025-09-29T05:31:28.139+0000] {docker.py:438} INFO -    [DEBUG] container: mongodb-exporter, restart_count: 0
+[2025-09-29T05:31:28.139+0000] {docker.py:438} INFO -    [DEBUG] container: post-storage-mongodb, restart_count: 7
+[2025-09-29T05:31:28.140+0000] {docker.py:438} INFO -    ✅ [DEBUG] Matched container post-storage-mongodb, restart_count=7
+[2025-09-29T05:31:28.140+0000] {docker.py:438} INFO -    [DEBUG] Polled restart count: 7 (before was 7)
+[2025-09-29T05:31:28.140+0000] {docker.py:438} INFO - 🔍 [DEBUG] _get_restart_count() called for pod=post-storage-mongodb-d5f69c6b6-7ftvd, ns=default, container=post-storage-mongodb
+[2025-09-29T05:31:28.140+0000] {docker.py:438} INFO -    [DEBUG] Found 3 container_status entries
+[2025-09-29T05:31:28.141+0000] {docker.py:438} INFO -    [DEBUG] container: istio-proxy, restart_count: 0
+[2025-09-29T05:31:28.141+0000] {docker.py:438} INFO -    [DEBUG] container: mongodb-exporter, restart_count: 0
+[2025-09-29T05:31:28.142+0000] {docker.py:438} INFO -    [DEBUG] container: post-storage-mongodb, restart_count: 7
+[2025-09-29T05:31:28.142+0000] {docker.py:438} INFO -    ✅ [DEBUG] Matched container post-storage-mongodb, restart_count=7
+[2025-09-29T05:31:28.142+0000] {docker.py:438} INFO -    [DEBUG] Polled restart count: 7 (before was 7)
+[2025-09-29T05:31:28.142+0000] {docker.py:438} INFO - 🔍 [DEBUG] _get_restart_count() called for pod=post-storage-mongodb-d5f69c6b6-7ftvd, ns=default, container=post-storage-mongodb
+[2025-09-29T05:31:28.142+0000] {docker.py:438} INFO -    [DEBUG] Found 3 container_status entries
+[2025-09-29T05:31:28.142+0000] {docker.py:438} INFO -    [DEBUG] container: istio-proxy, restart_count: 0
+[2025-09-29T05:31:28.143+0000] {docker.py:438} INFO -    [DEBUG] container: mongodb-exporter, restart_count: 0
+[2025-09-29T05:31:28.143+0000] {docker.py:438} INFO -    [DEBUG] container: post-storage-mongodb, restart_count: 7
+[2025-09-29T05:31:28.143+0000] {docker.py:438} INFO -    ✅ [DEBUG] Matched container post-storage-mongodb, restart_count=7
+[2025-09-29T05:31:28.143+0000] {docker.py:438} INFO -    [DEBUG] Polled restart count: 7 (before was 7)
+[2025-09-29T05:31:28.143+0000] {docker.py:438} INFO - 🔍 [DEBUG] _get_restart_count() called for pod=post-storage-mongodb-d5f69c6b6-7ftvd, ns=default, container=post-storage-mongodb
+[2025-09-29T05:31:28.143+0000] {docker.py:438} INFO -    [DEBUG] Found 3 container_status entries
+[2025-09-29T05:31:28.144+0000] {docker.py:438} INFO -    [DEBUG] container: istio-proxy, restart_count: 0
+[2025-09-29T05:31:28.144+0000] {docker.py:438} INFO -    [DEBUG] container: mongodb-exporter, restart_count: 0
+[2025-09-29T05:31:28.144+0000] {docker.py:438} INFO -    [DEBUG] container: post-storage-mongodb, restart_count: 7
+[2025-09-29T05:31:28.144+0000] {docker.py:438} INFO -    ✅ [DEBUG] Matched container post-storage-mongodb, restart_count=7
+[2025-09-29T05:31:28.144+0000] {docker.py:438} INFO -    [DEBUG] Polled restart count: 7 (before was 7)
+[2025-09-29T05:31:28.144+0000] {docker.py:438} INFO - 🔍 [DEBUG] _get_restart_count() called for pod=post-storage-mongodb-d5f69c6b6-7ftvd, ns=default, container=post-storage-mongodb
+[2025-09-29T05:31:28.144+0000] {docker.py:438} INFO -    [DEBUG] Found 3 container_status entries
+[2025-09-29T05:31:28.145+0000] {docker.py:438} INFO -    [DEBUG] container: istio-proxy, restart_count: 0
+[2025-09-29T05:31:28.145+0000] {docker.py:438} INFO -    [DEBUG] container: mongodb-exporter, restart_count: 0
+[2025-09-29T05:31:28.145+0000] {docker.py:438} INFO -    [DEBUG] container: post-storage-mongodb, restart_count: 8
+[2025-09-29T05:31:28.145+0000] {docker.py:438} INFO -    ✅ [DEBUG] Matched container post-storage-mongodb, restart_count=8
+[2025-09-29T05:31:28.145+0000] {docker.py:438} INFO -    [DEBUG] Polled restart count: 8 (before was 7)
+[2025-09-29T05:31:28.145+0000] {docker.py:438} INFO -    ✅ [DEBUG] Restart observed: 7 -> 8
+[2025-09-29T05:31:28.145+0000] {docker.py:438} INFO -    🎉 [DEBUG] Restart verified, breaking out of strategies loop
+[2025-09-29T05:31:28.146+0000] {docker.py:438} INFO - 🔍 [DEBUG] _get_restart_count() called for pod=post-storage-mongodb-d5f69c6b6-7ftvd, ns=default, container=post-storage-mongodb
+[2025-09-29T05:31:28.146+0000] {docker.py:438} INFO -    [DEBUG] Found 3 container_status entries
+[2025-09-29T05:31:28.146+0000] {docker.py:438} INFO -    [DEBUG] container: istio-proxy, restart_count: 0
+[2025-09-29T05:31:28.146+0000] {docker.py:438} INFO -    [DEBUG] container: mongodb-exporter, restart_count: 0
+[2025-09-29T05:31:28.146+0000] {docker.py:438} INFO -    [DEBUG] container: post-storage-mongodb, restart_count: 8
+[2025-09-29T05:31:28.146+0000] {docker.py:438} INFO -    ✅ [DEBUG] Matched container post-storage-mongodb, restart_count=8
+[2025-09-29T05:31:28.146+0000] {docker.py:438} INFO - ✅ [DEBUG] Restart recorded for post-storage-mongodb-d5f69c6b6-7ftvd: 7 -> 8
+[2025-09-29T05:31:28.147+0000] {docker.py:438} INFO - 
+[2025-09-29T05:31:28.147+0000] {docker.py:438} INFO - 🏁 [DEBUG] restart_containers() finished. Processed 1 pods
+[2025-09-29T05:31:28.147+0000] {docker.py:438} INFO -    [DEBUG] restart_containers returned 1 entries
+[2025-09-29T05:31:28.147+0000] {docker.py:438} INFO - ✅ [DEBUG] Successfully restarted this cycle: 1
+[2025-09-29T05:31:28.147+0000] {docker.py:438} INFO -    📦 [DEBUG] post-storage-mongodb-d5f69c6b6-7ftvd: restart_verified
+[2025-09-29T05:31:28.147+0000] {docker.py:438} INFO - ⏳ [DEBUG] Waiting 5 seconds until next cycle. Time remaining: 63s
+[2025-09-29T05:31:28.147+0000] {docker.py:438} INFO - 
+[2025-09-29T05:31:28.148+0000] {docker.py:438} INFO - ============================================================
+[2025-09-29T05:31:28.148+0000] {docker.py:438} INFO - 🔄 [DEBUG] Container Restart Cycle #5 at 2025-09-29 05:31:26
+[2025-09-29T05:31:28.148+0000] {docker.py:438} INFO - ============================================================
+[2025-09-29T05:31:28.148+0000] {docker.py:438} INFO - 🔄 [DEBUG] Entered restart_containers()
+[2025-09-29T05:31:28.148+0000] {docker.py:438} INFO -    Params => label_selector=app=post-storage-mongodb, name_pattern=None, qty=2, rand=True, mode=fixed, ns=default, order=alphabetic, container_name=post-storage-mongodb, restart_command=None
+[2025-09-29T05:31:28.148+0000] {docker.py:438} INFO - 🔑 [DEBUG] Kubernetes API client created
+[2025-09-29T05:31:28.148+0000] {docker.py:438} INFO - 🔍 [DEBUG] Selecting pods now...
+[2025-09-29T05:31:28.149+0000] {docker.py:438} INFO - 🔍 [DEBUG] Entered _select_pods()
+[2025-09-29T05:31:28.149+0000] {docker.py:438} INFO -    Params => label_selector=app=post-storage-mongodb, name_pattern=None, all=False, rand=True, mode=fixed, qty=2, ns=default, order=alphabetic
+[2025-09-29T05:31:28.149+0000] {docker.py:438} INFO -    [DEBUG] Listing pods with label_selector=app=post-storage-mongodb
+[2025-09-29T05:31:28.149+0000] {docker.py:438} INFO - 📋 [DEBUG] Found 1 pods initially
+[2025-09-29T05:31:28.149+0000] {docker.py:438} INFO - 🎲 [DEBUG] Random selection chosen: 1 pods
+[2025-09-29T05:31:28.149+0000] {docker.py:438} INFO - ✅ [DEBUG] Selected pods: ['post-storage-mongodb-d5f69c6b6-7ftvd']
+[2025-09-29T05:31:28.149+0000] {docker.py:438} INFO - 📋 [DEBUG] Pods selected: 1
+[2025-09-29T05:31:28.150+0000] {docker.py:438} INFO - 
+[2025-09-29T05:31:28.150+0000] {docker.py:438} INFO - 🎯 [DEBUG] Processing pod: post-storage-mongodb-d5f69c6b6-7ftvd
+[2025-09-29T05:32:10.319+0000] {docker.py:438} INFO - 📦 [DEBUG] Using provided container: post-storage-mongodb
+[2025-09-29T05:32:10.321+0000] {docker.py:438} INFO - 🔍 [DEBUG] _get_restart_count() called for pod=post-storage-mongodb-d5f69c6b6-7ftvd, ns=default, container=post-storage-mongodb
+[2025-09-29T05:32:10.321+0000] {docker.py:438} INFO -    [DEBUG] Found 3 container_status entries
+[2025-09-29T05:32:10.322+0000] {docker.py:438} INFO -    [DEBUG] container: istio-proxy, restart_count: 0
+[2025-09-29T05:32:10.322+0000] {docker.py:438} INFO -    [DEBUG] container: mongodb-exporter, restart_count: 0
+[2025-09-29T05:32:10.322+0000] {docker.py:438} INFO -    [DEBUG] container: post-storage-mongodb, restart_count: 8
+[2025-09-29T05:32:10.323+0000] {docker.py:438} INFO -    ✅ [DEBUG] Matched container post-storage-mongodb, restart_count=8
+[2025-09-29T05:32:10.323+0000] {docker.py:438} INFO - 📊 [DEBUG] Restart count before action: 8
+[2025-09-29T05:32:10.323+0000] {docker.py:438} INFO - 🔧 [DEBUG] Restart strategies to try: [['sh', '-c', 'kill -INT 1'], ['sh', '-c', 'kill -2 1'], ['sh', '-c', 'kill -TERM 1'], ['sh', '-c', 'kill -9 1']]
+[2025-09-29T05:32:10.324+0000] {docker.py:438} INFO - ➡️ [DEBUG] Trying restart strategy #1: sh -c kill -INT 1
+[2025-09-29T05:32:10.324+0000] {docker.py:438} INFO -    [DEBUG] Exec stream opened successfully, running command...
+[2025-09-29T05:32:10.324+0000] {docker.py:438} INFO -    [DEBUG] run_forever returned/finished
+[2025-09-29T05:32:10.324+0000] {docker.py:438} INFO -    📤 [DEBUG] STDOUT (truncated): 
+[2025-09-29T05:32:10.325+0000] {docker.py:438} INFO -    📤 [DEBUG] STDERR (truncated): 
+[2025-09-29T05:32:10.325+0000] {docker.py:438} INFO -    📤 [DEBUG] CTRL_ERR: {"metadata":{},"status":"Success"}
+[2025-09-29T05:32:10.326+0000] {docker.py:438} INFO -    ⏳ [DEBUG] Waiting up to 60s for restart count to increment...
+[2025-09-29T05:32:10.326+0000] {docker.py:438} INFO - 🔍 [DEBUG] _get_restart_count() called for pod=post-storage-mongodb-d5f69c6b6-7ftvd, ns=default, container=post-storage-mongodb
+[2025-09-29T05:32:10.327+0000] {docker.py:438} INFO -    [DEBUG] Found 3 container_status entries
+[2025-09-29T05:32:10.327+0000] {docker.py:438} INFO -    [DEBUG] container: istio-proxy, restart_count: 0
+[2025-09-29T05:32:10.327+0000] {docker.py:438} INFO -    [DEBUG] container: mongodb-exporter, restart_count: 0
+[2025-09-29T05:32:10.327+0000] {docker.py:438} INFO -    [DEBUG] container: post-storage-mongodb, restart_count: 8
+[2025-09-29T05:32:10.328+0000] {docker.py:438} INFO -    ✅ [DEBUG] Matched container post-storage-mongodb, restart_count=8
+[2025-09-29T05:32:10.328+0000] {docker.py:438} INFO -    [DEBUG] Polled restart count: 8 (before was 8)
+[2025-09-29T05:32:10.329+0000] {docker.py:438} INFO - 🔍 [DEBUG] _get_restart_count() called for pod=post-storage-mongodb-d5f69c6b6-7ftvd, ns=default, container=post-storage-mongodb
+[2025-09-29T05:32:10.329+0000] {docker.py:438} INFO -    [DEBUG] Found 3 container_status entries
+[2025-09-29T05:32:10.329+0000] {docker.py:438} INFO -    [DEBUG] container: istio-proxy, restart_count: 0
+[2025-09-29T05:32:10.330+0000] {docker.py:438} INFO -    [DEBUG] container: mongodb-exporter, restart_count: 0
+[2025-09-29T05:32:10.330+0000] {docker.py:438} INFO -    [DEBUG] container: post-storage-mongodb, restart_count: 8
+[2025-09-29T05:32:10.330+0000] {docker.py:438} INFO -    ✅ [DEBUG] Matched container post-storage-mongodb, restart_count=8
+[2025-09-29T05:32:10.330+0000] {docker.py:438} INFO -    [DEBUG] Polled restart count: 8 (before was 8)
+[2025-09-29T05:32:10.331+0000] {docker.py:438} INFO - 🔍 [DEBUG] _get_restart_count() called for pod=post-storage-mongodb-d5f69c6b6-7ftvd, ns=default, container=post-storage-mongodb
+[2025-09-29T05:32:10.331+0000] {docker.py:438} INFO -    [DEBUG] Found 3 container_status entries
+[2025-09-29T05:32:10.331+0000] {docker.py:438} INFO -    [DEBUG] container: istio-proxy, restart_count: 0
+[2025-09-29T05:32:10.331+0000] {docker.py:438} INFO -    [DEBUG] container: mongodb-exporter, restart_count: 0
+[2025-09-29T05:32:10.331+0000] {docker.py:438} INFO -    [DEBUG] container: post-storage-mongodb, restart_count: 8
+[2025-09-29T05:32:10.332+0000] {docker.py:438} INFO -    ✅ [DEBUG] Matched container post-storage-mongodb, restart_count=8
+[2025-09-29T05:32:10.332+0000] {docker.py:438} INFO -    [DEBUG] Polled restart count: 8 (before was 8)
+[2025-09-29T05:32:10.332+0000] {docker.py:438} INFO - 🔍 [DEBUG] _get_restart_count() called for pod=post-storage-mongodb-d5f69c6b6-7ftvd, ns=default, container=post-storage-mongodb
+[2025-09-29T05:32:10.332+0000] {docker.py:438} INFO -    [DEBUG] Found 3 container_status entries
+[2025-09-29T05:32:10.332+0000] {docker.py:438} INFO -    [DEBUG] container: istio-proxy, restart_count: 0
+[2025-09-29T05:32:10.332+0000] {docker.py:438} INFO -    [DEBUG] container: mongodb-exporter, restart_count: 0
+[2025-09-29T05:32:10.332+0000] {docker.py:438} INFO -    [DEBUG] container: post-storage-mongodb, restart_count: 8
+[2025-09-29T05:32:10.333+0000] {docker.py:438} INFO -    ✅ [DEBUG] Matched container post-storage-mongodb, restart_count=8
+[2025-09-29T05:32:10.333+0000] {docker.py:438} INFO -    [DEBUG] Polled restart count: 8 (before was 8)
+[2025-09-29T05:32:10.333+0000] {docker.py:438} INFO - 🔍 [DEBUG] _get_restart_count() called for pod=post-storage-mongodb-d5f69c6b6-7ftvd, ns=default, container=post-storage-mongodb
+[2025-09-29T05:32:10.333+0000] {docker.py:438} INFO -    [DEBUG] Found 3 container_status entries
+[2025-09-29T05:32:10.333+0000] {docker.py:438} INFO -    [DEBUG] container: istio-proxy, restart_count: 0
+[2025-09-29T05:32:10.333+0000] {docker.py:438} INFO -    [DEBUG] container: mongodb-exporter, restart_count: 0
+[2025-09-29T05:32:10.334+0000] {docker.py:438} INFO -    [DEBUG] container: post-storage-mongodb, restart_count: 8
+[2025-09-29T05:32:10.334+0000] {docker.py:438} INFO -    ✅ [DEBUG] Matched container post-storage-mongodb, restart_count=8
+[2025-09-29T05:32:10.334+0000] {docker.py:438} INFO -    [DEBUG] Polled restart count: 8 (before was 8)
+[2025-09-29T05:32:10.334+0000] {docker.py:438} INFO - 🔍 [DEBUG] _get_restart_count() called for pod=post-storage-mongodb-d5f69c6b6-7ftvd, ns=default, container=post-storage-mongodb
+[2025-09-29T05:32:10.334+0000] {docker.py:438} INFO -    [DEBUG] Found 3 container_status entries
+[2025-09-29T05:32:10.334+0000] {docker.py:438} INFO -    [DEBUG] container: istio-proxy, restart_count: 0
+[2025-09-29T05:32:10.334+0000] {docker.py:438} INFO -    [DEBUG] container: mongodb-exporter, restart_count: 0
+[2025-09-29T05:32:10.335+0000] {docker.py:438} INFO -    [DEBUG] container: post-storage-mongodb, restart_count: 8
+[2025-09-29T05:32:10.335+0000] {docker.py:438} INFO -    ✅ [DEBUG] Matched container post-storage-mongodb, restart_count=8
+[2025-09-29T05:32:10.335+0000] {docker.py:438} INFO -    [DEBUG] Polled restart count: 8 (before was 8)
+[2025-09-29T05:32:10.335+0000] {docker.py:438} INFO - 🔍 [DEBUG] _get_restart_count() called for pod=post-storage-mongodb-d5f69c6b6-7ftvd, ns=default, container=post-storage-mongodb
+[2025-09-29T05:32:10.335+0000] {docker.py:438} INFO -    [DEBUG] Found 3 container_status entries
+[2025-09-29T05:32:10.335+0000] {docker.py:438} INFO -    [DEBUG] container: istio-proxy, restart_count: 0
+[2025-09-29T05:32:10.335+0000] {docker.py:438} INFO -    [DEBUG] container: mongodb-exporter, restart_count: 0
+[2025-09-29T05:32:10.335+0000] {docker.py:438} INFO -    [DEBUG] container: post-storage-mongodb, restart_count: 8
+[2025-09-29T05:32:10.336+0000] {docker.py:438} INFO -    ✅ [DEBUG] Matched container post-storage-mongodb, restart_count=8
+[2025-09-29T05:32:10.336+0000] {docker.py:438} INFO -    [DEBUG] Polled restart count: 8 (before was 8)
+[2025-09-29T05:32:10.336+0000] {docker.py:438} INFO - 🔍 [DEBUG] _get_restart_count() called for pod=post-storage-mongodb-d5f69c6b6-7ftvd, ns=default, container=post-storage-mongodb
+[2025-09-29T05:32:10.336+0000] {docker.py:438} INFO -    [DEBUG] Found 3 container_status entries
+[2025-09-29T05:32:10.336+0000] {docker.py:438} INFO -    [DEBUG] container: istio-proxy, restart_count: 0
+[2025-09-29T05:32:10.336+0000] {docker.py:438} INFO -    [DEBUG] container: mongodb-exporter, restart_count: 0
+[2025-09-29T05:32:10.337+0000] {docker.py:438} INFO -    [DEBUG] container: post-storage-mongodb, restart_count: 8
+[2025-09-29T05:32:10.337+0000] {docker.py:438} INFO -    ✅ [DEBUG] Matched container post-storage-mongodb, restart_count=8
+[2025-09-29T05:32:10.337+0000] {docker.py:438} INFO -    [DEBUG] Polled restart count: 8 (before was 8)
+[2025-09-29T05:32:10.337+0000] {docker.py:438} INFO - 🔍 [DEBUG] _get_restart_count() called for pod=post-storage-mongodb-d5f69c6b6-7ftvd, ns=default, container=post-storage-mongodb
+[2025-09-29T05:32:10.338+0000] {docker.py:438} INFO -    [DEBUG] Found 3 container_status entries
+[2025-09-29T05:32:10.338+0000] {docker.py:438} INFO -    [DEBUG] container: istio-proxy, restart_count: 0
+[2025-09-29T05:32:10.338+0000] {docker.py:438} INFO -    [DEBUG] container: mongodb-exporter, restart_count: 0
+[2025-09-29T05:32:10.338+0000] {docker.py:438} INFO -    [DEBUG] container: post-storage-mongodb, restart_count: 8
+[2025-09-29T05:32:10.338+0000] {docker.py:438} INFO -    ✅ [DEBUG] Matched container post-storage-mongodb, restart_count=8
+[2025-09-29T05:32:10.339+0000] {docker.py:438} INFO -    [DEBUG] Polled restart count: 8 (before was 8)
+[2025-09-29T05:32:10.339+0000] {docker.py:438} INFO - 🔍 [DEBUG] _get_restart_count() called for pod=post-storage-mongodb-d5f69c6b6-7ftvd, ns=default, container=post-storage-mongodb
+[2025-09-29T05:32:10.339+0000] {docker.py:438} INFO -    [DEBUG] Found 3 container_status entries
+[2025-09-29T05:32:10.339+0000] {docker.py:438} INFO -    [DEBUG] container: istio-proxy, restart_count: 0
+[2025-09-29T05:32:10.339+0000] {docker.py:438} INFO -    [DEBUG] container: mongodb-exporter, restart_count: 0
+[2025-09-29T05:32:10.340+0000] {docker.py:438} INFO -    [DEBUG] container: post-storage-mongodb, restart_count: 8
+[2025-09-29T05:32:10.340+0000] {docker.py:438} INFO -    ✅ [DEBUG] Matched container post-storage-mongodb, restart_count=8
+[2025-09-29T05:32:10.340+0000] {docker.py:438} INFO -    [DEBUG] Polled restart count: 8 (before was 8)
+[2025-09-29T05:32:10.340+0000] {docker.py:438} INFO - 🔍 [DEBUG] _get_restart_count() called for pod=post-storage-mongodb-d5f69c6b6-7ftvd, ns=default, container=post-storage-mongodb
+[2025-09-29T05:32:10.340+0000] {docker.py:438} INFO -    [DEBUG] Found 3 container_status entries
+[2025-09-29T05:32:10.340+0000] {docker.py:438} INFO -    [DEBUG] container: istio-proxy, restart_count: 0
+[2025-09-29T05:32:10.341+0000] {docker.py:438} INFO -    [DEBUG] container: mongodb-exporter, restart_count: 0
+[2025-09-29T05:32:10.341+0000] {docker.py:438} INFO -    [DEBUG] container: post-storage-mongodb, restart_count: 8
+[2025-09-29T05:32:10.341+0000] {docker.py:438} INFO -    ✅ [DEBUG] Matched container post-storage-mongodb, restart_count=8
+[2025-09-29T05:32:10.341+0000] {docker.py:438} INFO -    [DEBUG] Polled restart count: 8 (before was 8)
+[2025-09-29T05:32:10.341+0000] {docker.py:438} INFO - 🔍 [DEBUG] _get_restart_count() called for pod=post-storage-mongodb-d5f69c6b6-7ftvd, ns=default, container=post-storage-mongodb
+[2025-09-29T05:32:10.341+0000] {docker.py:438} INFO -    [DEBUG] Found 3 container_status entries
+[2025-09-29T05:32:10.341+0000] {docker.py:438} INFO -    [DEBUG] container: istio-proxy, restart_count: 0
+[2025-09-29T05:32:10.342+0000] {docker.py:438} INFO -    [DEBUG] container: mongodb-exporter, restart_count: 0
+[2025-09-29T05:32:10.342+0000] {docker.py:438} INFO -    [DEBUG] container: post-storage-mongodb, restart_count: 8
+[2025-09-29T05:32:10.342+0000] {docker.py:438} INFO -    ✅ [DEBUG] Matched container post-storage-mongodb, restart_count=8
+[2025-09-29T05:32:10.342+0000] {docker.py:438} INFO -    [DEBUG] Polled restart count: 8 (before was 8)
+[2025-09-29T05:32:10.342+0000] {docker.py:438} INFO - 🔍 [DEBUG] _get_restart_count() called for pod=post-storage-mongodb-d5f69c6b6-7ftvd, ns=default, container=post-storage-mongodb
+[2025-09-29T05:32:10.342+0000] {docker.py:438} INFO -    [DEBUG] Found 3 container_status entries
+[2025-09-29T05:32:10.343+0000] {docker.py:438} INFO -    [DEBUG] container: istio-proxy, restart_count: 0
+[2025-09-29T05:32:10.343+0000] {docker.py:438} INFO -    [DEBUG] container: mongodb-exporter, restart_count: 0
+[2025-09-29T05:32:10.343+0000] {docker.py:438} INFO -    [DEBUG] container: post-storage-mongodb, restart_count: 8
+[2025-09-29T05:32:10.343+0000] {docker.py:438} INFO -    ✅ [DEBUG] Matched container post-storage-mongodb, restart_count=8
+[2025-09-29T05:32:10.343+0000] {docker.py:438} INFO -    [DEBUG] Polled restart count: 8 (before was 8)
+[2025-09-29T05:32:10.343+0000] {docker.py:438} INFO - 🔍 [DEBUG] _get_restart_count() called for pod=post-storage-mongodb-d5f69c6b6-7ftvd, ns=default, container=post-storage-mongodb
+[2025-09-29T05:32:10.344+0000] {docker.py:438} INFO -    [DEBUG] Found 3 container_status entries
+[2025-09-29T05:32:10.344+0000] {docker.py:438} INFO -    [DEBUG] container: istio-proxy, restart_count: 0
+[2025-09-29T05:32:10.344+0000] {docker.py:438} INFO -    [DEBUG] container: mongodb-exporter, restart_count: 0
+[2025-09-29T05:32:10.344+0000] {docker.py:438} INFO -    [DEBUG] container: post-storage-mongodb, restart_count: 8
+[2025-09-29T05:32:10.344+0000] {docker.py:438} INFO -    ✅ [DEBUG] Matched container post-storage-mongodb, restart_count=8
+[2025-09-29T05:32:10.344+0000] {docker.py:438} INFO -    [DEBUG] Polled restart count: 8 (before was 8)
+[2025-09-29T05:32:10.344+0000] {docker.py:438} INFO - 🔍 [DEBUG] _get_restart_count() called for pod=post-storage-mongodb-d5f69c6b6-7ftvd, ns=default, container=post-storage-mongodb
+[2025-09-29T05:32:10.345+0000] {docker.py:438} INFO -    [DEBUG] Found 3 container_status entries
+[2025-09-29T05:32:10.345+0000] {docker.py:438} INFO -    [DEBUG] container: istio-proxy, restart_count: 0
+[2025-09-29T05:32:10.345+0000] {docker.py:438} INFO -    [DEBUG] container: mongodb-exporter, restart_count: 0
+[2025-09-29T05:32:10.345+0000] {docker.py:438} INFO -    [DEBUG] container: post-storage-mongodb, restart_count: 8
+[2025-09-29T05:32:10.345+0000] {docker.py:438} INFO -    ✅ [DEBUG] Matched container post-storage-mongodb, restart_count=8
+[2025-09-29T05:32:10.345+0000] {docker.py:438} INFO -    [DEBUG] Polled restart count: 8 (before was 8)
+[2025-09-29T05:32:10.345+0000] {docker.py:438} INFO - 🔍 [DEBUG] _get_restart_count() called for pod=post-storage-mongodb-d5f69c6b6-7ftvd, ns=default, container=post-storage-mongodb
+[2025-09-29T05:32:10.346+0000] {docker.py:438} INFO -    [DEBUG] Found 3 container_status entries
+[2025-09-29T05:32:10.346+0000] {docker.py:438} INFO -    [DEBUG] container: istio-proxy, restart_count: 0
+[2025-09-29T05:32:37.236+0000] {docker.py:438} INFO - [32m[2025-09-29 05:32:37 INFO] Let's rollback...
+[2025-09-29T05:32:37.238+0000] {docker.py:438} INFO - [32m[2025-09-29 05:32:37 INFO] Rollback: verify-pods-running
+[2025-09-29T05:32:37.238+0000] {docker.py:438} INFO - [32m[2025-09-29 05:32:37 INFO] Probe: verify-pods-running
+[2025-09-29T05:32:38.989+0000] {docker.py:438} INFO - [32m[2025-09-29 05:32:38 INFO] Experiment ended with status: completed
+[2025-09-29T05:32:38.992+0000] {docker.py:438} INFO - [DEBUG] container: mongodb-exporter, restart_count: 0
+[2025-09-29T05:32:38.992+0000] {docker.py:438} INFO -    [DEBUG] container: post-storage-mongodb, restart_count: 8
+[2025-09-29T05:32:38.992+0000] {docker.py:438} INFO -    ✅ [DEBUG] Matched container post-storage-mongodb, restart_count=8
+[2025-09-29T05:32:38.992+0000] {docker.py:438} INFO -    [DEBUG] Polled restart count: 8 (before was 8)
+[2025-09-29T05:32:38.993+0000] {docker.py:438} INFO - 🔍 [DEBUG] _get_restart_count() called for pod=post-storage-mongodb-d5f69c6b6-7ftvd, ns=default, container=post-storage-mongodb
+[2025-09-29T05:32:38.993+0000] {docker.py:438} INFO -    [DEBUG] Found 3 container_status entries
+[2025-09-29T05:32:38.993+0000] {docker.py:438} INFO -    [DEBUG] container: istio-proxy, restart_count: 0
+[2025-09-29T05:32:38.994+0000] {docker.py:438} INFO -    [DEBUG] container: mongodb-exporter, restart_count: 0
+[2025-09-29T05:32:38.994+0000] {docker.py:438} INFO -    [DEBUG] container: post-storage-mongodb, restart_count: 8
+[2025-09-29T05:32:38.994+0000] {docker.py:438} INFO -    ✅ [DEBUG] Matched container post-storage-mongodb, restart_count=8
+[2025-09-29T05:32:38.995+0000] {docker.py:438} INFO -    [DEBUG] Polled restart count: 8 (before was 8)
+[2025-09-29T05:32:38.995+0000] {docker.py:438} INFO - 🔍 [DEBUG] _get_restart_count() called for pod=post-storage-mongodb-d5f69c6b6-7ftvd, ns=default, container=post-storage-mongodb
+[2025-09-29T05:32:38.995+0000] {docker.py:438} INFO -    [DEBUG] Found 3 container_status entries
+[2025-09-29T05:32:38.995+0000] {docker.py:438} INFO -    [DEBUG] container: istio-proxy, restart_count: 0
+[2025-09-29T05:32:38.996+0000] {docker.py:438} INFO -    [DEBUG] container: mongodb-exporter, restart_count: 0
+[2025-09-29T05:32:38.996+0000] {docker.py:438} INFO -    [DEBUG] container: post-storage-mongodb, restart_count: 8
+[2025-09-29T05:32:38.996+0000] {docker.py:438} INFO -    ✅ [DEBUG] Matched container post-storage-mongodb, restart_count=8
+[2025-09-29T05:32:38.996+0000] {docker.py:438} INFO -    [DEBUG] Polled restart count: 8 (before was 8)
+[2025-09-29T05:32:38.997+0000] {docker.py:438} INFO - 🔍 [DEBUG] _get_restart_count() called for pod=post-storage-mongodb-d5f69c6b6-7ftvd, ns=default, container=post-storage-mongodb
+[2025-09-29T05:32:38.997+0000] {docker.py:438} INFO -    [DEBUG] Found 3 container_status entries
+[2025-09-29T05:32:38.997+0000] {docker.py:438} INFO -    [DEBUG] container: istio-proxy, restart_count: 0
+[2025-09-29T05:32:38.997+0000] {docker.py:438} INFO -    [DEBUG] container: mongodb-exporter, restart_count: 0
+[2025-09-29T05:32:38.998+0000] {docker.py:438} INFO -    [DEBUG] container: post-storage-mongodb, restart_count: 8
+[2025-09-29T05:32:38.998+0000] {docker.py:438} INFO -    ✅ [DEBUG] Matched container post-storage-mongodb, restart_count=8
+[2025-09-29T05:32:38.998+0000] {docker.py:438} INFO -    [DEBUG] Polled restart count: 8 (before was 8)
+[2025-09-29T05:32:38.999+0000] {docker.py:438} INFO - 🔍 [DEBUG] _get_restart_count() called for pod=post-storage-mongodb-d5f69c6b6-7ftvd, ns=default, container=post-storage-mongodb
+[2025-09-29T05:32:38.999+0000] {docker.py:438} INFO -    [DEBUG] Found 3 container_status entries
+[2025-09-29T05:32:38.999+0000] {docker.py:438} INFO -    [DEBUG] container: istio-proxy, restart_count: 0
+[2025-09-29T05:32:38.999+0000] {docker.py:438} INFO -    [DEBUG] container: mongodb-exporter, restart_count: 0
+[2025-09-29T05:32:39.000+0000] {docker.py:438} INFO -    [DEBUG] container: post-storage-mongodb, restart_count: 8
+[2025-09-29T05:32:39.000+0000] {docker.py:438} INFO -    ✅ [DEBUG] Matched container post-storage-mongodb, restart_count=8
+[2025-09-29T05:32:39.000+0000] {docker.py:438} INFO -    [DEBUG] Polled restart count: 8 (before was 8)
+[2025-09-29T05:32:39.001+0000] {docker.py:438} INFO - 🔍 [DEBUG] _get_restart_count() called for pod=post-storage-mongodb-d5f69c6b6-7ftvd, ns=default, container=post-storage-mongodb
+[2025-09-29T05:32:39.001+0000] {docker.py:438} INFO -    [DEBUG] Found 3 container_status entries
+[2025-09-29T05:32:39.001+0000] {docker.py:438} INFO -    [DEBUG] container: istio-proxy, restart_count: 0
+[2025-09-29T05:32:39.001+0000] {docker.py:438} INFO -    [DEBUG] container: mongodb-exporter, restart_count: 0
+[2025-09-29T05:32:39.002+0000] {docker.py:438} INFO -    [DEBUG] container: post-storage-mongodb, restart_count: 8
+[2025-09-29T05:32:39.002+0000] {docker.py:438} INFO -    ✅ [DEBUG] Matched container post-storage-mongodb, restart_count=8
+[2025-09-29T05:32:39.002+0000] {docker.py:438} INFO -    [DEBUG] Polled restart count: 8 (before was 8)
+[2025-09-29T05:32:39.002+0000] {docker.py:438} INFO - 🔍 [DEBUG] _get_restart_count() called for pod=post-storage-mongodb-d5f69c6b6-7ftvd, ns=default, container=post-storage-mongodb
+[2025-09-29T05:32:39.003+0000] {docker.py:438} INFO -    [DEBUG] Found 3 container_status entries
+[2025-09-29T05:32:39.003+0000] {docker.py:438} INFO -    [DEBUG] container: istio-proxy, restart_count: 0
+[2025-09-29T05:32:39.003+0000] {docker.py:438} INFO -    [DEBUG] container: mongodb-exporter, restart_count: 0
+[2025-09-29T05:32:39.004+0000] {docker.py:438} INFO -    [DEBUG] container: post-storage-mongodb, restart_count: 8
+[2025-09-29T05:32:39.004+0000] {docker.py:438} INFO -    ✅ [DEBUG] Matched container post-storage-mongodb, restart_count=8
+[2025-09-29T05:32:39.004+0000] {docker.py:438} INFO -    [DEBUG] Polled restart count: 8 (before was 8)
+[2025-09-29T05:32:39.004+0000] {docker.py:438} INFO - 🔍 [DEBUG] _get_restart_count() called for pod=post-storage-mongodb-d5f69c6b6-7ftvd, ns=default, container=post-storage-mongodb
+[2025-09-29T05:32:39.005+0000] {docker.py:438} INFO -    [DEBUG] Found 3 container_status entries
+[2025-09-29T05:32:39.005+0000] {docker.py:438} INFO -    [DEBUG] container: istio-proxy, restart_count: 0
+[2025-09-29T05:32:39.005+0000] {docker.py:438} INFO -    [DEBUG] container: mongodb-exporter, restart_count: 0
+[2025-09-29T05:32:39.005+0000] {docker.py:438} INFO -    [DEBUG] container: post-storage-mongodb, restart_count: 8
+[2025-09-29T05:32:39.006+0000] {docker.py:438} INFO -    ✅ [DEBUG] Matched container post-storage-mongodb, restart_count=8
+[2025-09-29T05:32:39.006+0000] {docker.py:438} INFO -    [DEBUG] Polled restart count: 8 (before was 8)
+[2025-09-29T05:32:39.006+0000] {docker.py:438} INFO - 🔍 [DEBUG] _get_restart_count() called for pod=post-storage-mongodb-d5f69c6b6-7ftvd, ns=default, container=post-storage-mongodb
+[2025-09-29T05:32:39.007+0000] {docker.py:438} INFO -    [DEBUG] Found 3 container_status entries
+[2025-09-29T05:32:39.007+0000] {docker.py:438} INFO -    [DEBUG] container: istio-proxy, restart_count: 0
+[2025-09-29T05:32:39.007+0000] {docker.py:438} INFO -    [DEBUG] container: mongodb-exporter, restart_count: 0
+[2025-09-29T05:32:39.007+0000] {docker.py:438} INFO -    [DEBUG] container: post-storage-mongodb, restart_count: 8
+[2025-09-29T05:32:39.008+0000] {docker.py:438} INFO -    ✅ [DEBUG] Matched container post-storage-mongodb, restart_count=8
+[2025-09-29T05:32:39.008+0000] {docker.py:438} INFO -    [DEBUG] Polled restart count: 8 (before was 8)
+[2025-09-29T05:32:39.008+0000] {docker.py:438} INFO -    ⚠️ [DEBUG] This strategy did not result in a restart, going to next strategy if any
+[2025-09-29T05:32:39.008+0000] {docker.py:438} INFO - ➡️ [DEBUG] Trying restart strategy #2: sh -c kill -2 1
+[2025-09-29T05:32:39.008+0000] {docker.py:438} INFO -    ❌ [DEBUG] Failed to open exec stream for pod post-storage-mongodb-d5f69c6b6-7ftvd, container post-storage-mongodb: (0)
+[2025-09-29T05:32:39.008+0000] {docker.py:438} INFO - Reason: Handshake status 500 Internal Server Error -+-+- {'date': 'Mon, 29 Sep 2025 05:32:34 GMT', 'connection': 'close', 'content-length': '0'} -+-+- b''
+[2025-09-29T05:32:39.009+0000] {docker.py:438} INFO - 
+[2025-09-29T05:32:39.009+0000] {docker.py:438} INFO - ➡️ [DEBUG] Trying restart strategy #3: sh -c kill -TERM 1
+[2025-09-29T05:32:39.009+0000] {docker.py:438} INFO -    ❌ [DEBUG] Failed to open exec stream for pod post-storage-mongodb-d5f69c6b6-7ftvd, container post-storage-mongodb: (0)
+[2025-09-29T05:32:39.009+0000] {docker.py:438} INFO - Reason: Handshake status 500 Internal Server Error -+-+- {'date': 'Mon, 29 Sep 2025 05:32:35 GMT', 'connection': 'close', 'content-length': '0'} -+-+- b''
+[2025-09-29T05:32:39.009+0000] {docker.py:438} INFO - 
+[2025-09-29T05:32:39.009+0000] {docker.py:438} INFO - ➡️ [DEBUG] Trying restart strategy #4: sh -c kill -9 1
+[2025-09-29T05:32:39.009+0000] {docker.py:438} INFO -    ❌ [DEBUG] Failed to open exec stream for pod post-storage-mongodb-d5f69c6b6-7ftvd, container post-storage-mongodb: (0)
+[2025-09-29T05:32:39.010+0000] {docker.py:438} INFO - Reason: Handshake status 500 Internal Server Error -+-+- {'date': 'Mon, 29 Sep 2025 05:32:37 GMT', 'connection': 'close', 'content-length': '0'} -+-+- b''
+[2025-09-29T05:32:39.010+0000] {docker.py:438} INFO - 
+[2025-09-29T05:32:39.010+0000] {docker.py:438} INFO - ❌ [DEBUG] All strategies exhausted for pod post-storage-mongodb-d5f69c6b6-7ftvd and no restart observed
+[2025-09-29T05:32:39.010+0000] {docker.py:438} INFO - 
+[2025-09-29T05:32:39.010+0000] {docker.py:438} INFO - 🏁 [DEBUG] restart_containers() finished. Processed 1 pods
+[2025-09-29T05:32:39.010+0000] {docker.py:438} INFO -    [DEBUG] restart_containers returned 1 entries
+[2025-09-29T05:32:39.010+0000] {docker.py:438} INFO - ✅ [DEBUG] Successfully restarted this cycle: 0
+[2025-09-29T05:32:39.011+0000] {docker.py:438} INFO - ❌ [DEBUG] Failed restarts this cycle: 1
+[2025-09-29T05:32:39.011+0000] {docker.py:438} INFO -    - post-storage-mongodb-d5f69c6b6-7ftvd status=restart_failed details={'pod_name': 'post-storage-mongodb-d5f69c6b6-7ftvd', 'container_name': 'post-storage-mongodb', 'status': 'restart_failed', 'before_count': 8, 'stdout': '', 'stderr': '', 'ctrl_err': '{"metadata":{},"status":"Success"}'}
+[2025-09-29T05:32:39.011+0000] {docker.py:438} INFO - ⏰ [DEBUG] Less than 5 seconds remaining (-13s). Stopping continuous run.
+[2025-09-29T05:32:39.011+0000] {docker.py:438} INFO - 
+[2025-09-29T05:32:39.011+0000] {docker.py:438} INFO - ============================================================
+[2025-09-29T05:32:39.011+0000] {docker.py:438} INFO - 🏁 [DEBUG] Continuous restart experiment completed
+[2025-09-29T05:32:39.011+0000] {docker.py:438} INFO - 📈 Total cycles: 5
+[2025-09-29T05:32:39.012+0000] {docker.py:438} INFO - 📦 Total containers restarted: 4
+[2025-09-29T05:32:39.012+0000] {docker.py:438} INFO - ⏱️ Total duration: 213 seconds
+[2025-09-29T05:32:39.012+0000] {docker.py:438} INFO - 📊 Average cycle time: 42.6 seconds
+[2025-09-29T05:32:39.103+0000] {docker.py:438} INFO - MongoDB container restart experiment completed successfully
+[2025-09-29T05:32:39.334+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2025-09-29T05:32:39.334+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=Mongo_DB_Container_Restart, task_id=run_mongo_container_restart, run_id=scheduled__2025-01-10T00:00:00+00:00, execution_date=20250110T000000, start_date=20250929T052851, end_date=20250929T053239
+[2025-09-29T05:32:39.368+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-09-29T05:32:39.389+0000] {taskinstance.py:3900} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-09-29T05:32:39.392+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

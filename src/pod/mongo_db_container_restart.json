@@ -1,0 +1,42 @@
+{
+    "version": "1.0.0",
+    "title": "Continuous Container Restart Experiment",
+    "description": "Restart containers continuously at specified intervals - keeps pods alive but restarts container processes",
+    "tags": ["container-restart", "chaos-engineering", "kubernetes", "continuous"],
+    "method": [
+        {
+            "name": "continuous-container-restart",
+            "type": "action",
+            "provider": {
+                "type": "python",
+                "module": "container_restart",
+                "func": "restart_containers_continuous",
+                "arguments": {
+                    "label_selector": "app=post-storage-mongodb",
+                    "qty": 2,
+                    "rand": true,
+                    "ns": "default",
+                    "interval": 5,
+                    "duration": 200,
+                    "container_name": "post-storage-mongodb"
+                }
+            }
+        }
+    ],
+    "rollbacks": [
+        {
+            "name": "verify-pods-running",
+            "type": "probe",
+            "provider": {
+                "type": "python",
+                "module": "chaosk8s.pod.probes",
+                "func": "pods_in_phase",
+                "arguments": {
+                    "label_selector": "app=post-storage-mongodb",
+                    "phase": "Running",
+                    "ns": "default"
+                }
+            }
+        }
+    ]
+}

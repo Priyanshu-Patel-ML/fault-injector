@@ -1,0 +1,111 @@
+chaos_node_dag:
+  default_args:
+    owner: "airflow"
+    start_date: 2025-01-10
+    retries: 0
+    depends_on_past: false
+  schedule: "@once"
+  description: "Chaos Experiments DAG"
+  catchup: false
+  orientation: "LR"
+  default_view: "graph"
+ 
+  tasks:
+ 
+    taskA:
+      operator: airflow.providers.docker.operators.docker.DockerOperator
+     
+      image: "airflow_chaos:latest"
+      api_version: "auto"
+      auto_remove: true
+      user: "root"
+      mount_tmp_dir: false
+      docker_url: "unix://var/run/docker.sock"
+      network_mode: "host"
+      mounts:
+        - source: "/home/azureuser/fault-injector/src/pod"
+          target: "/opt/airflow/src/pod"
+          type: "bind"
+        - source: "/home/azureuser/.kube/config"
+          target: "/root/.kube/config"
+          type: "bind"
+          read_only: true
+      environment:
+        KUBECONFIG: "/root/.kube/config"
+      command: >
+        bash -c "cd /opt/airflow/src/pod && chaos run container_restart.json"
+ 
+    taskB:
+      operator: airflow.providers.docker.operators.docker.DockerOperator
+     
+      dependencies: ['taskA']
+     
+      image: "airflow_chaos:latest"
+      api_version: "auto"
+      auto_remove: true
+      user: "root"
+      mount_tmp_dir: false
+      docker_url: "unix://var/run/docker.sock"
+      network_mode: "host"
+      mounts:
+        - source: "/home/azureuser/fault-injector/src/pod"
+          target: "/opt/airflow/src/pod"
+          type: "bind"
+        - source: "/home/azureuser/.kube/config"
+          target: "/root/.kube/config"
+          type: "bind"
+          read_only: true
+      environment:
+        KUBECONFIG: "/root/.kube/config"
+      command: >
+        bash -c "cd /opt/airflow/src/pod && chaos run cpu_stress_ng.json"
+ 
+    taskC:
+      operator: airflow.providers.docker.operators.docker.DockerOperator
+     
+      dependencies: ['taskA']
+     
+      image: "airflow_chaos:latest"
+      api_version: "auto"
+      auto_remove: true
+      user: "root"
+      mount_tmp_dir: false
+      docker_url: "unix://var/run/docker.sock"
+      network_mode: "host"
+      mounts:
+        - source: "/home/azureuser/fault-injector/src/pod"
+          target: "/opt/airflow/src/pod"
+          type: "bind"
+        - source: "/home/azureuser/.kube/config"
+          target: "/root/.kube/config"
+          type: "bind"
+          read_only: true
+      environment:
+        KUBECONFIG: "/root/.kube/config"
+      command: >
+        bash -c "cd /opt/airflow/src/pod && chaos run memory_stress.json"
+ 
+    taskD:
+      operator: airflow.providers.docker.operators.docker.DockerOperator
+     
+      dependencies: ['taskB', 'taskC']
+     
+      image: "airflow_chaos:latest"
+      api_version: "auto"
+      auto_remove: true
+      user: "root"
+      mount_tmp_dir: false
+      docker_url: "unix://var/run/docker.sock"
+      network_mode: "host"
+      mounts:
+        - source: "/home/azureuser/fault-injector/src/pod"
+          target: "/opt/airflow/src/pod"
+          type: "bind"
+        - source: "/home/azureuser/.kube/config"
+          target: "/root/.kube/config"
+          type: "bind"
+          read_only: true
+      environment:
+        KUBECONFIG: "/root/.kube/config"
+      command: >
+        bash -c "cd /opt/airflow/src/pod && chaos run node_delete.json"

@@ -1,16 +1,19 @@
-Redis_Memory_Stress_Test:
+Redis_Memory_Stress_K8s:
   schedule: "@once"
-  start_date: "2025-01-10"
-  description: "Redis memory stress test on Azure Kubernetes with 1KB limit and noeviction policy"
+  start_date: "2025-01-20"  
+  description: "Redis memory stress test via kubectl exec on Kubernetes pod"
+  catchup: false
   default_view: "graph"
   orientation: "LR"
-  catchup: false
+  max_active_runs: 1  
+
   default_args:
     owner: "airflow"
     depends_on_past: false
-    retries: 0
+    retries: 1  
+    retry_delay_seconds: 60
   tasks:
-    - task_id: apply_redis_memory_stress
+    - task_id: redis_memory_stress_test
       operator: airflow.providers.docker.operators.docker.DockerOperator
       image: "airflow_chaos:latest"
       api_version: "auto"
@@ -19,6 +22,7 @@ Redis_Memory_Stress_Test:
       mount_tmp_dir: false
       docker_url: "unix://var/run/docker.sock"
       network_mode: "host"
+      container_name: "redis_memory_stress"
       mounts:
         - source: "/home/priyanshupatel/fault-injector/src/pod"
           target: "/opt/airflow/src/pod"
@@ -29,11 +33,11 @@ Redis_Memory_Stress_Test:
           read_only: true
       environment:
         KUBECONFIG: "/root/.kube/config"
+        PYTHONPATH: "/opt/airflow/src/pod"  # Added for Python imports
       command: >
         bash -c '
         cd /opt/airflow/src/pod &&
         chaos run redis_experiment.json &&
-        echo "Sleeping for 180 seconds..." &&
-        sleep 180 &&
-        echo "Redis memory stress test completed"'
-      container_name: "redis_memory_stress"
+        echo "[INFO] Sleeping for cooldown..." &&
+        sleep 30 &&
+        echo "[INFO] DAG complete"'
