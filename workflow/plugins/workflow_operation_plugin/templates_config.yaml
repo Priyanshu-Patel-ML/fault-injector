@@ -1,0 +1,47 @@
+templates:
+  - id: pod_cpu_stress_rollback
+    path: ../src/pod/cpu-stress-rollback.json
+    display_name: "Pod CPU Stress with Rollback"
+    type: action
+ 
+  - id: pod_memory_stress_rollback
+    path: ../src/pod/memory-stress-rollback.json
+    display_name: "Pod Memory Stress with Rollback"
+    type: action
+ 
+  - id: pod_restart
+    path: ../src/pod/container_restart.json
+    display_name: "Continuous Pod Restart"
+    type: action
+
+  - id: cpu_stress_ng
+    path: ../src/pod/cpu_stress_ng.json
+    display_name: "CPU Stress Test"
+    type: action
+
+  - id: api_latency
+    path: ../helm/chaos-platform/files/pod/API_Latency.json
+    display_name: "API Latency Test"
+    type: action
+
+  - id: api_timeout
+    path: ../helm/chaos-platform/files/pod/API_Timeout.json
+    display_name: "API Timeout Test"
+    type: action
+
+  - id: redis_load
+    path: ../helm/chaos-platform/files/pod/redis_load.json
+    display_name: "Redis Load Test"
+    type: action
+ 
+  - id: node_cordon_new
+    path: ../src/node/cordon-nodes_new.json
+    display_name: "Node Cordon (New)"
+    type: probe
+ 
+  - id: node_cordon
+    path: ../src/node/cordon-nodes.json
+    display_name: "Node Cordon"
+    type: probe
+ 
+ 

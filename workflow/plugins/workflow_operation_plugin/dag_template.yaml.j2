@@ -1,0 +1,39 @@
+{{ workflow_name }}:
+  default_args:
+    owner: "airflow"
+    start_date: 2025-01-10
+    retries: 0
+    depends_on_past: false
+  schedule: "@once"
+  description: "Chaos Experiments DAG"
+  catchup: false
+  orientation: "LR"
+  default_view: "graph"
+ 
+  tasks:
+{% for t in tasks %}
+    {{ t.task_id }}:
+      operator: airflow.providers.docker.operators.docker.DockerOperator
+      {% if t.dependencies and t.dependencies|length > 0 %}
+      dependencies: {{ t.dependencies }}
+      {% endif %}
+      image: "{{ t.image | default('airflow_chaos:latest') }}"
+      api_version: "auto"
+      auto_remove: true
+      user: "root"
+      mount_tmp_dir: false
+      docker_url: "unix://var/run/docker.sock"
+      network_mode: "host"
+      mounts:
+        - source: "/home/azureuser/fault-injector/src/pod"
+          target: "/opt/airflow/src/pod"
+          type: "bind"
+        - source: "/home/azureuser/.kube/config"
+          target: "/root/.kube/config"
+          type: "bind"
+          read_only: true
+      environment:
+        KUBECONFIG: "/root/.kube/config"
+      command: >
+        bash -c "cd /opt/airflow/src/pod && chaos run {{ t.json_file }}"
+{% endfor %}
