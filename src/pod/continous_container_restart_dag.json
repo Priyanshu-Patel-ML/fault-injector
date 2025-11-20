@@ -2,7 +2,7 @@
   "dag_id": "hs_search_service_container_restart",
   "task_id": "hs_search_service_container_restart",
   "task_name": "hs_search_service_container_restart",
-  "experiment_json": "hs_search_service_restart_dag.json",
+  "experiment_json": "continous_container_restart.json",
   "tags": ["severity:medium", "target_system:search-service", "configured_duration:300"],
   "description": "As part of container restart workflow, search-service container running inside the pod with label app.kubernetes.io/name=search-service is restarted continuously. Due to this, some of the http requests to search service  in the hotel reservation application fails with 500 error as the container is not up and running to cater to the http requests",
   "schedule": "@daily"
