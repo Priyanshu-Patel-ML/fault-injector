@@ -1,0 +1,42 @@
+{
+    "version": "1.0.0",
+    "title": "Hotel Reservation Search Service Continuous Container Restart Experiment",
+    "description": "Restart containers continuously at specified intervals - keeps pods alive but restarts container processes",
+    "tags": ["container-restart", "chaos-engineering", "kubernetes", "continuous"],
+    "method": [
+        {
+            "name": "hs-search-service-container-restart-exp",
+            "type": "action",
+            "provider": {
+                "type": "python",
+                "module": "container_restart",
+                "func": "restart_containers_continuous",
+                "arguments": {
+                    "label_selector": "app.kubernetes.io/name=search-service",
+                    "qty": 2,
+                    "rand": true,
+                    "ns": "hotel-reservation",
+                    "interval": 5,
+                    "duration": 400,
+                    "container_name": "search-service"
+                }
+            }
+        }
+    ],
+    "rollbacks": [
+        {
+            "name": "verify-pods-running",
+            "type": "probe",
+            "provider": {
+                "type": "python",
+                "module": "chaosk8s.pod.probes",
+                "func": "pods_in_phase",
+                "arguments": {
+                    "label_selector": "app.kubernetes.io/name=search-service",
+                    "phase": "Running",
+                    "ns": "hotel-reservation"
+                }
+            }
+        }
+    ]
+}
