@@ -1,0 +1,63 @@
+{
+    "version": "1.0.0",
+    "title": "Kafka Producer Linger Delay Experiment",
+    "description": "Inject artificial linger delays into Kafka producers using fault injection APIs.",
+    "tags": [
+        "kafka",
+        "linger-delay",
+        "fault-injection",
+        "chaos-engineering"
+    ],
+    "method": [
+        {
+            "name": "set-kafka-linger-fault",
+            "type": "action",
+            "provider": {
+                "type": "python",
+                "module": "kafka_linger_fault",
+                "func": "set_linger_delay",
+                "arguments": {
+                    "api_url": "http://48.194.77.240:8080/v1/fault_gen/app-fault/KAKFA_FAULT_LINGER/set"
+                }
+            }
+        },
+        {
+            "name": "kafka-linger-delay-execution",
+            "type": "action",
+            "provider": {
+                "type": "python",
+                "module": "kafka_linger_fault",
+                "func": "inject_linger_delay",
+                "arguments": {
+                    "number_of_request": 1,
+                    "api_url": "http://48.194.82.60:3000/api/bookings/create",
+                    "payload": {
+                        "hotelId": "hotel_009",
+                        "hotelName": "From Json Hotel",
+                        "checkInDate": "2025-11-26",
+                        "checkOutDate": "2025-11-29",
+                        "adults": 2,
+                        "children": 0,
+                        "rooms": 1,
+                        "totalPrice": 750
+                    },
+                    "token": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiQ1VTVE9NRVIiLCJ1c2VySWQiOjMsImVtYWlsIjoiYUBhLmNvbSIsInN1YiI6ImFAYS5jb20iLCJpYXQiOjE3NjQwNzYxNjEsImV4cCI6MTc2NDE2MjU2MX0.Ot7QRs82czE8h6_WZ_9npQ79V_7BCHKIvN1_QVE40HU"
+                }
+            }
+        }
+    ],
+    "rollbacks": [
+        {
+            "name": "reset-kafka-linger-fault",
+            "type": "action",
+            "provider": {
+                "type": "python",
+                "module": "kafka_linger_fault",
+                "func": "reset_linger_delay",
+                "arguments": {
+                    "api_url": "http://48.194.77.240:8080/v1/fault_gen/app-fault/KAKFA_FAULT_LINGER/reset"
+                }
+            }
+        }
+    ]
+}
