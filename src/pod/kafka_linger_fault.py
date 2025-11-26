@@ -101,8 +101,8 @@ def inject_linger_delay(api_url: str, payload: dict, token: str):
                 total_time = poll_end - start_time  # total time until count changed
  
                 print(f"Booking count increased from {initial_count} to {new_count}")
-                print(f"API latency for last GET: {api_latency:.2f} seconds")
-                print(f"Total time taken for increase: {total_time:.2f} seconds")
+                print(f"API latency for last GET: {api_latency} seconds")
+                print(f"Total time taken for increase: {total_time} seconds")
  
                 return {
                     "status": "success",
