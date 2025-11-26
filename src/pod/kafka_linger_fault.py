@@ -58,9 +58,10 @@ def inject_linger_delay(api_url: str, payload: dict, token: str):
     # -----------------------------------------------------------
     try:
         create_res = requests.post(api_url, json=payload, headers=headers, timeout=10)
-        create_res.raise_for_status()
+        # create_res.raise_for_status()
         print("Create booking triggered successfully.")
     except Exception as e:
+        print(f"Failed Create Booking")
         return {
             "status": "failed",
             "error": f"Create booking failed: {str(e)}",
@@ -83,7 +84,8 @@ def inject_linger_delay(api_url: str, payload: dict, token: str):
             new_count = len(current_bookings)
  
             if new_count > initial_count:
-                logs.append(f"Booking count increased from {initial_count} to {new_count}")
+                print(f"Booking count increased from {initial_count} to {new_count}")
+                print("Success for new booking")
                 return {
                     "status": "success",
                     "message": "Booking successfully created and confirmed by count change.",
