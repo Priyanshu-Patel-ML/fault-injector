@@ -1,7 +1,8 @@
 import time
 
 import requests
- 
+
+from datetime import datetime
  
 def set_linger_delay(api_url: str = "http://48.194.77.240:8080/v1/fault_gen/app-fault/KAKFA_FAULT_LINGER/set"):
 
@@ -78,7 +79,7 @@ def inject_linger_delay(api_url: str, payload: dict, token: str):
 
     print(f"Initial booking count: {initial_count}")
 
-    time.sleep(3)
+    # time.sleep(3)
 
     # except Exception as e:
 
@@ -146,9 +147,9 @@ def inject_linger_delay(api_url: str, payload: dict, token: str):
 
         try:
 
-            poll_start = time.time()  # timestamp right before calling GET
+            poll_start = datetime.now() # timestamp right before calling GET
 
-            print(f"Poll start time {poll_start} seconds")
+            print(f"Poll start time: {poll_start.strftime('%Y-%m-%d %H:%M:%S.%f')[:-3]}")
  
             current_res = requests.get(main_check_url, headers=headers)
 
