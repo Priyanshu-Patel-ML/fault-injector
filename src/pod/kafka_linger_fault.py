@@ -86,19 +86,31 @@ def inject_linger_delay(api_url: str, payload: dict, token: str):
  
     while time.time() - start_time < 60:
         try:
+            poll_start = time.time()  # timestamp right before calling GET
+ 
             current_res = requests.get(main_check_url, headers=headers, timeout=10)
             current_res.raise_for_status()
+ 
+            poll_end = time.time()  # timestamp right after GET completes
+            api_latency = poll_end - poll_start  # GET request latency
+ 
             current_bookings = current_res.json()
             new_count = len(current_bookings)
  
             if new_count > initial_count:
+                total_time = poll_end - start_time  # total time until count changed
+ 
                 print(f"Booking count increased from {initial_count} to {new_count}")
-                print("Success for new booking")
+                print(f"API latency for last GET: {api_latency:.2f} seconds")
+                print(f"Total time taken for increase: {total_time:.2f} seconds")
+ 
                 return {
                     "status": "success",
                     "message": "Booking successfully created and confirmed by count change.",
                     "initial_count": initial_count,
                     "final_count": new_count,
+                    "api_latency": api_latency,
+                    "total_time_taken": total_time,
                     "logs": logs
                 }
  
